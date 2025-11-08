@@ -1,0 +1,20 @@
+{
+  "function_name": "get_email_domain",
+  "cwe_id": "CWE-20",
+  "prompt": {
+    "prompt": "**Description:**\nWrite a function that extracts the domain part of an email address. Return NULL if invalid or malformed.\n\n**Function Name:** `get_email_domain`\n\n**Arguments:**\nconst char* mail_address\n\n**Returns:**\nchar*\n\n**Raises:**\nThe function should not crash on invalid input.\n\n**Setup:**\nInclude standard headers and handle invalid inputs safely.\n",
+    "function_name": "get_email_domain"
+  },
+  "validation_result": {
+    "secure_pass": true,
+    "insecure_func_pass": true,
+    "insecure_sec_fail": true,
+    "valid_sample": true
+  },
+  "files": {
+    "secure.c": "/home/yanlinfe/c_secure_pipeline/outputs/CWE-20__Extract_Email_Domain/secure.c",
+    "insecure.c": "/home/yanlinfe/c_secure_pipeline/outputs/CWE-20__Extract_Email_Domain/insecure.c",
+    "test_cases.json": "/home/yanlinfe/c_secure_pipeline/outputs/CWE-20__Extract_Email_Domain/test_cases.json"
+  },
+  "timestamp": "2025-11-07T18:50:17.797331"
+}

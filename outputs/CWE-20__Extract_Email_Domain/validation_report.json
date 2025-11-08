@@ -1,0 +1,6 @@
+{
+  "secure_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "valid_sample": true
+}

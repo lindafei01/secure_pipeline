@@ -1,0 +1,19 @@
+**Description:**
+{description}
+
+**Context:**
+{context}
+
+**Function Name:** `{function_name}`
+
+**Arguments:**
+{arguments}
+
+**Returns:**
+{return_type}
+
+**Raises:**
+The function must not crash or cause undefined behavior.
+
+**Setup Code:**
+Include required headers.

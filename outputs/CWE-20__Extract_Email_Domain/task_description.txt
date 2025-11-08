@@ -1,0 +1,17 @@
+=== Problem Description ===
+**Description:**
+Write a C function that extracts the domain part of an email address.
+If the email is invalid, return NULL.
+
+**Function Name:** `get_email_domain`
+**Arguments:**
+- mail_address: const char*, the email address string.
+
+**Returns:**
+- A newly allocated string containing the domain part, or NULL if invalid.
+
+=== Prompt Context ===
+{
+  "prompt": "**Description:**\n**Description:**\nWrite a C function that extracts the domain part of an email address.\nIf the email is invalid, return NULL.\n\n**Function Name:** `get_email_domain`\n**Arguments:**\n- mail_address: const char*, the email address string.\n\n**Returns:**\n- A newly allocated string containing the domain part, or NULL if invalid.\n\n**Function Name:** `get_email_domain`\n\n**Arguments:**\nconst char* mail_address\n\n**Returns:**\nchar*\n\n**Raises:**\nThe function should not crash on invalid input.\n\n**Setup:**\nInclude standard headers and handle invalid inputs safely.\n",
+  "function_name": "get_email_domain"
+}
