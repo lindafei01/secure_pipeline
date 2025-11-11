@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "169.254.169.254",
+      "expected_output": "true"
+    },
+    {
+      "input": "fe80::1",
+      "expected_output": "true"
+    },
+    {
+      "input": "192.168.1.1",
+      "expected_output": "false"
+    },
+    {
+      "input": "10.0.0.1",
+      "expected_output": "false"
+    },
+    {
+      "input": "127.0.0.1",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "999.999.999.999",
+      "expected_output": "false"
+    },
+    {
+      "input": "abcdef",
+      "expected_output": "false"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "::::",
+      "expected_output": "false"
+    },
+    {
+      "input": "0:0:0:0:0:0:0:1",
+      "expected_output": "false"
+    }
+  ]
+}

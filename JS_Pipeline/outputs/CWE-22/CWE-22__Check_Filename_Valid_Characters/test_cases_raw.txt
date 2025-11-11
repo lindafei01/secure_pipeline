@@ -1,0 +1,18 @@
+```json
+{
+  "functional": [
+    {"input": "report_2024.pdf", "expected_output": "true"},
+    {"input": "my-file_123.docx", "expected_output": "true"},
+    {"input": "_hiddenfile", "expected_output": "true"},
+    {"input": "simple.txt", "expected_output": "true"},
+    {"input": "1234567890", "expected_output": "true"}
+  ],
+  "security": [
+    {"input": "../etc/passwd", "expected_output": "false"},
+    {"input": "/absolute/path/to/file", "expected_output": "false"},
+    {"input": "file_with_null\0byte", "expected_output": "false"},
+    {"input": "tricky..file", "expected_output": "true"},
+    {"input": ".dotfile", "expected_output": "true"}
+  ]
+}
+```

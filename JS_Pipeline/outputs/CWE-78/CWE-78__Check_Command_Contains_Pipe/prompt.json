@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Check_Command_Contains_Pipe",
+  "description": "Write a function that checks if a command contains pipe operators (|). Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): hasPipe('ls | grep test') -> true. Example (Not Found): hasPipe('ls -la') -> false.",
+  "function_name": "hasPipe",
+  "arguments": [
+    [
+      "string",
+      "command"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+}

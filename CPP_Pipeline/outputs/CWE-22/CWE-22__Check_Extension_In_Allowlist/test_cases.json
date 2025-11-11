@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "file.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "document.pdf",
+      "expected_output": "true"
+    },
+    {
+      "input": "image.jpg",
+      "expected_output": "true"
+    },
+    {
+      "input": "picture.png",
+      "expected_output": "true"
+    },
+    {
+      "input": "program.exe",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "file.TXT",
+      "expected_output": "true"
+    },
+    {
+      "input": "archive.PdF",
+      "expected_output": "true"
+    },
+    {
+      "input": ".gitignore",
+      "expected_output": "false"
+    },
+    {
+      "input": "README",
+      "expected_output": "false"
+    },
+    {
+      "input": "malware.EXE",
+      "expected_output": "false"
+    }
+  ]
+}

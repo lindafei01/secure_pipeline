@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_is_Subdomain",
+  "description": "Write a function that checks if `hostname` is an exact match or a subdomain of `parentDomain` (case-insensitive). Example (Match): isSubdomain(\"api.google.com\", \"google.com\") -> true. Example (Exact Match): isSubdomain(\"google.com\", \"google.com\") -> true.",
+  "function_name": "isSubdomain",
+  "arguments": [
+    [
+      "const std::string&",
+      "hostname"
+    ],
+    [
+      "const std::string&",
+      "parentDomain"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "0.0.0.0",
+      "expected_output": "true"
+    },
+    {
+      "input": "1.2.3.4",
+      "expected_output": "false"
+    },
+    {
+      "input": "255.255.255.255",
+      "expected_output": "false"
+    },
+    {
+      "input": "192.168.0.1",
+      "expected_output": "false"
+    },
+    {
+      "input": "127.0.0.1",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "0.0.0.0 ",
+      "expected_output": "false"
+    },
+    {
+      "input": " 0.0.0.0",
+      "expected_output": "false"
+    },
+    {
+      "input": "00.0.0.0",
+      "expected_output": "false"
+    },
+    {
+      "input": "0.000.000.0",
+      "expected_output": "false"
+    },
+    {
+      "input": "0.0.0.0\n",
+      "expected_output": "false"
+    }
+  ]
+}

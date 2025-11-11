@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 4,
+    "FUNCTION PASS (insecure)": 4,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 4,
+    "SECURITY PASS (insecure)": 4,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 1,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/home/user 4096",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/this/is/a/test/path 20",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/another/valid/path 21",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/yet/another/path 16",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/short/path 10",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": " 4096",
+        "expected": "true",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> path maxLength",
+          "exit_code": 64,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> path maxLength",
+          "exit_code": 64,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/this/path/has/zero/zero/zero/zero/zero/zero/ 4096",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/pathwithspecial\u5b57\u7b26 4096",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/path/with/newline\n 4096",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/a/very/very/very/very/long/path/that/should/exceed/the/maximum/length/of/our/system/and/be/checked/properly/for/the/longest/path/possible/in/the/given/system 100",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

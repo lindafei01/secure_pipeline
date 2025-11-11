@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "https://example.com/path/to/resource",
+      "expected_output": "0"
+    },
+    {
+      "input": "",
+      "expected_output": "0"
+    },
+    {
+      "input": "ftp://fileserver.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "mailto:user@example.com",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "javascript:alert('Security Issue')",
+      "expected_output": "1"
+    },
+    {
+      "input": "JaVaScrIPT:console.log('Hello')",
+      "expected_output": "1"
+    },
+    {
+      "input": " javascript : alert('XSS');",
+      "expected_output": "1"
+    },
+    {
+      "input": " \t javascript:\twindow.location='http://bad.com';",
+      "expected_output": "1"
+    },
+    {
+      "input": null,
+      "expected_output": "0"
+    }
+  ]
+}

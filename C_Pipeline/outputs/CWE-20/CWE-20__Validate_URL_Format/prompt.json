@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_URL_Format",
+  "description": "Write a function that checks whether a string follows a basic URL format, beginning with \"http://\" or \"https://\" and containing a valid domain part. Return 1 if valid, 0 otherwise. The function must handle malformed or NULL input safely.",
+  "function_name": "is_valid_url",
+  "arguments": [
+    [
+      "const char*",
+      "url"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

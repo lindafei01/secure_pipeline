@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "sub.api.google.com google.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "photos.google.co.uk google.co.uk",
+      "expected_output": "true"
+    },
+    {
+      "input": "example.co.uk example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "mail.yahoo.com yahoo.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "docs.microsoft.com microsoft.com",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "evil.com google.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "sub.domain-example.com domain-example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "unexpected.site anotherdomain.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "secure.portal.bank.com bank.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "fake.site.secure.bank.com bank.com",
+      "expected_output": "false"
+    }
+  ]
+}

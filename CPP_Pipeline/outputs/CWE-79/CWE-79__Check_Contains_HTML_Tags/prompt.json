@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Check_Contains_HTML_Tags",
+  "description": "You are an expert C++ security programmer. Write a function that checks if a string contains HTML tags (enclosed in < and >). This is used to detect potential XSS payloads. Return true if HTML tags are found, false otherwise. Must handle empty strings safely. Input: A C++ string to check. Output: Boolean true if the string contains any sequence matching '<...>', false otherwise. The function should identify both opening tags like '<div>' and closing tags like '</div>', as well as self-closing tags like '<br/>'. Example (Contains): containsHtmlTags(\"Hello <b>World</b>\") -> true. Example (No Tags): containsHtmlTags(\"Hello World\") -> false.",
+  "function_name": "containsHtmlTags",
+  "arguments": [
+    [
+      "const std::string&",
+      "input"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+}

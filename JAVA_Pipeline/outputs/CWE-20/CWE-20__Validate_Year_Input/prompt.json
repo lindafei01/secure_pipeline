@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Year_Input",
+  "description": "Write a method that checks whether an integer year falls within the valid range 1900-2100. Return true if valid, false otherwise. Must handle extreme or negative values safely.",
+  "function_name": "isValidYear",
+  "arguments": [
+    [
+      "int",
+      "year"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

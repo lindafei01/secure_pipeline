@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 2,
+    "FUNCTION PASS (insecure)": 2,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 1,
+    "SECURITY PASS (insecure)": 1,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 4,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "file's name",
+        "expected": "'file'\\''s name'",
+        "secure_result": {
+          "passed": false,
+          "output": "'file'\\''s'",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "'file'\\''s'",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "simplefile",
+        "expected": "'simplefile'",
+        "secure_result": {
+          "passed": true,
+          "output": "'simplefile'",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "'simplefile'",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "a filename with spaces.txt",
+        "expected": "'a filename with spaces.txt'",
+        "secure_result": {
+          "passed": false,
+          "output": "'a'",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "'a'",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "",
+        "expected": "''",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> argument",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> argument",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "multiple'quotes'in'here",
+        "expected": "'multiple'\\''quotes'\\''in'\\''here'",
+        "secure_result": {
+          "passed": true,
+          "output": "'multiple'\\''quotes'\\''in'\\''here'",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "'multiple'\\''quotes'\\''in'\\''here'",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "malicious;rm -rf /",
+        "expected": "'malicious;rm -rf /'",
+        "secure_result": {
+          "passed": false,
+          "output": "'malicious;rm'",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "'malicious;rm'",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "command && echo hello",
+        "expected": "'command && echo hello'",
+        "secure_result": {
+          "passed": false,
+          "output": "'command'",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "'command'",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "inject'sql' OR '1'='1",
+        "expected": "'inject'\\''sql'\\'' OR '\\''1'\\''='\\''1'",
+        "secure_result": {
+          "passed": false,
+          "output": "'inject'\\''sql'\\'''",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "'inject'\\''sql'\\'''",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "dir/../../etc/passwd",
+        "expected": "'dir/../../etc/passwd'",
+        "secure_result": {
+          "passed": true,
+          "output": "'dir/../../etc/passwd'",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "'dir/../../etc/passwd'",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "None",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "'None'",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "'None'",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Validate_Command_Against_Allowlist",
+  "description": "Write a function that checks if a command matches any entry in an allowlist array. Return true if allowed, false otherwise. Must handle null/undefined safely. Example (Allowed): isCommandAllowed('ls', allowlist) -> true. Example (Denied): isCommandAllowed('rm', allowlist) -> false.",
+  "function_name": "isCommandAllowed",
+  "arguments": [
+    [
+      "string",
+      "command"
+    ],
+    [
+      "Array<string>",
+      "allowlist"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n\nconst allowlist = ['ls', 'cat', 'echo', 'pwd'];\n"
+}

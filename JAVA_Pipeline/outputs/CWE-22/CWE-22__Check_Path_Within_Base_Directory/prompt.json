@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Within_Base_Directory",
+  "description": "Write a function that checks if a given path stays within a base directory (no traversal outside). Return true if safe, false otherwise. Must handle null safely. Example (Safe): isPathWithinBase(\"/var/www\", \"/var/www/html/index.html\") -> true. Example (Unsafe): isPathWithinBase(\"/var/www\", \"/var/www/../etc/passwd\") -> false.",
+  "function_name": "isPathWithinBase",
+  "arguments": [
+    [
+      "String",
+      "baseDir"
+    ],
+    [
+      "String",
+      "path"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 3,
+    "SECURITY PASS (insecure)": 3,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 2,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "Hello, World!",
+        "expected": "Hello, World!",
+        "secure_result": {
+          "passed": false,
+          "output": "Hello,",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Hello,",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Good 'morning'",
+        "expected": "Good &#39;morning&#39;",
+        "secure_result": {
+          "passed": false,
+          "output": "Good",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Good",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "The \"quick\" brown",
+        "expected": "The &quot;quick&quot; brown",
+        "secure_result": {
+          "passed": false,
+          "output": "The",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "The",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "A < B && C > D",
+        "expected": "A &lt; B &amp;&amp; C &gt; D",
+        "secure_result": {
+          "passed": false,
+          "output": "A",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "A",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Use & character wisely",
+        "expected": "Use &amp; character wisely",
+        "secure_result": {
+          "passed": false,
+          "output": "Use",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Use",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "<script>alert('XSS')</script>",
+        "expected": "&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;",
+        "secure_result": {
+          "passed": true,
+          "output": "&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "Click <a href='malicious'>here</a>",
+        "expected": "Click &lt;a href=&#39;malicious&#39;&gt;here&lt;/a&gt;",
+        "secure_result": {
+          "passed": false,
+          "output": "Click",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Click",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "Dangerous <img src='error.js'>",
+        "expected": "Dangerous &lt;img src=&#39;error.js&#39;&gt;",
+        "secure_result": {
+          "passed": false,
+          "output": "Dangerous",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Dangerous",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "\"Onmouseover=evil()\"",
+        "expected": "&quot;Onmouseover=evil()&quot;",
+        "secure_result": {
+          "passed": true,
+          "output": "&quot;Onmouseover=evil()&quot;",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "&quot;Onmouseover=evil()&quot;",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "'<b>Bold</b>'",
+        "expected": "&#39;&lt;b&gt;Bold&lt;/b&gt;&#39;",
+        "secure_result": {
+          "passed": true,
+          "output": "&#39;&lt;b&gt;Bold&lt;/b&gt;&#39;",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "&#39;&lt;b&gt;Bold&lt;/b&gt;&#39;",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

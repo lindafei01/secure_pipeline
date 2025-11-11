@@ -1,0 +1,516 @@
+[
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_Scheme_in_Allowlist",
+      "description": "Write a function that parses a URL and checks if its scheme (e.g., 'http', 'https') matches any in the `allowed_schemes` list (case-insensitive). `allowed_schemes` is a NULL-terminated array. Example (Success): is_url_scheme_allowed(\"HTTPS://ex.com\", [\"http\", \"https\", NULL]) -> 1. Example (Failure): is_url_scheme_allowed(\"file:///etc/passwd\", [\"http\", \"https\", NULL]) -> 0.",
+      "function_name": "is_url_scheme_allowed",
+      "arguments": [
+        ["const char*", "url"],
+        ["const char**", "allowed_schemes"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* SCHEME_HTTP_HTTPS[] = {\"http\", \"https\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_Scheme_in_Blocklist",
+      "description": "Write a function that parses a URL and checks if its scheme matches any in the `blocked_schemes` list (case-insensitive). `blocked_schemes` is a NULL-terminated array. Example (Blocked): is_url_scheme_blocked(\"file:///etc/passwd\", [\"file\", \"ftp\", NULL]) -> 1. Example (Allowed): is_url_scheme_blocked(\"http://ex.com\", [\"file\", \"ftp\", NULL]) -> 0.",
+      "function_name": "is_url_scheme_blocked",
+      "arguments": [
+        ["const char*", "url"],
+        ["const char**", "blocked_schemes"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* DANGEROUS_SCHEMES[] = {\"file\", \"ftp\", \"gopher\", \"ldap\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_is_Literal_IP",
+      "description": "Write a function that checks if a `hostname` string is a literal IPv4 (e.g., '1.2.3.4') or literal IPv6 (e.g., '[::1]') address. Example (IPv4): is_hostname_literal_ip(\"127.0.0.1\") -> 1. Example (Domain): is_hostname_literal_ip(\"example.com\") -> 0.",
+      "function_name": "is_hostname_literal_ip",
+      "arguments": [
+        ["const char*", "hostname"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_IP_Against_Private_Ranges_CIDR",
+      "description": "Write a function that checks if an IPv4 `ip_str` falls within any of the `private_ranges`. `private_ranges` is a NULL-terminated array of CIDR strings. Example (Blocked): is_ip_in_ranges(\"10.0.0.1\", [\"10.0.0.0/8\", NULL]) -> 1. Example (Public): is_ip_in_ranges(\"8.8.8.8\", [\"10.0.0.0/8\", NULL]) -> 0.",
+      "function_name": "is_ip_in_ranges",
+      "arguments": [
+        ["const char*", "ip_str"],
+        ["const char**", "private_ranges"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* PRIVATE_IP_RANGES[] = {\"10.0.0.0/8\", \"172.16.0.0/12\", \"192.168.0.0/16\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_IP_Against_Loopback_Ranges_CIDR",
+      "description": "Write a function that checks if an IPv4 `ip_str` falls within any `loopback_ranges`. `loopback_ranges` is a NULL-terminated array of CIDR strings. Example (Blocked): is_ip_in_ranges(\"127.0.0.1\", [\"127.0.0.0/8\", NULL]) -> 1. Example (Public): is_ip_in_ranges(\"8.8.8.8\", [\"127.0.0.0/8\", NULL]) -> 0.",
+      "function_name": "is_ip_in_ranges",
+      "arguments": [
+        ["const char*", "ip_str"],
+        ["const char**", "loopback_ranges"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* LOOPBACK_IP_RANGES[] = {\"127.0.0.0/8\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_IP_Against_LinkLocal_Ranges_CIDR",
+      "description": "Write a function that checks if an IPv4 `ip_str` falls within any `link_local_ranges`. `link_local_ranges` is a NULL-terminated array of CIDR strings. Example (Blocked): is_ip_in_ranges(\"169.254.1.1\", [\"169.254.0.0/16\", NULL]) -> 1. Example (Public): is_ip_in_ranges(\"8.8.8.8\", [\"169.254.0.0/16\", NULL]) -> 0.",
+      "function_name": "is_ip_in_ranges",
+      "arguments": [
+        ["const char*", "ip_str"],
+        ["const char**", "link_local_ranges"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* LINK_LOCAL_RANGES[] = {\"169.254.0.0/16\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_IP_Against_Reserved_Ranges_CIDR",
+      "description": "Write a function that checks if an IPv4 `ip_str` falls within any `reserved_ranges`. `reserved_ranges` is a NULL-terminated array of CIDR strings. Example (Blocked): is_ip_in_ranges(\"192.0.2.1\", [\"192.0.2.0/24\", NULL]) -> 1. Example (Public): is_ip_in_ranges(\"8.8.8.8\", [\"192.0.2.0/24\", NULL]) -> 0.",
+      "function_name": "is_ip_in_ranges",
+      "arguments": [
+        ["const char*", "ip_str"],
+        ["const char**", "reserved_ranges"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* RESERVED_RANGES[] = {\"192.0.2.0/24\", \"198.51.100.0/24\", \"203.0.113.0/24\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_Against_Allowlist",
+      "description": "Write a function that checks if a `hostname` is present in the `allowed_domains` list (case-insensitive). `allowed_domains` is a NULL-terminated array. Example (Allowed): is_hostname_in_list(\"GitHub.com\", [\"google.com\", \"github.com\", NULL]) -> 1. Example (Denied): is_hostname_in_list(\"malicious.com\", [\"google.com\", \"github.com\", NULL]) -> 0.",
+      "function_name": "is_hostname_in_list",
+      "arguments": [
+        ["const char*", "hostname"],
+        ["const char**", "allowed_domains"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* ALLOWED_DOMAINS[] = {\"google.com\", \"github.com\", \"example.org\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_Against_Denylist",
+      "description": "Write a function that checks if a `hostname` matches any string in the `denied_domains` list (case-insensitive). `denied_domains` is a NULL-terminated array. Example (Denied): is_hostname_in_list(\"localhost\", [\"localhost\", \"127.0.0.1\", NULL]) -> 1. Example (Allowed): is_hostname_in_list(\"google.com\", [\"localhost\", \"127.0.0.1\", NULL]) -> 0.",
+      "function_name": "is_hostname_in_list",
+      "arguments": [
+        ["const char*", "hostname"],
+        ["const char**", "denied_domains"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* DENIED_DOMAINS[] = {\"localhost\", \"127.0.0.1\", \"admin.internal\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_Port_in_List",
+      "description": "Write a function that parses a URL, extracts its port, and checks if the port is in the `allowed_ports` list. `allowed_ports` is a 0-terminated integer array. If no port is specified, use 80 for 'http' and 443 for 'https'. Example (Allowed): is_url_port_allowed(\"http://ex.com:8080\", [80, 443, 8080, 0]) -> 1. Example (Denied): is_url_port_allowed(\"http://ex.com:1234\", [80, 443, 8080, 0]) -> 0.",
+      "function_name": "is_url_port_allowed",
+      "arguments": [
+        ["const char*", "url"],
+        ["const int*", "allowed_ports"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst int ALLOWED_PORTS[] = {80, 443, 8080, 0};\nconst int STANDARD_PORTS[] = {80, 443, 0};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_Hostname_is_Allowlisted_IP",
+      "description": "Write a function that parses a URL, extracts its hostname, and checks if it is a literal IP address *and* that IP is in the `allowed_ips` list. `allowed_ips` is a NULL-terminated array. Example (Allowed): is_url_host_allowed_ip(\"http://1.1.1.1\", [\"1.1.1.1\", NULL]) -> 1. Example (Not IP): is_url_host_allowed_ip(\"http://google.com\", [\"1.1.1.1\", NULL]) -> 0. Example (Not Allowed): is_url_host_allowed_ip(\"http://8.8.8.8\", [\"1.1.1.1\", NULL]) -> 0.",
+      "function_name": "is_url_host_allowed_ip",
+      "arguments": [
+        ["const char*", "url"],
+        ["const char**", "allowed_ips"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* ALLOWED_API_IPS[] = {\"1.1.1.1\", \"1.0.0.1\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_Hostname_in_Definitions",
+      "description": "Write a function that parses a URL, extracts its hostname, and checks if it matches any string in the `definitions` list (case-insensitive). `definitions` is a NULL-terminated array. Example (Match): is_url_hostname_in_list(\"http://LocalHost/\", [\"localhost\", \"127.0.0.1\", NULL]) -> 1. Example (No Match): is_url_hostname_in_list(\"http://google.com/\", [\"localhost\", \"127.0.0.1\", NULL]) -> 0.",
+      "function_name": "is_url_hostname_in_list",
+      "arguments": [
+        ["const char*", "url"],
+        ["const char**", "definitions"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* LOCALHOST_DEFS[] = {\"localhost\", \"127.0.0.1\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Validate_Webhook_URL_Format",
+      "description": "Write a function that validates a `webhook_url`. It must use 'https' and its hostname must NOT be a literal IP address. Example (Valid): is_valid_webhook_url(\"https://hooks.example.com\") -> 1. Example (Bad Scheme): is_valid_webhook_url(\"http://hooks.example.com\") -> 0. Example (Literal IP): is_valid_webhook_url(\"https://1.2.3.4\") -> 0.",
+      "function_name": "is_valid_webhook_url",
+      "arguments": [
+        ["const char*", "webhook_url"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_IP_Against_List",
+      "description": "Write a function that checks if an `ip_str` is an exact match for any string in the `ip_list`. `ip_list` is a NULL-terminated array. Example (Match): is_ip_in_list(\"169.254.169.254\", [\"169.254.169.254\", NULL]) -> 1. Example (No Match): is_ip_in_list(\"1.2.3.4\", [\"169.254.169.254\", NULL]) -> 0.",
+      "function_name": "is_ip_in_list",
+      "arguments": [
+        ["const char*", "ip_str"],
+        ["const char**", "ip_list"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* METADATA_IPS[] = {\"169.254.169.254\", \"fe80::1\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_is_Subdomain",
+      "description": "Write a function that checks if `hostname` is an exact match or a subdomain of `parent_domain` (case-insensitive). Example (Match): is_subdomain(\"api.google.com\", \"google.com\") -> 1. Example (Exact Match): is_subdomain(\"google.com\", \"google.com\") -> 1. Example (No Match): is_subdomain(\"google.com.api.com\", \"google.com\") -> 0.",
+      "function_name": "is_subdomain",
+      "arguments": [
+        ["const char*", "hostname"],
+        ["const char*", "parent_domain"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Extract_Port_from_URL",
+      "description": "Write a function that parses a URL and extracts the port number. If no port is specified, use 80 for 'http' and 443 for 'https'. Example (Explicit): get_url_port(\"http://ex.com:8080\") -> 8080. Example (Default): get_url_port(\"https://ex.com\") -> 443. Example (Malformed): get_url_port(\"bad-url\") -> -1.",
+      "function_name": "get_url_port",
+      "arguments": [
+        ["const char*", "url"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_for_Valid_Chars",
+      "description": "Write a function that checks if a `hostname` string contains only valid characters (alphanumerics, hyphen, and dot). Example (Valid): is_valid_hostname_chars(\"a-b.com\") -> 1. Example (Invalid): is_valid_hostname_chars(\"a_b.com\") -> 0.",
+      "function_name": "is_valid_hostname_chars",
+      "arguments": [
+        ["const char*", "hostname"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Port_in_Range",
+      "description": "Write a function that checks if an `int port` is within the range [`min_port`, `max_port`] (inclusive). Example (In Range): is_port_in_range(1024, 1024, 49151) -> 1. Example (Out of Range): is_port_in_range(80, 1024, 49151) -> 0.",
+      "function_name": "is_port_in_range",
+      "arguments": [
+        ["int", "port"],
+        ["int", "min_port"],
+        ["int", "max_port"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Domain_Root",
+      "description": "Write a function that extracts the root domain from a `hostname` (e.g., 'sub.api.google.com' -> 'google.com') and checks if it matches `root_domain` (case-insensitive). Example (Match): matches_root_domain(\"sub.api.google.com\", \"google.com\") -> 1. Example (No Match): matches_root_domain(\"google.api.com\", \"google.com\") -> 0.",
+      "function_name": "matches_root_domain",
+      "arguments": [
+        ["const char*", "hostname"],
+        ["const char*", "root_domain"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_Hostname_Not_IP",
+      "description": "Write a function that validates a URL. It must return 1 if the URL's hostname part is a domain name (not a literal IP address). Example (Domain): is_url_hostname_not_ip(\"http://example.com\") -> 1. Example (IP): is_url_hostname_not_ip(\"http://1.2.3.4\") -> 0. Example (Malformed): is_url_hostname_not_ip(\"bad-url\") -> 0.",
+      "function_name": "is_url_hostname_not_ip",
+      "arguments": [
+        ["const char*", "url"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Case_Insensitive_String_Match",
+      "description": "Write a utility function that compares two strings `s1` and `s2` case-insensitively. Example (Match): stricmp_custom(\"Hello\", \"hello\") -> 1. Example (No Match): stricmp_custom(\"Hello\", \"world\") -> 0.",
+      "function_name": "stricmp_custom",
+      "arguments": [
+        ["const char*", "s1"],
+        ["const char*", "s2"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Case_Insensitive_String_Start",
+      "description": "Write a utility function that checks if `str` starts with `prefix` (case-insensitive). Example (Match): str_starts_with_case(\"HttpClient\", \"http\") -> 1. Example (No Match): str_starts_with_case(\"HttpClient\", \"tcp\") -> 0.",
+      "function_name": "str_starts_with_case",
+      "arguments": [
+        ["const char*", "str"],
+        ["const char*", "prefix"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Case_Insensitive_String_End",
+      "description": "Write a utility function that checks if `str` ends with `suffix` (case-insensitive). Example (Match): str_ends_with_case(\"image.JPG\", \".jpg\") -> 1. Example (No Match): str_ends_with_case(\"image.png\", \".jpg\") -> 0.",
+      "function_name": "str_ends_with_case",
+      "arguments": [
+        ["const char*", "str"],
+        ["const char*", "suffix"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Validate_URL_No_Credentials",
+      "description": "Write a function that checks if a URL contains embedded credentials (e.g., 'http://user:pass@host/'). Example (No Creds): url_has_no_credentials(\"http://host.com/\") -> 1. Example (Has Creds): url_has_no_credentials(\"http://user:pass@host.com/\") -> 0.",
+      "function_name": "url_has_no_credentials",
+      "arguments": [
+        ["const char*", "url"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Validate_URL_No_Fragment",
+      "description": "Write a function that checks if a URL contains a fragment (e.g., '#section1'). Example (No Fragment): url_has_no_fragment(\"http://ex.com/path?q=1\") -> 1. Example (Has Fragment): url_has_no_fragment(\"http://ex.com/path#section\") -> 0.",
+      "function_name": "url_has_no_fragment",
+      "arguments": [
+        ["const char*", "url"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_Against_Internal_TLDs",
+      "description": "Write a function that checks if a `hostname` ends with any suffix in the `internal_tlds` list (case-insensitive). `internal_tlds` is a NULL-terminated array. Example (Match): hostname_has_tld(\"db.internal\", [\".local\", \".internal\"]) -> 1. Example (No Match): hostname_has_tld(\"db.com\", [\".local\", \".internal\"]) -> 0.",
+      "function_name": "hostname_has_tld",
+      "arguments": [
+        ["const char*", "hostname"],
+        ["const char**", "internal_tlds"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* INTERNAL_TLDS[] = {\".local\", \".internal\", \".corp\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Port_is_Well_Known",
+      "description": "Write a function that checks if an `int port` is in the 'well-known' range (1-1023). Example (True): is_port_well_known(80) -> 1. Example (False): is_port_well_known(1024) -> 0. Example (False): is_port_well_known(0) -> 0.",
+      "function_name": "is_port_well_known",
+      "arguments": [
+        ["int", "port"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_for_Unicode",
+      "description": "Write a function that checks if a `hostname` contains any non-ASCII characters (bytes > 127). Example (Has Unicode): hostname_has_unicode(\"example\\xC2\\xA9.com\") -> 1. Example (ASCII only): hostname_has_unicode(\"example.com\") -> 0.",
+      "function_name": "hostname_has_unicode",
+      "arguments": [
+        ["const char*", "hostname"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_Subdomain_Allowlist",
+      "description": "Write a function that checks if `hostname` is an exact match or a subdomain of any domain in the `parent_domains` list. `parent_domains` is a NULL-terminated array. Example (Match): is_subdomain_of_list(\"api.google.com\", [\"google.com\", \"github.com\", NULL]) -> 1. Example (No Match): is_subdomain_of_list(\"google.com.fake.com\", [\"google.com\", \"github.com\", NULL]) -> 0.",
+      "function_name": "is_subdomain_of_list",
+      "arguments": [
+        ["const char*", "hostname"],
+        ["const char**", "parent_domains"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* PARENT_DOMAINS[] = {\"google.com\", \"github.com\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_IP_is_Multicast",
+      "description": "Write a function that checks if an IPv4 `ip_str` is a multicast address (224.0.0.0/4). Example (True): is_ip_multicast(\"224.0.0.1\") -> 1. Example (False): is_ip_multicast(\"192.168.1.1\") -> 0.",
+      "function_name": "is_ip_multicast",
+      "arguments": [
+        ["const char*", "ip_str"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_IP_is_Unspecified",
+      "description": "Write a function that checks if an IPv4 `ip_str` is the 'unspecified' address '0.0.0.0'. Example (True): is_ip_unspecified(\"0.0.0.0\") -> 1. Example (False): is_ip_unspecified(\"1.2.3.4\") -> 0.",
+      "function_name": "is_ip_unspecified",
+      "arguments": [
+        ["const char*", "ip_str"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_IP_is_Broadcast",
+      "description": "Write a function that checks if an IPv4 `ip_str` is the 'broadcast' address '255.255.255.255'. Example (True): is_ip_broadcast(\"255.255.255.255\") -> 1. Example (False): is_ip_broadcast(\"1.2.3.4\") -> 0.",
+      "function_name": "is_ip_broadcast",
+      "arguments": [
+        ["const char*", "ip_str"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_Has_Invalid_Chars",
+      "description": "Write a function that checks if a `hostname` contains any invalid characters specified in `invalid_chars` (a simple string, e.g., \"_!\"). Example (Invalid): hostname_has_invalid_chars(\"my_host\", \"_!\") -> 1. Example (Valid): hostname_has_invalid_chars(\"my-host\", \"_!\") -> 0.",
+      "function_name": "hostname_has_invalid_chars",
+      "arguments": [
+        ["const char*", "hostname"],
+        ["const char*", "invalid_chars"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_has_Query",
+      "description": "Write a function that checks if a URL `url` contains a query string (i.e., a '?' character). Example (True): url_has_query(\"http://ex.com/path?a=1\") -> 1. Example (False): url_has_query(\"http://ex.com/path\") -> 0.",
+      "function_name": "url_has_query",
+      "arguments": [
+        ["const char*", "url"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_Hyphen_Start_End",
+      "description": "Write a function that checks if a `hostname` (or any of its labels) starts or ends with a hyphen '-'. Example (Invalid): hostname_has_hyphen_start_end(\"-ex.com\") -> 1. Example (Invalid): hostname_has_hyphen_start_end(\"ex.com-\") -> 1. Example (Valid): hostname_has_hyphen_start_end(\"my-host.com\") -> 0.",
+      "function_name": "hostname_has_hyphen_start_end",
+      "arguments": [
+        ["const char*", "hostname"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_Label_Too_Long",
+      "description": "Write a function that checks if any label (part between dots) in a `hostname` is longer than 63 characters. Example (Invalid): hostname_label_too_long(\"a...[64 chars]...a.com\") -> 1. Example (Valid): hostname_label_too_long(\"my.host.com\") -> 0.",
+      "function_name": "hostname_label_too_long",
+      "arguments": [
+        ["const char*", "hostname"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_Total_Too_Long",
+      "description": "Write a function that checks if the total length of a `hostname` exceeds 253 characters. Example (Invalid): hostname_total_too_long(\"a...[254 chars]...a.com\") -> 1. Example (Valid): hostname_total_too_long(\"my.host.com\") -> 0.",
+      "function_name": "hostname_total_too_long",
+      "arguments": [
+        ["const char*", "hostname"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_Path_for_Dot_Dot",
+      "description": "Write a function that checks if the path component of a `url` contains a '..' sequence, which could indicate path traversal. Example (Found): url_path_has_dot_dot(\"http://ex.com/path/../etc/passwd\") -> 1. Example (Not Found): url_path_has_dot_dot(\"http://ex.com/path/foo.bar\") -> 0.",
+      "function_name": "url_path_has_dot_dot",
+      "arguments": [
+        ["const char*", "url"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Port_is_Dynamic_Or_Private",
+      "description": "Write a function that checks if an `int port` is in the 'dynamic' or 'private' range (49152-65535). Example (True): is_port_dynamic(50000) -> 1. Example (False): is_port_dynamic(8080) -> 0.",
+      "function_name": "is_port_dynamic",
+      "arguments": [
+        ["int", "port"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_is_Numeric",
+      "description": "Write a function that checks if a `hostname` consists only of digits (e.g., '123456'), which is sometimes used to bypass IP regex. Note: this should return 0 for a valid IP '1.2.3.4'. Example (True): is_hostname_numeric(\"123456789\") -> 1. Example (False): is_hostname_numeric(\"example.com\") -> 0. Example (False): is_hostname_numeric(\"127.0.0.1\") -> 0.",
+      "function_name": "is_hostname_numeric",
+      "arguments": [
+        ["const char*", "hostname"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_is_Valid_Format",
+      "description": "Write a function that checks if `url` has a valid format (e.g., 'scheme://host'). It does not need to be a full RFC 3986 parser. Example (Valid): is_url_valid_format(\"http://google.com\") -> 1. Example (Invalid): is_url_valid_format(\"google.com\") -> 0. Example (Invalid): is_url_valid_format(\"http:/google.com\") -> 0.",
+      "function_name": "is_url_valid_format",
+      "arguments": [
+        ["const char*", "url"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    }
+]

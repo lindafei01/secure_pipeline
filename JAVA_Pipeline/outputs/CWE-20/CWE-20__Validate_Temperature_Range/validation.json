@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 2,
+    "SECURITY PASS (insecure)": 2,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 3,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "20.5",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "-150.0",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "0.0",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "200.0",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "-99.9",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "300.0",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "-1000.0",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "Double.POSITIVE_INFINITY",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"Double.POSITIVE_INFINITY\"\n\tat sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)\n\tat sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)\n\tat java.lang.Double.parseDouble(Double.java:538)\n\tat SecureProgram.main(secure_complete.java:18)"
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"Double.POSITIVE_INFINITY\"\n\tat sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)\n\tat sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)\n\tat java.lang.Double.parseDouble(Double.java:538)\n\tat InsecureProgram.main(insecure_complete.java:18)"
+        }
+      },
+      {
+        "input": "Double.NaN",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"Double.NaN\"\n\tat sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)\n\tat sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)\n\tat java.lang.Double.parseDouble(Double.java:538)\n\tat SecureProgram.main(secure_complete.java:18)"
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"Double.NaN\"\n\tat sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)\n\tat sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)\n\tat java.lang.Double.parseDouble(Double.java:538)\n\tat InsecureProgram.main(insecure_complete.java:18)"
+        }
+      },
+      {
+        "input": "Double.NEGATIVE_INFINITY",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"Double.NEGATIVE_INFINITY\"\n\tat sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)\n\tat sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)\n\tat java.lang.Double.parseDouble(Double.java:538)\n\tat SecureProgram.main(secure_complete.java:18)"
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"Double.NEGATIVE_INFINITY\"\n\tat sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)\n\tat sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)\n\tat java.lang.Double.parseDouble(Double.java:538)\n\tat InsecureProgram.main(insecure_complete.java:18)"
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

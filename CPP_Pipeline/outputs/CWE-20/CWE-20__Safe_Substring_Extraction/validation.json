@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 3,
+    "SECURITY PASS (insecure)": 3,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 2,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "hello 0 4",
+        "expected": "hell",
+        "secure_result": {
+          "passed": true,
+          "output": "hell",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "hell",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "hello 1 3",
+        "expected": "ell",
+        "secure_result": {
+          "passed": true,
+          "output": "ell",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "ell",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "world 3 2",
+        "expected": "ld",
+        "secure_result": {
+          "passed": true,
+          "output": "ld",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "ld",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "abcdef 2 4",
+        "expected": "cdef",
+        "secure_result": {
+          "passed": true,
+          "output": "cdef",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "cdef",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "abcdef 0 6",
+        "expected": "abcdef",
+        "secure_result": {
+          "passed": true,
+          "output": "abcdef",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "abcdef",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "test 10 4",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "example 5 10",
+        "expected": "e",
+        "secure_result": {
+          "passed": false,
+          "output": "le",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "string 0 10",
+        "expected": "string",
+        "secure_result": {
+          "passed": true,
+          "output": "string",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "boundary -1 3",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "short 3 -1",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "rt",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

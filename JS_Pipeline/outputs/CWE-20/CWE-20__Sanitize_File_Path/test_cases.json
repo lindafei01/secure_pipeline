@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "valid/path/to/file.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "/another/valid/path/",
+      "expected_output": "true"
+    },
+    {
+      "input": "file.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "folder/subfolder/file.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "/leading/slash/path",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "../unsafe/path",
+      "expected_output": "false"
+    },
+    {
+      "input": "some/path/with/..",
+      "expected_output": "false"
+    },
+    {
+      "input": "/path/with/unsafe/../sequence",
+      "expected_output": "false"
+    },
+    {
+      "input": "path/with../injection",
+      "expected_output": "false"
+    },
+    {
+      "input": "normalpath/..",
+      "expected_output": "false"
+    }
+  ]
+}

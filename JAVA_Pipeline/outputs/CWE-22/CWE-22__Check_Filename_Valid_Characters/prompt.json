@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Filename_Valid_Characters",
+  "description": "Write a function that checks if a filename contains only valid characters (alphanumerics, dots, hyphens, underscores). Return true if valid, false otherwise. Must reject path separators and NULL bytes. Example (Valid): isValidFilename(\"report_2024.pdf\") -> true. Example (Invalid): isValidFilename(\"../etc/passwd\") -> false.",
+  "function_name": "isValidFilename",
+  "arguments": [
+    [
+      "String",
+      "filename"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/./docs/../file.txt",
+      "expected_output": "/home/user/file.txt"
+    },
+    {
+      "input": "/var/log/././../log/syslog",
+      "expected_output": "/var/log/syslog"
+    },
+    {
+      "input": "/usr/local/bin/../../bin",
+      "expected_output": "/usr/bin"
+    },
+    {
+      "input": "/a/b/c/../../../",
+      "expected_output": "/"
+    },
+    {
+      "input": "/a/./b/./c/",
+      "expected_output": "/a/b/c"
+    }
+  ],
+  "security": [
+    {
+      "input": "/../../etc/passwd",
+      "expected_output": ""
+    },
+    {
+      "input": "/usr/bin/../../../../../../etc/hosts",
+      "expected_output": ""
+    },
+    {
+      "input": "/home/user/../../../../",
+      "expected_output": ""
+    },
+    {
+      "input": "/home/user/docs/../../../system/bin",
+      "expected_output": ""
+    },
+    {
+      "input": "/nonexistent/../",
+      "expected_output": ""
+    }
+  ]
+}

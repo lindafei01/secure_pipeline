@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 4,
+    "FUNCTION PASS (insecure)": 4,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 1,
+    "SECURITY PASS (insecure)": 1,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 4,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/home/user/file.txt",
+        "expected": "file.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "file.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "file.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/docs/report.docx",
+        "expected": "report.docx",
+        "secure_result": {
+          "passed": true,
+          "output": "report.docx",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "report.docx",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "user",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/var/log/system.log",
+        "expected": "system.log",
+        "secure_result": {
+          "passed": true,
+          "output": "system.log",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "system.log",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "relative/path/to/readme.md",
+        "expected": "readme.md",
+        "secure_result": {
+          "passed": true,
+          "output": "readme.md",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "readme.md",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> path",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> path",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "None",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "None",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.ArrayIndexOutOfBoundsException: -1\n\tat InsecureProgram.extractFilename(insecure_complete.java:13)\n\tat InsecureProgram.main(insecure_complete.java:23)"
+        }
+      },
+      {
+        "input": "/only/one/trailing/slash/",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "slash",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "../../up/one/level/file.txt",
+        "expected": "file.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "file.txt",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "file.txt",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "/home/user_123/file-01.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/log/system.out",
+      "expected_output": "true"
+    },
+    {
+      "input": "/usr/local/bin/script.sh",
+      "expected_output": "true"
+    },
+    {
+      "input": "/projects/example-02/report.docx",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "/home/../etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "//usr/bin/ssh",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var///opt//scripts",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user/../.hidden",
+      "expected_output": "false"
+    },
+    {
+      "input": "/etc/../../boot/grub/menu.lst",
+      "expected_output": "false"
+    }
+  ]
+}

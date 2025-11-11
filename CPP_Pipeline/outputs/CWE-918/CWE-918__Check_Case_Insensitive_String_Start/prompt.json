@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Case_Insensitive_String_Start",
+  "description": "Write a utility function that checks if `str` starts with `prefix` (case-insensitive). Example (Match): startsWithIgnoreCase(\"HttpClient\", \"http\") -> true. Example (No Match): startsWithIgnoreCase(\"HttpClient\", \"tcp\") -> false.",
+  "function_name": "startsWithIgnoreCase",
+  "arguments": [
+    [
+      "const std::string&",
+      "str"
+    ],
+    [
+      "const std::string&",
+      "prefix"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

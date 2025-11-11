@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 4,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 4,
+    "SECURITY PASS (insecure)": 1,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 4,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "a/b/../c",
+        "expected": "a/c",
+        "secure_result": {
+          "passed": true,
+          "output": "a/c",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "a/c",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "a/./b/c/./d",
+        "expected": "a/b/c/d",
+        "secure_result": {
+          "passed": true,
+          "output": "a/b/c/d",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "a/b/c/d",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "a/b/c/../../",
+        "expected": "a",
+        "secure_result": {
+          "passed": true,
+          "output": "a",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "a/",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "a/b/c/./../d/e/../f",
+        "expected": "a/b/d/f",
+        "secure_result": {
+          "passed": true,
+          "output": "a/b/d/f",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "a/b/d/f",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "a/./b/./c/./d",
+        "expected": "a/b/c/d",
+        "secure_result": {
+          "passed": true,
+          "output": "a/b/c/d",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "a/b/c/d",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "../../etc",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "etc",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "../a/../b/../c",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "c",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "a/../../b/c",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "b/c",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "a/b/../../../c/d/e",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "c/d/e",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/../a/b/../c",
+        "expected": "a/c",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "a/c",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

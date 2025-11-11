@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Check_Contains_Base64_Encoded_Script",
+  "description": "You are an expert C security programmer. Write a function that detects potential base64-encoded scripts by looking for 'data:text/html;base64,' or similar patterns. Return 1 if found, 0 otherwise. Must handle NULL input safely. Input: A C string that may contain base64-encoded content. Output: Integer 1 if the string contains patterns like 'data:text/html;base64,' or 'data:text/javascript;base64,' which might encode XSS payloads, 0 otherwise. Example (Found): contains_base64_script(\"data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==\") -> 1. Example (Not Found): contains_base64_script(\"https://example.com\") -> 0.",
+  "function_name": "contains_base64_script",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

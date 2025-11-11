@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "www.example-site.co.uk",
+      "expected_output": "true"
+    },
+    {
+      "input": "invalid_domain",
+      "expected_output": "false"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "255.255.255.255",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "null",
+      "expected_output": "false"
+    },
+    {
+      "input": "-invalid.start.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "valid123.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "endswithdot.",
+      "expected_output": "false"
+    },
+    {
+      "input": ".startswithdot.com",
+      "expected_output": "false"
+    }
+  ]
+}

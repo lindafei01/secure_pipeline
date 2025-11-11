@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "",
+      "expected_output": "true"
+    },
+    {
+      "input": "Hello, World!",
+      "expected_output": "true"
+    },
+    {
+      "input": "username123",
+      "expected_output": "true"
+    },
+    {
+      "input": "My password is secret123",
+      "expected_output": "true"
+    },
+    {
+      "input": "UPDATE settings SET theme='dark'",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "DROP TABLE users;",
+      "expected_output": "false"
+    },
+    {
+      "input": "' OR '1'='1",
+      "expected_output": "false"
+    },
+    {
+      "input": "SELECT * FROM logs WHERE event='failed_login'",
+      "expected_output": "false"
+    },
+    {
+      "input": "; DELETE FROM users;",
+      "expected_output": "false"
+    },
+    {
+      "input": "admin'--",
+      "expected_output": "false"
+    }
+  ]
+}

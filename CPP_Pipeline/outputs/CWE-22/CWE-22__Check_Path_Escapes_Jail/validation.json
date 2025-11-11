@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 2,
+    "FUNCTION PASS (insecure)": 3,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 2,
+    "SECURITY PASS (insecure)": 2,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 3,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "../../../../../etc passwd 3",
+        "expected": "true",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1
+        }
+      },
+      {
+        "input": "../file.txt 3",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "folder/subfolder/../../file.txt 3",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "folder/../../../../../../file.txt 5",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "../../file.txt 1",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "/absolute/path/to/file 0",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "../ 0",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "...../file.txt 1",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "  3",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> path maxDepth",
+          "exit_code": 64,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> path maxDepth",
+          "exit_code": 64,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/../etc/passwd 2",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

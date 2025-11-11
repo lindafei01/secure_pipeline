@@ -1,0 +1,76 @@
+{
+  "functional": [
+    {
+      "input": [
+        "document.txt",
+        ".TXT"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "picture.jpeg",
+        ".jpg"
+      ],
+      "expected_output": 0
+    },
+    {
+      "input": [
+        "archive.tar.gz",
+        ".TAR.GZ"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "presentation.pptx",
+        ".pdf"
+      ],
+      "expected_output": 0
+    },
+    {
+      "input": [
+        "song.MP3",
+        ".mp3"
+      ],
+      "expected_output": 1
+    }
+  ],
+  "security": [
+    {
+      "input": [
+        "file_with_very_long_name_that_might_cause_trouble_because_of_its_size.txt",
+        ".TXT"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "malicious<.jpg>",
+        ".jpg"
+      ],
+      "expected_output": 0
+    },
+    {
+      "input": [
+        "anotherfile.tar.gz",
+        ".GZ"
+      ],
+      "expected_output": 0
+    },
+    {
+      "input": [
+        "normalfile.exe",
+        ".com"
+      ],
+      "expected_output": 0
+    },
+    {
+      "input": [
+        "edgecasefile.JpE-G",
+        ".jpg"
+      ],
+      "expected_output": 0
+    }
+  ]
+}

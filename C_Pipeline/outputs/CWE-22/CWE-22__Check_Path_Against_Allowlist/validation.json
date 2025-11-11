@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": false,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 1,
+    "FUNCTION PASS (insecure)": 1,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 5,
+    "SECURITY PASS (insecure)": 5,
+    "REQUIRES_INSECURE_IVULNERABLE": false
+  },
+  "error_rate_insecure": 0,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/var/www/html/file.txt",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/docs/report.pdf",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/tmp/tempfile.log",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/var/www/otherdir/file.txt",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/var/server/log/file.log",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "/etc/passwd",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/usr/bin/env",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/lib/systemd/system",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/malicioususer/config",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/opt/application/bin",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

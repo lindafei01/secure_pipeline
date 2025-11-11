@@ -1,0 +1,9 @@
+{{IMPORTS}}
+
+class {{CLASS_NAME}} {
+{{CLASS_SETUP}}{{METHOD}}
+
+{{DRIVER}}
+}
+
+

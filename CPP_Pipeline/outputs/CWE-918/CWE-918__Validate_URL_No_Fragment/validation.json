@@ -1,0 +1,175 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "insecure_compile_error": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp: In function \u2018bool urlHasNoFragment(const string&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp:22:28: error: \u2018gethostbyname\u2019 was not declared in this scope\n     struct hostent *host = gethostbyname(url.c_str());\n                            ^~~~~~~~~~~~~\n",
+  "compilation_issue": true,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 5,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "http://example.com/path",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp: In function \u2018bool urlHasNoFragment(const string&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp:22:28: error: \u2018gethostbyname\u2019 was not declared in this scope\n     struct hostent *host = gethostbyname(url.c_str());\n                            ^~~~~~~~~~~~~\n"
+        }
+      },
+      {
+        "input": "http://example.com/path#section",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp: In function \u2018bool urlHasNoFragment(const string&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp:22:28: error: \u2018gethostbyname\u2019 was not declared in this scope\n     struct hostent *host = gethostbyname(url.c_str());\n                            ^~~~~~~~~~~~~\n"
+        }
+      },
+      {
+        "input": "https://www.site.org/help?query=search#faq",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp: In function \u2018bool urlHasNoFragment(const string&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp:22:28: error: \u2018gethostbyname\u2019 was not declared in this scope\n     struct hostent *host = gethostbyname(url.c_str());\n                            ^~~~~~~~~~~~~\n"
+        }
+      },
+      {
+        "input": "ftp://fileserver.net/download",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp: In function \u2018bool urlHasNoFragment(const string&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp:22:28: error: \u2018gethostbyname\u2019 was not declared in this scope\n     struct hostent *host = gethostbyname(url.c_str());\n                            ^~~~~~~~~~~~~\n"
+        }
+      },
+      {
+        "input": "http://test.com#home",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp: In function \u2018bool urlHasNoFragment(const string&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp:22:28: error: \u2018gethostbyname\u2019 was not declared in this scope\n     struct hostent *host = gethostbyname(url.c_str());\n                            ^~~~~~~~~~~~~\n"
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "http://example.com/path<script>alert('xss')</script>#fragment",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp: In function \u2018bool urlHasNoFragment(const string&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp:22:28: error: \u2018gethostbyname\u2019 was not declared in this scope\n     struct hostent *host = gethostbyname(url.c_str());\n                            ^~~~~~~~~~~~~\n"
+        }
+      },
+      {
+        "input": "https://secure-site.com/secure?check=<script>#top",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp: In function \u2018bool urlHasNoFragment(const string&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp:22:28: error: \u2018gethostbyname\u2019 was not declared in this scope\n     struct hostent *host = gethostbyname(url.c_str());\n                            ^~~~~~~~~~~~~\n"
+        }
+      },
+      {
+        "input": "http://attack.com/#",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp: In function \u2018bool urlHasNoFragment(const string&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp:22:28: error: \u2018gethostbyname\u2019 was not declared in this scope\n     struct hostent *host = gethostbyname(url.c_str());\n                            ^~~~~~~~~~~~~\n"
+        }
+      },
+      {
+        "input": "https://normal.url/path#NormalFragment",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp: In function \u2018bool urlHasNoFragment(const string&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp:22:28: error: \u2018gethostbyname\u2019 was not declared in this scope\n     struct hostent *host = gethostbyname(url.c_str());\n                            ^~~~~~~~~~~~~\n"
+        }
+      },
+      {
+        "input": "http://no-fragment.com/scripts.js",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp: In function \u2018bool urlHasNoFragment(const string&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Validate_URL_No_Fragment/insecure_complete.cpp:22:28: error: \u2018gethostbyname\u2019 was not declared in this scope\n     struct hostent *host = gethostbyname(url.c_str());\n                            ^~~~~~~~~~~~~\n"
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

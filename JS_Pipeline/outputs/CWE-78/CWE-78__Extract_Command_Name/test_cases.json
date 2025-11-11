@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "  ls -la",
+      "expected_output": "ls"
+    },
+    {
+      "input": "echo 'Hello World'",
+      "expected_output": "echo"
+    },
+    {
+      "input": "   pwd",
+      "expected_output": "pwd"
+    },
+    {
+      "input": "cd /home/user",
+      "expected_output": "cd"
+    },
+    {
+      "input": "rm -rf /tmp",
+      "expected_output": "rm"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "null"
+    },
+    {
+      "input": "  ",
+      "expected_output": "null"
+    },
+    {
+      "input": "   ",
+      "expected_output": "null"
+    },
+    {
+      "input": "&&&&&",
+      "expected_output": "null"
+    },
+    {
+      "input": " \t\n ",
+      "expected_output": "null"
+    }
+  ]
+}

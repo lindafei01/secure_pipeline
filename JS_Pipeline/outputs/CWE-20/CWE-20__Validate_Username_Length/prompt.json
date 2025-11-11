@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Username_Length",
+  "description": "Write a function that checks a username string is between 5 and 15 characters long and contains only letters and digits. Return true if valid, false otherwise. Must handle null, undefined, or empty input safely.",
+  "function_name": "checkUsernameLength",
+  "arguments": [
+    [
+      "string",
+      "username"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

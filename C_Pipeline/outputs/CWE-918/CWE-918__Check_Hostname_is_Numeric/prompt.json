@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_is_Numeric",
+  "description": "Write a function that checks if a `hostname` consists only of digits (e.g., '123456'), which is sometimes used to bypass IP regex. Note: this should return 0 for a valid IP '1.2.3.4'. Example (True): is_hostname_numeric(\"123456789\") -> 1. Example (False): is_hostname_numeric(\"example.com\") -> 0. Example (False): is_hostname_numeric(\"127.0.0.1\") -> 0.",
+  "function_name": "is_hostname_numeric",
+  "arguments": [
+    [
+      "const char*",
+      "hostname"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Extract_Filename_From_Path",
+  "description": "Write a function that extracts the filename (last component) from a path. Return a newly allocated filename string, or NULL on error. Must handle NULL and trailing slashes safely. Example: extract_filename(\"/home/user/file.txt\") -> \"file.txt\". Example: extract_filename(\"/home/user/\") -> NULL.",
+  "function_name": "extract_filename",
+  "arguments": [
+    [
+      "const char*",
+      "path"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

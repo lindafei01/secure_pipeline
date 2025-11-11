@@ -1,0 +1,158 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 3,
+    "SECURITY TOTAL": 4,
+    "SECURITY PASS (secure)": 1,
+    "SECURITY PASS (insecure)": 1,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 3,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "example.com",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "sub-domain.example.co.uk",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "123-456.789",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "-startdash.com",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "enddash-.com",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> domain",
+          "exit_code": 64,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> domain",
+          "exit_code": 64,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "toolongcomponent.thiscomponentismorethan63characterslongwhichisinvalid.com",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "valid.but.with.very.long.total.length.thiscouldbetoolong.waytooexcessivelylong.name.quitehardtoimagine.howlongitcouldget.but.possible.com",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "valid-but_unusual.com",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

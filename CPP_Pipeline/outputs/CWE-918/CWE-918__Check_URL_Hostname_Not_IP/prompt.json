@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_URL_Hostname_Not_IP",
+  "description": "Write a function that validates a URL. It must return true if the URL's hostname part is a domain name (not a literal IP address). Example (Domain): isURLHostnameNotIP(\"http://example.com\") -> true. Example (IP): isURLHostnameNotIP(\"http://1.2.3.4\") -> false.",
+  "function_name": "isURLHostnameNotIP",
+  "arguments": [
+    [
+      "const std::string&",
+      "url"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

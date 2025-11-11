@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "sub.example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "-example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "example-.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "exa_mple.com",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "null",
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined",
+      "expected_output": "false"
+    },
+    {
+      "input": "2554547777777777778.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "a",
+      "expected_output": "false"
+    }
+  ]
+}

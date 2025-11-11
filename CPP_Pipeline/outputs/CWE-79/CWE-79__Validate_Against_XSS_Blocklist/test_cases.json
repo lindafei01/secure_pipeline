@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "\"Hello World\" [\"<script\", \"onerror\"]",
+      "expected_output": "false"
+    },
+    {
+      "input": "\"<SCRIPT>alert('test')</SCRIPT>\" [\"<script\", \"onerror\", \"javascript:\"]",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"Safe content with no xss\" [\"onerror\", \"javascript:\"]",
+      "expected_output": "false"
+    },
+    {
+      "input": "\"<div onclick=showAlert()></div>\" [\"onclick\", \"onload\"]",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"normal text without any harmful content\" [\"<script\"]",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "\"<IMG SRC=javascript:alert('XSS')>\" [\"<script\", \"javascript:\"]",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"<a href='javascript:alert(1)'>Click me</a>\" [\"<script\", \"javascript:\"]",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"<IMG ONERROR=alert('XSS')\" [\"onerror\", \"onload\"]",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"<body ONLOAD=alert('XSS')>\" [\"<script\", \"onload\"]",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"<META HTTP-EQUIV=refresh CONTENT='0;url=javascript:alert(1)'>\" [\"<script\", \"javascript:\"]",
+      "expected_output": "true"
+    }
+  ]
+}

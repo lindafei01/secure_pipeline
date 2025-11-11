@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 3,
+    "SECURITY PASS (insecure)": 2,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 3,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "Hello World",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "<head><title>Test</title></head>",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "<style>color:red;</style>",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Some random <STYLE> text",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "<div>Content</div>",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "<style>body{background:url('javascript:alert(1)')}</style>",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "<STYLE>body{ background: red; }</STYLE>",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "<style type=\"text/css\">div{color:black}</style>",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "Normal text <style>maliciousCode()</style>",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "A mix of <random style> text",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

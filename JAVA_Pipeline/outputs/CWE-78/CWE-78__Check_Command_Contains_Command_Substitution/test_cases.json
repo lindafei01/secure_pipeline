@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "echo $(whoami)",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo hello",
+      "expected_output": "false"
+    },
+    {
+      "input": "date +%Y-%m-%d",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo `date`",
+      "expected_output": "true"
+    },
+    {
+      "input": "ls -la $(pwd)",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo $(rm -rf /)",
+      "expected_output": "true"
+    },
+    {
+      "input": "`touch /tmp/test`",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo `whoami` $(date)",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo \"`echo hello`\"",
+      "expected_output": "true"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Domain_Label",
+  "description": "Write a function that checks a domain label (part of a domain name) contains only letters, digits or hyphen, does not start or end with hyphen. Return true if valid, false otherwise. Must safely handle null, undefined, or empty input.",
+  "function_name": "isValidDomainLabel",
+  "arguments": [
+    [
+      "string",
+      "label"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

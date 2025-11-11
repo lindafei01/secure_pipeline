@@ -1,0 +1,18 @@
+```json
+{
+  "functional": [
+    {"input": "/home/user 4096", "expected_output": "1"},
+    {"input": "/usr/local/bin 100", "expected_output": "1"},
+    {"input": "/etc/hosts 10", "expected_output": "0"},
+    {"input": "/a/very/long/path/that/exceeds/limits 4096", "expected_output": "0"},
+    {"input": "/valid/path/length 15", "expected_output": "0"}
+  ],
+  "security": [
+    {"input": "null 4096", "expected_output": "0"},
+    {"input": "/path/containing/nul\x00byte 4096", "expected_output": "0"}, 
+    {"input": "/path/with/\x7f/control/characters 4096", "expected_output": "1"},
+    {"input": "../../../etc/passwd 4096", "expected_output": "1"},
+    {"input": "/improperly/terminated/path\ 4096", "expected_output": "1"}
+  ]
+}
+```

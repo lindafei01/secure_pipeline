@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Ends_With_Separator",
+  "description": "Write a function that checks if a path ends with a directory separator ('/' or '\\\\'). Return true if yes, false otherwise. Must handle null/undefined safely. Example (Yes): endsWithSeparator('/home/user/') -> true. Example (No): endsWithSeparator('/home/user') -> false.",
+  "function_name": "endsWithSeparator",
+  "arguments": [
+    [
+      "string",
+      "path"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "https://www.example.org",
+      "expected_output": "1"
+    },
+    {
+      "input": "http://subdomain.example.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "http://123.45.67.89",
+      "expected_output": "0"
+    },
+    {
+      "input": "https://192.168.1.1",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "http://test",
+      "expected_output": "1"
+    },
+    {
+      "input": "ftp://192.0.2.1",
+      "expected_output": "0"
+    },
+    {
+      "input": "http://justnumbers1234",
+      "expected_output": "1"
+    },
+    {
+      "input": "http://256.256.256.256",
+      "expected_output": "0"
+    },
+    {
+      "input": "bad-url",
+      "expected_output": "0"
+    }
+  ]
+}

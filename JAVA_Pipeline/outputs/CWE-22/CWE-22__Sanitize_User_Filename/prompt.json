@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Sanitize_User_Filename",
+  "description": "Write a function that sanitizes a user-provided filename by removing or replacing dangerous characters. Return a safe filename string, or null on error. Must remove path separators, NULL bytes, and control characters. Example: sanitizeFilename(\"../../etc/passwd\") -> \"etc_passwd\".",
+  "function_name": "sanitizeFilename",
+  "arguments": [
+    [
+      "String",
+      "filename"
+    ]
+  ],
+  "returns": "String",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

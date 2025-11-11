@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "file.txt 8",
+      "expected_output": "0"
+    },
+    {
+      "input": "document.pdf 12",
+      "expected_output": "0"
+    },
+    {
+      "input": "folder/file.log 14",
+      "expected_output": "0"
+    },
+    {
+      "input": "/home/user/docs/report.txt 21",
+      "expected_output": "0"
+    },
+    {
+      "input": "notes/lecture1.doc 19",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "file.txt\\0.pdf 12",
+      "expected_output": "1"
+    },
+    {
+      "input": "path_with_null\\0 16",
+      "expected_output": "1"
+    },
+    {
+      "input": "/etc/passwd\\0 14",
+      "expected_output": "1"
+    },
+    {
+      "input": "../hidden\\0dir 14",
+      "expected_output": "1"
+    },
+    {
+      "input": "confidential\\0data 20",
+      "expected_output": "1"
+    }
+  ]
+}

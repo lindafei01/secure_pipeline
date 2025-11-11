@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Extension_In_Allowlist",
+  "description": "Write a function that checks if a file's extension is in an allowlist array. Return true if allowed, false otherwise. Must be case-insensitive and handle null/undefined safely. Example (Allowed): isExtensionAllowed('file.pdf', allowlist) -> true. Example (Denied): isExtensionAllowed('file.exe', allowlist) -> false.",
+  "function_name": "isExtensionAllowed",
+  "arguments": [
+    [
+      "string",
+      "filename"
+    ],
+    [
+      "Array<string>",
+      "allowlist"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n\nconst allowlist = ['.txt', '.pdf', '.jpg', '.png'];\n"
+}

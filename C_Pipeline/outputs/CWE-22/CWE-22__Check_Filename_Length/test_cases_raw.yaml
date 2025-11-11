@@ -1,0 +1,18 @@
+functional:
+- expected_output: '1'
+  input: empty.pdf 255
+- expected_output: '0'
+  input: <256-char-long-filename-here> 255
+- expected_output: '1'
+  input: valid_filename.txt 50
+- expected_output: '0'
+  input: just_a_bit_too_long_filename.txt 25
+security:
+- expected_output: '0'
+  input: NULL 255
+- expected_output: '1'
+  input: a 128
+- expected_output: '0'
+  input: bigger_than_max_length_filename_which_should_fail 15
+- expected_output: '0'
+  input: "\0hiddenfile.txt 15"

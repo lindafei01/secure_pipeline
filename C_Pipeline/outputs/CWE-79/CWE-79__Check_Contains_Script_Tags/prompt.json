@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Check_Contains_Script_Tags",
+  "description": "You are an expert C security programmer. Write a function that detects <script> tags (case-insensitive) in a string, which are commonly used in XSS attacks. Return 1 if <script> tags are found, 0 otherwise. Must handle NULL input safely. Input: A C string to analyze. Output: Integer 1 if the string contains '<script' (case-insensitive) followed by '>' or whitespace, 0 otherwise. The detection should work for variations like '<script>', '<SCRIPT>', '<Script src=...>', etc. Example (Found): contains_script_tags(\"<script>alert(1)</script>\") -> 1. Example (Not Found): contains_script_tags(\"Hello World\") -> 0.",
+  "function_name": "contains_script_tags",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

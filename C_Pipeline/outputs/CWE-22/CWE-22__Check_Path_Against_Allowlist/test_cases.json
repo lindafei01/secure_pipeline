@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/var/www/html/file.txt",
+      "expected_output": "1"
+    },
+    {
+      "input": "/home/user/docs/report.pdf",
+      "expected_output": "1"
+    },
+    {
+      "input": "/tmp/tempfile.log",
+      "expected_output": "1"
+    },
+    {
+      "input": "/var/www/otherdir/file.txt",
+      "expected_output": "1"
+    },
+    {
+      "input": "/var/server/log/file.log",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "/etc/passwd",
+      "expected_output": "0"
+    },
+    {
+      "input": "/usr/bin/env",
+      "expected_output": "0"
+    },
+    {
+      "input": "/lib/systemd/system",
+      "expected_output": "0"
+    },
+    {
+      "input": "/home/malicioususer/config",
+      "expected_output": "0"
+    },
+    {
+      "input": "/opt/application/bin",
+      "expected_output": "0"
+    }
+  ]
+}

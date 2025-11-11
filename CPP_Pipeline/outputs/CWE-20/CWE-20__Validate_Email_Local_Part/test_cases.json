@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "username123",
+      "expected_output": "true"
+    },
+    {
+      "input": "user.name_456",
+      "expected_output": "true"
+    },
+    {
+      "input": "user.name@domain.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "user!name",
+      "expected_output": "false"
+    },
+    {
+      "input": "valid_local_part@sub.domain",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "true"
+    },
+    {
+      "input": "user_name_with_unicode_\u00c3\u00a4_\u00c3\u00b6_\u00c3\u00bc",
+      "expected_output": "false"
+    },
+    {
+      "input": "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "expected_output": "true"
+    },
+    {
+      "input": "user-name@",
+      "expected_output": "false"
+    },
+    {
+      "input": "_user.name",
+      "expected_output": "true"
+    }
+  ]
+}

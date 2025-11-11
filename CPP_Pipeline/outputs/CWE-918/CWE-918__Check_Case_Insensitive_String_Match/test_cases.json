@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello hello",
+      "expected_output": "true"
+    },
+    {
+      "input": "WORLD world",
+      "expected_output": "true"
+    },
+    {
+      "input": "Test tEsT",
+      "expected_output": "true"
+    },
+    {
+      "input": "String Comparison",
+      "expected_output": "false"
+    },
+    {
+      "input": "CaseInsensitive CASEINSENSITIVE",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "12345 12345",
+      "expected_output": "true"
+    },
+    {
+      "input": "!@#$%^ &*()_+",
+      "expected_output": "false"
+    },
+    {
+      "input": "   space    SPACE    ",
+      "expected_output": "true"
+    },
+    {
+      "input": "Alpha123 ALPHA123",
+      "expected_output": "true"
+    },
+    {
+      "input": "New Line newline\n",
+      "expected_output": "true"
+    }
+  ]
+}

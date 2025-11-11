@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Sanitize_URL_For_Href",
+  "description": "You are an expert C++ security programmer. Write a function that sanitizes a URL for safe use in href attributes. Only allow http:, https:, and mailto: protocols. Return a sanitized URL or empty string if the URL is dangerous. Must handle empty strings safely. Input: A C++ string representing a URL. Output: A string containing the URL if it starts with an allowed protocol (http://, https://, or mailto:, case-insensitive), or empty string if the URL uses a dangerous protocol like javascript:, data:, or vbscript:. Example (Safe): sanitizeUrlForHref(\"https://example.com\") -> \"https://example.com\". Example (Dangerous): sanitizeUrlForHref(\"javascript:alert(1)\") -> \"\".",
+  "function_name": "sanitizeUrlForHref",
+  "arguments": [
+    [
+      "const std::string&",
+      "url"
+    ]
+  ],
+  "returns": "std::string",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+}

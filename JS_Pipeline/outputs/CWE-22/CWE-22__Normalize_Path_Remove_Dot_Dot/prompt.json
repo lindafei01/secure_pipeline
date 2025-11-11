@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Normalize_Path_Remove_Dot_Dot",
+  "description": "Write a function that normalizes a path by resolving '..' and '.' components. Return a normalized path string, or null on error. Must prevent directory traversal. Example: normalizePath('a/b/../c') -> 'a/c'. Example: normalizePath('../../etc') -> null (traverses above root).",
+  "function_name": "normalizePath",
+  "arguments": [
+    [
+      "string",
+      "path"
+    ]
+  ],
+  "returns": "string|null",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

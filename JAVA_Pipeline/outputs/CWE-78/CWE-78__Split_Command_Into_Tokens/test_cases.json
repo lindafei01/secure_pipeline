@@ -1,0 +1,65 @@
+{
+  "functional": [
+    {
+      "input": "ls -la /home",
+      "expected_output": [
+        "ls",
+        "-la",
+        "/home"
+      ]
+    },
+    {
+      "input": "echo \"Hello World\"",
+      "expected_output": [
+        "echo",
+        "Hello World"
+      ]
+    },
+    {
+      "input": "grep \"pattern\" /file/path",
+      "expected_output": [
+        "grep",
+        "pattern",
+        "/file/path"
+      ]
+    },
+    {
+      "input": "java -jar \"my program.jar\"",
+      "expected_output": [
+        "java",
+        "-jar",
+        "my program.jar"
+      ]
+    },
+    {
+      "input": "cp \"file 1.txt\" \"file 2.txt\"",
+      "expected_output": [
+        "cp",
+        "file 1.txt",
+        "file 2.txt"
+      ]
+    }
+  ],
+  "security": [
+    {
+      "input": "\"incomplete quote test",
+      "expected_output": "null"
+    },
+    {
+      "input": "bad command \"missing end quote",
+      "expected_output": "null"
+    },
+    {
+      "input": "another 'unclosed quote test",
+      "expected_output": "null"
+    },
+    {
+      "input": "ls \"-l \" /home/user",
+      "expected_output": [
+        "ls",
+        "-l ",
+        "/home/user"
+      ]
+    }
+  ]
+}

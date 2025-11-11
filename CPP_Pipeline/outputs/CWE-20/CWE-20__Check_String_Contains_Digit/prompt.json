@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Check_String_Contains_Digit",
+  "description": "Write a function that checks if a given string contains at least one digit (0-9). Return true if yes, false otherwise. Must safely handle empty input.",
+  "function_name": "containsDigit",
+  "arguments": [
+    [
+      "const std::string&",
+      "s"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

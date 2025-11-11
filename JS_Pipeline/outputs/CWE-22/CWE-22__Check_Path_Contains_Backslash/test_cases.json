@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "C:\\Windows",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/docs",
+      "expected_output": "false"
+    },
+    {
+      "input": "/usr/local/bin",
+      "expected_output": "false"
+    },
+    {
+      "input": "D:\\Games\\Steam",
+      "expected_output": "true"
+    },
+    {
+      "input": "relative\\path\\to\\file",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined",
+      "expected_output": "false"
+    },
+    {
+      "input": "normal/path/with/special&chars@ui#^",
+      "expected_output": "false"
+    },
+    {
+      "input": "backslash\\in\\middle",
+      "expected_output": "true"
+    }
+  ]
+}

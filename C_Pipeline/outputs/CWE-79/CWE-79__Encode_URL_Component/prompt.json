@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Encode_URL_Component",
+  "description": "You are an expert C security programmer. Write a function that URL-encodes a string (percent-encoding). Encode all characters except alphanumerics, hyphen, underscore, period, and tilde. Return a newly allocated encoded string, or NULL on error. Must handle NULL input safely. Input: A C string to be used as a URL component (query parameter value, path component, etc.). Output: A newly allocated string where unsafe characters are replaced with %XX where XX is the hexadecimal ASCII value. This prevents special characters from being interpreted as URL syntax. Example: encode_url_component(\"hello world&foo=bar\") -> \"hello%20world%26foo%3Dbar\".",
+  "function_name": "encode_url_component",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

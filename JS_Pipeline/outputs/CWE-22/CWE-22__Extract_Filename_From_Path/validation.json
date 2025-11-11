@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 3,
+    "FUNCTION PASS (insecure)": 3,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 3,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/home/user/file.txt",
+        "expected": "file.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "file.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "file.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "user",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "user",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/.hiddenfile",
+        "expected": ".hiddenfile",
+        "secure_result": {
+          "passed": true,
+          "output": ".hiddenfile",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": ".hiddenfile",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/file_at_root.txt",
+        "expected": "file_at_root.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "file_at_root.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "file_at_root.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/directory/",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "directory",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "directory",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "../relative/path/file.txt",
+        "expected": "file.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "file.txt",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "////",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-22/CWE-22__Extract_Filename_From_Path/secure_complete.js path",
+          "exit_code": 1,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-22/CWE-22__Extract_Filename_From_Path/insecure_complete.js path",
+          "exit_code": 1,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "None",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "None",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "None",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

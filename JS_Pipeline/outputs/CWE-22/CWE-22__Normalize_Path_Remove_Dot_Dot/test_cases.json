@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "a/b/../c",
+      "expected_output": "a/c"
+    },
+    {
+      "input": "/a/b/./c",
+      "expected_output": "/a/b/c"
+    },
+    {
+      "input": "home/user/docs/./project/../notes",
+      "expected_output": "home/user/docs/notes"
+    },
+    {
+      "input": "photos/../../pics",
+      "expected_output": "null"
+    },
+    {
+      "input": "root/./subdir/../file",
+      "expected_output": "root/file"
+    }
+  ],
+  "security": [
+    {
+      "input": "../etc/passwd",
+      "expected_output": "null"
+    },
+    {
+      "input": "../../boot.ini",
+      "expected_output": "null"
+    },
+    {
+      "input": "/valid/path/../../bin",
+      "expected_output": "null"
+    },
+    {
+      "input": "folder/../../../anotherfolder",
+      "expected_output": "null"
+    },
+    {
+      "input": "a/../../../b/c",
+      "expected_output": "null"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_IPv4_Address",
+  "description": "Write a function that checks whether a given string is a valid IPv4 address in dotted-decimal notation (four octets 0-255). Return 1 if valid, otherwise 0. The function should treat NULL or malformed input safely.",
+  "function_name": "is_valid_ipv4",
+  "arguments": [
+    [
+      "const char*",
+      "ip_str"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

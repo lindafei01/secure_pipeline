@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Day_Input",
+  "description": "Write a method that checks if an integer day is between 1 and 31 inclusive. Return true if valid, false otherwise. Must handle out-of-range values safely.",
+  "function_name": "isValidDay",
+  "arguments": [
+    [
+      "int",
+      "day"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

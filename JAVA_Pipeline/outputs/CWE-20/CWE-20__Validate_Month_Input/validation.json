@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 4,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 4,
+    "SECURITY PASS (insecure)": 2,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 3,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "1",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "12",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "6",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "0",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "13",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "-1",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "100",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "2147483647",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "-2147483648",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "Integer.MAX_VALUE",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"Integer.MAX_VALUE\"\n\tat java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)\n\tat java.lang.Integer.parseInt(Integer.java:580)\n\tat java.lang.Integer.parseInt(Integer.java:615)\n\tat SecureProgram.main(secure_complete.java:15)"
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"Integer.MAX_VALUE\"\n\tat java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)\n\tat java.lang.Integer.parseInt(Integer.java:580)\n\tat java.lang.Integer.parseInt(Integer.java:615)\n\tat InsecureProgram.main(insecure_complete.java:15)"
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

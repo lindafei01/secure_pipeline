@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Validate_Filename_Argument",
+  "description": "Write a function that validates a filename argument to be used in a command. Return true if valid (alphanumerics, dots, hyphens, underscores only), false otherwise. Must handle null safely. Example (Valid): isValidFilenameArg(\"report_2024.txt\") -> true. Example (Invalid): isValidFilenameArg(\"file; rm -rf\") -> false.",
+  "function_name": "isValidFilenameArg",
+  "arguments": [
+    [
+      "String",
+      "filename"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

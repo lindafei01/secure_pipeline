@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls -la",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo Hello",
+      "expected_output": "false"
+    },
+    {
+      "input": "git status",
+      "expected_output": "false"
+    },
+    {
+      "input": "cat /etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "ping -c 4 google.com",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "ls\nrm -rf /",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo 'Hello\nWorld'",
+      "expected_output": "true"
+    },
+    {
+      "input": "sudo shutdown \nnow",
+      "expected_output": "true"
+    },
+    {
+      "input": "\nid -un",
+      "expected_output": "true"
+    },
+    {
+      "input": "pwd;\ncd /",
+      "expected_output": "true"
+    }
+  ]
+}

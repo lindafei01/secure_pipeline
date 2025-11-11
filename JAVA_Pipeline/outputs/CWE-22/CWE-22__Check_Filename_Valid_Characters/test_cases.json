@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "report_2024.pdf",
+      "expected_output": "true"
+    },
+    {
+      "input": "document.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "myfile-version1.0.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "sample_file_2023.docx",
+      "expected_output": "true"
+    },
+    {
+      "input": "image.gallery.jpeg",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "../etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user/notes/README.md",
+      "expected_output": "false"
+    },
+    {
+      "input": "myfile\\version2.doc",
+      "expected_output": "false"
+    },
+    {
+      "input": "null-byte-file\u0000.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "unsafe:script.sh",
+      "expected_output": "false"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "valid_username",
+      "expected_output": "true"
+    },
+    {
+      "input": "user.name",
+      "expected_output": "true"
+    },
+    {
+      "input": "user123",
+      "expected_output": "true"
+    },
+    {
+      "input": "user_name_123",
+      "expected_output": "true"
+    },
+    {
+      "input": "user.name_123",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "user@name",
+      "expected_output": "false"
+    },
+    {
+      "input": "user!name",
+      "expected_output": "false"
+    },
+    {
+      "input": "user#name",
+      "expected_output": "false"
+    },
+    {
+      "input": "null",
+      "expected_output": "false"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    }
+  ]
+}

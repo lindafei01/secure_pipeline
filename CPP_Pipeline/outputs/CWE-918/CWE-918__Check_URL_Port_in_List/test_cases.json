@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com:8080",
+      "expected_output": "true"
+    },
+    {
+      "input": "http://example.com:1234",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "https://example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "https://example.com:8080",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "ftp://example.com:21",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://example.com:0",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://example.com:65535",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://example.com:80abc",
+      "expected_output": "false"
+    }
+  ]
+}

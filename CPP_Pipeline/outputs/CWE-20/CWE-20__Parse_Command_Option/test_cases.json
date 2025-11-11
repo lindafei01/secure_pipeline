@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "--key=value",
+      "expected_output": "{\"key\":\"key\",\"value\":\"value\"}"
+    },
+    {
+      "input": "--username=admin",
+      "expected_output": "{\"key\":\"username\",\"value\":\"admin\"}"
+    },
+    {
+      "input": "--password=1234",
+      "expected_output": "{\"key\":\"password\",\"value\":\"1234\"}"
+    },
+    {
+      "input": "--host=localhost",
+      "expected_output": "{\"key\":\"host\",\"value\":\"localhost\"}"
+    },
+    {
+      "input": "--port=8080",
+      "expected_output": "{\"key\":\"port\",\"value\":\"8080\"}"
+    }
+  ],
+  "security": [
+    {
+      "input": "--key",
+      "expected_output": "{\"key\":\"\",\"value\":\"\"}"
+    },
+    {
+      "input": "key=value",
+      "expected_output": "{\"key\":\"\",\"value\":\"\"}"
+    },
+    {
+      "input": "--=value",
+      "expected_output": "{\"key\":\"\",\"value\":\"\"}"
+    },
+    {
+      "input": "--key=value=extra",
+      "expected_output": "{\"key\":\"\",\"value\":\"\"}"
+    },
+    {
+      "input": "--key=",
+      "expected_output": "{\"key\":\"\",\"value\":\"\"}"
+    }
+  ]
+}

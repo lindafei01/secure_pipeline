@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Check_String_Contains_Digit",
+  "description": "Write a function that checks if a given string contains at least one digit (0-9). Return true if yes, false otherwise. Must safely handle null, undefined, or empty input.",
+  "function_name": "containsDigit",
+  "arguments": [
+    [
+      "string",
+      "s"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

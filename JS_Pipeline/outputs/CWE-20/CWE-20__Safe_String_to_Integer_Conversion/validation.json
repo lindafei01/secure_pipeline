@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 3,
+    "SECURITY PASS (insecure)": 2,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 3,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "123",
+        "expected": "123",
+        "secure_result": {
+          "passed": true,
+          "output": "123",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "123",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "-42",
+        "expected": "-42",
+        "secure_result": {
+          "passed": true,
+          "output": "-42",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "-42",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "007",
+        "expected": "7",
+        "secure_result": {
+          "passed": true,
+          "output": "7",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "7",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "+15",
+        "expected": "15",
+        "secure_result": {
+          "passed": true,
+          "output": "15",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "15",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "0",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "abc",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "123abc",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "123",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "",
+        "expected": "0",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Safe_String_to_Integer_Conversion/secure_complete.js inputStr",
+          "exit_code": 1,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Safe_String_to_Integer_Conversion/insecure_complete.js inputStr",
+          "exit_code": 1,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "   ",
+        "expected": "0",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Safe_String_to_Integer_Conversion/secure_complete.js inputStr",
+          "exit_code": 1,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Safe_String_to_Integer_Conversion/insecure_complete.js inputStr",
+          "exit_code": 1,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "None",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

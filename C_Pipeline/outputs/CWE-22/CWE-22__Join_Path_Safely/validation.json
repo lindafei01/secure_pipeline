@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 5,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/var/www file.txt",
+        "expected": "/var/www/file.txt",
+        "secure_result": {
+          "passed": false,
+          "output": "NULL",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/var/www/file.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/usr/local bin/script.sh",
+        "expected": "/usr/local/bin/script.sh",
+        "secure_result": {
+          "passed": false,
+          "output": "NULL",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/usr/local/bin/script.sh",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user docs/report.pdf",
+        "expected": "/home/user/docs/report.pdf",
+        "secure_result": {
+          "passed": false,
+          "output": "NULL",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/user/docs/report.pdf",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/tmp logs/logfile.log",
+        "expected": "/tmp/logs/logfile.log",
+        "secure_result": {
+          "passed": false,
+          "output": "NULL",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/tmp/logs/logfile.log",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/lib64 libm.so",
+        "expected": "/lib64/libm.so",
+        "secure_result": {
+          "passed": false,
+          "output": "/usr/lib64/libm.so",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/lib64/libm.so",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "/var/www ../etc/passwd",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/var/www/../etc/passwd",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/etc ../../../../passwd",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/etc/../../../../passwd",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user ..",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/home/user/..",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/base_dir ./../another_dir/file",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/base_dir/./../another_dir/file",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/files case/test/../../../etc/shadow",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/files/case/test/../../../etc/shadow",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

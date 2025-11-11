@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "example.com",
+      "expected_output": 0
+    },
+    {
+      "input": "short.label.hostname.com",
+      "expected_output": 0
+    },
+    {
+      "input": "this-label-is-exactly-sixty-three-characters-long-x00.com",
+      "expected_output": 0
+    },
+    {
+      "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com",
+      "expected_output": 1
+    },
+    {
+      "input": "normal.hostname.with.many.labels.com",
+      "expected_output": 0
+    }
+  ],
+  "security": [
+    {
+      "input": "malicious-label-is-way-too-long-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com",
+      "expected_output": 1
+    },
+    {
+      "input": "safe.hostname.ru",
+      "expected_output": 0
+    },
+    {
+      "input": "a...com",
+      "expected_output": 0
+    },
+    {
+      "input": "perfectly-reasonable-hostname.co.uk",
+      "expected_output": 0
+    },
+    {
+      "input": "extremely-long-label-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.xc",
+      "expected_output": 1
+    }
+  ]
+}

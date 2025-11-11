@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 3,
+    "FUNCTION PASS (insecure)": 3,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 3,
+    "SECURITY PASS (insecure)": 3,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 2,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "Hello World",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "The quick brown fox jumps over the lazy dog",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "<header>Content here</header>",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "<iFrame src='something.com'></iFrame>",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "<ifrAmE src='another.com'></iframe>",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "<iframe src='http://malicious.com'></iframe>",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "<someTag><iframe></someTag>",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "<script>console.log('hello');</script>",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "This is a test with an <iframe src=\"test.com\">",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "None",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

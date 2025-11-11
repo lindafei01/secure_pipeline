@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "123.456",
+      "expected_output": "true"
+    },
+    {
+      "input": "-0.001",
+      "expected_output": "true"
+    },
+    {
+      "input": "3.14e10",
+      "expected_output": "true"
+    },
+    {
+      "input": "42",
+      "expected_output": "true"
+    },
+    {
+      "input": "-.5",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "NaN",
+      "expected_output": "false"
+    },
+    {
+      "input": "Infinity",
+      "expected_output": "false"
+    },
+    {
+      "input": "2e308",
+      "expected_output": "true"
+    },
+    {
+      "input": null,
+      "expected_output": "false"
+    }
+  ]
+}

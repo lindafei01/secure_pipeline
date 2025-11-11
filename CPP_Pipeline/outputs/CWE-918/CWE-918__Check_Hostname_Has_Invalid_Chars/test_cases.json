@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "my_host _!",
+      "expected_output": "true"
+    },
+    {
+      "input": "my-host _!",
+      "expected_output": "false"
+    },
+    {
+      "input": "example.com _!",
+      "expected_output": "false"
+    },
+    {
+      "input": "site!name.com _!",
+      "expected_output": "true"
+    },
+    {
+      "input": "hello_world _!",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "127.0.0.1 _!",
+      "expected_output": "false"
+    },
+    {
+      "input": "localhost _!",
+      "expected_output": "false"
+    },
+    {
+      "input": "user@host.com _!",
+      "expected_output": "true"
+    },
+    {
+      "input": "server#name _#!",
+      "expected_output": "true"
+    },
+    {
+      "input": "secure-host _@#",
+      "expected_output": "false"
+    }
+  ]
+}

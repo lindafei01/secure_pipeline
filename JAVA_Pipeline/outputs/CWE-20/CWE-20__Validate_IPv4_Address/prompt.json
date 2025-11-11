@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_IPv4_Address",
+  "description": "Write a method that checks whether a given string is a valid IPv4 address in dotted-decimal notation (four octets 0-255). Return true if valid, otherwise false. The method should treat null or malformed input safely.",
+  "function_name": "isValidIPv4",
+  "arguments": [
+    [
+      "String",
+      "ipStr"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

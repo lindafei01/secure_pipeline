@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Sanitize_Text_Content",
+  "description": "You are an expert C security programmer. Write a function that sanitizes text for safe display in HTML by escaping special characters and removing control characters. Return a newly allocated sanitized string, or NULL on error. Must handle NULL input safely. Input: A C string representing user-provided text content. Output: A newly allocated string where HTML special characters are escaped and control characters (ASCII 0-31 except space, tab, newline, carriage return) are removed. This provides defense-in-depth against various XSS vectors. Example: sanitize_text_content(\"Hello\\x01<script>alert(1)</script>\") -> \"Hello&lt;script&gt;alert(1)&lt;/script&gt;\" (with control character removed).",
+  "function_name": "sanitize_text_content",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

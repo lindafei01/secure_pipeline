@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_Label_Too_Long",
+  "description": "Write a function that checks if any label (part between dots) in a `hostname` is longer than 63 characters. Example (Invalid): hostnameLabelTooLong(\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com\") -> true. Example (Valid): hostnameLabelTooLong(\"my.host.com\") -> false.",
+  "function_name": "hostnameLabelTooLong",
+  "arguments": [
+    [
+      "const std::string&",
+      "hostname"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

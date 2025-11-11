@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Check_Alphanumeric_String",
+  "description": "Write a method that checks if a string contains only alphanumeric characters (A-Z, a-z, 0-9). Return true if yes, false otherwise. Must handle null safely.",
+  "function_name": "isAlphanumeric",
+  "arguments": [
+    [
+      "String",
+      "s"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

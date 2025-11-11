@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_URL_Scheme_in_Blocklist",
+  "description": "Write a function that parses a URL and checks if its scheme matches any in the `blockedSchemes` vector (case-insensitive). Example (Blocked): isURLSchemeBlocked(\"file:///etc/passwd\", blockedSchemes) -> true. Example (Allowed): isURLSchemeBlocked(\"http://ex.com\", blockedSchemes) -> false.",
+  "function_name": "isURLSchemeBlocked",
+  "arguments": [
+    [
+      "const std::string&",
+      "url"
+    ],
+    [
+      "const std::vector<std::string>&",
+      "blockedSchemes"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> blockedSchemes = {\"file\", \"ftp\", \"gopher\", \"ldap\"};\n"
+}

@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Validate_Command_Length",
+  "description": "Write a function that checks if a command length is within safe limits. Return true if valid, false otherwise. Must handle null safely. Example (Valid): isCommandLengthValid(\"ls -la\", 1024) -> true. Example (Too Long): isCommandLengthValid(<1025-char command>, 1024) -> false.",
+  "function_name": "isCommandLengthValid",
+  "arguments": [
+    [
+      "String",
+      "command"
+    ],
+    [
+      "int",
+      "maxLength"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

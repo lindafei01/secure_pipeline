@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "report_2024.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "data-analysis_v1.1.csv",
+      "expected_output": "true"
+    },
+    {
+      "input": "my_file-2023.backup",
+      "expected_output": "true"
+    },
+    {
+      "input": "config.ini",
+      "expected_output": "true"
+    },
+    {
+      "input": "summary.txt",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "file; rm -rf",
+      "expected_output": "false"
+    },
+    {
+      "input": "dangerous&file.sh",
+      "expected_output": "false"
+    },
+    {
+      "input": "invalid|name",
+      "expected_output": "false"
+    },
+    {
+      "input": "virus?.exe",
+      "expected_output": "false"
+    },
+    {
+      "input": "; echo hello",
+      "expected_output": "false"
+    }
+  ]
+}

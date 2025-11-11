@@ -1,0 +1,78 @@
+{
+  "functional": [
+    {
+      "input": "ls -la /home",
+      "expected_output": [
+        "ls",
+        "-la",
+        "/home"
+      ]
+    },
+    {
+      "input": "echo Hello World",
+      "expected_output": [
+        "echo",
+        "Hello",
+        "World"
+      ]
+    },
+    {
+      "input": "mkdir /tmp/new_folder",
+      "expected_output": [
+        "mkdir",
+        "/tmp/new_folder"
+      ]
+    },
+    {
+      "input": "grep pattern /var/log/syslog",
+      "expected_output": [
+        "grep",
+        "pattern",
+        "/var/log/syslog"
+      ]
+    },
+    {
+      "input": "cp /source/file /destination/",
+      "expected_output": [
+        "cp",
+        "/source/file",
+        "/destination/"
+      ]
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "null"
+    },
+    {
+      "input": "cd ..",
+      "expected_output": [
+        "cd",
+        ".."
+      ]
+    },
+    {
+      "input": "rm -rf /",
+      "expected_output": [
+        "rm",
+        "-rf",
+        "/"
+      ]
+    },
+    {
+      "input": "touch /etc/passwd",
+      "expected_output": [
+        "touch",
+        "/etc/passwd"
+      ]
+    },
+    {
+      "input": "cat /dev/null",
+      "expected_output": [
+        "cat",
+        "/dev/null"
+      ]
+    }
+  ]
+}

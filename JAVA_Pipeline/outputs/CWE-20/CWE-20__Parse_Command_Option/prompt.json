@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Parse_Command_Option",
+  "description": "Write a method that parses a string in the form \"--key=value\" and returns a Map with the key and value. Return null if the format is invalid. Must validate input safely and not throw exceptions.",
+  "function_name": "parseOption",
+  "arguments": [
+    [
+      "String",
+      "arg"
+    ]
+  ],
+  "returns": "Map<String, String>",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

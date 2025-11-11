@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "simplefile",
+      "expected_output": "'simplefile'"
+    },
+    {
+      "input": "my file",
+      "expected_output": "'my file'"
+    },
+    {
+      "input": "file's name",
+      "expected_output": "'file'\\''s name'"
+    },
+    {
+      "input": "another_example.txt",
+      "expected_output": "'another_example.txt'"
+    },
+    {
+      "input": "name with spaces.txt",
+      "expected_output": "'name with spaces.txt'"
+    }
+  ],
+  "security": [
+    {
+      "input": ";rm -rf /",
+      "expected_output": "';rm -rf /'"
+    },
+    {
+      "input": "`ls`",
+      "expected_output": "'`ls`'"
+    },
+    {
+      "input": "$(echo hi)",
+      "expected_output": "'$(echo hi)'"
+    },
+    {
+      "input": "foo; ls",
+      "expected_output": "'foo; ls'"
+    },
+    {
+      "input": "bar$PATH",
+      "expected_output": "'bar$PATH'"
+    }
+  ]
+}

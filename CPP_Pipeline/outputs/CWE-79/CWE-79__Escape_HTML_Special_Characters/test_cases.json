@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "<div>Content</div>",
+      "expected_output": "&lt;div&gt;Content&lt;/div&gt;"
+    },
+    {
+      "input": "Hello & welcome",
+      "expected_output": "Hello &amp; welcome"
+    },
+    {
+      "input": "Use \"quotes\"",
+      "expected_output": "Use &quot;quotes&quot;"
+    },
+    {
+      "input": "It's a test",
+      "expected_output": "It&#39;s a test"
+    },
+    {
+      "input": "",
+      "expected_output": ""
+    }
+  ],
+  "security": [
+    {
+      "input": "<script>alert('XSS')</script>",
+      "expected_output": "&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;"
+    },
+    {
+      "input": "<img src=x onerror=alert('XSS')>",
+      "expected_output": "&lt;img src=x onerror=alert(&#39;XSS&#39;)&gt;"
+    },
+    {
+      "input": "Click <a href='http://example.com'>here</a>",
+      "expected_output": "Click &lt;a href=&#39;http://example.com&#39;&gt;here&lt;/a&gt;"
+    },
+    {
+      "input": "var x = \"<script>alert('hack!')</script>\";",
+      "expected_output": "var x = &quot;&lt;script&gt;alert(&#39;hack!&#39;)&lt;/script&gt;&quot;;"
+    },
+    {
+      "input": "<b>Hello</b> & <i>world</i>",
+      "expected_output": "&lt;b&gt;Hello&lt;/b&gt; &amp; &lt;i&gt;world&lt;/i&gt;"
+    }
+  ]
+}

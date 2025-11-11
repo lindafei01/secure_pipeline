@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "https://example.com/path",
+      "expected_output": "0"
+    },
+    {
+      "input": "ftp://example.org/resource",
+      "expected_output": "0"
+    },
+    {
+      "input": "",
+      "expected_output": "0"
+    },
+    {
+      "input": null,
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "data:text/plain;base64,SGVsbG8gd29ybGQ=",
+      "expected_output": "1"
+    },
+    {
+      "input": "DATA:image/png;base64,iVBORw0KGg",
+      "expected_output": "1"
+    },
+    {
+      "input": "file://localhost/etc/passwd",
+      "expected_output": "0"
+    },
+    {
+      "input": "javascript:void(0)",
+      "expected_output": "0"
+    },
+    {
+      "input": "mailto:user@example.com",
+      "expected_output": "0"
+    }
+  ]
+}

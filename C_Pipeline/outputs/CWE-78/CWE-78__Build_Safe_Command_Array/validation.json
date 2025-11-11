@@ -1,0 +1,24 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": false,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": false,
+  "has_variable_assertions": false,
+  "summary": "Secure version failed to compile - critical failure",
+  "secure_compile_error": "/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-78/CWE-78__Build_Safe_Command_Array/secure_complete.c: In function \u2018main\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-78/CWE-78__Build_Safe_Command_Array/secure_complete.c:79:30: error: \u2018HTTP_ONLY\u2019 undeclared (first use in this function)\n     const char** arguments = HTTP_ONLY; // From setup\n                              ^~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-78/CWE-78__Build_Safe_Command_Array/secure_complete.c:79:30: note: each undeclared identifier is reported only once for each function it appears in\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-78/CWE-78__Build_Safe_Command_Array/secure_complete.c:88:18: warning: format \u2018%s\u2019 expects argument of type \u2018char *\u2019, but argument 2 has type \u2018char **\u2019 [-Wformat=]\n         printf(\"%s\\n\", result);\n                 ~^     ~~~~~~\n",
+  "statistics": {
+    "FUNCTION TOTAL": 4,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 4,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": false
+  },
+  "detailed_results": {
+    "functional_tests": [],
+    "security_tests": []
+  },
+  "valid_sample": false,
+  "compilation_issue": true
+}

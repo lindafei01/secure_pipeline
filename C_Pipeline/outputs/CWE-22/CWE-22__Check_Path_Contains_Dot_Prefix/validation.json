@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 3,
+    "SECURITY PASS (insecure)": 3,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 2,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/home/.ssh/id_rsa",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/file.txt",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/usr/local/bin",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/.config/settings",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "../../folder/.hidden_subfolder",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "NULL",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/.././.hidden",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user/..",
+        "expected": "0",
+        "secure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "../.malicious_file",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/var/log/../hidden",
+        "expected": "0",
+        "secure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

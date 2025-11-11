@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Check_String_Ends_With",
+  "description": "Write a method that checks if a given string ends with a specific suffix. Return true if yes, false otherwise. Must handle null safely.",
+  "function_name": "endsWith",
+  "arguments": [
+    [
+      "String",
+      "s"
+    ],
+    [
+      "String",
+      "suffix"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "0 5",
+      "expected_output": "true"
+    },
+    {
+      "input": "4 5",
+      "expected_output": "true"
+    },
+    {
+      "input": "5 5",
+      "expected_output": "false"
+    },
+    {
+      "input": "-1 5",
+      "expected_output": "false"
+    },
+    {
+      "input": "2 3",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "-1000 1000",
+      "expected_output": "false"
+    },
+    {
+      "input": "1000 1000",
+      "expected_output": "false"
+    },
+    {
+      "input": "-10 0",
+      "expected_output": "false"
+    },
+    {
+      "input": "0 0",
+      "expected_output": "false"
+    },
+    {
+      "input": "43000 40000",
+      "expected_output": "false"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "rm",
+      "expected_output": "true"
+    },
+    {
+      "input": "ls",
+      "expected_output": "false"
+    },
+    {
+      "input": "shutdown",
+      "expected_output": "true"
+    },
+    {
+      "input": "touch",
+      "expected_output": "false"
+    },
+    {
+      "input": "mkdir",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "dd",
+      "expected_output": "true"
+    },
+    {
+      "input": "MkFs",
+      "expected_output": "false"
+    },
+    {
+      "input": "shutdown now",
+      "expected_output": "false"
+    },
+    {
+      "input": "sudo rm -rf /",
+      "expected_output": "false"
+    }
+  ]
+}

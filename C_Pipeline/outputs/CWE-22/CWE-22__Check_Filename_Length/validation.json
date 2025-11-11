@@ -1,0 +1,144 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 4,
+    "FUNCTION PASS (secure)": 3,
+    "FUNCTION PASS (insecure)": 3,
+    "SECURITY TOTAL": 4,
+    "SECURITY PASS (secure)": 2,
+    "SECURITY PASS (insecure)": 2,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 2,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "empty.pdf 255",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "<256-char-long-filename-here> 255",
+        "expected": "0",
+        "secure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "valid_filename.txt 50",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "just_a_bit_too_long_filename.txt 25",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "NULL 255",
+        "expected": "0",
+        "secure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "a 128",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "bigger_than_max_length_filename_which_should_fail 15",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "\u0000hiddenfile.txt 15",
+        "expected": "0",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1,
+          "stderr": "embedded null byte"
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1,
+          "stderr": "embedded null byte"
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

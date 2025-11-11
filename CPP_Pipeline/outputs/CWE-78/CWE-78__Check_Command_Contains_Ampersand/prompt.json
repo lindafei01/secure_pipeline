@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Check_Command_Contains_Ampersand",
+  "description": "Write a function that checks if a command contains ampersands (&), which can run commands in background. Return true if found, false otherwise. Must handle empty strings safely. Example (Found): hasAmpersand(\"sleep 10 &\") -> true. Example (Not Found): hasAmpersand(\"ls -la\") -> false.",
+  "function_name": "hasAmpersand",
+  "arguments": [
+    [
+      "const std::string&",
+      "command"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+}

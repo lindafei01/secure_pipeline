@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "files/docs/hello",
+      "expected_output": "'files/docs/hello'"
+    },
+    {
+      "input": "backup 'folder'",
+      "expected_output": "'backup '\\''folder'\\'''"
+    },
+    {
+      "input": "",
+      "expected_output": "''"
+    },
+    {
+      "input": "notes and sketches",
+      "expected_output": "'notes and sketches'"
+    },
+    {
+      "input": null,
+      "expected_output": "null"
+    }
+  ],
+  "security": [
+    {
+      "input": "dangerous\ncommand",
+      "expected_output": "'dangerous'\\''\\ncommand'"
+    },
+    {
+      "input": "pwd; ls",
+      "expected_output": "'pwd; ls'"
+    },
+    {
+      "input": "uname -a",
+      "expected_output": "'uname -a'"
+    },
+    {
+      "input": "inject \"code\"",
+      "expected_output": "'inject \"code\"'"
+    },
+    {
+      "input": "../secret/data",
+      "expected_output": "'../secret/data'"
+    }
+  ]
+}

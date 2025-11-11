@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com",
+      "expected_output": 1
+    },
+    {
+      "input": "https://sub.domain.co.uk",
+      "expected_output": 1
+    },
+    {
+      "input": "http://example.com/path?x=1#frag",
+      "expected_output": 1
+    },
+    {
+      "input": "ftp://example.com",
+      "expected_output": 0
+    }
+  ],
+  "security": [
+    {
+      "input": "NULL",
+      "expected_output": 0
+    },
+    {
+      "input": "",
+      "expected_output": 0
+    },
+    {
+      "input": " http://example.com",
+      "expected_output": 0
+    },
+    {
+      "input": "http:/example.com",
+      "expected_output": 0
+    },
+    {
+      "input": "http://-example.com",
+      "expected_output": 0
+    }
+  ]
+}

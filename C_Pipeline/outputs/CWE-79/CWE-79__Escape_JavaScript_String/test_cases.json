@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello\n'World'",
+      "expected_output": "Hello\\n\\'World\\'"
+    },
+    {
+      "input": "Line1\rLine2",
+      "expected_output": "Line1\\rLine2"
+    },
+    {
+      "input": "Tab\tSeparated",
+      "expected_output": "Tab\\tSeparated"
+    },
+    {
+      "input": "Backslash\\Test",
+      "expected_output": "Backslash\\\\Test"
+    },
+    {
+      "input": "Quotes\"in\"string",
+      "expected_output": "Quotes\\\"in\\\"string"
+    }
+  ],
+  "security": [
+    {
+      "input": "\tThis\n'is'a\ntest\\string",
+      "expected_output": "\\tThis\\n\\'is\\'a\\ntest\\\\string"
+    },
+    {
+      "input": "InjectionTest';alert('XSS')",
+      "expected_output": "InjectionTest\\';alert(\\'XSS\\')"
+    },
+    {
+      "input": "\"Inject\"code\nhere",
+      "expected_output": "\\\"Inject\\\"code\\nhere"
+    },
+    {
+      "input": "Secure\r\nString",
+      "expected_output": "Secure\\r\\nString"
+    },
+    {
+      "input": "Complex\\Path\n'Test'",
+      "expected_output": "Complex\\\\Path\\n\\'Test\\'"
+    }
+  ]
+}

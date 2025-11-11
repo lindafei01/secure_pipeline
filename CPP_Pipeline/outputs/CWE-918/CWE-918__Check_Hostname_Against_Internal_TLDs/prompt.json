@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_Against_Internal_TLDs",
+  "description": "Write a function that checks if a `hostname` ends with any suffix in the `internalTLDs` vector (case-insensitive). Example (Match): hostnameHasTLD(\"db.internal\", internalTLDs) -> true. Example (No Match): hostnameHasTLD(\"db.com\", internalTLDs) -> false.",
+  "function_name": "hostnameHasTLD",
+  "arguments": [
+    [
+      "const std::string&",
+      "hostname"
+    ],
+    [
+      "const std::vector<std::string>&",
+      "internalTLDs"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> internalTLDs = {\".local\", \".internal\", \".corp\"};\n"
+}

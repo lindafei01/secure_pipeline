@@ -1,0 +1,69 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/file.txt",
+      "expected_output": [
+        "home",
+        "user",
+        "file.txt"
+      ]
+    },
+    {
+      "input": "/var/log/syslog",
+      "expected_output": [
+        "var",
+        "log",
+        "syslog"
+      ]
+    },
+    {
+      "input": "/usr/lib/node_modules",
+      "expected_output": [
+        "usr",
+        "lib",
+        "node_modules"
+      ]
+    },
+    {
+      "input": "/temp/",
+      "expected_output": [
+        "temp"
+      ]
+    },
+    {
+      "input": "/path/to/a/file/",
+      "expected_output": [
+        "path",
+        "to",
+        "a",
+        "file"
+      ]
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "null"
+    },
+    {
+      "input": null,
+      "expected_output": "null"
+    },
+    {
+      "input": "/",
+      "expected_output": []
+    },
+    {
+      "input": "///",
+      "expected_output": []
+    },
+    {
+      "input": "//non/existent//path//",
+      "expected_output": [
+        "non",
+        "existent",
+        "path"
+      ]
+    }
+  ]
+}

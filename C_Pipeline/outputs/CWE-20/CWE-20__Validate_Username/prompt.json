@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Username",
+  "description": "Write a function to validate a username: it must only contain alphanumeric characters and underscores, and be between 3 and 20 characters long. Return 1 if valid, 0 otherwise. Must safely handle NULL or empty input.",
+  "function_name": "validate_username",
+  "arguments": [
+    [
+      "const char*",
+      "username"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_Hyphen_Start_End",
+  "description": "Write a function that checks if a `hostname` (or any of its labels) starts or ends with a hyphen '-'. Example (Invalid): hostname_has_hyphen_start_end(\"-ex.com\") -> 1. Example (Invalid): hostname_has_hyphen_start_end(\"ex.com-\") -> 1. Example (Valid): hostname_has_hyphen_start_end(\"my-host.com\") -> 0.",
+  "function_name": "hostname_has_hyphen_start_end",
+  "arguments": [
+    [
+      "const char*",
+      "hostname"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

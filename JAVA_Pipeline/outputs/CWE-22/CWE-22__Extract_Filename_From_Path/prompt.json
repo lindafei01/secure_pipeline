@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Extract_Filename_From_Path",
+  "description": "Write a function that extracts the filename (last component) from a path. Return the filename string, or null on error. Must handle null and trailing slashes safely. Example: extractFilename(\"/home/user/file.txt\") -> \"file.txt\". Example: extractFilename(\"/home/user/\") -> null.",
+  "function_name": "extractFilename",
+  "arguments": [
+    [
+      "String",
+      "path"
+    ]
+  ],
+  "returns": "String",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

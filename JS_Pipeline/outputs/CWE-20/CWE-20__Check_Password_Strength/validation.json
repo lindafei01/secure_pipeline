@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 4,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 4,
+    "SECURITY PASS (insecure)": 3,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 2,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "Password123",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "password",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "PASSWORD123",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Pass123",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Strong1Password",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Check_Password_Strength/secure_complete.js password",
+          "exit_code": 1,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Check_Password_Strength/insecure_complete.js password",
+          "exit_code": 1,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "12345678",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "Aa1",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "None",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "ValidPass1",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

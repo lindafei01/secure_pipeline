@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Contains_Symlink_Indicators",
+  "description": "Write a function that checks if a path contains strings often used in symlink attacks like 'proc', 'sys', or 'dev'. Return true if suspicious, false otherwise. Must handle null safely. Example (Suspicious): pathHasSymlinkIndicators(\"/proc/self/fd\") -> true. Example (Safe): pathHasSymlinkIndicators(\"/home/user\") -> false.",
+  "function_name": "pathHasSymlinkIndicators",
+  "arguments": [
+    [
+      "String",
+      "path"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

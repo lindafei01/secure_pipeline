@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "file.txt",
+      "expected_output": "0"
+    },
+    {
+      "input": "docs/readme.md",
+      "expected_output": "0"
+    },
+    {
+      "input": "/home/user/docs/file.txt",
+      "expected_output": "0"
+    },
+    {
+      "input": "archive/2023/report.pdf",
+      "expected_output": "0"
+    },
+    {
+      "input": "./local/config.yaml",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "../../etc/passwd",
+      "expected_output": "1"
+    },
+    {
+      "input": "/etc/passwd",
+      "expected_output": "1"
+    },
+    {
+      "input": "../var/log/system.log",
+      "expected_output": "1"
+    },
+    {
+      "input": "/root/.bashrc",
+      "expected_output": "1"
+    },
+    {
+      "input": "../../../usr/bin/script.sh",
+      "expected_output": "1"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "echo $(whoami)",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo `date`",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo 'hello world'",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo $(ps aux)",
+      "expected_output": "true"
+    },
+    {
+      "input": "ping -c 4 google.com",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "$(rm -rf /)",
+      "expected_output": "true"
+    },
+    {
+      "input": "`shutdown now`",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo $()",
+      "expected_output": "true"
+    }
+  ]
+}

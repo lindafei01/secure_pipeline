@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 5,
+    "SECURITY PASS (insecure)": 3,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 2,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "Google.com",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "GITHUB.com",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "example.org",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "EXAMPLE.ORG",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "github.com",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "malicious.com",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "notallowed.org",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1,
+          "stderr": "timeout"
+        }
+      },
+      {
+        "input": "fake.github.com",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "unauthorized.google.com",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "example.com",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "<!doctype html><html lang=\"en\"><head><title>Example Domain</title><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style>body{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}</style><body><div><h1>Example Domain</h1><p>This domain is for use in documentation examples without needing permission. Avoid use in operations.<p><a href=\"https://iana.org/domains/example\">Learn more</a></div></body></html>\n0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

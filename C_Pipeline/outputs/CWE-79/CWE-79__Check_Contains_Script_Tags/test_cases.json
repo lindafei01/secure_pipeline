@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello World",
+      "expected_output": "0"
+    },
+    {
+      "input": "This is a <div> tag",
+      "expected_output": "0"
+    },
+    {
+      "input": "Let's <talk> about coding",
+      "expected_output": "0"
+    },
+    {
+      "input": "No scripts here!",
+      "expected_output": "0"
+    },
+    {
+      "input": "<round about>",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "<script>alert('XSS');</script>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<SCRIPT type='text/javascript'>var x = 1;</SCRIPT>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<script src='evil.js'>",
+      "expected_output": "1"
+    },
+    {
+      "input": "Here's a sneaky<script >",
+      "expected_output": "1"
+    },
+    {
+      "input": "We have a <script>",
+      "expected_output": "1"
+    }
+  ]
+}

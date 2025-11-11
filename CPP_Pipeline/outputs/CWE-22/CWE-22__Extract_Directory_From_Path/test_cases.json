@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/file.txt",
+      "expected_output": "/home/user"
+    },
+    {
+      "input": "file.txt",
+      "expected_output": ""
+    },
+    {
+      "input": "/home/user/docs/report.pdf",
+      "expected_output": "/home/user/docs"
+    },
+    {
+      "input": "/usr/local/bin/",
+      "expected_output": "/usr/local/bin"
+    },
+    {
+      "input": "/",
+      "expected_output": ""
+    }
+  ],
+  "security": [
+    {
+      "input": "/ho@me/user*/file.txt",
+      "expected_output": "/ho@me/user*"
+    },
+    {
+      "input": "C:\\Program Files\\App\\file.exe",
+      "expected_output": "C:\\Program Files\\App"
+    },
+    {
+      "input": "/usr//bin//command",
+      "expected_output": "/usr//bin"
+    },
+    {
+      "input": "C:/dir_with_underscore_/file.txt",
+      "expected_output": "C:/dir_with_underscore_"
+    },
+    {
+      "input": "",
+      "expected_output": ""
+    }
+  ]
+}

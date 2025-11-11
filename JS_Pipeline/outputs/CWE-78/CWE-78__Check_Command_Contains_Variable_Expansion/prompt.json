@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Check_Command_Contains_Variable_Expansion",
+  "description": "Write a function that checks if a command contains variable expansion syntax ($VAR or ${VAR}). Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): hasVariableExpansion('echo $HOME') -> true. Example (Not Found): hasVariableExpansion('echo hello') -> false.",
+  "function_name": "hasVariableExpansion",
+  "arguments": [
+    [
+      "string",
+      "command"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+}

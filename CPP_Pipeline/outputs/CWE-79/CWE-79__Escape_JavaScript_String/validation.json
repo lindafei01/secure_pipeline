@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "Hello World",
+        "expected": "Hello World",
+        "secure_result": {
+          "passed": false,
+          "output": "Hello",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Hello",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Hello\nWorld",
+        "expected": "Hello\\nWorld",
+        "secure_result": {
+          "passed": false,
+          "output": "Hello",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Hello",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "She said, \"Hello\"",
+        "expected": "She said, \\\"Hello\\\"",
+        "secure_result": {
+          "passed": false,
+          "output": "She",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "She",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "It's a beautiful day",
+        "expected": "It\\'s a beautiful day",
+        "secure_result": {
+          "passed": false,
+          "output": "It\\'s",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "It\\'s",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Tab\tseparated",
+        "expected": "Tab\\tseparated",
+        "secure_result": {
+          "passed": false,
+          "output": "Tab",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Tab",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "Hello; alert('XSS')",
+        "expected": "Hello; alert(\\'XSS\\')",
+        "secure_result": {
+          "passed": false,
+          "output": "Hello;",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Hello;",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "Line1\rLine2",
+        "expected": "Line1\\rLine2",
+        "secure_result": {
+          "passed": false,
+          "output": "Line1",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Line1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "\\Already escaped\\",
+        "expected": "\\\\Already escaped\\\\",
+        "secure_result": {
+          "passed": false,
+          "output": "\\\\Already",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "\\\\Already",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "\"Quoted\" 'text'",
+        "expected": "\\\"Quoted\\\" \\'text\\'",
+        "secure_result": {
+          "passed": false,
+          "output": "\\\"Quoted\\\"",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "\\\"Quoted\\\"",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> input",
+          "exit_code": 64,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> input",
+          "exit_code": 64,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

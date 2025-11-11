@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Sanitize_Command_Argument",
+  "description": "Write a function that sanitizes a command argument by removing or escaping dangerous characters. Return a sanitized string, or null on error. Must handle null safely. Example: sanitizeArgument(\"file; rm -rf\") -> \"file_rm_-rf\" or similar safe output.",
+  "function_name": "sanitizeArgument",
+  "arguments": [
+    [
+      "String",
+      "argument"
+    ]
+  ],
+  "returns": "String",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

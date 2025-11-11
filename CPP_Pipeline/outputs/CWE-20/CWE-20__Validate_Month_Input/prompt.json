@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Month_Input",
+  "description": "Write a function that verifies a month integer is between 1 and 12. Return true if valid, false otherwise. Must handle invalid or out-of-range values safely.",
+  "function_name": "isValidMonth",
+  "arguments": [
+    [
+      "int",
+      "month"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

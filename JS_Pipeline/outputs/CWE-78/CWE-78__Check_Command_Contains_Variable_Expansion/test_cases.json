@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "echo $HOME",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo ${USER}",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo hello",
+      "expected_output": "false"
+    },
+    {
+      "input": "cd /var/log && ls -l $LOGNAME",
+      "expected_output": "true"
+    },
+    {
+      "input": "printf '%s\\n' 'Hello World!'",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "echo $; rm -rf /",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo $USER && echo $HOME",
+      "expected_output": "true"
+    },
+    {
+      "input": "find / -name ${HOME}*",
+      "expected_output": "true"
+    },
+    {
+      "input": "grep -E '\\$(not_a_var)'",
+      "expected_output": "false"
+    },
+    {
+      "input": "cp ~/file $DESTINATION_FOLDER",
+      "expected_output": "true"
+    }
+  ]
+}

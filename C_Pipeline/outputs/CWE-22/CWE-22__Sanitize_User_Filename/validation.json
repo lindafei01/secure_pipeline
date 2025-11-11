@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 1,
+    "SECURITY PASS (insecure)": 1,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 4,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "normalfilename.txt",
+        "expected": "normalfilename.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "normalfilename.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "normalfilename.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "document.pdf",
+        "expected": "document.pdf",
+        "secure_result": {
+          "passed": true,
+          "output": "document.pdf",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "document.pdf",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "safe_file_name.jpeg",
+        "expected": "safe_file_name.jpeg",
+        "secure_result": {
+          "passed": true,
+          "output": "safe_file_name.jpeg",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "safe_file_name.jpeg",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "simplefile",
+        "expected": "simplefile",
+        "secure_result": {
+          "passed": true,
+          "output": "simplefile",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "simplefile",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "backup_file_2023.tar",
+        "expected": "backup_file_2023.tar",
+        "secure_result": {
+          "passed": true,
+          "output": "backup_file_2023.tar",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "backup_file_2023.tar",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "../../etc/passwd",
+        "expected": "etc_passwd",
+        "secure_result": {
+          "passed": false,
+          "output": "....etcpasswd",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "....etcpasswd",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "..//..//var//log//syslog",
+        "expected": "var_log_syslog",
+        "secure_result": {
+          "passed": false,
+          "output": "....varlogsyslog",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "....varlogsyslog",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user/../.bashrc",
+        "expected": "home_user_bashrc",
+        "secure_result": {
+          "passed": false,
+          "output": "homeuser...bashrc",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "homeuser...bashrc",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "\u0001\u0002\u0003\u0004badfilename",
+        "expected": "badfilename",
+        "secure_result": {
+          "passed": true,
+          "output": "badfilename",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "badfilename",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "data\u0000control",
+        "expected": "datacontrol",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1,
+          "stderr": "embedded null byte"
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1,
+          "stderr": "embedded null byte"
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

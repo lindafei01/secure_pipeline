@@ -1,0 +1,38 @@
+{
+  "functional": [
+    {
+      "input": "10 2",
+      "expected_output": "5"
+    },
+    {
+      "input": "7 3",
+      "expected_output": "2"
+    },
+    {
+      "input": "-8 2",
+      "expected_output": "-4"
+    },
+    {
+      "input": "9 -3",
+      "expected_output": "-3"
+    }
+  ],
+  "security": [
+    {
+      "input": "5 0",
+      "expected_output": "0"
+    },
+    {
+      "input": "abc 5",
+      "expected_output": "0"
+    },
+    {
+      "input": "123 NULL",
+      "expected_output": "0"
+    },
+    {
+      "input": "NULL 7",
+      "expected_output": "0"
+    }
+  ]
+}

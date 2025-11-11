@@ -1,0 +1,30 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com",
+      "expected_output": "http://example.com"
+    },
+    {
+      "input": "https://secure-site.org",
+      "expected_output": "https://secure-site.org"
+    },
+    {
+      "input": "mailto:user@example.com",
+      "expected_output": "mailto:user@example.com"
+    }
+  ],
+  "security": [
+    {
+      "input": "javascript:alert('XSS')",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "vbscript:msgbox('XSS')",
+      "expected_output": "NULL"
+    }
+  ]
+}

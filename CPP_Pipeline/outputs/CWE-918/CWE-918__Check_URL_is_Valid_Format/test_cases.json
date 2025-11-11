@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "https://example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "ftp://example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "http//example.com",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "javascript://alert(1)",
+      "expected_output": "true"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "://example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://",
+      "expected_output": "false"
+    }
+  ]
+}

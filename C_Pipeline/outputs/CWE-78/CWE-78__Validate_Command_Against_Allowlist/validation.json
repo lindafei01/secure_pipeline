@@ -1,0 +1,190 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 6,
+    "SECURITY PASS (secure)": 6,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 6,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "ls",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1
+        }
+      },
+      {
+        "input": "cat",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1
+        }
+      },
+      {
+        "input": "echo",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1
+        }
+      },
+      {
+        "input": "pwd",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1
+        }
+      },
+      {
+        "input": "ls -l",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "rm",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1,
+          "stderr": "timeout"
+        }
+      },
+      {
+        "input": "chmod",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1,
+          "stderr": "timeout"
+        }
+      },
+      {
+        "input": "mv",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1,
+          "stderr": "timeout"
+        }
+      },
+      {
+        "input": "cp",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1,
+          "stderr": "timeout"
+        }
+      },
+      {
+        "input": "; ls",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1,
+          "stderr": "timeout"
+        }
+      },
+      {
+        "input": "| echo 'hello'",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1,
+          "stderr": "timeout"
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

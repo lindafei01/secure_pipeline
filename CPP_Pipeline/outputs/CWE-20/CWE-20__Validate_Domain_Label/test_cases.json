@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "example",
+      "expected_output": "true"
+    },
+    {
+      "input": "ex-ample",
+      "expected_output": "true"
+    },
+    {
+      "input": "123456",
+      "expected_output": "true"
+    },
+    {
+      "input": "examp1e",
+      "expected_output": "true"
+    },
+    {
+      "input": "example-",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "-example",
+      "expected_output": "false"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "!@#$%^&*()",
+      "expected_output": "false"
+    }
+  ]
+}

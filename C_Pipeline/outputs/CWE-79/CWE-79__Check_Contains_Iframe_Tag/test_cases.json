@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello World",
+      "expected_output": "0"
+    },
+    {
+      "input": "The quick brown fox jumps over the lazy dog",
+      "expected_output": "0"
+    },
+    {
+      "input": "<header>Content here</header>",
+      "expected_output": "0"
+    },
+    {
+      "input": "<iFrame src='something.com'></iFrame>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<ifrAmE src='another.com'></iframe>",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "<iframe src='http://malicious.com'></iframe>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<someTag><iframe></someTag>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<script>console.log('hello');</script>",
+      "expected_output": "0"
+    },
+    {
+      "input": "This is a test with an <iframe src=\"test.com\">",
+      "expected_output": "1"
+    },
+    {
+      "input": null,
+      "expected_output": "0"
+    }
+  ]
+}

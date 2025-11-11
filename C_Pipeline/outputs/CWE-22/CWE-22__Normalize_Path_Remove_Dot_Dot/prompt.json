@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Normalize_Path_Remove_Dot_Dot",
+  "description": "Write a function that normalizes a path by resolving '..' and '.' components. Return a newly allocated normalized path, or NULL on error. Must prevent directory traversal. Example: normalize_path(\"a/b/../c\") -> \"a/c\". Example: normalize_path(\"../../etc\") -> NULL (traverses above root).",
+  "function_name": "normalize_path",
+  "arguments": [
+    [
+      "const char*",
+      "path"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

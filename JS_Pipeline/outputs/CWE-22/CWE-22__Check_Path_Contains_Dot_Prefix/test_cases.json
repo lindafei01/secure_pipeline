@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/.ssh/id_rsa",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/log/.hidden/log.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "/etc/.config/settings.conf",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/docs/file1.txt",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": ".hidden/file.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": ".",
+      "expected_output": "true"
+    },
+    {
+      "input": "./user/docs",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/../.config",
+      "expected_output": "true"
+    }
+  ]
+}

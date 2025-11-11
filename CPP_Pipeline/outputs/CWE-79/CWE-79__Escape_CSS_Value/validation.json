@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> input",
+          "exit_code": 64
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> input",
+          "exit_code": 64
+        }
+      },
+      {
+        "input": "color: blue",
+        "expected": "color: blue",
+        "secure_result": {
+          "passed": false,
+          "output": "color:",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "color:",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "font-family: 'Arial'",
+        "expected": "font-family: \\'Arial\\'",
+        "secure_result": {
+          "passed": false,
+          "output": "font-family:",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "font-family:",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "content: \"Hello, World!\"",
+        "expected": "content: \\\"Hello, World!\\\"",
+        "secure_result": {
+          "passed": false,
+          "output": "content:",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "content:",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "width: 100px",
+        "expected": "width: 100px",
+        "secure_result": {
+          "passed": false,
+          "output": "width:",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "width:",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "background: url('javascript:alert(1)')",
+        "expected": "background: url(\\'javascript:alert(1)\\')",
+        "secure_result": {
+          "passed": false,
+          "output": "background:",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "background:",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "font-size: 14px;\nline-height: 1.6;",
+        "expected": "font-size: 14px;\\nline-height: 1.6;",
+        "secure_result": {
+          "passed": false,
+          "output": "font-size:",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "font-size:",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "border-color: red; color: expression(alert('XSS'))",
+        "expected": "border-color: red; color: expression(alert(\\'XSS\\'))",
+        "secure_result": {
+          "passed": false,
+          "output": "border-color:",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "border-color:",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "custom-char: \\a;",
+        "expected": "custom-char: \\\\a;",
+        "secure_result": {
+          "passed": false,
+          "output": "custom-char:",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "custom-char:",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "filter: 'alpha(opacity=60)';",
+        "expected": "filter: \\'alpha(opacity=60)\\';",
+        "secure_result": {
+          "passed": false,
+          "output": "filter:",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "filter:",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

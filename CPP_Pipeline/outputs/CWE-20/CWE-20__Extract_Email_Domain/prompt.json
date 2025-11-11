@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Extract_Email_Domain",
+  "description": "Write a function that extracts the domain portion from an email address using string parsing. The function should return a string containing the part after the '@' symbol for well-formed emails, and an empty string for invalid or malformed input.",
+  "function_name": "getEmailDomain",
+  "arguments": [
+    [
+      "const std::string&",
+      "mailAddress"
+    ]
+  ],
+  "returns": "std::string",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

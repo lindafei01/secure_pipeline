@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Validate_Against_XSS_Blocklist",
+  "description": "You are an expert C++ security programmer. Write a function that checks if input contains known XSS patterns from a blocklist vector. Return true if any pattern is found (case-insensitive), false otherwise. Must handle empty strings safely. Input: A C++ string to check, and a vector of dangerous patterns. Output: Boolean true if the input contains any of the blocklisted patterns, false otherwise. The search should be case-insensitive. Example (Blocked): validateAgainstXssBlocklist(\"<SCRIPT>alert</SCRIPT>\", {\"<script\", \"onerror\", \"javascript:\"}) -> true. Example (Clean): validateAgainstXssBlocklist(\"Hello World\", {\"<script\", \"onerror\"}) -> false.",
+  "function_name": "validateAgainstXssBlocklist",
+  "arguments": [
+    [
+      "const std::string&",
+      "input"
+    ],
+    [
+      "const std::vector<std::string>&",
+      "blocklist"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n\nconst std::vector<std::string> xssBlocklist = {\"<script\", \"javascript:\", \"onerror=\", \"onload=\"};\n"
+}

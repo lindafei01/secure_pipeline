@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello World",
+      "expected_output": "0"
+    },
+    {
+      "input": "This is a test string",
+      "expected_output": "0"
+    },
+    {
+      "input": "<p>This is a paragraph</p>",
+      "expected_output": "0"
+    },
+    {
+      "input": "Sample text with an <image> tag",
+      "expected_output": "0"
+    },
+    {
+      "input": "<div><span>Content</span></div>",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "<meta http-equiv='refresh' content='0;url=javascript:alert(1)'>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<META HTTP-EQUIV='REFRESH' CONTENT='0;URL=javascript:void(0)'>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<meta name='viewport' content='width=device-width, initial-scale=1.0'>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<body><meta charset='UTF-8'></body>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<head><meta http-equiv='refresh' content='1'></head>",
+      "expected_output": "1"
+    }
+  ]
+}

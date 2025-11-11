@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls; rm file",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo Hello World",
+      "expected_output": "false"
+    },
+    {
+      "input": "ps aux",
+      "expected_output": "false"
+    },
+    {
+      "input": "cd /usr/local; ls",
+      "expected_output": "true"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined",
+      "expected_output": "false"
+    },
+    {
+      "input": "ls && rm -rf /; echo done",
+      "expected_output": "false"
+    },
+    {
+      "input": "export PATH=/new/path; echo $PATH",
+      "expected_output": "true"
+    },
+    {
+      "input": "apt-get update; apt-get upgrade",
+      "expected_output": "true"
+    }
+  ]
+}

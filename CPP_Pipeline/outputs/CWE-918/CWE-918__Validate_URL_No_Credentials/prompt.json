@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Validate_URL_No_Credentials",
+  "description": "Write a function that checks if a URL contains embedded credentials (e.g., 'http://user:pass@host/'). Example (No Creds): urlHasNoCredentials(\"http://host.com/\") -> true. Example (Has Creds): urlHasNoCredentials(\"http://user:pass@host.com/\") -> false.",
+  "function_name": "urlHasNoCredentials",
+  "arguments": [
+    [
+      "const std::string&",
+      "url"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

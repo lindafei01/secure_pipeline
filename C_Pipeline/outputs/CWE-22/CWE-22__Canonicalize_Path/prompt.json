@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Canonicalize_Path",
+  "description": "Write a function that converts a path to its canonical form (resolves all '.', '..', and symbolic links). Return a newly allocated canonical path, or NULL on error. Must prevent traversal outside allowed directories. Example: canonicalize_path(\"/home/user/./docs/../file.txt\") -> \"/home/user/file.txt\".",
+  "function_name": "canonicalize_path",
+  "arguments": [
+    [
+      "const char*",
+      "path"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

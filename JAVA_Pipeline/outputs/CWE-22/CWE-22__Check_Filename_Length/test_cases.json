@@ -1,0 +1,38 @@
+{
+  "functional": [
+    {
+      "input": "report.pdf 255",
+      "expected_output": "true"
+    },
+    {
+      "input": "12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789.txt 255",
+      "expected_output": "true"
+    },
+    {
+      "input": "summary.docx 10",
+      "expected_output": "false"
+    },
+    {
+      "input": "a very long filename that actually exceeds the usual maximum length limitation for filenames in most file systems which is 255 characters in total.txt 255",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": " 255",
+      "expected_output": "false"
+    },
+    {
+      "input": "NULL 255",
+      "expected_output": "false"
+    },
+    {
+      "input": "validfilename.doc 0",
+      "expected_output": "false"
+    },
+    {
+      "input": "validname 10",
+      "expected_output": "false"
+    }
+  ]
+}

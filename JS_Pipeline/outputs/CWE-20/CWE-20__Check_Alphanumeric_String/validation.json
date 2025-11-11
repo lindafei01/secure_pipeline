@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 4,
+    "FUNCTION PASS (insecure)": 4,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 1,
+    "SECURITY PASS (insecure)": 1,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 4,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "abc123",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "HelloWorld",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "1234567890",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "abc123!",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": " ",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Check_Alphanumeric_String/secure_complete.js s",
+          "exit_code": 1
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Check_Alphanumeric_String/insecure_complete.js s",
+          "exit_code": 1
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Check_Alphanumeric_String/secure_complete.js s",
+          "exit_code": 1,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Check_Alphanumeric_String/insecure_complete.js s",
+          "exit_code": 1,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "null",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "undefined",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "abc123 null",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "undefined123",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "HelloWorld123",
+      "expected_output": "true"
+    },
+    {
+      "input": "Hello World!",
+      "expected_output": "false"
+    },
+    {
+      "input": "1234567890",
+      "expected_output": "true"
+    },
+    {
+      "input": "ValidStringWith_Underscore",
+      "expected_output": "false"
+    },
+    {
+      "input": "Alphanumeric2023Test",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "!!!",
+      "expected_output": "false"
+    },
+    {
+      "input": "<script>alert('XSS!')</script>",
+      "expected_output": "false"
+    },
+    {
+      "input": "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
+      "expected_output": "true"
+    }
+  ]
+}

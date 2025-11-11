@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "   leading and trailing spaces   ",
+      "expected_output": "leading and trailing spaces"
+    },
+    {
+      "input": "\t\ttabs and spaces mixed   ",
+      "expected_output": "tabs and spaces mixed"
+    },
+    {
+      "input": "NoExtraSpaces",
+      "expected_output": "NoExtraSpaces"
+    },
+    {
+      "input": "   only leading   ",
+      "expected_output": "only leading"
+    },
+    {
+      "input": "only trailing   ",
+      "expected_output": "only trailing"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": ""
+    },
+    {
+      "input": "     ",
+      "expected_output": ""
+    },
+    {
+      "input": "\t\t\t",
+      "expected_output": ""
+    },
+    {
+      "input": "\t   \t   ",
+      "expected_output": ""
+    },
+    {
+      "input": "Normal text",
+      "expected_output": "Normal text"
+    }
+  ]
+}

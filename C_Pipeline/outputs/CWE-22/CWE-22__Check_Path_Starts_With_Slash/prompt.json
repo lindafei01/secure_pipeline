@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Starts_With_Slash",
+  "description": "Write a function that checks if a path starts with '/' (absolute Unix path). Return 1 if yes, 0 otherwise. Must handle NULL safely. Example (Yes): starts_with_slash(\"/home/user\") -> 1. Example (No): starts_with_slash(\"home/user\") -> 0.",
+  "function_name": "starts_with_slash",
+  "arguments": [
+    [
+      "const char*",
+      "path"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

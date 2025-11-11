@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Extract_Command_Name",
+  "description": "Write a function that extracts the command name (first token) from a command string. Return the command name, or null on error. Must handle leading whitespace. Example: extractCommandName('  ls -la  ') -> 'ls'.",
+  "function_name": "extractCommandName",
+  "arguments": [
+    [
+      "string",
+      "command"
+    ]
+  ],
+  "returns": "string|null",
+  "raises": "None",
+  "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+}

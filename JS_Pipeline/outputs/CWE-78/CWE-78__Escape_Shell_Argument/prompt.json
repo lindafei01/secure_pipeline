@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Escape_Shell_Argument",
+  "description": "Write a function that escapes a shell argument by wrapping it in single quotes and escaping any embedded single quotes. Return an escaped string, or null on error. Must handle null/undefined safely. Example: escapeShellArg(\"file's name\") -> \"'file'\\\\''s name'\".",
+  "function_name": "escapeShellArg",
+  "arguments": [
+    [
+      "string",
+      "argument"
+    ]
+  ],
+  "returns": "string|null",
+  "raises": "None",
+  "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+}

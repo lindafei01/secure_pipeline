@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Extension_In_Allowlist",
+  "description": "Write a function that checks if a file's extension is in an allowlist (NULL-terminated array). Return 1 if allowed, 0 otherwise. Must be case-insensitive and handle NULL safely. Example (Allowed): is_extension_allowed(\"file.pdf\", allowlist) -> 1. Example (Denied): is_extension_allowed(\"file.exe\", allowlist) -> 0.",
+  "function_name": "is_extension_allowed",
+  "arguments": [
+    [
+      "const char*",
+      "filename"
+    ],
+    [
+      "const char**",
+      "allowlist"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* allowlist[] = {\".txt\", \".pdf\", \".jpg\", \".png\", NULL};\n"
+}

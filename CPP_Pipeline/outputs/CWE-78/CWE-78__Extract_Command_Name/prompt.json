@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Extract_Command_Name",
+  "description": "Write a function that extracts the command name (first token) from a command string. Return the command name, or empty string on error. Must handle leading whitespace. Example: extractCommandName(\"  ls -la  \") -> \"ls\".",
+  "function_name": "extractCommandName",
+  "arguments": [
+    [
+      "const std::string&",
+      "command"
+    ]
+  ],
+  "returns": "std::string",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+}

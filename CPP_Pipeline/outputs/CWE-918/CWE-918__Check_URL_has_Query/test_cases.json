@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com/path?name=value",
+      "expected_output": "true"
+    },
+    {
+      "input": "http://example.com/path",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://example.com/?query=true",
+      "expected_output": "true"
+    },
+    {
+      "input": "https://example.com/path#anchor",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://example.com/path/to/resource?query1=foo&query2=bar",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "http://example.com/path<.>?inject=test",
+      "expected_output": "true"
+    },
+    {
+      "input": "ftp://example.com/resource",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://example.com:8080/path?",
+      "expected_output": "true"
+    },
+    {
+      "input": "http://ex.com:8000#admin",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://secure.com/path?q=<script>alert('xss')</script>",
+      "expected_output": "true"
+    }
+  ]
+}

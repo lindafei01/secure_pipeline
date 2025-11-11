@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Validate_Path_Length",
+  "description": "Write a function that checks if a path length is within safe limits. Return true if valid, false otherwise. Must handle empty string safely. Example (Valid): isPathLengthValid(\"/home/user\", 4096) -> true. Example (Too Long): isPathLengthValid(<4097-char path>, 4096) -> false.",
+  "function_name": "isPathLengthValid",
+  "arguments": [
+    [
+      "const std::string&",
+      "path"
+    ],
+    [
+      "size_t",
+      "maxLength"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

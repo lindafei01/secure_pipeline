@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Contains_Dot_Dot",
+  "description": "Write a function that checks if a file path contains '..' (parent directory reference). Return true if '..' is found, false otherwise. Must handle null input safely. Example (Found): pathContainsDotDot(\"../etc/passwd\") -> true. Example (Not Found): pathContainsDotDot(\"/home/user/file.txt\") -> false.",
+  "function_name": "pathContainsDotDot",
+  "arguments": [
+    [
+      "String",
+      "path"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 4,
+    "FUNCTION PASS (insecure)": 3,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 4,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "a/b/../c",
+        "expected": "a/c",
+        "secure_result": {
+          "passed": true,
+          "output": "a/c",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "a/c",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/a/b/./c",
+        "expected": "/a/b/c",
+        "secure_result": {
+          "passed": false,
+          "output": "a/b/c",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "a/b/c",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "home/user/docs/./project/../notes",
+        "expected": "home/user/docs/notes",
+        "secure_result": {
+          "passed": true,
+          "output": "home/user/docs/notes",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "home/user/docs/notes",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "photos/../../pics",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "pics",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "root/./subdir/../file",
+        "expected": "root/file",
+        "secure_result": {
+          "passed": true,
+          "output": "root/file",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "root/file",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "../etc/passwd",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "etc/passwd",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "../../boot.ini",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "boot.ini",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/valid/path/../../bin",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "bin",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "bin",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "folder/../../../anotherfolder",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "anotherfolder",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "a/../../../b/c",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "b/c",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

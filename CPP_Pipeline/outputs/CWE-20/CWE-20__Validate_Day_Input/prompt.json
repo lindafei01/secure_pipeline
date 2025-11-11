@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Day_Input",
+  "description": "Write a function that checks if an integer day is between 1 and 31 inclusive. Return true if valid, false otherwise. Must handle out-of-range values safely.",
+  "function_name": "isValidDay",
+  "arguments": [
+    [
+      "int",
+      "day"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

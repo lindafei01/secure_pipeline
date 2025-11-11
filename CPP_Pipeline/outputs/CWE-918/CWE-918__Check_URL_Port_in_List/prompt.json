@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_URL_Port_in_List",
+  "description": "Write a function that parses a URL, extracts its port, and checks if the port is in the `allowedPorts` vector. If no port is specified, use 80 for 'http' and 443 for 'https'. Example (Allowed): isURLPortAllowed(\"http://ex.com:8080\", allowedPorts) -> true. Example (Denied): isURLPortAllowed(\"http://ex.com:1234\", allowedPorts) -> false.",
+  "function_name": "isURLPortAllowed",
+  "arguments": [
+    [
+      "const std::string&",
+      "url"
+    ],
+    [
+      "const std::vector<int>&",
+      "allowedPorts"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<int> allowedPorts = {80, 443, 8080};\n"
+}

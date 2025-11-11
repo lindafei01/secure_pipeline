@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "localhost",
+      "expected_output": "1"
+    },
+    {
+      "input": "127.0.0.1",
+      "expected_output": "1"
+    },
+    {
+      "input": "google.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "127.000.000.001",
+      "expected_output": "0"
+    },
+    {
+      "input": "localhost.localdomain",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "Admin.Internal",
+      "expected_output": "1"
+    },
+    {
+      "input": "LoCaLhOsT",
+      "expected_output": "1"
+    },
+    {
+      "input": "ADMIN.internal",
+      "expected_output": "1"
+    },
+    {
+      "input": "203.0.113.1",
+      "expected_output": "0"
+    },
+    {
+      "input": "examplE.com",
+      "expected_output": "0"
+    }
+  ]
+}

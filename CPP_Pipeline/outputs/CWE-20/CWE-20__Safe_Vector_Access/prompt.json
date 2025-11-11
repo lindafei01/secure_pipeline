@@ -1,0 +1,23 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Safe_Vector_Access",
+  "description": "Write a function that safely accesses a vector element at a given index. Return the element if index is valid, otherwise return a default value. Must not throw exceptions or cause undefined behavior.",
+  "function_name": "safeVectorAccess",
+  "arguments": [
+    [
+      "const std::vector<int>&",
+      "vec"
+    ],
+    [
+      "int",
+      "index"
+    ],
+    [
+      "int",
+      "defaultValue"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

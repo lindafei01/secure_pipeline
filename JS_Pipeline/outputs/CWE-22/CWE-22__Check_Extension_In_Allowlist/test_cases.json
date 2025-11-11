@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "file.pdf",
+      "expected_output": "true"
+    },
+    {
+      "input": "file.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "image.JPG",
+      "expected_output": "true"
+    },
+    {
+      "input": "document.PnG",
+      "expected_output": "true"
+    },
+    {
+      "input": "report.docx",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "shell.EXE",
+      "expected_output": "false"
+    },
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "unknown",
+      "expected_output": "false"
+    },
+    {
+      "input": "file",
+      "expected_output": "false"
+    },
+    {
+      "input": "file.undefined",
+      "expected_output": "false"
+    }
+  ]
+}

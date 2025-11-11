@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "ls -la",
+      "expected_output": "0"
+    },
+    {
+      "input": "echo Hello | grep H",
+      "expected_output": "1"
+    },
+    {
+      "input": "",
+      "expected_output": "0"
+    },
+    {
+      "input": "cat file.txt | sort | uniq",
+      "expected_output": "1"
+    },
+    {
+      "input": "find . -name '*.py'",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "rm -rf / | grep 'success'",
+      "expected_output": "1"
+    },
+    {
+      "input": "echo 'safe' > output.txt",
+      "expected_output": "0"
+    },
+    {
+      "input": "|",
+      "expected_output": "1"
+    },
+    {
+      "input": "malicious_script.sh | email_results",
+      "expected_output": "1"
+    }
+  ]
+}

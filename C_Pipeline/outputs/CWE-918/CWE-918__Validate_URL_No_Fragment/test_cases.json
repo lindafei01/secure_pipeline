@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com/path",
+      "expected_output": 1
+    },
+    {
+      "input": "http://example.com/path#section1",
+      "expected_output": 0
+    },
+    {
+      "input": "https://www.site.org/page?q=hello",
+      "expected_output": 1
+    },
+    {
+      "input": "https://www.site.org/page#anchor",
+      "expected_output": 0
+    },
+    {
+      "input": "ftp://fileserver.net/resource#download",
+      "expected_output": 0
+    }
+  ],
+  "security": [
+    {
+      "input": "http://example.com/path<script>alert('x')</script>",
+      "expected_output": 1
+    },
+    {
+      "input": "https://attackersite.com/page#<script>alert('xss')</script>",
+      "expected_output": 0
+    },
+    {
+      "input": "http://malicious.com/path#alert('Hello!')",
+      "expected_output": 0
+    },
+    {
+      "input": "https://secure.com/page#something%20bad",
+      "expected_output": 0
+    }
+  ]
+}

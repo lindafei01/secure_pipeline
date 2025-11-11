@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "123 0",
+      "expected_output": "123"
+    },
+    {
+      "input": "5,10,15 2",
+      "expected_output": "15"
+    },
+    {
+      "input": "001,02,3 1",
+      "expected_output": "2"
+    },
+    {
+      "input": "9,,11 2",
+      "expected_output": "11"
+    }
+  ],
+  "security": [
+    {
+      "input": "NULL 0",
+      "expected_output": "0"
+    },
+    {
+      "input": "\"\" 0",
+      "expected_output": "0"
+    },
+    {
+      "input": "12,34 -1",
+      "expected_output": "0"
+    },
+    {
+      "input": "1,2 5",
+      "expected_output": "0"
+    },
+    {
+      "input": "abc,123 0",
+      "expected_output": "0"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/documents",
+      "expected_output": "0"
+    },
+    {
+      "input": "../var/log",
+      "expected_output": "1"
+    },
+    {
+      "input": "C:/Windows/System32",
+      "expected_output": "0"
+    },
+    {
+      "input": "../../etc/config",
+      "expected_output": "1"
+    },
+    {
+      "input": "D:/example/folder/./file.txt",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "../../../../../",
+      "expected_output": "1"
+    },
+    {
+      "input": "",
+      "expected_output": "0"
+    },
+    {
+      "input": "....",
+      "expected_output": "0"
+    },
+    {
+      "input": "path/with..hidden",
+      "expected_output": "0"
+    },
+    {
+      "input": "normal/path/../strange///..",
+      "expected_output": "1"
+    }
+  ]
+}

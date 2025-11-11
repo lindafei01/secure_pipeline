@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/var/www file.txt",
+      "expected_output": "/var/www/file.txt"
+    },
+    {
+      "input": "/home/user docs/report.pdf",
+      "expected_output": "/home/user/docs/report.pdf"
+    },
+    {
+      "input": "/usr/local/bin script.sh",
+      "expected_output": "/usr/local/bin/script.sh"
+    },
+    {
+      "input": "/tmp folder/readme.md",
+      "expected_output": "/tmp/folder/readme.md"
+    },
+    {
+      "input": "/opt/data data.csv",
+      "expected_output": "/opt/data/data.csv"
+    }
+  ],
+  "security": [
+    {
+      "input": "/var/www ../etc/passwd",
+      "expected_output": "null"
+    },
+    {
+      "input": "/home/user ../../root/.ssh/id_rsa",
+      "expected_output": "null"
+    },
+    {
+      "input": "/etc /../var/log/syslog",
+      "expected_output": "null"
+    },
+    {
+      "input": "/tmp ./../tmp/secret",
+      "expected_output": "null"
+    },
+    {
+      "input": "/opt/downloads ../../../bin/script.sh",
+      "expected_output": "null"
+    }
+  ]
+}

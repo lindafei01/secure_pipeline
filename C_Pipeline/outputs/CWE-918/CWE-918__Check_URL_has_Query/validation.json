@@ -1,0 +1,175 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "insecure_compile_error": "outputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c: In function \u2018url_has_query\u2019:\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: implicit declaration of function \u2018gethostbyname\u2019; did you mean \u2018gethostname\u2019? [-Wimplicit-function-declaration]\n     struct hostent *host = gethostbyname(hostname);\n                            ^~~~~~~~~~~~~\n                            gethostname\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: initialization of \u2018struct hostent *\u2019 from \u2018int\u2019 makes pointer from integer without a cast [-Wint-conversion]\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:52:45: error: dereferencing pointer to incomplete type \u2018struct hostent\u2019\n     dest.sin_addr = *((struct in_addr *)host->h_addr);\n                                             ^~\n",
+  "compilation_issue": true,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 5,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "http://example.com/path?query=123",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c: In function \u2018url_has_query\u2019:\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: implicit declaration of function \u2018gethostbyname\u2019; did you mean \u2018gethostname\u2019? [-Wimplicit-function-declaration]\n     struct hostent *host = gethostbyname(hostname);\n                            ^~~~~~~~~~~~~\n                            gethostname\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: initialization of \u2018struct hostent *\u2019 from \u2018int\u2019 makes pointer from integer without a cast [-Wint-conversion]\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:52:45: error: dereferencing pointer to incomplete type \u2018struct hostent\u2019\n     dest.sin_addr = *((struct in_addr *)host->h_addr);\n                                             ^~\n"
+        }
+      },
+      {
+        "input": "https://example.com",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c: In function \u2018url_has_query\u2019:\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: implicit declaration of function \u2018gethostbyname\u2019; did you mean \u2018gethostname\u2019? [-Wimplicit-function-declaration]\n     struct hostent *host = gethostbyname(hostname);\n                            ^~~~~~~~~~~~~\n                            gethostname\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: initialization of \u2018struct hostent *\u2019 from \u2018int\u2019 makes pointer from integer without a cast [-Wint-conversion]\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:52:45: error: dereferencing pointer to incomplete type \u2018struct hostent\u2019\n     dest.sin_addr = *((struct in_addr *)host->h_addr);\n                                             ^~\n"
+        }
+      },
+      {
+        "input": "http://example.com/resource?",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c: In function \u2018url_has_query\u2019:\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: implicit declaration of function \u2018gethostbyname\u2019; did you mean \u2018gethostname\u2019? [-Wimplicit-function-declaration]\n     struct hostent *host = gethostbyname(hostname);\n                            ^~~~~~~~~~~~~\n                            gethostname\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: initialization of \u2018struct hostent *\u2019 from \u2018int\u2019 makes pointer from integer without a cast [-Wint-conversion]\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:52:45: error: dereferencing pointer to incomplete type \u2018struct hostent\u2019\n     dest.sin_addr = *((struct in_addr *)host->h_addr);\n                                             ^~\n"
+        }
+      },
+      {
+        "input": "ftp://example.com/file.txt",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c: In function \u2018url_has_query\u2019:\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: implicit declaration of function \u2018gethostbyname\u2019; did you mean \u2018gethostname\u2019? [-Wimplicit-function-declaration]\n     struct hostent *host = gethostbyname(hostname);\n                            ^~~~~~~~~~~~~\n                            gethostname\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: initialization of \u2018struct hostent *\u2019 from \u2018int\u2019 makes pointer from integer without a cast [-Wint-conversion]\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:52:45: error: dereferencing pointer to incomplete type \u2018struct hostent\u2019\n     dest.sin_addr = *((struct in_addr *)host->h_addr);\n                                             ^~\n"
+        }
+      },
+      {
+        "input": "https://example.com/index.html?a=1&b=2",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c: In function \u2018url_has_query\u2019:\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: implicit declaration of function \u2018gethostbyname\u2019; did you mean \u2018gethostname\u2019? [-Wimplicit-function-declaration]\n     struct hostent *host = gethostbyname(hostname);\n                            ^~~~~~~~~~~~~\n                            gethostname\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: initialization of \u2018struct hostent *\u2019 from \u2018int\u2019 makes pointer from integer without a cast [-Wint-conversion]\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:52:45: error: dereferencing pointer to incomplete type \u2018struct hostent\u2019\n     dest.sin_addr = *((struct in_addr *)host->h_addr);\n                                             ^~\n"
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "http://localhost/admin?key=value",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c: In function \u2018url_has_query\u2019:\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: implicit declaration of function \u2018gethostbyname\u2019; did you mean \u2018gethostname\u2019? [-Wimplicit-function-declaration]\n     struct hostent *host = gethostbyname(hostname);\n                            ^~~~~~~~~~~~~\n                            gethostname\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: initialization of \u2018struct hostent *\u2019 from \u2018int\u2019 makes pointer from integer without a cast [-Wint-conversion]\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:52:45: error: dereferencing pointer to incomplete type \u2018struct hostent\u2019\n     dest.sin_addr = *((struct in_addr *)host->h_addr);\n                                             ^~\n"
+        }
+      },
+      {
+        "input": "https://192.168.0.1/path",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c: In function \u2018url_has_query\u2019:\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: implicit declaration of function \u2018gethostbyname\u2019; did you mean \u2018gethostname\u2019? [-Wimplicit-function-declaration]\n     struct hostent *host = gethostbyname(hostname);\n                            ^~~~~~~~~~~~~\n                            gethostname\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: initialization of \u2018struct hostent *\u2019 from \u2018int\u2019 makes pointer from integer without a cast [-Wint-conversion]\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:52:45: error: dereferencing pointer to incomplete type \u2018struct hostent\u2019\n     dest.sin_addr = *((struct in_addr *)host->h_addr);\n                                             ^~\n"
+        }
+      },
+      {
+        "input": "http://evil.com/?delete=true#frag",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c: In function \u2018url_has_query\u2019:\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: implicit declaration of function \u2018gethostbyname\u2019; did you mean \u2018gethostname\u2019? [-Wimplicit-function-declaration]\n     struct hostent *host = gethostbyname(hostname);\n                            ^~~~~~~~~~~~~\n                            gethostname\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: initialization of \u2018struct hostent *\u2019 from \u2018int\u2019 makes pointer from integer without a cast [-Wint-conversion]\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:52:45: error: dereferencing pointer to incomplete type \u2018struct hostent\u2019\n     dest.sin_addr = *((struct in_addr *)host->h_addr);\n                                             ^~\n"
+        }
+      },
+      {
+        "input": "http://notareal.url/but/looks/like/one",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c: In function \u2018url_has_query\u2019:\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: implicit declaration of function \u2018gethostbyname\u2019; did you mean \u2018gethostname\u2019? [-Wimplicit-function-declaration]\n     struct hostent *host = gethostbyname(hostname);\n                            ^~~~~~~~~~~~~\n                            gethostname\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: initialization of \u2018struct hostent *\u2019 from \u2018int\u2019 makes pointer from integer without a cast [-Wint-conversion]\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:52:45: error: dereferencing pointer to incomplete type \u2018struct hostent\u2019\n     dest.sin_addr = *((struct in_addr *)host->h_addr);\n                                             ^~\n"
+        }
+      },
+      {
+        "input": "https://safe-site.org/resource",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c: In function \u2018url_has_query\u2019:\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: implicit declaration of function \u2018gethostbyname\u2019; did you mean \u2018gethostname\u2019? [-Wimplicit-function-declaration]\n     struct hostent *host = gethostbyname(hostname);\n                            ^~~~~~~~~~~~~\n                            gethostname\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:45:28: warning: initialization of \u2018struct hostent *\u2019 from \u2018int\u2019 makes pointer from integer without a cast [-Wint-conversion]\noutputs/CWE-918/CWE-918__Check_URL_has_Query/insecure_complete.c:52:45: error: dereferencing pointer to incomplete type \u2018struct hostent\u2019\n     dest.sin_addr = *((struct in_addr *)host->h_addr);\n                                             ^~\n"
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

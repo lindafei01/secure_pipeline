@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "valid-label",
+      "expected_output": "true"
+    },
+    {
+      "input": "12345",
+      "expected_output": "true"
+    },
+    {
+      "input": "hyphen-",
+      "expected_output": "false"
+    },
+    {
+      "input": "-start",
+      "expected_output": "false"
+    },
+    {
+      "input": "valid-label123",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "null",
+      "expected_output": "true"
+    },
+    {
+      "input": "undefined",
+      "expected_output": "true"
+    },
+    {
+      "input": " ",
+      "expected_output": "false"
+    },
+    {
+      "input": "!invalid$",
+      "expected_output": "false"
+    }
+  ]
+}

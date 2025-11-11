@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Validate_Against_XSS_Blocklist",
+  "description": "You are an expert C security programmer. Write a function that checks if input contains known XSS patterns from a blocklist. The blocklist is a NULL-terminated array of strings. Return 1 if any pattern is found (case-insensitive), 0 otherwise. Must handle NULL input safely. Input: A C string to check, and a NULL-terminated array of dangerous patterns. Output: Integer 1 if the input contains any of the blocklisted patterns, 0 otherwise. The search should be case-insensitive. Example (Blocked): validate_against_xss_blocklist(\"<SCRIPT>alert</SCRIPT>\", [\"<script\", \"onerror\", \"javascript:\", NULL]) -> 1. Example (Clean): validate_against_xss_blocklist(\"Hello World\", [\"<script\", \"onerror\", NULL]) -> 0.",
+  "function_name": "validate_against_xss_blocklist",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ],
+    [
+      "const char**",
+      "blocklist"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* xss_blocklist[] = {\"<script\", \"javascript:\", \"onerror=\", \"onload=\", NULL};\n"
+}

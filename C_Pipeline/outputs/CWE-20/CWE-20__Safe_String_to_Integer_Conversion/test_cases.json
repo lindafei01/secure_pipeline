@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "123",
+      "expected_output": "123"
+    },
+    {
+      "input": "+456",
+      "expected_output": "456"
+    },
+    {
+      "input": "-789",
+      "expected_output": "-789"
+    },
+    {
+      "input": "007",
+      "expected_output": "7"
+    },
+    {
+      "input": "2147483647",
+      "expected_output": "2147483647"
+    }
+  ],
+  "security": [
+    {
+      "input": "NULL",
+      "expected_output": "0"
+    },
+    {
+      "input": "",
+      "expected_output": "0"
+    },
+    {
+      "input": "abc",
+      "expected_output": "0"
+    },
+    {
+      "input": "123abc",
+      "expected_output": "0"
+    },
+    {
+      "input": " 42",
+      "expected_output": "0"
+    }
+  ]
+}

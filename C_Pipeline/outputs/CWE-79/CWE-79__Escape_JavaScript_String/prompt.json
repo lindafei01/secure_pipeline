@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Escape_JavaScript_String",
+  "description": "You are an expert C security programmer. Write a function that escapes special characters for safe inclusion in JavaScript strings. The function must escape: backslash (\\), single quote ('), double quote (\"), newline (\\n), carriage return (\\r), and tab (\\t) by prefixing them with backslash. Return a newly allocated escaped string, or NULL on error. Must handle NULL input safely. Input: A C string that will be embedded in a JavaScript context. Output: A newly allocated string where special characters are escaped. This prevents breaking out of JavaScript string literals. Example: escape_js_string(\"Hello\\n'World'\") -> \"Hello\\\\n\\\\'World\\\\'\".",
+  "function_name": "escape_js_string",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

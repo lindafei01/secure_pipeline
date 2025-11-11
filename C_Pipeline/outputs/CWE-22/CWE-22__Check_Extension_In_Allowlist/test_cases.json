@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "document.txt",
+      "expected_output": "1"
+    },
+    {
+      "input": "report.pdf",
+      "expected_output": "1"
+    },
+    {
+      "input": "image.jpg",
+      "expected_output": "1"
+    },
+    {
+      "input": "photo.png",
+      "expected_output": "1"
+    },
+    {
+      "input": "video.mp4",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "malware.exe",
+      "expected_output": "0"
+    },
+    {
+      "input": "virus.TXT",
+      "expected_output": "1"
+    },
+    {
+      "input": "script.sh",
+      "expected_output": "0"
+    },
+    {
+      "input": "archive.tar.gz",
+      "expected_output": "0"
+    },
+    {
+      "input": ".hiddenfile",
+      "expected_output": "0"
+    }
+  ]
+}

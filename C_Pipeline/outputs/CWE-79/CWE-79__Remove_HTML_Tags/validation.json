@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 2,
+    "FUNCTION PASS (insecure)": 2,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 2,
+    "SECURITY PASS (insecure)": 2,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 3,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Plain text string",
+        "expected": "Plain text string",
+        "secure_result": {
+          "passed": false,
+          "output": "Plain",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Plain",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "<div>This <i>is</i> a <b>test</b>.</div>",
+        "expected": "This is a test.",
+        "secure_result": {
+          "passed": false,
+          "output": "This",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "This",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "<h1>Header</h1><p>Paragraph</p>",
+        "expected": "HeaderParagraph",
+        "secure_result": {
+          "passed": true,
+          "output": "HeaderParagraph",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "HeaderParagraph",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "<body><header>Welcome</header><footer>Goodbye</footer></body>",
+        "expected": "WelcomeGoodbye",
+        "secure_result": {
+          "passed": true,
+          "output": "WelcomeGoodbye",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "WelcomeGoodbye",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "<script>alert('xss');</script>",
+        "expected": "alert('xss');",
+        "secure_result": {
+          "passed": true,
+          "output": "alert('xss');",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "alert('xss');",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "<img src='image.jpg' onerror='evilFunction()'>",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "<a href='http://malicious.com'>Click me</a>",
+        "expected": "Click me",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "<!-- hidden comment -->Visible content",
+        "expected": "Visible content",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "<style>body { background: url('evil.com/image.jpg'); }</style>",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "body",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "body",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

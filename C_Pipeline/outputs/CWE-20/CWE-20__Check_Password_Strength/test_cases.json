@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Abcdef12",
+      "expected_output": "1"
+    },
+    {
+      "input": "Short1",
+      "expected_output": "0"
+    },
+    {
+      "input": "alllowercase1",
+      "expected_output": "0"
+    },
+    {
+      "input": "NoDigitsHere",
+      "expected_output": "0"
+    },
+    {
+      "input": "Pass1234",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "NULL",
+      "expected_output": "0"
+    },
+    {
+      "input": "",
+      "expected_output": "0"
+    },
+    {
+      "input": "        ",
+      "expected_output": "0"
+    },
+    {
+      "input": "12345678",
+      "expected_output": "0"
+    },
+    {
+      "input": "Abcdefgh",
+      "expected_output": "0"
+    }
+  ]
+}

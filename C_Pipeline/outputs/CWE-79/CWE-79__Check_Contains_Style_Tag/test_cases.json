@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello World",
+      "expected_output": "0"
+    },
+    {
+      "input": "<head><title>Test</title></head>",
+      "expected_output": "0"
+    },
+    {
+      "input": "<style>color:red;</style>",
+      "expected_output": "1"
+    },
+    {
+      "input": "Some random <STYLE> text",
+      "expected_output": "0"
+    },
+    {
+      "input": "<div>Content</div>",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "<style>body{background:url('javascript:alert(1)')}</style>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<STYLE>body{ background: red; }</STYLE>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<style type=\"text/css\">div{color:black}</style>",
+      "expected_output": "1"
+    },
+    {
+      "input": "Normal text <style>maliciousCode()</style>",
+      "expected_output": "1"
+    },
+    {
+      "input": "A mix of <random style> text",
+      "expected_output": "0"
+    }
+  ]
+}

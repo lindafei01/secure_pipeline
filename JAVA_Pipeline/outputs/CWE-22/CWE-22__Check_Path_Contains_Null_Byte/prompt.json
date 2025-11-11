@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Contains_Null_Byte",
+  "description": "Write a function that checks if a path contains a NULL byte (\\0), which can be used for path truncation attacks. Return true if NULL byte found, false otherwise. Example (Found): pathContainsNull(\"file.txt\\0.pdf\") -> true. Example (Not Found): pathContainsNull(\"file.txt\") -> false.",
+  "function_name": "pathContainsNull",
+  "arguments": [
+    [
+      "String",
+      "path"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

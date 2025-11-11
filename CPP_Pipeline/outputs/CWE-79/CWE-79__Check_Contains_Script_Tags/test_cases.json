@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "\"Hello World\"",
+      "expected_output": "false"
+    },
+    {
+      "input": "\"<script>alert(1)</script>\"",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"This is a test <ScRiPt> tag\"",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"<ScRiPt src='https://example.com/script.js'>\"",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"No tags here\"",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "\"<scrIpt>malicious code</scriPt>\"",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"Some text <scripting> that should not match\"",
+      "expected_output": "false"
+    },
+    {
+      "input": "\"<SCRIPT SRC='http://evil.com/xss.js'>\"",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"Nothing <scriptx> here\"",
+      "expected_output": "false"
+    },
+    {
+      "input": "\"Content with <script > extra space\"",
+      "expected_output": "true"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Domain_Name",
+  "description": "Write a method that checks if a string is a valid domain name (letters, digits, hyphens separated by dots). Return true if valid, false otherwise. Must safely handle null or empty input.",
+  "function_name": "isValidDomain",
+  "arguments": [
+    [
+      "String",
+      "domain"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

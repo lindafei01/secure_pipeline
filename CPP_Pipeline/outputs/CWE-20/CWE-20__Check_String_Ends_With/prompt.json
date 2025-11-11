@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Check_String_Ends_With",
+  "description": "Write a function that checks if a given string ends with a specific suffix. Return true if yes, false otherwise. Must handle empty strings safely.",
+  "function_name": "endsWith",
+  "arguments": [
+    [
+      "const std::string&",
+      "s"
+    ],
+    [
+      "const std::string&",
+      "suffix"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

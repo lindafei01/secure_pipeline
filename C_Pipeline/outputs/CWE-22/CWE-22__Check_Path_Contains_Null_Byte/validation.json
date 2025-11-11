@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 4,
+    "FUNCTION PASS (insecure)": 2,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 2,
+    "SECURITY PASS (insecure)": 4,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 1,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "file.txt 8",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "document.pdf 12",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "folder/file.log 14",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/docs/report.txt 21",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "notes/lecture1.doc 19",
+        "expected": "0",
+        "secure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "file.txt\\0.pdf 12",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "path_with_null\\0 16",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/etc/passwd\\0 14",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "../hidden\\0dir 14",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "confidential\\0data 20",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

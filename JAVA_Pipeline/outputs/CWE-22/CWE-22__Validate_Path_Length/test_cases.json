@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user 4096",
+      "expected_output": "true"
+    },
+    {
+      "input": "/usr/local/bin/important_script.sh 4096",
+      "expected_output": "true"
+    },
+    {
+      "input": "/etc/very/long/path/to/configuration/file/that/is/well/within/limits 4096",
+      "expected_output": "true"
+    },
+    {
+      "input": "/short/path 5",
+      "expected_output": "false"
+    },
+    {
+      "input": "/exactly/kbyte/path 2048",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "<4097-char-path> 4096",
+      "expected_output": "false"
+    },
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user 4097",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/log/../../../../../etc/passwd 4096",
+      "expected_output": "true"
+    },
+    {
+      "input": "../relative/../path 4096",
+      "expected_output": "true"
+    }
+  ]
+}

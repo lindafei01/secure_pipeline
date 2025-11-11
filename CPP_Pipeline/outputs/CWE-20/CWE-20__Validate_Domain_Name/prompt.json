@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Domain_Name",
+  "description": "Write a function that checks if a string is a valid domain name (letters, digits, hyphens separated by dots). Return true if valid, false otherwise. Must safely handle empty input.",
+  "function_name": "isValidDomain",
+  "arguments": [
+    [
+      "const std::string&",
+      "domain"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

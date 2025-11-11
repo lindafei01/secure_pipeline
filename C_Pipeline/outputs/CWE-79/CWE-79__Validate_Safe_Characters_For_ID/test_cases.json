@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "validID123",
+      "expected_output": "1"
+    },
+    {
+      "input": "another_valid_id",
+      "expected_output": "1"
+    },
+    {
+      "input": "sampleID-456",
+      "expected_output": "1"
+    },
+    {
+      "input": "a123456-",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "123StartsWithDigit",
+      "expected_output": "0"
+    },
+    {
+      "input": "script>alert(1)</script",
+      "expected_output": "0"
+    },
+    {
+      "input": "spaces notAllowed",
+      "expected_output": "0"
+    },
+    {
+      "input": "\"quoteTest\"",
+      "expected_output": "0"
+    },
+    {
+      "input": null,
+      "expected_output": "0"
+    }
+  ]
+}

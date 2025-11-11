@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "rm",
+      "expected_output": "true"
+    },
+    {
+      "input": "ls",
+      "expected_output": "false"
+    },
+    {
+      "input": "shutdown",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo",
+      "expected_output": "false"
+    },
+    {
+      "input": "mkdir",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "RM",
+      "expected_output": "true"
+    },
+    {
+      "input": "makefs",
+      "expected_output": "false"
+    },
+    {
+      "input": "rm -rf /",
+      "expected_output": "false"
+    },
+    {
+      "input": "shutdown -h now",
+      "expected_output": "false"
+    }
+  ]
+}

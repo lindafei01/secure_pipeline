@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/",
+      "expected_output": "/home/user"
+    },
+    {
+      "input": "/home/user/docs/",
+      "expected_output": "/home/user/docs"
+    },
+    {
+      "input": "/",
+      "expected_output": "/"
+    },
+    {
+      "input": "/home/user/docs/file.txt",
+      "expected_output": "/home/user/docs/file.txt"
+    },
+    {
+      "input": "relative/path/to/file/",
+      "expected_output": "relative/path/to/file"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "//",
+      "expected_output": "/"
+    },
+    {
+      "input": "/..///",
+      "expected_output": "/.."
+    },
+    {
+      "input": "////",
+      "expected_output": "/"
+    },
+    {
+      "input": "not/a/valid/path/",
+      "expected_output": "not/a/valid/path"
+    }
+  ]
+}

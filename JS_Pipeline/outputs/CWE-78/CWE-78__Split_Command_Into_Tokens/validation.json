@@ -1,0 +1,158 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 4,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 4,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "ls -la /home/user",
+        "expected": "['ls', '-la', '/home/user']",
+        "secure_result": {
+          "passed": false,
+          "output": "['ls']",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['ls']",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "echo \"Hello, World!\"",
+        "expected": "['echo', 'Hello, World!']",
+        "secure_result": {
+          "passed": false,
+          "output": "['echo']",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['echo']",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "cat file.txt",
+        "expected": "['cat', 'file.txt']",
+        "secure_result": {
+          "passed": false,
+          "output": "['cat']",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['cat']",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "grep \"pattern\" file.txt",
+        "expected": "['grep', 'pattern', 'file.txt']",
+        "secure_result": {
+          "passed": false,
+          "output": "['grep']",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['grep']",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "cp /source/file /destination/",
+        "expected": "['cp', '/source/file', '/destination/']",
+        "secure_result": {
+          "passed": false,
+          "output": "['cp']",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['cp']",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "rm -rf \"some unsafe argument\"",
+        "expected": "['rm', '-rf', 'some unsafe argument']",
+        "secure_result": {
+          "passed": false,
+          "output": "['rm']",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['rm']",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "mv \"file with spaces.txt\" \"new location/\"",
+        "expected": "['mv', 'file with spaces.txt', 'new location/']",
+        "secure_result": {
+          "passed": false,
+          "output": "['mv']",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['mv']",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "touch \"escaped\\ space.txt\"",
+        "expected": "['touch', 'escaped\\\\ space.txt']",
+        "secure_result": {
+          "passed": false,
+          "output": "['touch']",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['touch']",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "find / -name \"*.txt\"",
+        "expected": "['find', '/', '-name', '*.txt']",
+        "secure_result": {
+          "passed": false,
+          "output": "['find']",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['find']",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

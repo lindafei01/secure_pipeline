@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Temperature_Range",
+  "description": "Write a function that checks if a double temperature value falls within a reasonable range (-100.0 to 200.0). Return 1 if valid, 0 otherwise. Must handle NaN or extreme values safely.",
+  "function_name": "is_valid_temperature",
+  "arguments": [
+    [
+      "double",
+      "temp"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

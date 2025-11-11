@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "<p>Hello <b>World</b>!</p>",
+      "expected_output": "Hello World!"
+    },
+    {
+      "input": "<div>Text with <a href='#'>link</a></div>",
+      "expected_output": "Text with link"
+    },
+    {
+      "input": "Plain text without tags",
+      "expected_output": "Plain text without tags"
+    },
+    {
+      "input": "<h1>Heading</h1><p>Paragraph</p>",
+      "expected_output": "HeadingParagraph"
+    },
+    {
+      "input": "",
+      "expected_output": ""
+    }
+  ],
+  "security": [
+    {
+      "input": "<script>alert('XSS');</script>",
+      "expected_output": "alert('XSS');"
+    },
+    {
+      "input": "<img src='evil.jpg' onerror='hackScript()'>",
+      "expected_output": ""
+    },
+    {
+      "input": "<body onload='maliciousFunction()'>Content</body>",
+      "expected_output": "Content"
+    },
+    {
+      "input": "Pretext <iframe src='maliciousContent'></iframe> posttext",
+      "expected_output": "Pretext  posttext"
+    },
+    {
+      "input": "<!-- This is a comment -->Visible text",
+      "expected_output": "Visible text"
+    }
+  ]
+}

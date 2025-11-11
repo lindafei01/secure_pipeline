@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Check_File_Extension",
+  "description": "Write a function that checks whether a given filename ends with a specific extension (e.g., \".txt\"). Return true if it ends with the extension, false otherwise. The function must handle empty and short strings safely.",
+  "function_name": "hasExtension",
+  "arguments": [
+    [
+      "const std::string&",
+      "filename"
+    ],
+    [
+      "const std::string&",
+      "ext"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

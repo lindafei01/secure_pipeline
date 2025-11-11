@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "simple_arg",
+      "expected_output": "simple_arg"
+    },
+    {
+      "input": "complex-arg_with.different#chars",
+      "expected_output": "complex-arg_with.different_chars"
+    },
+    {
+      "input": "filename.txt",
+      "expected_output": "filename.txt"
+    },
+    {
+      "input": "   leading_and_trailing_spaces   ",
+      "expected_output": "leading_and_trailing_spaces"
+    },
+    {
+      "input": "",
+      "expected_output": ""
+    }
+  ],
+  "security": [
+    {
+      "input": "file; rm -rf",
+      "expected_output": "file_rm_-rf"
+    },
+    {
+      "input": "`shutdown now`",
+      "expected_output": "_shutdown_now_"
+    },
+    {
+      "input": "normal_arg && echo Exploit",
+      "expected_output": "normal_arg___echo_Exploit"
+    },
+    {
+      "input": "(del *.*)",
+      "expected_output": "_del____"
+    },
+    {
+      "input": "cat /etc/passwd",
+      "expected_output": "cat_/etc/passwd"
+    }
+  ]
+}

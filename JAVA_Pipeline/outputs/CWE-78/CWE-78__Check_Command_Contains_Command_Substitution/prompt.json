@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Check_Command_Contains_Command_Substitution",
+  "description": "Write a function that checks if a command contains command substitution syntax ($(...) or `...`). Return true if found, false otherwise. Must handle null safely. Example (Found): hasCommandSubstitution(\"echo $(whoami)\") -> true. Example (Not Found): hasCommandSubstitution(\"echo hello\") -> false.",
+  "function_name": "hasCommandSubstitution",
+  "arguments": [
+    [
+      "String",
+      "command"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Check_Boolean_String",
+  "description": "Write a function that converts strings 'true' or 'false' (case-insensitive) to boolean true or false, and returns null for invalid input. Must handle null/undefined safely.",
+  "function_name": "parseBool",
+  "arguments": [
+    [
+      "string",
+      "s"
+    ]
+  ],
+  "returns": "boolean | null",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "user123",
+      "expected_output": "true"
+    },
+    {
+      "input": "hi",
+      "expected_output": "false"
+    },
+    {
+      "input": "username_too_long_for_the_system",
+      "expected_output": "false"
+    },
+    {
+      "input": "valid_name_20chars__ok",
+      "expected_output": "true"
+    },
+    {
+      "input": "just__right_20_chars",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "null",
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined",
+      "expected_output": "false"
+    },
+    {
+      "input": "user@name",
+      "expected_output": "false"
+    },
+    {
+      "input": "user-name",
+      "expected_output": "false"
+    },
+    {
+      "input": "  ",
+      "expected_output": "false"
+    }
+  ]
+}

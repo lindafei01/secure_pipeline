@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "user-name_123",
+      "expected_output": "true"
+    },
+    {
+      "input": "valid_attribute_001",
+      "expected_output": "true"
+    },
+    {
+      "input": "attribute_with-hyphen",
+      "expected_output": "true"
+    },
+    {
+      "input": "JustNumbers123",
+      "expected_output": "true"
+    },
+    {
+      "input": "",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "user' onload='alert(1)",
+      "expected_output": "false"
+    },
+    {
+      "input": "javascript:alert(1)",
+      "expected_output": "false"
+    },
+    {
+      "input": "<img src=x onerror=alert(1)>",
+      "expected_output": "false"
+    },
+    {
+      "input": "../path_traversal_attack!",
+      "expected_output": "false"
+    },
+    {
+      "input": "eval_function()",
+      "expected_output": "false"
+    }
+  ]
+}

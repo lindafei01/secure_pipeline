@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Parse_Command_Option",
+  "description": "Write a function that parses a string in the form \"--key=value\" and returns a pair with the key and value. Return an empty pair if the format is invalid. Must validate input safely and not throw exceptions.",
+  "function_name": "parseOption",
+  "arguments": [
+    [
+      "const std::string&",
+      "arg"
+    ]
+  ],
+  "returns": "std::pair<std::string, std::string>",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <utility>\n"
+}

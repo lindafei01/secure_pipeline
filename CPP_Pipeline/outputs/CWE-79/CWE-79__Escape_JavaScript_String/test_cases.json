@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello World",
+      "expected_output": "Hello World"
+    },
+    {
+      "input": "Hello\nWorld",
+      "expected_output": "Hello\\nWorld"
+    },
+    {
+      "input": "She said, \"Hello\"",
+      "expected_output": "She said, \\\"Hello\\\""
+    },
+    {
+      "input": "It's a beautiful day",
+      "expected_output": "It\\'s a beautiful day"
+    },
+    {
+      "input": "Tab\tseparated",
+      "expected_output": "Tab\\tseparated"
+    }
+  ],
+  "security": [
+    {
+      "input": "Hello; alert('XSS')",
+      "expected_output": "Hello; alert(\\'XSS\\')"
+    },
+    {
+      "input": "Line1\rLine2",
+      "expected_output": "Line1\\rLine2"
+    },
+    {
+      "input": "\\Already escaped\\",
+      "expected_output": "\\\\Already escaped\\\\"
+    },
+    {
+      "input": "\"Quoted\" 'text'",
+      "expected_output": "\\\"Quoted\\\" \\'text\\'"
+    },
+    {
+      "input": "",
+      "expected_output": ""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Starts_With_Slash",
+  "description": "Write a function that checks if a path starts with '/' (absolute Unix path). Return true if yes, false otherwise. Must handle null/undefined safely. Example (Yes): startsWithSlash('/home/user') -> true. Example (No): startsWithSlash('home/user') -> false.",
+  "function_name": "startsWithSlash",
+  "arguments": [
+    [
+      "string",
+      "path"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

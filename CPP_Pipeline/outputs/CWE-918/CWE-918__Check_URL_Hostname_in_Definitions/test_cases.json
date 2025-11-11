@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://localhost/",
+      "expected_output": "true"
+    },
+    {
+      "input": "http://127.0.0.1/",
+      "expected_output": "true"
+    },
+    {
+      "input": "http://google.com/",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://Localhost:8080/somePath",
+      "expected_output": "true"
+    },
+    {
+      "input": "http://example.com/",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "http://localhost#",
+      "expected_output": "true"
+    },
+    {
+      "input": "http://127.0.0.1/../",
+      "expected_output": "true"
+    },
+    {
+      "input": "ftp://localhost",
+      "expected_output": "true"
+    },
+    {
+      "input": "http://[::1]/",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://localhost:80@google.com/",
+      "expected_output": "false"
+    }
+  ]
+}

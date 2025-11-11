@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "1",
+      "expected_output": "true"
+    },
+    {
+      "input": "12",
+      "expected_output": "true"
+    },
+    {
+      "input": "6",
+      "expected_output": "true"
+    },
+    {
+      "input": "0",
+      "expected_output": "false"
+    },
+    {
+      "input": "13",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "-1",
+      "expected_output": "false"
+    },
+    {
+      "input": "100",
+      "expected_output": "false"
+    },
+    {
+      "input": "2147483647",
+      "expected_output": "false"
+    },
+    {
+      "input": "-2147483648",
+      "expected_output": "false"
+    },
+    {
+      "input": "Integer.MAX_VALUE",
+      "expected_output": "false"
+    }
+  ]
+}

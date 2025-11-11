@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/home/user/./docs/../file.txt",
+        "expected": "/home/user/file.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "/home/user/file.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/user/file.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/docs/././file.txt",
+        "expected": "/home/user/docs/file.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "/home/user/docs/file.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/user/docs/file.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/../user2/file.txt",
+        "expected": "/home/user2/file.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "/home/user2/file.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/user2/file.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/./user/./docs/./file.txt",
+        "expected": "/home/user/docs/file.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "/home/user/docs/file.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/user/docs/file.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/docs/../../file.txt",
+        "expected": "/home/file.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "/home/file.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/file.txt",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "/home/user/../../etc/passwd",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "/etc/passwd",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/etc/passwd",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user/../../../",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/etc/passwd/../../usr/bin",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "/usr/bin",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/usr/bin",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user/docs/../../../../",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/../../../../",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

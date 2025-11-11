@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/docs",
+      "expected_output": "1"
+    },
+    {
+      "input": "home/user/docs",
+      "expected_output": "0"
+    },
+    {
+      "input": "/etc/config",
+      "expected_output": "1"
+    },
+    {
+      "input": "etc/config",
+      "expected_output": "0"
+    },
+    {
+      "input": "/var/logs",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "NULL",
+      "expected_output": "0"
+    },
+    {
+      "input": "/../../etc/passwd",
+      "expected_output": "1"
+    },
+    {
+      "input": "../usr/local/bin",
+      "expected_output": "0"
+    },
+    {
+      "input": "/usr/bin/../../bin",
+      "expected_output": "1"
+    },
+    {
+      "input": " ",
+      "expected_output": "0"
+    }
+  ]
+}

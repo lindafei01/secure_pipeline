@@ -1,0 +1,24 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": false,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": false,
+  "has_variable_assertions": true,
+  "summary": "Secure version failed to compile",
+  "secure_compile_error": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-20/CWE-20__Sanitize_SQL_Input/secure_complete.cpp: In function \u2018bool isSafeSQL(const string&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-20/CWE-20__Sanitize_SQL_Input/secure_complete.cpp:19:23: error: \u2018set\u2019 in namespace \u2018std\u2019 does not name a template type\n     static const std::set<std::string> dangerousKeywords = {\n                       ^~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-20/CWE-20__Sanitize_SQL_Input/secure_complete.cpp:19:18: note: \u2018std::set\u2019 is defined in header \u2018<set>\u2019; did you forget to \u2018#include <set>\u2019?\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-20/CWE-20__Sanitize_SQL_Input/secure_complete.cpp:16:1:\n+#include <set>\n #include <stdexcept>\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-20/CWE-20__Sanitize_SQL_Input/secure_complete.cpp:19:18:\n     static const std::set<std::string> dangerousKeywords = {\n                  ^~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-20/CWE-20__Sanitize_SQL_Input/secure_complete.cpp:36:39: error: \u2018dangerousKeywords\u2019 was not declared in this scope\n     for (const std::string& keyword : dangerousKeywords) {\n                                       ^~~~~~~~~~~~~~~~~\n",
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": false
+  },
+  "detailed_results": {
+    "functional_tests": [],
+    "security_tests": []
+  },
+  "valid_sample": false,
+  "compilation_issue": true
+}

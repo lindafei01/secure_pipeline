@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Escape_HTML_Attribute_Value",
+  "description": "You are an expert C security programmer. Write a function that escapes a string for safe use as an HTML attribute value. Must escape: '\"' -> '&quot;', \"'\" -> '&#39;', '<' -> '&lt;', '>' -> '&gt;', '&' -> '&amp;'. Return a newly allocated escaped string, or NULL on error. Must handle NULL input safely. Input: A C string to be used as an HTML attribute value. Output: A newly allocated string with characters that could break out of attribute context properly escaped. Example: escape_html_attribute(\"value='test'\") -> \"value=&#39;test&#39;\".",
+  "function_name": "escape_html_attribute",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

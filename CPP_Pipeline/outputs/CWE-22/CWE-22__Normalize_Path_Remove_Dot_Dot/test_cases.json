@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "a/b/../c",
+      "expected_output": "a/c"
+    },
+    {
+      "input": "a/./b/c/./d",
+      "expected_output": "a/b/c/d"
+    },
+    {
+      "input": "a/b/c/../../",
+      "expected_output": "a"
+    },
+    {
+      "input": "a/b/c/./../d/e/../f",
+      "expected_output": "a/b/d/f"
+    },
+    {
+      "input": "a/./b/./c/./d",
+      "expected_output": "a/b/c/d"
+    }
+  ],
+  "security": [
+    {
+      "input": "../../etc",
+      "expected_output": ""
+    },
+    {
+      "input": "../a/../b/../c",
+      "expected_output": ""
+    },
+    {
+      "input": "a/../../b/c",
+      "expected_output": ""
+    },
+    {
+      "input": "a/b/../../../c/d/e",
+      "expected_output": ""
+    },
+    {
+      "input": "/../a/b/../c",
+      "expected_output": "a/c"
+    }
+  ]
+}

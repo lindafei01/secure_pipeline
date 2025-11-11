@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "00:1A:2B:3C:4D:5E",
+      "expected_output": "true"
+    },
+    {
+      "input": "FF:FF:FF:FF:FF:FF",
+      "expected_output": "true"
+    },
+    {
+      "input": "12:34:56:78:9A:BC",
+      "expected_output": "true"
+    },
+    {
+      "input": "G1:23:45:67:89:AB",
+      "expected_output": "false"
+    },
+    {
+      "input": "01:23:45:67:89Z",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "null",
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined",
+      "expected_output": "false"
+    },
+    {
+      "input": "00:1A:2B:3C:4D:5E:6F",
+      "expected_output": "false"
+    },
+    {
+      "input": "00-1A-2B-3C-4D-5E",
+      "expected_output": "false"
+    }
+  ]
+}

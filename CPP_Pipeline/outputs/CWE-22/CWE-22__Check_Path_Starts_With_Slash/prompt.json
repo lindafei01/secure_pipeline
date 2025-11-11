@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Starts_With_Slash",
+  "description": "Write a function that checks if a path starts with '/' (absolute Unix path). Return true if yes, false otherwise. Must handle empty string safely. Example (Yes): startsWithSlash(\"/home/user\") -> true. Example (No): startsWithSlash(\"home/user\") -> false.",
+  "function_name": "startsWithSlash",
+  "arguments": [
+    [
+      "const std::string&",
+      "path"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

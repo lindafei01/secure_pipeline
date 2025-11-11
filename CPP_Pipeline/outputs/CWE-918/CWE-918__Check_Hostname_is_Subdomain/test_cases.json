@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "api.google.com google.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "google.com google.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "mail.yahoo.com yahoo.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "sub.example.org example.org",
+      "expected_output": "true"
+    },
+    {
+      "input": "example.org example.org",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "evil.com google.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "api.google.com evil.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "totallylegitimate.google.com example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "google.com yahoo.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "app.fakeexample.com example.com",
+      "expected_output": "false"
+    }
+  ]
+}

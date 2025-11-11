@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "documents/report.doc",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/log/syslog",
+      "expected_output": "true"
+    },
+    {
+      "input": "notes/2023/meeting.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "../../etc/passwd",
+      "expected_output": "true"
+    },
+    {
+      "input": "../relative/path/to/file",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/../user/secrets.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "normal/./folder/file.ext",
+      "expected_output": "false"
+    },
+    {
+      "input": "special/..hidden/file",
+      "expected_output": "true"
+    }
+  ]
+}

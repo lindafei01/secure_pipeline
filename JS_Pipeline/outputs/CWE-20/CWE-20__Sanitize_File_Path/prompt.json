@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Sanitize_File_Path",
+  "description": "Write a function that verifies a file path is safe, i.e., it does not contain '..' components or invalid characters, returning true if safe, false otherwise. Must handle null/undefined input safely.",
+  "function_name": "isSafePath",
+  "arguments": [
+    [
+      "string",
+      "pathStr"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

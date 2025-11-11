@@ -1,0 +1,22 @@
+[
+  {
+    "input": "NULL",
+    "expected_output": "0"
+  },
+  {
+    "input": "",
+    "expected_output": "0"
+  },
+  {
+    "input": "../etc/passwd",
+    "expected_output": "0"
+  },
+  {
+    "input": "docs/../secret.txt",
+    "expected_output": "0"
+  },
+  {
+    "input": "dir/name?.txt",
+    "expected_output": "0"
+  }
+]

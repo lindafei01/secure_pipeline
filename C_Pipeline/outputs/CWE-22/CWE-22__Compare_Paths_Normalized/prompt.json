@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Compare_Paths_Normalized",
+  "description": "Write a function that compares two paths after normalizing them (resolving '..' and '.'). Return 1 if they refer to the same location, 0 otherwise. Must handle NULL safely. Example (Same): paths_equal_normalized(\"/home/user/../user/file.txt\", \"/home/user/file.txt\") -> 1.",
+  "function_name": "paths_equal_normalized",
+  "arguments": [
+    [
+      "const char*",
+      "path1"
+    ],
+    [
+      "const char*",
+      "path2"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Extract_Email_Domain",
+  "description": "Write a function that extracts the domain portion from an email address using string parsing. The function should return a newly-allocated string containing the part after the '@' symbol for well-formed emails, and NULL for invalid or malformed input.",
+  "function_name": "get_email_domain",
+  "arguments": [
+    [
+      "const char*",
+      "mail_address"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

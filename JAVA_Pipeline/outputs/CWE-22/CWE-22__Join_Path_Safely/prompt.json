@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Join_Path_Safely",
+  "description": "Write a function that joins a base directory with a filename, preventing directory traversal. Return a safe path string, or null if traversal detected. Example (Safe): joinPathSafe(\"/var/www\", \"file.txt\") -> \"/var/www/file.txt\". Example (Unsafe): joinPathSafe(\"/var/www\", \"../etc/passwd\") -> null.",
+  "function_name": "joinPathSafe",
+  "arguments": [
+    [
+      "String",
+      "baseDir"
+    ],
+    [
+      "String",
+      "filename"
+    ]
+  ],
+  "returns": "String",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

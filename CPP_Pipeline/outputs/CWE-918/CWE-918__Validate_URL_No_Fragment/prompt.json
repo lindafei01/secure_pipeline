@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Validate_URL_No_Fragment",
+  "description": "Write a function that checks if a URL contains a fragment (e.g., '#section1'). Example (No Fragment): urlHasNoFragment(\"http://ex.com/path?q=1\") -> true. Example (Has Fragment): urlHasNoFragment(\"http://ex.com/path#section\") -> false.",
+  "function_name": "urlHasNoFragment",
+  "arguments": [
+    [
+      "const std::string&",
+      "url"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

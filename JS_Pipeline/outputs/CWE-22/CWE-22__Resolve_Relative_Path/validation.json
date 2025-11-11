@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": false,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 5,
+    "SECURITY PASS (insecure)": 5,
+    "REQUIRES_INSECURE_IVULNERABLE": false
+  },
+  "error_rate_insecure": 0,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/var/www html/index.html",
+        "expected": "/var/www/html/index.html",
+        "secure_result": {
+          "passed": true,
+          "output": "/var/www/html/index.html",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/var/www/html/index.html",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user docs/readme.txt",
+        "expected": "/home/user/docs/readme.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "/home/user/docs/readme.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/user/docs/readme.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/website assets/images/img.png",
+        "expected": "/home/user/website/assets/images/img.png",
+        "secure_result": {
+          "passed": true,
+          "output": "/home/user/website/assets/images/img.png",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/user/website/assets/images/img.png",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/data/files logs/2023/log.txt",
+        "expected": "/data/files/logs/2023/log.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "/data/files/logs/2023/log.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/data/files/logs/2023/log.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/etc config/settings.json",
+        "expected": "/etc/config/settings.json",
+        "secure_result": {
+          "passed": true,
+          "output": "/etc/config/settings.json",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/etc/config/settings.json",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "/var/www ../etc/passwd",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user ../../usr/bin/script.sh",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/data/files ../../../private/secret.txt",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/etc ../../../../root/.bashrc",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user ./../documents/../hidden/file.txt",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "-example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "example.com-",
+      "expected_output": "true"
+    },
+    {
+      "input": "my-host.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "sub.-domain.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "subdomain.community",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "-",
+      "expected_output": "true"
+    },
+    {
+      "input": "-",
+      "expected_output": "true"
+    },
+    {
+      "input": "a.-",
+      "expected_output": "true"
+    },
+    {
+      "input": "-.a",
+      "expected_output": "true"
+    },
+    {
+      "input": "-.doma-.in.-com",
+      "expected_output": "true"
+    }
+  ]
+}

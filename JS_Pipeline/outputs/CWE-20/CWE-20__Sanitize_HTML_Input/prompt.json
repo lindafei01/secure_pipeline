@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Sanitize_HTML_Input",
+  "description": "Write a function that checks if a string contains potentially dangerous HTML tags like <script>, <iframe>, or <object>. Return true if safe (no dangerous tags), false otherwise. Must handle null/undefined input safely.",
+  "function_name": "isSafeHTML",
+  "arguments": [
+    [
+      "string",
+      "html"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

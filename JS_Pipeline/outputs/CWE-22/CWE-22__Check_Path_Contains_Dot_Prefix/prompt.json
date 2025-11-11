@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Contains_Dot_Prefix",
+  "description": "Write a function that checks if any path component starts with a dot '.' (hidden files on Unix). Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): hasDotPrefix('/home/.ssh/id_rsa') -> true. Example (Not Found): hasDotPrefix('/home/user/file.txt') -> false.",
+  "function_name": "hasDotPrefix",
+  "arguments": [
+    [
+      "string",
+      "path"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

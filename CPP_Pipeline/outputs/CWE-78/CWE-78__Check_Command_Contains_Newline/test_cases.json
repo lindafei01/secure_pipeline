@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls -la",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo \"hello world\"",
+      "expected_output": "false"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "cat /etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "find . -name \"*.cpp\"",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "ls\nrm -rf /",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo \"test\"\necho \"another\"",
+      "expected_output": "true"
+    },
+    {
+      "input": "touch file.txt\ncat file.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "grep \"pattern\" file.txt\nsort",
+      "expected_output": "true"
+    },
+    {
+      "input": "ls; echo \"newline is \\n\"",
+      "expected_output": "false"
+    }
+  ]
+}

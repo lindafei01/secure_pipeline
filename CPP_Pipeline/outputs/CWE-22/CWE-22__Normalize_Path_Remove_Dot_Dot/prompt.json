@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Normalize_Path_Remove_Dot_Dot",
+  "description": "Write a function that normalizes a path by resolving '..' and '.' components. Return a normalized path string, or empty string on error. Must prevent directory traversal. Example: normalizePath(\"a/b/../c\") -> \"a/c\". Example: normalizePath(\"../../etc\") -> \"\" (traverses above root).",
+  "function_name": "normalizePath",
+  "arguments": [
+    [
+      "const std::string&",
+      "path"
+    ]
+  ],
+  "returns": "std::string",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

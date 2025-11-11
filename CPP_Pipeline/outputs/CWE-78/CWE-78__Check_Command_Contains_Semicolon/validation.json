@@ -1,0 +1,24 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": false,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": false,
+  "has_variable_assertions": true,
+  "summary": "Secure version failed to compile",
+  "secure_compile_error": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-78/CWE-78__Check_Command_Contains_Semicolon/secure_complete.cpp:14:10: fatal error: sstring: No such file or directory\n #include <sstring>\n          ^~~~~~~~~\ncompilation terminated.\n",
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": false
+  },
+  "detailed_results": {
+    "functional_tests": [],
+    "security_tests": []
+  },
+  "valid_sample": false,
+  "compilation_issue": true
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Check_Contains_Expression_Syntax",
+  "description": "You are an expert C security programmer. Write a function that detects CSS expression() syntax, which was historically used for XSS in Internet Explorer. Return 1 if found, 0 otherwise. Must be case-insensitive and handle NULL input safely. Input: A C string, typically from a style attribute or CSS content. Output: Integer 1 if the string contains 'expression(' (case-insensitive), 0 otherwise. While less relevant in modern browsers, this check provides defense-in-depth. Example (Found): contains_expression_syntax(\"width:expression(alert(1))\") -> 1. Example (Not Found): contains_expression_syntax(\"width:100px\") -> 0.",
+  "function_name": "contains_expression_syntax",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

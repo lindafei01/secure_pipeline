@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Domain_Label",
+  "description": "Write a function that checks a domain label (part of a domain name) contains only letters, digits or hyphen, does not start or end with hyphen. Return true if valid, false otherwise. Must safely handle empty input.",
+  "function_name": "isValidDomainLabel",
+  "arguments": [
+    [
+      "const std::string&",
+      "label"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

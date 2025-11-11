@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Is_Absolute",
+  "description": "Write a function that checks if a path is absolute (starts with '/' on Unix or drive letter on Windows). Return true if absolute, false otherwise. Must handle empty string safely. Example (Absolute): isAbsolutePath(\"/home/user\") -> true. Example (Relative): isAbsolutePath(\"../file.txt\") -> false.",
+  "function_name": "isAbsolutePath",
+  "arguments": [
+    [
+      "const std::string&",
+      "path"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

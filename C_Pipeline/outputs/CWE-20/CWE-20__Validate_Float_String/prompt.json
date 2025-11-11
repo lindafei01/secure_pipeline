@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Float_String",
+  "description": "Write a function that checks if a string represents a valid floating-point number (e.g., optional sign, digits, decimal point). Return 1 if valid, 0 otherwise. Must not crash on NULL or malformed input.",
+  "function_name": "is_valid_float",
+  "arguments": [
+    [
+      "const char*",
+      "s"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

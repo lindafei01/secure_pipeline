@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Canonicalize_Path",
+  "description": "Write a function that converts a path to its canonical form (resolves all '.', '..'). Return a canonical path string, or null on error. Must prevent traversal outside allowed directories. Example: canonicalizePath('/home/user/./docs/../file.txt') -> '/home/user/file.txt'.",
+  "function_name": "canonicalizePath",
+  "arguments": [
+    [
+      "string",
+      "path"
+    ]
+  ],
+  "returns": "string|null",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

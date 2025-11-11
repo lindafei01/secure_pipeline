@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_URL_has_Query",
+  "description": "Write a function that checks if a URL `url` contains a query string (i.e., a '?' character). Example (True): url_has_query(\"http://ex.com/path?a=1\") -> 1. Example (False): url_has_query(\"http://ex.com/path\") -> 0.",
+  "function_name": "url_has_query",
+  "arguments": [
+    [
+      "const char*",
+      "url"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Extract_Directory_From_Path",
+  "description": "Write a function that extracts the directory part from a path (everything before the last separator). Return a newly allocated directory string, or NULL on error. Example: extract_directory(\"/home/user/file.txt\") -> \"/home/user\". Example: extract_directory(\"file.txt\") -> NULL.",
+  "function_name": "extract_directory",
+  "arguments": [
+    [
+      "const char*",
+      "path"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

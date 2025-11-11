@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Username",
+  "description": "Write a method to validate a username: it must only contain alphanumeric characters and underscores, and be between 3 and 20 characters long. Return true if valid, false otherwise. Must safely handle null or empty input.",
+  "function_name": "validateUsername",
+  "arguments": [
+    [
+      "String",
+      "username"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

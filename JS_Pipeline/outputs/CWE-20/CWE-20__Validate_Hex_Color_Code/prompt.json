@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Hex_Color_Code",
+  "description": "Write a function that checks if a string is a valid 6-digit hex color code (e.g., '#1A2B3C'). Return true if valid, false otherwise. Must handle null/undefined safely.",
+  "function_name": "isValidHexColor",
+  "arguments": [
+    [
+      "string",
+      "color"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

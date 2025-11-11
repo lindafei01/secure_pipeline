@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/var/www/html /var/www",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/log /var/www",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/www/html/ /var/www",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/docs /home/user",
+      "expected_output": "true"
+    },
+    {
+      "input": "/etc/nginx/config /etc/nginx",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "/var/www/html null",
+      "expected_output": "false"
+    },
+    {
+      "input": "null /var/www",
+      "expected_output": "false"
+    },
+    {
+      "input": "null null",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/www/html /var/www/html",
+      "expected_output": "true"
+    },
+    {
+      "input": "/../relative /..",
+      "expected_output": "true"
+    }
+  ]
+}

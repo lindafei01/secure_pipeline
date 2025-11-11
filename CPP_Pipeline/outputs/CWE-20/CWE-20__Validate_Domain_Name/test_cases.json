@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "sub-domain.example.co.uk",
+      "expected_output": "true"
+    },
+    {
+      "input": "123-456.789",
+      "expected_output": "true"
+    },
+    {
+      "input": "-startdash.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "enddash-.com",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "toolongcomponent.thiscomponentismorethan63characterslongwhichisinvalid.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "valid.but.with.very.long.total.length.thiscouldbetoolong.waytooexcessivelylong.name.quitehardtoimagine.howlongitcouldget.but.possible.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "valid-but_unusual.com",
+      "expected_output": "false"
+    }
+  ]
+}

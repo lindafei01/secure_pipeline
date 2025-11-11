@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "http://1.2.3.4",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://sub.example.co.uk",
+      "expected_output": "true"
+    },
+    {
+      "input": "https://192.168.0.1",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://www.google.com",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "http://999.999.999.999",
+      "expected_output": "true"
+    },
+    {
+      "input": "ftp://127.0.0.1",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://0x7f.0x0.0x0.0x1",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://255.255.255.255",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://user:pass@123.456.78.90",
+      "expected_output": "false"
+    }
+  ]
+}

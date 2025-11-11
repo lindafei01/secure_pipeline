@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": false,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 4,
+    "FUNCTION PASS (insecure)": 4,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 4,
+    "SECURITY PASS (insecure)": 5,
+    "REQUIRES_INSECURE_IVULNERABLE": false
+  },
+  "error_rate_insecure": 0,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/home/user/document.txt",
+        "expected": "document.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "document.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "document.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/var/log/system.log",
+        "expected": "system.log",
+        "secure_result": {
+          "passed": true,
+          "output": "system.log",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "system.log",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/usr/bin/",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "bin",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/singlefile",
+        "expected": "singlefile",
+        "secure_result": {
+          "passed": true,
+          "output": "singlefile",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "NULL",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "../etc/passwd",
+        "expected": "passwd",
+        "secure_result": {
+          "passed": true,
+          "output": "passwd",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "passwd",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/path/to/.hiddenfile",
+        "expected": ".hiddenfile",
+        "secure_result": {
+          "passed": true,
+          "output": ".hiddenfile",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": ".hiddenfile",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user//",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "user",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/tricky/..//file.txt",
+        "expected": "file.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "file.txt",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "file.txt",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user/sensitive_data/.env",
+        "expected": ".env",
+        "secure_result": {
+          "passed": true,
+          "output": ".env",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": ".env",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

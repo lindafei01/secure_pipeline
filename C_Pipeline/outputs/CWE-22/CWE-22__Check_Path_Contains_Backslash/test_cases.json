@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "C:\\Windows\\System32",
+      "expected_output": "1"
+    },
+    {
+      "input": "/usr/local/bin",
+      "expected_output": "0"
+    },
+    {
+      "input": "D:\\Documents\\Files\\Report.txt",
+      "expected_output": "1"
+    },
+    {
+      "input": "../relative/path",
+      "expected_output": "0"
+    },
+    {
+      "input": "E:/music",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": null,
+      "expected_output": "0"
+    },
+    {
+      "input": "",
+      "expected_output": "0"
+    },
+    {
+      "input": "normal/path\\with\\backslashes",
+      "expected_output": "1"
+    },
+    {
+      "input": "../../etc\\passwd",
+      "expected_output": "1"
+    },
+    {
+      "input": "\\ leading backslash in path",
+      "expected_output": "1"
+    }
+  ]
+}

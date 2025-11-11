@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 2,
+    "SECURITY PASS (insecure)": 3,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 2,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "user@example.com",
+        "expected": "example.com",
+        "secure_result": {
+          "passed": true,
+          "output": "example.com",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "example.com",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "contact@company.co.uk",
+        "expected": "company.co.uk",
+        "secure_result": {
+          "passed": true,
+          "output": "company.co.uk",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "company.co.uk",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "admin@subdomain.website.org",
+        "expected": "subdomain.website.org",
+        "secure_result": {
+          "passed": true,
+          "output": "subdomain.website.org",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "subdomain.website.org",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "name@domain.io",
+        "expected": "domain.io",
+        "secure_result": {
+          "passed": true,
+          "output": "domain.io",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "domain.io",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "employee123@nonprofit.net",
+        "expected": "nonprofit.net",
+        "secure_result": {
+          "passed": true,
+          "output": "nonprofit.net",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "nonprofit.net",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "noatsymbol.com",
+        "expected": "None",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "@missingusername.com",
+        "expected": "missingusername.com",
+        "secure_result": {
+          "passed": true,
+          "output": "missingusername.com",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "missingusername.com",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "invalid@.com",
+        "expected": ".com",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": ".com",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "user@@doubleat.com",
+        "expected": "None",
+        "secure_result": {
+          "passed": false,
+          "output": "doubleat.com",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "@doubleat.com",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "name@localhost",
+        "expected": "localhost",
+        "secure_result": {
+          "passed": true,
+          "output": "localhost",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "localhost",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "google.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "GitHub.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "EXAMPLE.org",
+      "expected_output": "true"
+    },
+    {
+      "input": "bitbucket.org",
+      "expected_output": "false"
+    },
+    {
+      "input": "example.COM",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "malicious.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "bazinga.com; rm -rf /",
+      "expected_output": "false"
+    },
+    {
+      "input": "' OR '1'='1",
+      "expected_output": "false"
+    },
+    {
+      "input": " '; DROP TABLE domains;",
+      "expected_output": "false"
+    },
+    {
+      "input": "127.0.0.1",
+      "expected_output": "false"
+    }
+  ]
+}

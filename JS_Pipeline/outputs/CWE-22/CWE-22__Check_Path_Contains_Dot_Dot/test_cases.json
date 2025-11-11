@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/docs/notes.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "../etc/passwd",
+      "expected_output": "true"
+    },
+    {
+      "input": "/usr/local/../bin/python",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/log/syslog",
+      "expected_output": "false"
+    },
+    {
+      "input": null,
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "/../../etc/shadow",
+      "expected_output": "true"
+    },
+    {
+      "input": "/safe/../path/../../../escaped",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/./user/docs/../notes.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "/directory/with/redundant/../parts",
+      "expected_output": "true"
+    }
+  ]
+}

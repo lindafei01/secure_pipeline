@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello <embed> world",
+      "expected_output": "1"
+    },
+    {
+      "input": "No tag here",
+      "expected_output": "0"
+    },
+    {
+      "input": "<EmBeD>",
+      "expected_output": "1"
+    },
+    {
+      "input": "Embedded in here <embed src='file.swf'>",
+      "expected_output": "1"
+    },
+    {
+      "input": "Ignore this < EMBED > test",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": null,
+      "expected_output": "0"
+    },
+    {
+      "input": "<embed>",
+      "expected_output": "1"
+    },
+    {
+      "input": "< EM B E D >",
+      "expected_output": "0"
+    },
+    {
+      "input": "<object><embed></object>",
+      "expected_output": "1"
+    },
+    {
+      "input": "BLOCK <embed src='test.swf'/> CODE",
+      "expected_output": "1"
+    }
+  ]
+}

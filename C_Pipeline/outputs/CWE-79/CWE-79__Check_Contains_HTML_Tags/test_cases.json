@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello World",
+      "expected_output": "0"
+    },
+    {
+      "input": "",
+      "expected_output": "0"
+    },
+    {
+      "input": "This is a test without tags",
+      "expected_output": "0"
+    },
+    {
+      "input": "Example with <tag> enclosed",
+      "expected_output": "1"
+    },
+    {
+      "input": "Mixed content <with> and without <tags>",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "<script>alert('xss')</script>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<img src='evil.jpg'/>",
+      "expected_output": "1"
+    },
+    {
+      "input": "Safe text until <unexpected>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<!-- comment -->",
+      "expected_output": "1"
+    },
+    {
+      "input": null,
+      "expected_output": "0"
+    }
+  ]
+}

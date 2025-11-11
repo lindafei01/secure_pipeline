@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Extract_Directory_From_Path",
+  "description": "Write a function that extracts the directory part from a path (everything before the last separator). Return the directory string, or null on error. Example: extractDirectory(\"/home/user/file.txt\") -> \"/home/user\". Example: extractDirectory(\"file.txt\") -> null.",
+  "function_name": "extractDirectory",
+  "arguments": [
+    [
+      "String",
+      "path"
+    ]
+  ],
+  "returns": "String",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

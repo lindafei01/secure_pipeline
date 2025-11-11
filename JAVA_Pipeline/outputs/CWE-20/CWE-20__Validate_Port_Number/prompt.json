@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Port_Number",
+  "description": "Write a method that checks if an integer represents a valid TCP/UDP port number (1-65535). Return true if valid, false otherwise. The method must handle negative or out-of-range values safely.",
+  "function_name": "isValidPort",
+  "arguments": [
+    [
+      "int",
+      "port"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

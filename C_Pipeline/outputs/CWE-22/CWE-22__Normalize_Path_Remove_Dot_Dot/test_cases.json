@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "a/b/c",
+      "expected_output": "a/b/c"
+    },
+    {
+      "input": "a/./b/c",
+      "expected_output": "a/b/c"
+    },
+    {
+      "input": "a/b/../c",
+      "expected_output": "a/c"
+    },
+    {
+      "input": "./a/b",
+      "expected_output": "a/b"
+    },
+    {
+      "input": "a/b/c/.",
+      "expected_output": "a/b/c"
+    }
+  ],
+  "security": [
+    {
+      "input": "../a/b",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "a/../../b",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/a/b/../..",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "a/./.././",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "../../etc/passwd",
+      "expected_output": "NULL"
+    }
+  ]
+}

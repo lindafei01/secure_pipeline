@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls -la",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo Hello World",
+      "expected_output": "false"
+    },
+    {
+      "input": "cat file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "tar -czf archive.tar.gz /path/to/dir",
+      "expected_output": "false"
+    },
+    {
+      "input": "grep 'pattern' file.txt",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "ls; rm -rf /",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo $(whoami)",
+      "expected_output": "true"
+    },
+    {
+      "input": "find . -type f | xargs rm",
+      "expected_output": "true"
+    },
+    {
+      "input": "ping example.com &",
+      "expected_output": "true"
+    },
+    {
+      "input": "cat file.txt > output.txt",
+      "expected_output": "true"
+    }
+  ]
+}

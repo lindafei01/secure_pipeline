@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Against_Blocklist",
+  "description": "Write a function that checks if a path matches any entry in a blocklist (NULL-terminated array). Return 1 if blocked, 0 otherwise. Must handle NULL safely. Example (Blocked): is_path_blocked(\"/etc/passwd\", blocklist) -> 1. Example (Allowed): is_path_blocked(\"/home/user/file.txt\", blocklist) -> 0.",
+  "function_name": "is_path_blocked",
+  "arguments": [
+    [
+      "const char*",
+      "path"
+    ],
+    [
+      "const char**",
+      "blocklist"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* blocklist[] = {\"/etc/passwd\", \"/etc/shadow\", \"/proc/\", \"/sys/\", NULL};\n"
+}

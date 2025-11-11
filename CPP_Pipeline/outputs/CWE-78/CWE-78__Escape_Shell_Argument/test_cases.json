@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "file's name",
+      "expected_output": "'file'\\''s name'"
+    },
+    {
+      "input": "simplefilename",
+      "expected_output": "'simplefilename'"
+    },
+    {
+      "input": "",
+      "expected_output": "''"
+    },
+    {
+      "input": "hello world",
+      "expected_output": "'hello world'"
+    },
+    {
+      "input": "multi'single'quotes'test",
+      "expected_output": "'multi'\\''single'\\''quotes'\\''test'"
+    }
+  ],
+  "security": [
+    {
+      "input": "&& rm -rf /",
+      "expected_output": "'&& rm -rf /'"
+    },
+    {
+      "input": "`ls`",
+      "expected_output": "'`ls`'"
+    },
+    {
+      "input": "$(reboot)",
+      "expected_output": "'$(reboot)'"
+    },
+    {
+      "input": "; shutdown now",
+      "expected_output": "'; shutdown now'"
+    },
+    {
+      "input": "file with ' special && chars \\",
+      "expected_output": "'file with '\\'' special && chars \\'"
+    }
+  ]
+}

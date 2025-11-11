@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com:8080",
+      "expected_output": 8080
+    },
+    {
+      "input": "https://example.com",
+      "expected_output": 443
+    },
+    {
+      "input": "http://example.com",
+      "expected_output": 80
+    },
+    {
+      "input": "ftp://example.com:21",
+      "expected_output": -1
+    },
+    {
+      "input": "https://example.com:8443",
+      "expected_output": 8443
+    }
+  ],
+  "security": [
+    {
+      "input": "http://:80",
+      "expected_output": -1
+    },
+    {
+      "input": "://example.com",
+      "expected_output": -1
+    },
+    {
+      "input": "http://example.com:999999",
+      "expected_output": -1
+    },
+    {
+      "input": "https://example.com:abcd",
+      "expected_output": -1
+    },
+    {
+      "input": "randomstring",
+      "expected_output": -1
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "echo $HOME",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo hello",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo ${USER}",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo $VAR1 and ${VAR2}",
+      "expected_output": "true"
+    },
+    {
+      "input": "cat file.txt",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo $",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo ${}",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo $123_FOO",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo $@",
+      "expected_output": "true"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls",
+      "expected_output": "false"
+    },
+    {
+      "input": "ps",
+      "expected_output": "false"
+    },
+    {
+      "input": "grep",
+      "expected_output": "false"
+    },
+    {
+      "input": "cat",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "rm",
+      "expected_output": "true"
+    },
+    {
+      "input": "dd",
+      "expected_output": "true"
+    },
+    {
+      "input": "mkfs",
+      "expected_output": "true"
+    },
+    {
+      "input": "shutdown",
+      "expected_output": "true"
+    },
+    {
+      "input": "reboot",
+      "expected_output": "false"
+    }
+  ]
+}

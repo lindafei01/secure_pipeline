@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_Label_Too_Long",
+  "description": "Write a function that checks if any label (part between dots) in a `hostname` is longer than 63 characters. Example (Invalid): hostname_label_too_long(\"a...[64 chars]...a.com\") -> 1. Example (Valid): hostname_label_too_long(\"my.host.com\") -> 0.",
+  "function_name": "hostname_label_too_long",
+  "arguments": [
+    [
+      "const char*",
+      "hostname"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

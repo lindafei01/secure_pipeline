@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "document.txt .txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "image.jpeg .png",
+      "expected_output": "false"
+    },
+    {
+      "input": "notes.md .md",
+      "expected_output": "true"
+    },
+    {
+      "input": "archive.zip .tar.gz",
+      "expected_output": "false"
+    },
+    {
+      "input": "report.pdf .pdf",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "null .txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined .txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "  .txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "file .txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "blank",
+      "expected_output": "false"
+    }
+  ]
+}

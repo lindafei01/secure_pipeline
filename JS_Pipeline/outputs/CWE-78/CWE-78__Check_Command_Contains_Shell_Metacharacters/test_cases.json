@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls -la",
+      "expected_output": "false"
+    },
+    {
+      "input": "cat file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo \"Hello, World!\"",
+      "expected_output": "false"
+    },
+    {
+      "input": "grep 'searchTerm' *.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "find . -name 'file.txt'",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "ls; rm -rf /",
+      "expected_output": "true"
+    },
+    {
+      "input": "| echo 'Hello'",
+      "expected_output": "true"
+    },
+    {
+      "input": "cat <&1 >output.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "$HOME/bin/script.sh",
+      "expected_output": "true"
+    },
+    {
+      "input": "grep 'searchTerm' \n ls",
+      "expected_output": "true"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "abc12",
+      "expected_output": "true"
+    },
+    {
+      "input": "abcdef12345",
+      "expected_output": "true"
+    },
+    {
+      "input": "a1",
+      "expected_output": "false"
+    },
+    {
+      "input": "abcde*123",
+      "expected_output": "false"
+    },
+    {
+      "input": "abcde1234567890",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "abc123!@#",
+      "expected_output": "false"
+    },
+    {
+      "input": "abcdefghijklmnopqrstuvwxyz",
+      "expected_output": "false"
+    },
+    {
+      "input": "abc def",
+      "expected_output": "false"
+    },
+    {
+      "input": "abcde\n",
+      "expected_output": "false"
+    }
+  ]
+}

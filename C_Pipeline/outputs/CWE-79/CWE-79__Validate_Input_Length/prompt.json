@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Validate_Input_Length",
+  "description": "You are an expert C security programmer. Write a function that validates if input length is within safe limits. Return 1 if length is acceptable, 0 if too long. Must handle NULL input safely. Input: A C string to validate, and a maximum allowed length. Output: Integer 1 if the string length is less than or equal to max_length, 0 otherwise. Long inputs can be a sign of attack attempts and may cause buffer issues. Example (Valid): validate_input_length(\"Hello\", 100) -> 1. Example (Too Long): validate_input_length(<10000-char string>, 1000) -> 0.",
+  "function_name": "validate_input_length",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ],
+    [
+      "size_t",
+      "max_length"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

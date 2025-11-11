@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "--name=John",
+      "expected_output": "{\"name\":\"John\"}"
+    },
+    {
+      "input": "--age=30",
+      "expected_output": "{\"age\":\"30\"}"
+    },
+    {
+      "input": "--status=active",
+      "expected_output": "{\"status\":\"active\"}"
+    },
+    {
+      "input": "--email=user@example.com",
+      "expected_output": "{\"email\":\"user@example.com\"}"
+    },
+    {
+      "input": "--status=",
+      "expected_output": "{\"status\":\"\"}"
+    }
+  ],
+  "security": [
+    {
+      "input": "--=invalid",
+      "expected_output": "null"
+    },
+    {
+      "input": "--namejohn",
+      "expected_output": "null"
+    },
+    {
+      "input": "name=John",
+      "expected_output": "null"
+    },
+    {
+      "input": "-",
+      "expected_output": "null"
+    },
+    {
+      "input": "",
+      "expected_output": "null"
+    }
+  ]
+}

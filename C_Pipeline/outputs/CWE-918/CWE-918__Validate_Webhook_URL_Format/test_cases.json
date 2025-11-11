@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "https://hooks.example.com",
+      "expected_output": 1
+    },
+    {
+      "input": "https://webhooksite.com/path/to/webhook",
+      "expected_output": 1
+    },
+    {
+      "input": "http://hooks.example.com",
+      "expected_output": 0
+    },
+    {
+      "input": "ftp://example.com/hook",
+      "expected_output": 0
+    },
+    {
+      "input": "https://1.2.3.4/webhook",
+      "expected_output": 0
+    }
+  ],
+  "security": [
+    {
+      "input": "https://malicious.com<script>alert(1)</script>",
+      "expected_output": 0
+    },
+    {
+      "input": "https://127.0.0.1/hook",
+      "expected_output": 0
+    },
+    {
+      "input": "http://255.255.255.255/webhook",
+      "expected_output": 0
+    },
+    {
+      "input": "https://valid.webhook%e2%80%8bsite.com",
+      "expected_output": 1
+    },
+    {
+      "input": "javascript://attack.com",
+      "expected_output": 0
+    }
+  ]
+}

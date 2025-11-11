@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com:80",
+      "expected_output": "1"
+    },
+    {
+      "input": "https://example.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "http://example.com:1234",
+      "expected_output": "0"
+    },
+    {
+      "input": "https://example.com:443",
+      "expected_output": "1"
+    },
+    {
+      "input": "http://example.com:8080",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "http://example.com:-1",
+      "expected_output": "0"
+    },
+    {
+      "input": "http://example.com:65536",
+      "expected_output": "0"
+    },
+    {
+      "input": "http://example.com:notaport",
+      "expected_output": "0"
+    },
+    {
+      "input": "https://example.com:70000",
+      "expected_output": "0"
+    },
+    {
+      "input": "http://example.com:22",
+      "expected_output": "0"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Check_Command_Contains_Semicolon",
+  "description": "Write a function that checks if a command contains semicolons (;), which can chain commands. Return true if found, false otherwise. Must handle empty strings safely. Example (Found): hasSemicolon(\"ls; rm file\") -> true. Example (Not Found): hasSemicolon(\"ls -la\") -> false.",
+  "function_name": "hasSemicolon",
+  "arguments": [
+    [
+      "const std::string&",
+      "command"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstring>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+}

@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Starts_With_Prefix",
+  "description": "Write a function that checks if a path starts with a given prefix directory. Return true if yes, false otherwise. Must handle trailing slashes and empty strings safely. Example (Yes): pathStartsWith(\"/var/www/html\", \"/var/www\") -> true. Example (No): pathStartsWith(\"/var/log\", \"/var/www\") -> false.",
+  "function_name": "pathStartsWith",
+  "arguments": [
+    [
+      "const std::string&",
+      "path"
+    ],
+    [
+      "const std::string&",
+      "prefix"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

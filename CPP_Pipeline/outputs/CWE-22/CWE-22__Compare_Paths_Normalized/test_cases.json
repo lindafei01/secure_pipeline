@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/../user/file.txt /home/user/file.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "/a/b/c/./../c /a/b/c",
+      "expected_output": "true"
+    },
+    {
+      "input": "/./a/b/./c/.. /a/b",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/Documents/../Pictures /home/user/Pictures",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/log/../lib/.././log/apache /var/log/apache",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "../secure/path/../../etc/passwd /etc/passwd",
+      "expected_output": "true"
+    },
+    {
+      "input": "/../root/admin /root/admin",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home//user/documents/file.txt /home/user/documents/file.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": " /",
+      "expected_output": "true"
+    },
+    {
+      "input": "./././path/to/resource ./path/to/resource",
+      "expected_output": "true"
+    }
+  ]
+}

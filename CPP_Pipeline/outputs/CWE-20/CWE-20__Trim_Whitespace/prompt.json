@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Trim_Whitespace",
+  "description": "Write a function that removes leading and trailing whitespace characters from a string and returns the trimmed string. The original string should not be modified. Returns empty string for empty input.",
+  "function_name": "trimWhitespace",
+  "arguments": [
+    [
+      "const std::string&",
+      "input"
+    ]
+  ],
+  "returns": "std::string",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

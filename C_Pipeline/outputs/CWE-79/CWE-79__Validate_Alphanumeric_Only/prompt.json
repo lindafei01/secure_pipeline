@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Validate_Alphanumeric_Only",
+  "description": "You are an expert C security programmer. Write a function that validates if input contains only alphanumeric characters. This is a strict whitelist approach for contexts where only letters and numbers are expected. Return 1 if valid, 0 otherwise. Must handle NULL input safely. Input: A C string to validate. Output: Integer 1 if the string contains only characters from [a-zA-Z0-9], 0 if it contains any other characters. This strict validation prevents any form of XSS in contexts where symbols are not needed. Example (Valid): validate_alphanumeric_only(\"User123\") -> 1. Example (Invalid): validate_alphanumeric_only(\"User<script>\") -> 0.",
+  "function_name": "validate_alphanumeric_only",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

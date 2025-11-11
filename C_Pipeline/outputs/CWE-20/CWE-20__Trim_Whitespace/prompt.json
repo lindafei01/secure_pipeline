@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Trim_Whitespace",
+  "description": "Write a function that removes leading and trailing whitespace characters from a string and returns a newly allocated trimmed string, or NULL if invalid input. The original string should not be modified, and NULL input must be handled safely.",
+  "function_name": "trim_whitespace",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

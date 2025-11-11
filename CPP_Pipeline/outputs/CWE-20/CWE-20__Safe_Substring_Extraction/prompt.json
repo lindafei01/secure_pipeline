@@ -1,0 +1,23 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Safe_Substring_Extraction",
+  "description": "Write a function that extracts a substring from a source string given a start index and length, performing bounds checks. Return the substring if valid, otherwise return an empty string. Must prevent out_of_range exceptions or invalid operations.",
+  "function_name": "safeSubstring",
+  "arguments": [
+    [
+      "const std::string&",
+      "s"
+    ],
+    [
+      "size_t",
+      "start"
+    ],
+    [
+      "size_t",
+      "len"
+    ]
+  ],
+  "returns": "std::string",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

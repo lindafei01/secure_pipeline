@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_URL_Scheme_in_Allowlist",
+  "description": "Write a function that parses a URL and checks if its scheme (e.g., 'http', 'https') matches any in the `allowedSchemes` vector (case-insensitive). Example (Success): isURLSchemeAllowed(\"HTTPS://ex.com\", allowedSchemes) -> true. Example (Failure): isURLSchemeAllowed(\"file:///etc/passwd\", allowedSchemes) -> false.",
+  "function_name": "isURLSchemeAllowed",
+  "arguments": [
+    [
+      "const std::string&",
+      "url"
+    ],
+    [
+      "const std::vector<std::string>&",
+      "allowedSchemes"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> allowedSchemes = {\"http\", \"https\"};\n"
+}

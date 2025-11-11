@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_CSV_Integer_Field",
+  "description": "Write a function that given a CSV line string and an index, extracts the integer at that index if valid, otherwise returns 0. Must validate input safely and handle out-of-bounds indices.",
+  "function_name": "parseCSVInt",
+  "arguments": [
+    [
+      "const std::string&",
+      "line"
+    ],
+    [
+      "int",
+      "index"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

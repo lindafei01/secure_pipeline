@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "~/documents",
+      "expected_output": "1"
+    },
+    {
+      "input": "/home/user/documents",
+      "expected_output": "0"
+    },
+    {
+      "input": "relative/path",
+      "expected_output": "0"
+    },
+    {
+      "input": "/~/folder",
+      "expected_output": "0"
+    },
+    {
+      "input": "~user/docs",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": null,
+      "expected_output": "0"
+    },
+    {
+      "input": "~",
+      "expected_output": "1"
+    },
+    {
+      "input": "~/.config",
+      "expected_output": "1"
+    },
+    {
+      "input": "/path/without/tilde",
+      "expected_output": "0"
+    },
+    {
+      "input": "",
+      "expected_output": "0"
+    }
+  ]
+}

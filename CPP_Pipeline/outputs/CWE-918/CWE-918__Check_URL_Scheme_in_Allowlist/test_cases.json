@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "https://example.com/path?query=123#fragment",
+      "expected_output": "true"
+    },
+    {
+      "input": "ftp://fileserver.com/download",
+      "expected_output": "false"
+    },
+    {
+      "input": "HTTPS://SecureSite.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "HtTp://CaseInsensitiveCheck.com",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "file:///etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "javascript:alert('XSS')",
+      "expected_output": "false"
+    },
+    {
+      "input": "data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==",
+      "expected_output": "false"
+    },
+    {
+      "input": "mailto:user@example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "svn+ssh://example.com/repos",
+      "expected_output": "false"
+    }
+  ]
+}

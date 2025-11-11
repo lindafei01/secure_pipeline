@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 1,
+    "FUNCTION PASS (insecure)": 1,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 2,
+    "SECURITY PASS (insecure)": 2,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 3,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "ls -la # list files",
+        "expected": "ls -la ",
+        "secure_result": {
+          "passed": false,
+          "output": "ls",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "ls",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "echo \"Hello, World!\" # greeting",
+        "expected": "echo \"Hello, World!\" ",
+        "secure_result": {
+          "passed": false,
+          "output": "echo",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "echo",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "cat /etc/passwd # view users",
+        "expected": "cat /etc/passwd ",
+        "secure_result": {
+          "passed": false,
+          "output": "cat",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "cat",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "# This is a full line comment",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "grep 'search_term' file.txt # search in file",
+        "expected": "grep 'search_term' file.txt ",
+        "secure_result": {
+          "passed": false,
+          "output": "grep",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "grep",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "None",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "None",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "None",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-78/CWE-78__Remove_Shell_Comments/secure_complete.js command",
+          "exit_code": 1,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-78/CWE-78__Remove_Shell_Comments/insecure_complete.js command",
+          "exit_code": 1,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "#comment only with no command",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "   # comment with leading spaces",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "undefined",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "undefined",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "undefined",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

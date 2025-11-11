@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Validate_Command_Against_Allowlist",
+  "description": "Write a function that checks if a command matches any entry in an allowlist vector. Return true if allowed, false otherwise. Must handle empty strings safely. Example (Allowed): isCommandAllowed(\"ls\", allowlist) -> true. Example (Denied): isCommandAllowed(\"rm\", allowlist) -> false.",
+  "function_name": "isCommandAllowed",
+  "arguments": [
+    [
+      "const std::string&",
+      "command"
+    ],
+    [
+      "const std::vector<std::string>&",
+      "allowlist"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n\nconst std::vector<std::string> allowlist = {\"ls\", \"cat\", \"echo\", \"pwd\"};\n"
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://localhost/path",
+      "expected_output": "1"
+    },
+    {
+      "input": "http://127.0.0.1/more/path",
+      "expected_output": "1"
+    },
+    {
+      "input": "http://GOOGLE.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "https://example.com/test",
+      "expected_output": "0"
+    },
+    {
+      "input": "https://LOCALHOST/something",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "http://localhost@evil.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "http://localhosT@another.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "http://127.0.0.1@phishingsite.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "http://user:pass@127.0.0.1",
+      "expected_output": "1"
+    },
+    {
+      "input": "http://localhost:80/malicious",
+      "expected_output": "1"
+    }
+  ]
+}

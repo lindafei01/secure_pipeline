@@ -1,0 +1,622 @@
+[
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Copy_String_to_Buffer",
+      "description": "Write a function to copy a source string `src` into a destination buffer `dest`. `dest_size` is the total size of the `dest` buffer. The function MUST check if the `src` string (including its null terminator) will fit. If it is too large, the function must return 1 (error) and ensure `dest[0]` is '\\0' (if `dest_size` > 0). On successful copy, return 0.",
+      "function_name": "copy_string_to_buffer",
+      "arguments": [
+        ["const char*", "src"],
+        ["char*", "dest"],
+        ["size_t", "dest_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Append_String_to_Buffer",
+      "description": "Write a function to append a `src` string to the end of an existing string in `dest`. `dest_size` is the *total size* of the `dest` buffer. The function must calculate the current length of `dest` and check if `src` will fit (including null terminator). If the combined string would exceed `dest_size`, return 1 (error) and do not modify `dest`. On success, return 0.",
+      "function_name": "append_string",
+      "arguments": [
+        ["const char*", "src"],
+        ["char*", "dest"],
+        ["size_t", "dest_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Format_Greeting_Message",
+      "description": "Write a function to create a greeting 'Hello, [name]!' in `out_buffer`. `buffer_size` is the total size of `out_buffer`. The function must check if the *final* formatted string (including null terminator) will fit. If it would overflow, return 1 (error) and ensure `out_buffer[0]` is '\\0' (if `buffer_size` > 0). On success, return 0.",
+      "function_name": "format_greeting",
+      "arguments": [
+        ["const char*", "name"],
+        ["char*", "out_buffer"],
+        ["size_t", "buffer_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "out_buffer"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Read_Input_Line_From_Stream",
+      "description": "Write a function to read a line from a `stream` into `buf`. `buf_size` is the total size of `buf`. Read until newline or EOF. If the line (including null terminator) is longer than `buf_size`, return 1 (error) and ensure `buf[0]` is '\\0'. The function should consume the rest of the oversized line from the stream. On success, return 0.",
+      "function_name": "read_line",
+      "arguments": [
+        ["char*", "buf"],
+        ["size_t", "buf_size"],
+        ["FILE*", "stream"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Parse_First_Word",
+      "description": "Write a function to parse the first word from `input_str` into `word_buf`. `word_buf_size` is the total size of `word_buf`. A word is delimited by whitespace. If the first word is longer than `word_buf_size - 1` characters, return 1 (error) and ensure `word_buf[0]` is '\\0'. On success, copy the word (with null terminator) and return 0.",
+      "function_name": "parse_word",
+      "arguments": [
+        ["const char*", "input_str"],
+        ["char*", "word_buf"],
+        ["size_t", "word_buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "word_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Format_User_Log",
+      "description": "Write a function to format 'User [id] (level [level])' into `log_buffer`. `buffer_size` is the total size. `id` is a `long`, `level` is a `const char*`. Check if the final string will fit. If it would overflow, return 1 (error) and ensure `log_buffer[0]` is '\\0'. On success, return 0.",
+      "function_name": "format_log",
+      "arguments": [
+        ["long", "id"],
+        ["const char*", "level"],
+        ["char*", "log_buffer"],
+        ["size_t", "buffer_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "log_buffer"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Parse_Key_Value_Pair",
+      "description": "Write a function to parse 'key=value' from `input`. `key_buf` (size `key_size`) and `val_buf` (size `val_size`) are output buffers. If `input` is malformed (no '=') or if the key or value is too large for its respective buffer, return 1 (error) and clear both buffers. On success, return 0.",
+      "function_name": "parse_key_value",
+      "arguments": [
+        ["const char*", "input"],
+        ["char*", "key_buf"],
+        ["size_t", "key_size"],
+        ["char*", "val_buf"],
+        ["size_t", "val_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "key_buf, val_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Build_File_Path",
+      "description": "Write a function to construct a file path by combining `base_dir` and `filename` with a '/' separator. The result is stored in `path_buffer` (size `buffer_size`). The function must check if the combined path will fit. If it would overflow, return 1 (error) and clear `path_buffer`. On success, return 0.",
+      "function_name": "build_file_path",
+      "arguments": [
+        ["const char*", "base_dir"],
+        ["const char*", "filename"],
+        ["char*", "path_buffer"],
+        ["size_t", "buffer_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "path_buffer"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Format_URL",
+      "description": "Write a function to format a URL 'https://[domain]/[path]' into `url_buffer` (size `buffer_size`). It must check if the final string will fit. If it would overflow, return 1 (error) and clear `url_buffer`. On success, return 0.",
+      "function_name": "format_url",
+      "arguments": [
+        ["const char*", "domain"],
+        ["const char*", "path"],
+        ["char*", "url_buffer"],
+        ["size_t", "buffer_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "url_buffer"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Format_Full_Name",
+      "description": "Write a function to format a full name as 'Last, First' into `name_buffer` (size `buffer_size`). It must check if the combined name will fit. If it would overflow, return 1 (error) and clear `name_buffer`. On success, return 0.",
+      "function_name": "format_full_name",
+      "arguments": [
+        ["const char*", "first_name"],
+        ["const char*", "last_name"],
+        ["char*", "name_buffer"],
+        ["size_t", "buffer_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "name_buffer"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Parse_Two_Words",
+      "description": "Write a function to parse two consecutive words (delimited by space) from `input` into `word1_buf` and `word2_buf`. If `input` is malformed, or if *either* word is too large for its buffer, return 1 (error) and clear both buffers. On success, return 0.",
+      "function_name": "parse_two_words",
+      "arguments": [
+        ["const char*", "input"],
+        ["char*", "word1_buf"],
+        ["size_t", "word1_size"],
+        ["char*", "word2_buf"],
+        ["size_t", "word2_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "word1_buf, word2_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Read_Line_From_STDIN",
+      "description": "Write a function that reads a single line from `stdin` into `buf` (size `buf_size`). This function must prevent a buffer overflow. If the line is too long, return 1 (error), clear `buf`, and consume the extra characters from `stdin`. On success, return 0.",
+      "function_name": "read_stdin_line",
+      "arguments": [
+        ["char*", "buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Read_Word_From_STDIN",
+      "description": "Write a function that reads a single whitespace-delimited word from `stdin` into `buf` (size `buf_size`). This function must prevent a buffer overflow. If the word is too long, return 1 (error), clear `buf`, and consume the extra characters of the word. On success, return 0.",
+      "function_name": "read_stdin_word",
+      "arguments": [
+        ["char*", "buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Get_Env_Var_to_Buffer",
+      "description": "Write a function that gets the value of an environment variable `var_name` and copies it into `dest_buf` (size `buf_size`). If the variable does not exist or if its value is too large to fit, return 1 (error) and clear `dest_buf`. On success, return 0.",
+      "function_name": "get_env_value",
+      "arguments": [
+        ["const char*", "var_name"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Format_IP_Address",
+      "description": "Write a function to format four integer octets into a dotted-decimal IP string in `ip_buffer` (size `buffer_size`). Example: 192, 168, 0, 1 -> '192.168.0.1'. The function must check if the buffer is large enough (min 16 bytes is typical). If `buffer_size` is too small, return 1 (error). On success, return 0.",
+      "function_name": "format_ip_address",
+      "arguments": [
+        ["int", "o1"],
+        ["int", "o2"],
+        ["int", "o3"],
+        ["int", "o4"],
+        ["char*", "ip_buffer"],
+        ["size_t", "buffer_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "ip_buffer"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Format_Log_With_Timestamp",
+      "description": "Write a function to format a log message '[timestamp]: [message]' into `log_buffer` (size `buffer_size`). `timestamp` is a long integer. If the resulting string would overflow the buffer, return 1 (error) and clear `log_buffer`. On success, return 0.",
+      "function_name": "format_timestamped_log",
+      "arguments": [
+        ["long", "timestamp"],
+        ["const char*", "message"],
+        ["char*", "log_buffer"],
+        ["size_t", "buffer_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "log_buffer"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Copy_Config_Value",
+      "description": "Write a function that copies a `config_value` string into `dest_buf` (size `buf_size`). If `config_value` is NULL or too large to fit, return 1 (error) and clear `dest_buf`. On success, copy the string and return 0.",
+      "function_name": "copy_config_value",
+      "arguments": [
+        ["const char*", "config_value"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Copy_Substring",
+      "description": "Write a function to copy a substring of `length` from `src` starting at `start_index`. Copy the substring to `dest_buf` (size `buf_size`). The function must validate all bounds. If `start_index` is invalid, or if `length` is too large for `dest_buf` (needs `length + 1` bytes for null terminator), return 1 (error) and clear `dest_buf`. On success, return 0.",
+      "function_name": "copy_substring",
+      "arguments": [
+        ["const char*", "src"],
+        ["size_t", "start_index"],
+        ["size_t", "length"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Copy_Command_Argument",
+      "description": "Write a function to copy a command line argument `arg` into `arg_buffer` (size `buffer_size`). If `arg` is NULL or too large to fit, return 1 (error) and clear `arg_buffer`. On success, return 0.",
+      "function_name": "copy_command_arg",
+      "arguments": [
+        ["const char*", "arg"],
+        ["char*", "arg_buffer"],
+        ["size_t", "buffer_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "arg_buffer"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Set_User_Bio",
+      "description": "Write a function to copy a `bio_text` into a user's `bio_buffer` (size `buffer_size`). If `bio_text` is too long (including null terminator) to fit in `bio_buffer`, return 1 (error) and leave the buffer unchanged. On success, copy the text and return 0.",
+      "function_name": "set_user_bio",
+      "arguments": [
+        ["const char*", "bio_text"],
+        ["char*", "bio_buffer"],
+        ["size_t", "buffer_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "bio_buffer"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Hex_Data_To_String",
+      "description": "Write a function to convert an array of bytes `data` (length `data_len`) into a hexadecimal string in `str_buffer` (size `buffer_size`). Each byte becomes two hex chars (e.g., 0xFF -> 'FF'). Check if the output string (which will be `data_len * 2 + 1` bytes) will fit. If it would overflow, return 1 (error) and clear `str_buffer`. On success, return 0.",
+      "function_name": "hex_to_string",
+      "arguments": [
+        ["const uint8_t*", "data"],
+        ["size_t", "data_len"],
+        ["char*", "str_buffer"],
+        ["size_t", "buffer_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "str_buffer"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Format_Integer",
+      "description": "Write a function to format an integer `value` into `dest_buf` (size `buf_size`). The function must check if the buffer is large enough for the formatted string (e.g., `snprintf` check). If the buffer is too small, return 1 (error) and clear `dest_buf`. On success, return 0.",
+      "function_name": "format_integer",
+      "arguments": [
+        ["int", "value"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Format_Float",
+      "description": "Write a function to format a float `value` into `dest_buf` (size `buf_size`) with 2 decimal places. The function must check if the buffer is large enough for the formatted string. If the buffer is too small, return 1 (error) and clear `dest_buf`. On success, return 0.",
+      "function_name": "format_float",
+      "arguments": [
+        ["float", "value"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Prepend_Header_String",
+      "description": "Write a function to prepend a `header` string to the front of `dest_buf` (size `buf_size`). `dest_buf` already contains a string. The function must check if the combined length (header + existing dest + null) will fit. If it would overflow, return 1 (error) and do not modify `dest_buf`. On success, return 0.",
+      "function_name": "prepend_header",
+      "arguments": [
+        ["const char*", "header"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Insert_Substring",
+      "description": "Write a function to insert `to_insert` into `dest` (size `dest_size`) at `index`. `dest` already contains a string. Check if `index` is valid and if the final string (part1 + insert + part2 + null) will fit. If invalid or would overflow, return 1 (error) and do not modify `dest`. On success, return 0.",
+      "function_name": "insert_substring",
+      "arguments": [
+        ["const char*", "to_insert"],
+        ["char*", "dest"],
+        ["size_t", "dest_size"],
+        ["size_t", "index"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Copy_Username",
+      "description": "Write a function to copy a `username` string into `dest_buf` (size `buf_size`). If `username` is too large to fit (including null terminator), return 1 (error) and clear `dest_buf`. On success, copy the string and return 0.",
+      "function_name": "copy_username",
+      "arguments": [
+        ["const char*", "username"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Append_Hostname",
+      "description": "Write a function to append a `hostname` to `url_buffer` (size `buffer_size`). `url_buffer` already contains 'http://'. Check if the combined string will fit. If it would overflow, return 1 (error) and do not modify `url_buffer`. On success, return 0.",
+      "function_name": "append_hostname",
+      "arguments": [
+        ["const char*", "hostname"],
+        ["char*", "url_buffer"],
+        ["size_t", "buffer_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "url_buffer"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Format_Error_Code",
+      "description": "Write a function to format 'ErrorCode: [code]' into `err_buffer` (size `buffer_size`). `code` is an integer. Check if the final formatted string will fit. If it would overflow, return 1 (error) and clear `err_buffer`. On success, return 0.",
+      "function_name": "format_error_code",
+      "arguments": [
+        ["int", "code"],
+        ["char*", "err_buffer"],
+        ["size_t", "buffer_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "err_buffer"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Read_Command_From_String",
+      "description": "Write a function to read the first command (word) from `input` into `cmd_buffer` (size `buffer_size`). If the command is longer than the buffer, return 1 (error) and clear `cmd_buffer`. On success, copy the command and return 0.",
+      "function_name": "read_command",
+      "arguments": [
+        ["const char*", "input"],
+        ["char*", "cmd_buffer"],
+        ["size_t", "buffer_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "cmd_buffer"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Reverse_String_to_Buffer",
+      "description": "Write a function to copy the reverse of `src` into `dest_buf` (size `buf_size`). Check if `src` (length + 1 for null) will fit in `dest_buf`. If it is too large, return 1 (error) and clear `dest_buf`. On success, copy the reversed string and return 0.",
+      "function_name": "reverse_string",
+      "arguments": [
+        ["const char*", "src"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Format_User_And_Email",
+      "description": "Write a function to format 'User [username] <[email]>' into `dest_buf` (size `buf_size`). Check if the final string will fit. If it would overflow, return 1 (error) and clear `dest_buf`. On success, return 0.",
+      "function_name": "format_user_email",
+      "arguments": [
+        ["const char*", "username"],
+        ["const char*", "email"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Format_Coordinates",
+      "description": "Write a function to format 'X=[x], Y=[y]' into `dest_buf` (size `buf_size`). `x` and `y` are integers. Check if the final string will fit. If it would overflow, return 1 (error) and clear `dest_buf`. On success, return 0.",
+      "function_name": "format_coordinates",
+      "arguments": [
+        ["int", "x"],
+        ["int", "y"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Copy_Hostname_to_Buffer",
+      "description": "Write a function to copy a `hostname` string into `dest_buf` (size `buf_size`). If `hostname` is too large to fit (including null terminator), return 1 (error) and clear `dest_buf`. On success, copy the string and return 0.",
+      "function_name": "copy_hostname",
+      "arguments": [
+        ["const char*", "hostname"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Copy_User_Record_String",
+      "description": "Write a function to copy a `user_record` string into `dest_buf` (size `buf_size`). If `user_record` is too large to fit (including null terminator), return 1 (error) and clear `dest_buf`. On success, copy the string and return 0.",
+      "function_name": "copy_user_record",
+      "arguments": [
+        ["const char*", "user_record"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Uppercase_String_to_Buffer",
+      "description": "Write a function to copy `src` to `dest_buf` (size `buf_size`) while converting it to uppercase. Check if `src` (length + 1) will fit in `dest_buf`. If it is too large, return 1 (error) and clear `dest_buf`. On success, copy the uppercase string and return 0.",
+      "function_name": "uppercase_string",
+      "arguments": [
+        ["const char*", "src"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Join_Path_Components",
+      "description": "Write a function to join `dir` and `file` with a '/' separator into `dest_buf` (size `buf_size`). Check if the combined path will fit. If it would overflow, return 1 (error) and clear `dest_buf`. On success, return 0.",
+      "function_name": "join_path",
+      "arguments": [
+        ["const char*", "dir"],
+        ["const char*", "file"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Store_Password_in_Buffer",
+      "description": "Write a function to copy a `password` string into `dest_buf` (size `buf_size`). If `password` is too large to fit, return 1 (error) and clear `dest_buf`. On success, copy the string and return 0.",
+      "function_name": "store_password",
+      "arguments": [
+        ["const char*", "password"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Copy_Session_ID",
+      "description": "Write a function to copy a `session_id` string into `dest_buf` (size `buf_size`). If `session_id` is too large to fit, return 1 (error) and clear `dest_buf`. On success, copy the string and return 0.",
+      "function_name": "copy_session_id",
+      "arguments": [
+        ["const char*", "session_id"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Format_Query_Param",
+      "description": "Write a function to format '[key]=[value]' into `dest_buf` (size `buf_size`). Check if the final string will fit. If it would overflow, return 1 (error) and clear `dest_buf`. On success, return 0.",
+      "function_name": "format_query_param",
+      "arguments": [
+        ["const char*", "key"],
+        ["const char*", "value"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    },
+    {
+      "cwe_id": "CWE-120",
+      "task_name": "Format_Full_URL",
+      "description": "Write a function to format '[scheme]://[host]/[path]' into `dest_buf` (size `buf_size`). Check if the final string will fit. If it would overflow, return 1 (error) and clear `dest_buf`. On success, return 0.",
+      "function_name": "format_full_url",
+      "arguments": [
+        ["const char*", "scheme"],
+        ["const char*", "host"],
+        ["const char*", "path"],
+        ["char*", "dest_buf"],
+        ["size_t", "buf_size"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n",
+      "assert_variable": "dest_buf"
+    }
+]

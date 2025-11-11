@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Escape_Shell_Argument",
+  "description": "Write a function that escapes a shell argument by wrapping it in single quotes and escaping any embedded single quotes. Return an escaped string, or empty string on error. Must handle empty strings safely. Example: escapeShellArg(\"file's name\") -> \"'file'\\''s name'\".",
+  "function_name": "escapeShellArg",
+  "arguments": [
+    [
+      "const std::string&",
+      "argument"
+    ]
+  ],
+  "returns": "std::string",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+}

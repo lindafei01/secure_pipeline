@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls -la 1024",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo hello 1024",
+      "expected_output": "true"
+    },
+    {
+      "input": "cat /etc/passwd 1024",
+      "expected_output": "true"
+    },
+    {
+      "input": "date 1024",
+      "expected_output": "true"
+    },
+    {
+      "input": "mkdir new_directory 50",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "null 1024",
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined 1024",
+      "expected_output": "false"
+    },
+    {
+      "input": "a 1024",
+      "expected_output": "true"
+    },
+    {
+      "input": "<1025-char-command> 1024",
+      "expected_output": "false"
+    },
+    {
+      "input": " 1024",
+      "expected_output": "false"
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 5,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/var/www html/index.html",
+        "expected": "/var/www/html/index.html",
+        "secure_result": {
+          "passed": true,
+          "output": "/var/www/html/index.html",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/var/www/html/index.html",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user docs/report.txt",
+        "expected": "/home/user/docs/report.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "/home/user/docs/report.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/user/docs/report.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/opt/app bin/execute.sh",
+        "expected": "/opt/app/bin/execute.sh",
+        "secure_result": {
+          "passed": true,
+          "output": "/opt/app/bin/execute.sh",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/opt/app/bin/execute.sh",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/usr/local src/main.c",
+        "expected": "/usr/local/src/main.c",
+        "secure_result": {
+          "passed": true,
+          "output": "/usr/local/src/main.c",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/usr/local/src/main.c",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/data/projects project1/readme.md",
+        "expected": "/data/projects/project1/readme.md",
+        "secure_result": {
+          "passed": true,
+          "output": "/data/projects/project1/readme.md",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/data/projects/project1/readme.md",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "/var/www ../etc/passwd",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/var/www/../etc/passwd",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user ..",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/home/user/..",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/app/config ../../system/shadow",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/app/config/../../system/shadow",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/opt/bin ../../../important/file.txt",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/opt/bin/../../../important/file.txt",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user/profile ../../../../etc/hosts",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/home/user/profile/../../../../etc/hosts",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

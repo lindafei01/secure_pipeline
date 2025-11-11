@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/file.txt",
+      "expected_output": "file.txt"
+    },
+    {
+      "input": "/home/user/",
+      "expected_output": "null"
+    },
+    {
+      "input": "/home/user/.hiddenfile",
+      "expected_output": ".hiddenfile"
+    },
+    {
+      "input": "/file_at_root.txt",
+      "expected_output": "file_at_root.txt"
+    },
+    {
+      "input": "/home/user/directory/",
+      "expected_output": "null"
+    }
+  ],
+  "security": [
+    {
+      "input": "../relative/path/file.txt",
+      "expected_output": "file.txt"
+    },
+    {
+      "input": "/",
+      "expected_output": "null"
+    },
+    {
+      "input": "////",
+      "expected_output": "null"
+    },
+    {
+      "input": "",
+      "expected_output": "null"
+    },
+    {
+      "input": null,
+      "expected_output": "null"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/var/www /var/www/html/index.html",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/documents /home/user/documents/report.docx",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/documents /home/user/documents/subfolder/notes.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "/data /data/archive/log2020.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/www /var/www/css/style.css",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "/var/www /var/www/../etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user/documents /home/user/../../etc/hosts",
+      "expected_output": "false"
+    },
+    {
+      "input": "/data /data/../passwords.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user/documents /home/user/documents/..",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/www /../var/www/html/hack.js",
+      "expected_output": "false"
+    }
+  ]
+}

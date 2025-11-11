@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls -la",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo 'Hello World'",
+      "expected_output": "false"
+    },
+    {
+      "input": "cd /usr/local/bin",
+      "expected_output": "false"
+    },
+    {
+      "input": "mkdir new_folder; cd new_folder",
+      "expected_output": "true"
+    },
+    {
+      "input": "cp file1.txt file2.txt; rm file1.txt",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": ";",
+      "expected_output": "true"
+    },
+    {
+      "input": "rm -rf / ; echo 'Done'",
+      "expected_output": "true"
+    },
+    {
+      "input": "touch file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo 'test1'; echo 'test2'",
+      "expected_output": "true"
+    },
+    {
+      "input": "ls; ; ls",
+      "expected_output": "true"
+    }
+  ]
+}

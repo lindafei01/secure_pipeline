@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "document.txt .txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "image.jpeg .jpeg",
+      "expected_output": "true"
+    },
+    {
+      "input": "file.docx .pdf",
+      "expected_output": "false"
+    },
+    {
+      "input": "report.pdf .docx",
+      "expected_output": "false"
+    },
+    {
+      "input": "presentation.pptx .pptx",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "image.jpeg jpeg",
+      "expected_output": "false"
+    },
+    {
+      "input": ".hiddenfile .txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "file. .",
+      "expected_output": "true"
+    },
+    {
+      "input": "null .ext",
+      "expected_output": "false"
+    },
+    {
+      "input": "test .",
+      "expected_output": "false"
+    }
+  ]
+}

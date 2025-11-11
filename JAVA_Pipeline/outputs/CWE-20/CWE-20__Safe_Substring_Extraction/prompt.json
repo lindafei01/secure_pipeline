@@ -1,0 +1,23 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Safe_Substring_Extraction",
+  "description": "Write a method that extracts a substring from a source string given a start index and length, performing bounds checks. Return the substring if valid, otherwise return null. Must prevent IndexOutOfBoundsException or invalid operations.",
+  "function_name": "safeSubstring",
+  "arguments": [
+    [
+      "String",
+      "s"
+    ],
+    [
+      "int",
+      "start"
+    ],
+    [
+      "int",
+      "len"
+    ]
+  ],
+  "returns": "String",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

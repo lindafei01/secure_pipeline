@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Check_Contains_Data_Protocol",
+  "description": "You are an expert C security programmer. Write a function that detects 'data:' protocol in strings, which can be used to embed executable content in XSS attacks. Return 1 if found, 0 otherwise. Must be case-insensitive and handle NULL input safely. Input: A C string that may contain a URL or URI. Output: Integer 1 if the string contains 'data:' (case-insensitive), 0 otherwise. The data: protocol can embed HTML, JavaScript, or other content inline. Example (Found): contains_data_protocol(\"data:text/html,<script>alert(1)</script>\") -> 1. Example (Not Found): contains_data_protocol(\"https://example.com\") -> 0.",
+  "function_name": "contains_data_protocol",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

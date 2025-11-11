@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "user1",
+      "expected_output": "true"
+    },
+    {
+      "input": "user_name_2",
+      "expected_output": "true"
+    },
+    {
+      "input": "u",
+      "expected_output": "false"
+    },
+    {
+      "input": "username_that_is_way_too_long_for_the_constraints",
+      "expected_output": "false"
+    },
+    {
+      "input": "user@name",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "%username!",
+      "expected_output": "false"
+    },
+    {
+      "input": "admin ', DROP TABLE users; --",
+      "expected_output": "false"
+    },
+    {
+      "input": "correct_user_name1",
+      "expected_output": "true"
+    }
+  ]
+}

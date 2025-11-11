@@ -1,0 +1,76 @@
+{
+  "functional": [
+    {
+      "input": [
+        "sub.api.google.com",
+        "google.com"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "images.google.com",
+        "google.com"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "google.api.com",
+        "google.com"
+      ],
+      "expected_output": 0
+    },
+    {
+      "input": [
+        "api.microsoft.com",
+        "google.com"
+      ],
+      "expected_output": 0
+    },
+    {
+      "input": [
+        "google.com",
+        "google.com"
+      ],
+      "expected_output": 1
+    }
+  ],
+  "security": [
+    {
+      "input": [
+        "sub.api.goOGLE.com",
+        "Google.com"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "malware.google.com ",
+        "google.com"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "fakegoogle.com",
+        "google.com"
+      ],
+      "expected_output": 0
+    },
+    {
+      "input": [
+        "phishing-site.google.com",
+        "phish.com"
+      ],
+      "expected_output": 0
+    },
+    {
+      "input": [
+        "subdomain.malicious.com",
+        "google.com"
+      ],
+      "expected_output": 0
+    }
+  ]
+}

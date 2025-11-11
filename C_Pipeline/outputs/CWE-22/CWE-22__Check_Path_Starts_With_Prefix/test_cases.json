@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/var/www/html /var/www",
+      "expected_output": "1"
+    },
+    {
+      "input": "/var/www /var/www",
+      "expected_output": "1"
+    },
+    {
+      "input": "/var/www/html/ /var/www",
+      "expected_output": "1"
+    },
+    {
+      "input": "/var/log /var/www",
+      "expected_output": "0"
+    },
+    {
+      "input": "/usr/bin /usr",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "null /var/www",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/home/user /home/user2",
+      "expected_output": "0"
+    },
+    {
+      "input": "/etc/ /et",
+      "expected_output": "0"
+    },
+    {
+      "input": "/dev/null /dev",
+      "expected_output": "1"
+    },
+    {
+      "input": "null null",
+      "expected_output": "NULL"
+    }
+  ]
+}

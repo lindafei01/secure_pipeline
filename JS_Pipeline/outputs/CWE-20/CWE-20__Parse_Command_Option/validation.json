@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 5,
+    "SECURITY PASS (insecure)": 4,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 1,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "--name=John",
+        "expected": "{\"key\":\"name\",\"value\":\"John\"}",
+        "secure_result": {
+          "passed": true,
+          "output": "{\"key\":\"name\",\"value\":\"John\"}",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "{\"key\":\"name\",\"value\":\"John\"}",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "--age=30",
+        "expected": "{\"key\":\"age\",\"value\":\"30\"}",
+        "secure_result": {
+          "passed": true,
+          "output": "{\"key\":\"age\",\"value\":\"30\"}",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "{\"key\":\"age\",\"value\":\"30\"}",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "--country=USA",
+        "expected": "{\"key\":\"country\",\"value\":\"USA\"}",
+        "secure_result": {
+          "passed": true,
+          "output": "{\"key\":\"country\",\"value\":\"USA\"}",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "{\"key\":\"country\",\"value\":\"USA\"}",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "--empty=",
+        "expected": "{\"key\":\"empty\",\"value\":\"\"}",
+        "secure_result": {
+          "passed": true,
+          "output": "{\"key\":\"empty\",\"value\":\"\"}",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "{\"key\":\"empty\",\"value\":\"\"}",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "--feature-flag=true",
+        "expected": "{\"key\":\"feature-flag\",\"value\":\"true\"}",
+        "secure_result": {
+          "passed": true,
+          "output": "{\"key\":\"feature-flag\",\"value\":\"true\"}",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "{\"key\":\"feature-flag\",\"value\":\"true\"}",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "--key-without-value",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "-not-enough-dashes=value",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "--123invalidkey=value",
+        "expected": "{\"key\":\"123invalidkey\",\"value\":\"value\"}",
+        "secure_result": {
+          "passed": true,
+          "output": "{\"key\":\"123invalidkey\",\"value\":\"value\"}",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "{\"key\":\"123invalidkey\",\"value\":\"value\"}",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "--key=val=ue",
+        "expected": "{\"key\":\"key\",\"value\":\"val=ue\"}",
+        "secure_result": {
+          "passed": true,
+          "output": "{\"key\":\"key\",\"value\":\"val=ue\"}",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "{\"key\":\"key\",\"value\":\"val\"}",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "randomstring",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

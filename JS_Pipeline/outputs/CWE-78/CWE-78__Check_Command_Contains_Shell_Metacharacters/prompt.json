@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Check_Command_Contains_Shell_Metacharacters",
+  "description": "Write a function that checks if a command string contains shell metacharacters (;, |, &, $, `, \\, \", ', <, >, \\n). Return true if dangerous characters found, false otherwise. Must handle null/undefined safely. Example (Dangerous): hasShellMetacharacters('ls; rm -rf /') -> true. Example (Safe): hasShellMetacharacters('ls -la') -> false.",
+  "function_name": "hasShellMetacharacters",
+  "arguments": [
+    [
+      "string",
+      "command"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+}

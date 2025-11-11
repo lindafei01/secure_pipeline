@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "abc",
+      "expected_output": "1"
+    },
+    {
+      "input": "user_name_1234567890",
+      "expected_output": "1"
+    },
+    {
+      "input": "ab",
+      "expected_output": "0"
+    },
+    {
+      "input": "abcdefghijklmnopqrstu",
+      "expected_output": "0"
+    },
+    {
+      "input": "user-name",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "NULL",
+      "expected_output": "0"
+    },
+    {
+      "input": "",
+      "expected_output": "0"
+    },
+    {
+      "input": "   ",
+      "expected_output": "0"
+    },
+    {
+      "input": "../../../../",
+      "expected_output": "0"
+    },
+    {
+      "input": "admin'OR'1'='1",
+      "expected_output": "0"
+    }
+  ]
+}

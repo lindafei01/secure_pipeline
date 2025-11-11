@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Ends_With_Separator",
+  "description": "Write a function that checks if a path ends with a directory separator ('/' or '\\\\'). Return 1 if yes, 0 otherwise. Must handle NULL safely. Example (Yes): ends_with_separator(\"/home/user/\") -> 1. Example (No): ends_with_separator(\"/home/user\") -> 0.",
+  "function_name": "ends_with_separator",
+  "arguments": [
+    [
+      "const char*",
+      "path"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

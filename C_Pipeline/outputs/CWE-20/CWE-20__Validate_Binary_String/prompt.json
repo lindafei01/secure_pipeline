@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Binary_String",
+  "description": "Write a function that verifies whether a string consists only of '0' and '1' characters. Return 1 if yes, 0 otherwise. Must safely handle NULL or empty input.",
+  "function_name": "is_binary_string",
+  "arguments": [
+    [
+      "const char*",
+      "s"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

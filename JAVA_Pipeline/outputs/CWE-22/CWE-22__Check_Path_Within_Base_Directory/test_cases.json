@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/var/www /var/www/html/index.html",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/www /var/www/css/styles.css",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/docs /home/user/docs/file.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user /home/user/pictures/photo.jpg",
+      "expected_output": "true"
+    },
+    {
+      "input": "/srv/data /srv/data/2023/report.pdf",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "/var/www /var/www/../etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user /home/user/../../etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/www /var/www/./../www/../etc/shadow",
+      "expected_output": "false"
+    },
+    {
+      "input": " /etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "/base /base/../../unauthorized",
+      "expected_output": "false"
+    }
+  ]
+}

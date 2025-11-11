@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 2,
+    "FUNCTION PASS (insecure)": 3,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "simple_arg",
+        "expected": "simple_arg",
+        "secure_result": {
+          "passed": true,
+          "output": "simple_arg",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "simple_arg",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "complex-arg_with.different#chars",
+        "expected": "complex-arg_with.different_chars",
+        "secure_result": {
+          "passed": false,
+          "output": "complex-arg_with_different_chars",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "complex-arg_with.different#chars",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "filename.txt",
+        "expected": "filename.txt",
+        "secure_result": {
+          "passed": false,
+          "output": "filename_txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "filename.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "   leading_and_trailing_spaces   ",
+        "expected": "leading_and_trailing_spaces",
+        "secure_result": {
+          "passed": true,
+          "output": "leading_and_trailing_spaces",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "leading_and_trailing_spaces",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> argument",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> argument",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "file; rm -rf",
+        "expected": "file_rm_-rf",
+        "secure_result": {
+          "passed": false,
+          "output": "file_",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "file_",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "`shutdown now`",
+        "expected": "_shutdown_now_",
+        "secure_result": {
+          "passed": false,
+          "output": "_shutdown",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "_shutdown",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "normal_arg && echo Exploit",
+        "expected": "normal_arg___echo_Exploit",
+        "secure_result": {
+          "passed": false,
+          "output": "normal_arg",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "normal_arg",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "(del *.*)",
+        "expected": "_del____",
+        "secure_result": {
+          "passed": false,
+          "output": "_del",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "_del",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "cat /etc/passwd",
+        "expected": "cat_/etc/passwd",
+        "secure_result": {
+          "passed": false,
+          "output": "cat",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "cat",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

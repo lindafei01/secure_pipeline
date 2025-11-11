@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Check_Argument_Contains_Path_Traversal",
+  "description": "Write a function that checks if a command argument contains path traversal sequences like '..' or absolute paths. Return true if dangerous, false otherwise. Must handle empty strings safely. Example (Dangerous): hasPathTraversal(\"../../etc/passwd\") -> true. Example (Safe): hasPathTraversal(\"file.txt\") -> false.",
+  "function_name": "hasPathTraversal",
+  "arguments": [
+    [
+      "const std::string&",
+      "argument"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+}

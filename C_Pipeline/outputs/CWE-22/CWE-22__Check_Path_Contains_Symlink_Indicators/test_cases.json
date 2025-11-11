@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/docs",
+      "expected_output": "0"
+    },
+    {
+      "input": "/etc/passwd",
+      "expected_output": "0"
+    },
+    {
+      "input": "/var/log/syslog",
+      "expected_output": "0"
+    },
+    {
+      "input": "/usr/local/bin",
+      "expected_output": "0"
+    },
+    {
+      "input": "/opt/app/config",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "/proc/self/fd",
+      "expected_output": "1"
+    },
+    {
+      "input": "/sys/block",
+      "expected_output": "1"
+    },
+    {
+      "input": "/dev/null",
+      "expected_output": "1"
+    },
+    {
+      "input": "/proc/cpuinfo",
+      "expected_output": "1"
+    },
+    {
+      "input": "/sys/kernel",
+      "expected_output": "1"
+    }
+  ]
+}

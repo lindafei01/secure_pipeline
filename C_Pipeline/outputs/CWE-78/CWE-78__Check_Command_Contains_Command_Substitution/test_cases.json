@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "echo $(whoami)",
+      "expected_output": "1"
+    },
+    {
+      "input": "echo hello world",
+      "expected_output": "0"
+    },
+    {
+      "input": "ls `pwd`",
+      "expected_output": "1"
+    },
+    {
+      "input": "echo $(date) and `time`",
+      "expected_output": "1"
+    },
+    {
+      "input": "echo 'This is a test'",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "echo $(rm -rf /)",
+      "expected_output": "1"
+    },
+    {
+      "input": "`echo hello`",
+      "expected_output": "1"
+    },
+    {
+      "input": "$(touch /tmp/malicious)",
+      "expected_output": "1"
+    },
+    {
+      "input": "echo '; rm -rf ~;' | bash",
+      "expected_output": "0"
+    },
+    {
+      "input": "\"`whoami`\"",
+      "expected_output": "1"
+    }
+  ]
+}

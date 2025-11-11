@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "file.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "file.pdf",
+      "expected_output": "true"
+    },
+    {
+      "input": "file.jpg",
+      "expected_output": "true"
+    },
+    {
+      "input": "file.png",
+      "expected_output": "true"
+    },
+    {
+      "input": "file.docx",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "file.exe",
+      "expected_output": "false"
+    },
+    {
+      "input": "file.zip",
+      "expected_output": "false"
+    },
+    {
+      "input": "file.pdf.exe",
+      "expected_output": "false"
+    },
+    {
+      "input": "README.TXT",
+      "expected_output": "true"
+    },
+    {
+      "input": "document.PNG",
+      "expected_output": "true"
+    }
+  ]
+}

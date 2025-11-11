@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Canonicalize_Path",
+  "description": "Write a function that converts a path to its canonical form (resolves all '.', '..'). Return a canonical path string, or null on error. Must prevent traversal outside allowed directories. Example: canonicalizePath(\"/home/user/./docs/../file.txt\") -> \"/home/user/file.txt\".",
+  "function_name": "canonicalizePath",
+  "arguments": [
+    [
+      "String",
+      "path"
+    ]
+  ],
+  "returns": "String",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

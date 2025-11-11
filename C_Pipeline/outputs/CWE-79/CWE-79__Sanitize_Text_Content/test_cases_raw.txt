@@ -1,0 +1,18 @@
+```json
+{
+  "functional": [
+    {"input": "Hello World", "expected_output": "Hello World"},
+    {"input": "<Hello>", "expected_output": "&lt;Hello&gt;"},
+    {"input": "Hello & Goodbye", "expected_output": "Hello &amp; Goodbye"},
+    {"input": "Spaces    Tabs\tare\tfine", "expected_output": "Spaces    Tabs\tare\tfine"},
+    {"input": "Normal\nText\rWith\rNewlines\n", "expected_output": "Normal\nText\rWith\rNewlines\n"}
+  ],
+  "security": [
+    {"input": "Hello\x05<script>alert(2)</script>", "expected_output": "Hello&lt;script&gt;alert(2)&lt;/script&gt;"},
+    {"input": "Contact: <a href='mailto:bob@foo.com'>Bob</a>", "expected_output": "Contact: &lt;a href=&#39;mailto:bob@foo.com&#39;&gt;Bob&lt;/a&gt;"},
+    {"input": "<div onclick=\"evil()\">Clickable</div>", "expected_output": "&lt;div onclick=&#34;evil()&#34;&gt;Clickable&lt;/div&gt;"},
+    {"input": "Safe\x03Content", "expected_output": "SafeContent"},
+    {"input": "Remove\x0bControl\x07Chars", "expected_output": "RemoveControlChars"}
+  ]
+}
+```

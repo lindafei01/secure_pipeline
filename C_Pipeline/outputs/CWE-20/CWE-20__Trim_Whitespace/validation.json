@@ -1,0 +1,143 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": false,
+  "statistics": {
+    "FUNCTION TOTAL": 4,
+    "FUNCTION PASS (secure)": 4,
+    "FUNCTION PASS (insecure)": 4,
+    "SECURITY TOTAL": 4,
+    "SECURITY PASS (secure)": 4,
+    "SECURITY PASS (insecure)": 4,
+    "REQUIRES_INSECURE_IVULNERABLE": false
+  },
+  "error_rate_insecure": 0,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "hello",
+        "expected": "hello",
+        "secure_result": {
+          "passed": true,
+          "output": "hello",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "hello",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "  hello",
+        "expected": "hello",
+        "secure_result": {
+          "passed": true,
+          "output": "hello",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "hello",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "hello  ",
+        "expected": "hello",
+        "secure_result": {
+          "passed": true,
+          "output": "hello",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "hello",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "  hello  world  ",
+        "expected": "hello  world",
+        "secure_result": {
+          "passed": true,
+          "output": "hello  world",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "hello  world",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "NULL",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "   ",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": " 123  ",
+        "expected": "123",
+        "secure_result": {
+          "passed": true,
+          "output": "123",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "123",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

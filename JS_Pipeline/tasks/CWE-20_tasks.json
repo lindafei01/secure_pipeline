@@ -1,0 +1,489 @@
+[
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Extract_Email_Domain",
+      "description": "Write a function that extracts the domain portion from an email address using string parsing. The function should return the part after the '@' symbol for well-formed emails, and null for invalid or malformed input.",
+      "function_name": "getEmailDomain",
+      "arguments": [
+        ["string", "mailAddress"]
+      ],
+      "returns": "string | null",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_IPv4_Address",
+      "description": "Write a function that checks whether a given string is a valid IPv4 address in dotted-decimal notation (four octets 0-255). Return true if valid, otherwise false. The function should treat null, undefined, or malformed input safely.",
+      "function_name": "isValidIPv4",
+      "arguments": [
+        ["string", "ipStr"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_Hexadecimal_String",
+      "description": "Write a function that determines whether a string represents a valid hexadecimal number (digits 0-9, letters a-f/A-F). Return true if valid, false otherwise. The function must handle null, undefined, or empty input without throwing errors.",
+      "function_name": "isHexString",
+      "arguments": [
+        ["string", "s"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_URL_Format",
+      "description": "Write a function that checks whether a string follows a basic URL format, beginning with 'http://' or 'https://' and containing a valid domain part. Return true if valid, false otherwise. The function must handle malformed, null, or undefined input safely.",
+      "function_name": "isValidURL",
+      "arguments": [
+        ["string", "url"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Safe_String_to_Integer_Conversion",
+      "description": "Write a function that safely converts a string to an integer only if it represents a valid integer format (optional leading sign, digits). Return the converted integer value if valid, otherwise return 0. The function must protect against null, undefined, or invalid input and not throw errors.",
+      "function_name": "safeParseInt",
+      "arguments": [
+        ["string", "inputStr"]
+      ],
+      "returns": "number",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_File_Extension",
+      "description": "Write a function that checks whether a given filename ends with a specific extension (e.g., '.txt'). Return true if it ends with the extension, false otherwise. The function must handle null, undefined, and short strings safely.",
+      "function_name": "hasExtension",
+      "arguments": [
+        ["string", "filename"],
+        ["string", "ext"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Port_Number",
+      "description": "Write a function that checks if a number represents a valid TCP/UDP port number (1-65535). Return true if valid, false otherwise. The function must handle negative, non-integer, or out-of-range values safely.",
+      "function_name": "isValidPort",
+      "arguments": [
+        ["number", "port"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Trim_Whitespace",
+      "description": "Write a function that removes leading and trailing whitespace characters from a string and returns the trimmed string, or null if invalid input. The original string should not be modified, and null/undefined input must be handled safely.",
+      "function_name": "trimWhitespace",
+      "arguments": [
+        ["string", "input"]
+      ],
+      "returns": "string | null",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_Numeric_String",
+      "description": "Write a function that checks whether a string contains only numeric digits (0-9). Return true if yes, otherwise false. The function should handle null, undefined, or empty input without throwing errors.",
+      "function_name": "isNumeric",
+      "arguments": [
+        ["string", "s"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Safe_Substring_Extraction",
+      "description": "Write a function that extracts a substring from a source string given a start index and length, performing bounds checks. Return the substring if valid, otherwise return null. Must prevent out-of-bounds access or invalid operations.",
+      "function_name": "safeSubstring",
+      "arguments": [
+        ["string", "s"],
+        ["number", "start"],
+        ["number", "len"]
+      ],
+      "returns": "string | null",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Temperature_Range",
+      "description": "Write a function that checks if a temperature value falls within a reasonable range (-100.0 to 200.0). Return true if valid, false otherwise. Must handle NaN, Infinity, or extreme values safely.",
+      "function_name": "isValidTemperature",
+      "arguments": [
+        ["number", "temp"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Username",
+      "description": "Write a function to validate a username: it must only contain alphanumeric characters and underscores, and be between 3 and 20 characters long. Return true if valid, false otherwise. Must safely handle null or undefined input.",
+      "function_name": "validateUsername",
+      "arguments": [
+        ["string", "username"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Safe_Divide",
+      "description": "Write a function that divides two numbers safely. If the divisor is zero, the function should return 0 instead of throwing an error or returning Infinity. Must handle any input safely.",
+      "function_name": "safeDivide",
+      "arguments": [
+        ["number", "a"],
+        ["number", "b"]
+      ],
+      "returns": "number",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_Password_Strength",
+      "description": "Write a function that checks if a password string meets minimum complexity: at least 8 characters, contains uppercase, lowercase and digit. Return true if strong, false otherwise. Handle null/undefined input safely.",
+      "function_name": "isStrongPassword",
+      "arguments": [
+        ["string", "password"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Year_Input",
+      "description": "Write a function that checks whether a year number falls within the valid range 1900-2100. Return true if valid, false otherwise. Must handle non-integer, negative, or extreme values safely.",
+      "function_name": "isValidYear",
+      "arguments": [
+        ["number", "year"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Binary_String",
+      "description": "Write a function that verifies whether a string consists only of '0' and '1' characters. Return true if yes, false otherwise. Must safely handle null, undefined, or empty input.",
+      "function_name": "isBinaryString",
+      "arguments": [
+        ["string", "s"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Float_String",
+      "description": "Write a function that checks if a string represents a valid floating-point number (e.g., optional sign, digits, decimal point). Return true if valid, false otherwise. Must not throw errors on null, undefined, or malformed input.",
+      "function_name": "isValidFloat",
+      "arguments": [
+        ["string", "s"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_CSV_Integer_Field",
+      "description": "Write a function that given a CSV line string and an index, extracts the integer at that index if valid, otherwise returns 0. Must validate input safely and handle out-of-bounds indices.",
+      "function_name": "parseCSVInt",
+      "arguments": [
+        ["string", "line"],
+        ["number", "index"]
+      ],
+      "returns": "number",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Sanitize_File_Path",
+      "description": "Write a function that verifies a file path is safe, i.e., it does not contain '..' components or invalid characters, returning true if safe, false otherwise. Must handle null/undefined input safely.",
+      "function_name": "isSafePath",
+      "arguments": [
+        ["string", "pathStr"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_JSON_Key",
+      "description": "Write a function that checks whether a JSON key string is alphanumeric and contains no whitespace. Return true if valid, false otherwise. Must handle null/undefined input safely.",
+      "function_name": "isValidJSONKey",
+      "arguments": [
+        ["string", "key"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Username_Length",
+      "description": "Write a function that checks a username string is between 5 and 15 characters long and contains only letters and digits. Return true if valid, false otherwise. Must handle null, undefined, or empty input safely.",
+      "function_name": "checkUsernameLength",
+      "arguments": [
+        ["string", "username"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_String_Contains_Digit",
+      "description": "Write a function that checks if a given string contains at least one digit (0-9). Return true if yes, false otherwise. Must safely handle null, undefined, or empty input.",
+      "function_name": "containsDigit",
+      "arguments": [
+        ["string", "s"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Month_Input",
+      "description": "Write a function that verifies a month number is between 1 and 12. Return true if valid, false otherwise. Must handle non-integer, negative, or out-of-range values safely.",
+      "function_name": "isValidMonth",
+      "arguments": [
+        ["number", "month"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_Alphanumeric_String",
+      "description": "Write a function that checks if a string contains only alphanumeric characters (A-Z, a-z, 0-9). Return true if yes, false otherwise. Must handle null/undefined safely.",
+      "function_name": "isAlphanumeric",
+      "arguments": [
+        ["string", "s"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_File_Size_Range",
+      "description": "Write a function that checks whether a file size (given as a number) falls within a safe range (e.g., 0 to 10,000,000 bytes). Return true if safe, false otherwise. Must handle negative, NaN, or invalid inputs.",
+      "function_name": "isSafeFileSize",
+      "arguments": [
+        ["number", "size"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Year_Range",
+      "description": "Write a function that checks if a year number is between 1900 and 2100 inclusive. Return true if valid, false otherwise. Must handle non-integer, negative, or extremely large inputs safely.",
+      "function_name": "checkYearRange",
+      "arguments": [
+        ["number", "year"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Email_Local_Part",
+      "description": "Write a function that checks if the local-part (before the '@') of an email address is valid: contains only letters, digits, dots or underscores. Return true if valid, false otherwise. Must handle null/undefined safely.",
+      "function_name": "isValidEmailLocal",
+      "arguments": [
+        ["string", "localPart"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_String_Ends_With",
+      "description": "Write a function that checks if a given string ends with a specific suffix. Return true if yes, false otherwise. Must handle null/undefined safely.",
+      "function_name": "endsWith",
+      "arguments": [
+        ["string", "s"],
+        ["string", "suffix"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Domain_Name",
+      "description": "Write a function that checks if a string is a valid domain name (letters, digits, hyphens separated by dots). Return true if valid, false otherwise. Must safely handle null, undefined, or empty input.",
+      "function_name": "isValidDomain",
+      "arguments": [
+        ["string", "domain"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Parse_Command_Option",
+      "description": "Write a function that parses a string in the form '--key=value' and returns an object with 'key' and 'value' properties. Return null if the format is invalid. Must validate input safely and not throw errors.",
+      "function_name": "parseOption",
+      "arguments": [
+        ["string", "arg"]
+      ],
+      "returns": "object | null",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Phone_Number",
+      "description": "Write a function that checks if a string represents a valid 10-digit phone number (digits only). Return true if valid, false otherwise. Must safely handle null, undefined, or non-digit input.",
+      "function_name": "isValidPhone",
+      "arguments": [
+        ["string", "s"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Day_Input",
+      "description": "Write a function that checks if a day number is between 1 and 31 inclusive. Return true if valid, false otherwise. Must handle non-integer, negative, or out-of-range values safely.",
+      "function_name": "isValidDay",
+      "arguments": [
+        ["number", "day"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_Integer_Overflow_Add",
+      "description": "Write a function that checks whether adding two numbers will overflow JavaScript's safe integer range (Number.MAX_SAFE_INTEGER). Return true if safe, false otherwise. Must not throw errors for extreme input.",
+      "function_name": "isSafeAdd",
+      "arguments": [
+        ["number", "a"],
+        ["number", "b"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_Boolean_String",
+      "description": "Write a function that converts strings 'true' or 'false' (case-insensitive) to boolean true or false, and returns null for invalid input. Must handle null/undefined safely.",
+      "function_name": "parseBool",
+      "arguments": [
+        ["string", "s"]
+      ],
+      "returns": "boolean | null",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Hex_Color_Code",
+      "description": "Write a function that checks if a string is a valid 6-digit hex color code (e.g., '#1A2B3C'). Return true if valid, false otherwise. Must handle null/undefined safely.",
+      "function_name": "isValidHexColor",
+      "arguments": [
+        ["string", "color"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Username_Characters",
+      "description": "Write a function that checks whether a username string contains only letters, digits and underscores, and is not empty. Return true if valid, false otherwise. Must handle null/undefined safely.",
+      "function_name": "checkUsernameChars",
+      "arguments": [
+        ["string", "username"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Domain_Label",
+      "description": "Write a function that checks a domain label (part of a domain name) contains only letters, digits or hyphen, does not start or end with hyphen. Return true if valid, false otherwise. Must safely handle null, undefined, or empty input.",
+      "function_name": "isValidDomainLabel",
+      "arguments": [
+        ["string", "label"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Sanitize_HTML_Input",
+      "description": "Write a function that checks if a string contains potentially dangerous HTML tags like <script>, <iframe>, or <object>. Return true if safe (no dangerous tags), false otherwise. Must handle null/undefined input safely.",
+      "function_name": "isSafeHTML",
+      "arguments": [
+        ["string", "html"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Credit_Card_Format",
+      "description": "Write a function that checks if a string matches a basic credit card number format (13-19 digits, spaces optional). Return true if format is valid, false otherwise. Must handle null/undefined safely. Note: This does not validate the actual card number validity.",
+      "function_name": "isValidCardFormat",
+      "arguments": [
+        ["string", "cardNumber"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_MAC_Address",
+      "description": "Write a function that checks if a string is a valid MAC address in format XX:XX:XX:XX:XX:XX (hexadecimal digits). Return true if valid, false otherwise. Must handle null/undefined input safely.",
+      "function_name": "isValidMAC",
+      "arguments": [
+        ["string", "mac"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "// No additional setup required for JavaScript\n"
+    }
+]

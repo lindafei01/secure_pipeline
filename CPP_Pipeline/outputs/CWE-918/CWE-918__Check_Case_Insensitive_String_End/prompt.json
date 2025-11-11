@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Case_Insensitive_String_End",
+  "description": "Write a utility function that checks if `str` ends with `suffix` (case-insensitive). Example (Match): endsWithIgnoreCase(\"image.JPG\", \".jpg\") -> true. Example (No Match): endsWithIgnoreCase(\"image.png\", \".jpg\") -> false.",
+  "function_name": "endsWithIgnoreCase",
+  "arguments": [
+    [
+      "const std::string&",
+      "str"
+    ],
+    [
+      "const std::string&",
+      "suffix"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

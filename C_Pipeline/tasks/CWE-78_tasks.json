@@ -1,0 +1,124 @@
+[
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Shell_Metacharacters",
+      "description": "Write a function that checks if a command string contains shell metacharacters (;, |, &, $, `, \\, \", ', <, >, \\n). Return 1 if dangerous characters found, 0 otherwise. Must handle NULL safely. Example (Dangerous): has_shell_metacharacters(\"ls; rm -rf /\") -> 1. Example (Safe): has_shell_metacharacters(\"ls -la\") -> 0.",
+      "function_name": "has_shell_metacharacters",
+      "arguments": [
+        ["const char*", "command"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Sanitize_Command_Argument",
+      "description": "Write a function that sanitizes a command argument by removing or escaping dangerous characters. Return a newly allocated sanitized string, or NULL on error. Must handle NULL safely. Example: sanitize_argument(\"file; rm -rf\") -> \"file_rm_-rf\" or similar safe output.",
+      "function_name": "sanitize_argument",
+      "arguments": [
+        ["const char*", "argument"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Validate_Command_Against_Allowlist",
+      "description": "Write a function that checks if a command matches any entry in an allowlist (NULL-terminated array). Return 1 if allowed, 0 otherwise. Must handle NULL safely. Example (Allowed): is_command_allowed(\"ls\", allowlist) -> 1. Example (Denied): is_command_allowed(\"rm\", allowlist) -> 0.",
+      "function_name": "is_command_allowed",
+      "arguments": [
+        ["const char*", "command"],
+        ["const char**", "allowlist"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* allowlist[] = {\"ls\", \"cat\", \"echo\", \"pwd\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Argument_Contains_Path_Traversal",
+      "description": "Write a function that checks if a command argument contains path traversal sequences like '..' or absolute paths. Return 1 if dangerous, 0 otherwise. Must handle NULL safely. Example (Dangerous): has_path_traversal(\"../../etc/passwd\") -> 1. Example (Safe): has_path_traversal(\"file.txt\") -> 0.",
+      "function_name": "has_path_traversal",
+      "arguments": [
+        ["const char*", "argument"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Build_Safe_Command_Array",
+      "description": "Write a function that builds a NULL-terminated command array for execve() from a command and arguments. Return a newly allocated array, or NULL on error. Must validate all arguments. Example: build_command_array(\"ls\", [\"-la\", \"/home\", NULL]) -> [\"ls\", \"-la\", \"/home\", NULL].",
+      "function_name": "build_command_array",
+      "arguments": [
+        ["const char*", "command"],
+        ["const char**", "arguments"]
+      ],
+      "returns": "char**",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Validate_Filename_Argument",
+      "description": "Write a function that validates a filename argument to be used in a command. Return 1 if valid (alphanumerics, dots, hyphens, underscores only), 0 otherwise. Must handle NULL safely. Example (Valid): is_valid_filename_arg(\"report_2024.txt\") -> 1. Example (Invalid): is_valid_filename_arg(\"file; rm -rf\") -> 0.",
+      "function_name": "is_valid_filename_arg",
+      "arguments": [
+        ["const char*", "filename"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Redirection",
+      "description": "Write a function that checks if a command contains redirection operators (<, >, >>). Return 1 if found, 0 otherwise. Must handle NULL safely. Example (Found): has_redirection(\"ls > output.txt\") -> 1. Example (Not Found): has_redirection(\"ls -la\") -> 0.",
+      "function_name": "has_redirection",
+      "arguments": [
+        ["const char*", "command"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Pipe",
+      "description": "Write a function that checks if a command contains pipe operators (|). Return 1 if found, 0 otherwise. Must handle NULL safely. Example (Found): has_pipe(\"ls | grep test\") -> 1. Example (Not Found): has_pipe(\"ls -la\") -> 0.",
+      "function_name": "has_pipe",
+      "arguments": [
+        ["const char*", "command"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Command_Substitution",
+      "description": "Write a function that checks if a command contains command substitution syntax ($(...) or `...`). Return 1 if found, 0 otherwise. Must handle NULL safely. Example (Found): has_command_substitution(\"echo $(whoami)\") -> 1. Example (Not Found): has_command_substitution(\"echo hello\") -> 0.",
+      "function_name": "has_command_substitution",
+      "arguments": [
+        ["const char*", "command"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Escape_Shell_Argument",
+      "description": "Write a function that escapes a shell argument by wrapping it in single quotes and escaping any embedded single quotes. Return a newly allocated escaped string, or NULL on error. Must handle NULL safely. Example: escape_shell_arg(\"file's name\") -> \"'file'\\''s name'\".",
+      "function_name": "escape_shell_arg",
+      "arguments": [
+        ["const char*", "argument"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    }
+]

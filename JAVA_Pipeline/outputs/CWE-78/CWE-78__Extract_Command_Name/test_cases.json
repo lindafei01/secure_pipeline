@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls -la",
+      "expected_output": "ls"
+    },
+    {
+      "input": "   cd /home/user",
+      "expected_output": "cd"
+    },
+    {
+      "input": "echo Hello World",
+      "expected_output": "echo"
+    },
+    {
+      "input": "rm -rf /path/to/remove",
+      "expected_output": "rm"
+    },
+    {
+      "input": "mkdir new_folder",
+      "expected_output": "mkdir"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "null"
+    },
+    {
+      "input": "  ",
+      "expected_output": "null"
+    },
+    {
+      "input": " ; rm -rf /*",
+      "expected_output": "null"
+    },
+    {
+      "input": "\t\n  ",
+      "expected_output": "null"
+    },
+    {
+      "input": " # comment",
+      "expected_output": "null"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Binary_String",
+  "description": "Write a function that verifies whether a string consists only of '0' and '1' characters. Return true if yes, false otherwise. Must safely handle null, undefined, or empty input.",
+  "function_name": "isBinaryString",
+  "arguments": [
+    [
+      "string",
+      "s"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

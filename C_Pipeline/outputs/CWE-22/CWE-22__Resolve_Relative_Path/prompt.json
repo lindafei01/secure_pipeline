@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Resolve_Relative_Path",
+  "description": "Write a function that resolves a relative path against a base directory. Return a newly allocated absolute path, or NULL on error. Must prevent directory traversal. Example: resolve_relative(\"/var/www\", \"html/index.html\") -> \"/var/www/html/index.html\". Example: resolve_relative(\"/var/www\", \"../etc/passwd\") -> NULL.",
+  "function_name": "resolve_relative",
+  "arguments": [
+    [
+      "const char*",
+      "base_dir"
+    ],
+    [
+      "const char*",
+      "relative_path"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

@@ -1,0 +1,23 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Port_in_Range",
+  "description": "Write a function that checks if an `int port` is within the range [`min_port`, `max_port`] (inclusive). Example (In Range): is_port_in_range(1024, 1024, 49151) -> 1. Example (Out of Range): is_port_in_range(80, 1024, 49151) -> 0.",
+  "function_name": "is_port_in_range",
+  "arguments": [
+    [
+      "int",
+      "port"
+    ],
+    [
+      "int",
+      "min_port"
+    ],
+    [
+      "int",
+      "max_port"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "192.168.1.1",
+      "expected_output": "true"
+    },
+    {
+      "input": "255.255.255.255",
+      "expected_output": "true"
+    },
+    {
+      "input": "0.0.0.0",
+      "expected_output": "true"
+    },
+    {
+      "input": "256.100.100.100",
+      "expected_output": "false"
+    },
+    {
+      "input": "192.168.1",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "192.168.one.1",
+      "expected_output": "false"
+    },
+    {
+      "input": "192.168.1.1.1",
+      "expected_output": "false"
+    },
+    {
+      "input": "001.001.001.001",
+      "expected_output": "false"
+    },
+    {
+      "input": "not.an.ip.address",
+      "expected_output": "false"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com/path/to/resource",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://www.test.com/another/path/to/resource",
+      "expected_output": "false"
+    },
+    {
+      "input": "ftp://files.server.org/archive.zip",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://localhost/directory/with/subdirectory",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://www.site.com/an/empty/segment//in/path",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "http://ex.com/path/../etc/passwd",
+      "expected_output": "true"
+    },
+    {
+      "input": "https://site.com/files/../../../../etc/hosts",
+      "expected_output": "true"
+    },
+    {
+      "input": "http://insecure/path/to/../../secret/file",
+      "expected_output": "true"
+    },
+    {
+      "input": "ftp://server.com/downloads/..%2F%2E%2E/hidden",
+      "expected_output": "true"
+    },
+    {
+      "input": "http://example.com/..//unintended/access",
+      "expected_output": "true"
+    }
+  ]
+}

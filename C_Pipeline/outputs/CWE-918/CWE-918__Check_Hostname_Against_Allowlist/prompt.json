@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_Against_Allowlist",
+  "description": "Write a function that checks if a `hostname` is present in the `allowed_domains` list (case-insensitive). `allowed_domains` is a NULL-terminated array. Example (Allowed): is_hostname_in_list(\"GitHub.com\", [\"google.com\", \"github.com\", NULL]) -> 1. Example (Denied): is_hostname_in_list(\"malicious.com\", [\"google.com\", \"github.com\", NULL]) -> 0.",
+  "function_name": "is_hostname_in_list",
+  "arguments": [
+    [
+      "const char*",
+      "hostname"
+    ],
+    [
+      "const char**",
+      "allowed_domains"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* ALLOWED_DOMAINS[] = {\"google.com\", \"github.com\", \"example.org\", NULL};\n"
+}

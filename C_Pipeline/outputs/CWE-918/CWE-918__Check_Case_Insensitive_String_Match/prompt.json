@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Case_Insensitive_String_Match",
+  "description": "Write a utility function that compares two strings `s1` and `s2` case-insensitively. Example (Match): stricmp_custom(\"Hello\", \"hello\") -> 1. Example (No Match): stricmp_custom(\"Hello\", \"world\") -> 0.",
+  "function_name": "stricmp_custom",
+  "arguments": [
+    [
+      "const char*",
+      "s1"
+    ],
+    [
+      "const char*",
+      "s2"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

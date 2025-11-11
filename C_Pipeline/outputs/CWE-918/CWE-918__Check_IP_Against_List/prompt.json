@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_IP_Against_List",
+  "description": "Write a function that checks if an `ip_str` is an exact match for any string in the `ip_list`. `ip_list` is a NULL-terminated array. Example (Match): is_ip_in_list(\"169.254.169.254\", [\"169.254.169.254\", NULL]) -> 1. Example (No Match): is_ip_in_list(\"1.2.3.4\", [\"169.254.169.254\", NULL]) -> 0.",
+  "function_name": "is_ip_in_list",
+  "arguments": [
+    [
+      "const char*",
+      "ip_str"
+    ],
+    [
+      "const char**",
+      "ip_list"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* METADATA_IPS[] = {\"169.254.169.254\", \"fe80::1\", NULL};\n"
+}

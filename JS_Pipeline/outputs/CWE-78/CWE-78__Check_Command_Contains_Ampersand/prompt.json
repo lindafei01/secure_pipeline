@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Check_Command_Contains_Ampersand",
+  "description": "Write a function that checks if a command contains ampersands (&), which can run commands in background. Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): hasAmpersand('sleep 10 &') -> true. Example (Not Found): hasAmpersand('ls -la') -> false.",
+  "function_name": "hasAmpersand",
+  "arguments": [
+    [
+      "string",
+      "command"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+}

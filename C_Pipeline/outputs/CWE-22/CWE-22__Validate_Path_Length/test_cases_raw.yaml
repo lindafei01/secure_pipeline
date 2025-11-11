@@ -1,0 +1,22 @@
+functional:
+- expected_output: '1'
+  input: /home/user 4096
+- expected_output: '1'
+  input: /usr/local/bin 100
+- expected_output: '0'
+  input: /etc/hosts 10
+- expected_output: '0'
+  input: /a/very/long/path/that/exceeds/limits 4096
+- expected_output: '0'
+  input: /valid/path/length 15
+security:
+- expected_output: '0'
+  input: null 4096
+- expected_output: '0'
+  input: "/path/containing/nul\0byte 4096"
+- expected_output: '1'
+  input: "/path/with/\x7F/control/characters 4096"
+- expected_output: '1'
+  input: ../../../etc/passwd 4096
+- expected_output: '1'
+  input: /improperly/terminated/path 4096

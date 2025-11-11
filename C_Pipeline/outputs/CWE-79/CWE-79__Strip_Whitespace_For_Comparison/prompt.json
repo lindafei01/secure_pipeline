@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Strip_Whitespace_For_Comparison",
+  "description": "You are an expert C security programmer. Write a function that removes all whitespace from a string for comparison purposes. This helps detect obfuscated XSS attacks like '< script >' or 'java\\nscript:'. Return a newly allocated string with whitespace removed, or NULL on error. Must handle NULL input safely. Input: A C string potentially containing whitespace. Output: A newly allocated string with all space, tab, newline, and carriage return characters removed. This normalized form can be used to detect XSS patterns that use whitespace for obfuscation. Example: strip_whitespace(\"< s c r i p t >\") -> \"<script>\".",
+  "function_name": "strip_whitespace",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

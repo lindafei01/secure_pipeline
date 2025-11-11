@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com/path",
+      "expected_output": "true"
+    },
+    {
+      "input": "http://example.com/path#section",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://www.site.org/help?query=search#faq",
+      "expected_output": "false"
+    },
+    {
+      "input": "ftp://fileserver.net/download",
+      "expected_output": "true"
+    },
+    {
+      "input": "http://test.com#home",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "http://example.com/path<script>alert('xss')</script>#fragment",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://secure-site.com/secure?check=<script>#top",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://attack.com/#",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://normal.url/path#NormalFragment",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://no-fragment.com/scripts.js",
+      "expected_output": "true"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "file.txt",
+      "expected_output": "file.txt"
+    },
+    {
+      "input": "normal_filename",
+      "expected_output": "normal_filename"
+    },
+    {
+      "input": "",
+      "expected_output": ""
+    },
+    {
+      "input": "a_b_c",
+      "expected_output": "a_b_c"
+    },
+    {
+      "input": "123_filename",
+      "expected_output": "123_filename"
+    }
+  ],
+  "security": [
+    {
+      "input": "file; rm -rf",
+      "expected_output": "file_rm_-rf"
+    },
+    {
+      "input": "&& ls",
+      "expected_output": "__ls"
+    },
+    {
+      "input": "> /etc/passwd",
+      "expected_output": "_etc_passwd"
+    },
+    {
+      "input": "$(shutdown now)",
+      "expected_output": "_shutdown_now_"
+    },
+    {
+      "input": "| cat /etc/shadow",
+      "expected_output": "_cat_etc_shadow"
+    }
+  ]
+}

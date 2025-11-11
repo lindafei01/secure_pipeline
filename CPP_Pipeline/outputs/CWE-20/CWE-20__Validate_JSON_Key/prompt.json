@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_JSON_Key",
+  "description": "Write a function that checks whether a JSON key string is alphanumeric and contains no whitespace. Return true if valid, false otherwise. Must handle empty input safely.",
+  "function_name": "isValidJSONKey",
+  "arguments": [
+    [
+      "const std::string&",
+      "key"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

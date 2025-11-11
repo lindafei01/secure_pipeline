@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Extract_Filename_From_Path",
+  "description": "Write a function that extracts the filename (last component) from a path. Return the filename string, or null on error. Must handle null/undefined and trailing slashes safely. Example: extractFilename('/home/user/file.txt') -> 'file.txt'. Example: extractFilename('/home/user/') -> null.",
+  "function_name": "extractFilename",
+  "arguments": [
+    [
+      "string",
+      "path"
+    ]
+  ],
+  "returns": "string|null",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

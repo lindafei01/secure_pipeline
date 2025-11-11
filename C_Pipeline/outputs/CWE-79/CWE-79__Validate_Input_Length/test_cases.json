@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "\"Hello\" 100",
+      "expected_output": "1"
+    },
+    {
+      "input": "\"\" 0",
+      "expected_output": "1"
+    },
+    {
+      "input": "\"A short string\" 50",
+      "expected_output": "1"
+    },
+    {
+      "input": "\"Short\" 5",
+      "expected_output": "1"
+    },
+    {
+      "input": "\"Exactly fifty characters string length test!!!\" 50",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "\"This string will definitely exceed the small limit\" 10",
+      "expected_output": "0"
+    },
+    {
+      "input": "\"A very very long string that surpasses the allowed maximum length, possibly indicating an attempted buffer overflow attack scenario.\" 80",
+      "expected_output": "0"
+    },
+    {
+      "input": null,
+      "expected_output": "0"
+    },
+    {
+      "input": "\"Non-malicious input but too long for safety!\" 20",
+      "expected_output": "0"
+    }
+  ]
+}

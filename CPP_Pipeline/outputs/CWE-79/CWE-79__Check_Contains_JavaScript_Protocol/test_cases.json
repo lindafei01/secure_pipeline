@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "javascript:alert(1)",
+      "expected_output": "true"
+    },
+    {
+      "input": "https://example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "mailto:user@example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "ftp://files.example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "Javascript : showMessage()",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": " JAVASCRIPT:alert('Hack') ",
+      "expected_output": "true"
+    },
+    {
+      "input": "http : // fake.javascript.com",
+      "expected_output": "false"
+    },
+    {
+      "input": " javascript : window.location='https://trusted.com'",
+      "expected_output": "true"
+    },
+    {
+      "input": "JAVASCRIPT :  void(0);",
+      "expected_output": "true"
+    },
+    {
+      "input": "  jaVascript:console.log('Hacked') ",
+      "expected_output": "true"
+    }
+  ]
+}

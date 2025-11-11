@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "HTTPS://example.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "ftp://example.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "http://subdomain.example.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "HtTp://example.com",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "file:///etc/passwd",
+      "expected_output": "0"
+    },
+    {
+      "input": "javascript:alert('hack')",
+      "expected_output": "0"
+    },
+    {
+      "input": "data:text/plain;base64,SGVsbG8=",
+      "expected_output": "0"
+    },
+    {
+      "input": "mailto:user@example.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "tel:+1234567890",
+      "expected_output": "0"
+    }
+  ]
+}

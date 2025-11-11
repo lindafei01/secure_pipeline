@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 1,
+    "FUNCTION PASS (insecure)": 1,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 1,
+    "SECURITY PASS (insecure)": 1,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 4,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "ls -la # list files",
+        "expected": "ls -la ",
+        "secure_result": {
+          "passed": false,
+          "output": "ls",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "ls",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "echo 'Hello World' # this is a comment",
+        "expected": "echo 'Hello World' ",
+        "secure_result": {
+          "passed": false,
+          "output": "echo",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "echo",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "# just a comment",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "gcc main.c -o main",
+        "expected": "gcc main.c -o main",
+        "secure_result": {
+          "passed": false,
+          "output": "gcc",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "gcc",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "mkdir new_folder # create a new folder",
+        "expected": "mkdir new_folder ",
+        "secure_result": {
+          "passed": false,
+          "output": "mkdir",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "mkdir",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "some_command # comment with malicious attempt; rm -rf /",
+        "expected": "some_command ",
+        "secure_result": {
+          "passed": false,
+          "output": "some_command",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "some_command",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "command #",
+        "expected": "command ",
+        "secure_result": {
+          "passed": false,
+          "output": "command",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "command",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "    # leading whitespace with comment",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "print_file file.txt#no space before comment",
+        "expected": "print_file file.txt",
+        "secure_result": {
+          "passed": false,
+          "output": "print_file",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "print_file",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "ls -la##multiple hashes",
+        "expected": "ls -la",
+        "secure_result": {
+          "passed": false,
+          "output": "ls",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "ls",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

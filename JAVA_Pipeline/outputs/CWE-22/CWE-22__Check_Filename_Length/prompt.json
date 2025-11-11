@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Filename_Length",
+  "description": "Write a function that checks if a filename (without path) is within acceptable length limits. Return true if valid, false otherwise. Must handle null safely. Example (Valid): isFilenameLengthValid(\"report.pdf\", 255) -> true. Example (Too Long): isFilenameLengthValid(<256-char name>, 255) -> false.",
+  "function_name": "isFilenameLengthValid",
+  "arguments": [
+    [
+      "String",
+      "filename"
+    ],
+    [
+      "int",
+      "maxLength"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

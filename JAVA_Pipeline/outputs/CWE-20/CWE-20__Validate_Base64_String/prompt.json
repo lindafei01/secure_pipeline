@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Base64_String",
+  "description": "Write a method that checks if a string is valid Base64 encoding (only A-Z, a-z, 0-9, +, /, = characters, with proper padding). Return true if valid, false otherwise. Must handle null safely.",
+  "function_name": "isValidBase64",
+  "arguments": [
+    [
+      "String",
+      "s"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\nimport java.util.Base64;\n"
+}

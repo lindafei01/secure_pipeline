@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Remove_Shell_Comments",
+  "description": "Write a function that removes shell comments (everything after #) from a command. Return the cleaned command, or null on error. Must handle null/undefined safely. Example: removeComments('ls -la # list files') -> 'ls -la '.",
+  "function_name": "removeComments",
+  "arguments": [
+    [
+      "string",
+      "command"
+    ]
+  ],
+  "returns": "string|null",
+  "raises": "None",
+  "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+}

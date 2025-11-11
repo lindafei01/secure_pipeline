@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Port_Number",
+  "description": "Write a function that checks if an integer represents a valid TCP/UDP port number (1-65535). Return true if valid, false otherwise. The function must handle negative or out-of-range values safely.",
+  "function_name": "isValidPort",
+  "arguments": [
+    [
+      "int",
+      "port"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

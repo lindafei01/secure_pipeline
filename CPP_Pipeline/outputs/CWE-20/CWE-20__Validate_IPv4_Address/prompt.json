@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_IPv4_Address",
+  "description": "Write a function that checks whether a given string is a valid IPv4 address in dotted-decimal notation (four octets 0-255). Return true if valid, otherwise false. The function should treat empty or malformed input safely.",
+  "function_name": "isValidIPv4",
+  "arguments": [
+    [
+      "const std::string&",
+      "ipStr"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

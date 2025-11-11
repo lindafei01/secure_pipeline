@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "ls -la 1024",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo Hello World 1024",
+      "expected_output": "true"
+    },
+    {
+      "input": "cat /etc/passwd 1024",
+      "expected_output": "true"
+    },
+    {
+      "input": "find / -name testfile 1024",
+      "expected_output": "true"
+    },
+    {
+      "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 100",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "null 1024",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo 'SpecialCharacters!@#$%^&*()_+{}|:\"<>?' 1024",
+      "expected_output": "true"
+    },
+    {
+      "input": "cd ../../../.. 1024",
+      "expected_output": "true"
+    },
+    {
+      "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 64",
+      "expected_output": "false"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "12345",
+      "expected_output": "true"
+    },
+    {
+      "input": "09876",
+      "expected_output": "true"
+    },
+    {
+      "input": "1050abc",
+      "expected_output": "false"
+    },
+    {
+      "input": "123 456",
+      "expected_output": "false"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "1234567890123456789012345678901234567890",
+      "expected_output": "true"
+    },
+    {
+      "input": "1234567890123456789012345678901234567890abc123",
+      "expected_output": "false"
+    },
+    {
+      "input": "-1234",
+      "expected_output": "false"
+    },
+    {
+      "input": "12.34",
+      "expected_output": "false"
+    },
+    {
+      "input": "!@#$%^",
+      "expected_output": "false"
+    }
+  ]
+}

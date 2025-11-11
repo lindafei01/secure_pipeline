@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 2,
+    "FUNCTION PASS (insecure)": 4,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 4,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 1,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "hello world&foo=bar",
+        "expected": "hello%20world%26foo%3Dbar",
+        "secure_result": {
+          "passed": false,
+          "output": "hello",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "hello",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "simple-test_case~123",
+        "expected": "simple-test_case~123",
+        "secure_result": {
+          "passed": true,
+          "output": "simple-test_case~123",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "simple-test_case~123",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/path/to/resource?query=123",
+        "expected": "%2Fpath%2Fto%2Fresource%3Fquery%3D123",
+        "secure_result": {
+          "passed": false,
+          "output": "%i1lpath%i1lto%i1lresource%j1lquery%j1j123",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "%2Fpath%2Fto%2Fresource%3Fquery%3D123",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "email@example.com",
+        "expected": "email%40example.com",
+        "secure_result": {
+          "passed": false,
+          "output": "email%kgexample.com",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "email%40example.com",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "a-zA-Z0-9.~_-",
+        "expected": "a-zA-Z0-9.~_-",
+        "secure_result": {
+          "passed": true,
+          "output": "a-zA-Z0-9.~_-",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "a-zA-Z0-9.~_-",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "<script>alert('xss');</script>",
+        "expected": "%3Cscript%3Ealert%28%27xss%27%29%3B%3C%2Fscript%3E",
+        "secure_result": {
+          "passed": false,
+          "output": "%j1iscript%j1kalert%io%inxss%in%ip%j1h%j1i%i1lscript%j1k",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "%3Cscript%3Ealert%28%27xss%27%29%3B%3C%2Fscript%3E",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "SELECT * FROM users WHERE name='John'",
+        "expected": "SELECT%20%2A%20FROM%20users%20WHERE%20name%3D%27John%27",
+        "secure_result": {
+          "passed": false,
+          "output": "SELECT",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "SELECT",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "\u00e7\u00e8\u00e9\u00e0&param2=value",
+        "expected": "%C3%A7%C3%A8%C3%A9%C3%A0%26param2%3Dvalue",
+        "secure_result": {
+          "passed": false,
+          "output": "%1ij%1gn%1ij%1go%1ij%1gp%1ij%1gg%imparam2%j1jvalue",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "%C3%A7%C3%A8%C3%A9%C3%A0%26param2%3Dvalue",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "!@#$%^&*()_+=<>?/{}[]|\\",
+        "expected": "%21%40%23%24%25%5E%26%2A%28%29_%2B%3D%3C%3E%3F%2F%7B%7D%5B%5D%7C%5C",
+        "secure_result": {
+          "passed": false,
+          "output": "%ih%kg%ij%ik%il%l1k%im%i1g%io%ip_%i1h%j1j%j1i%j1k%j1l%i1l%n1h%n1j%l1h%l1j%n1i%l1i",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "%21%40%23%24%25%5E%26%2A%28%29_%2B%3D%3C%3E%3F%2F%7B%7D%5B%5D%7C%5C",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "Caf\u00e9",
+        "expected": "Caf%C3%A9",
+        "secure_result": {
+          "passed": false,
+          "output": "Caf%1ij%1gp",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "Caf%C3%A9",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

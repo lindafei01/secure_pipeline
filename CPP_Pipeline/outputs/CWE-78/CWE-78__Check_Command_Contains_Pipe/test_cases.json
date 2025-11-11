@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls | grep test",
+      "expected_output": "true"
+    },
+    {
+      "input": "ls -la",
+      "expected_output": "false"
+    },
+    {
+      "input": "find . | xargs grep 'main'",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo \"hello world\"",
+      "expected_output": "false"
+    },
+    {
+      "input": "awk \"/hello/\" file.txt",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "cat /etc/passwd | grep root",
+      "expected_output": "true"
+    },
+    {
+      "input": "   ",
+      "expected_output": "false"
+    },
+    {
+      "input": "ps aux | grep \"sshd\"",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo test | | echo fail",
+      "expected_output": "true"
+    },
+    {
+      "input": "ls; rm -rf /",
+      "expected_output": "false"
+    }
+  ]
+}

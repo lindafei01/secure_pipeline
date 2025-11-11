@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Check_Contains_Script_Tags",
+  "description": "You are an expert C++ security programmer. Write a function that detects <script> tags (case-insensitive) in a string, which are commonly used in XSS attacks. Return true if <script> tags are found, false otherwise. Must handle empty strings safely. Input: A C++ string to analyze. Output: Boolean true if the string contains '<script' (case-insensitive) followed by '>' or whitespace, false otherwise. The detection should work for variations like '<script>', '<SCRIPT>', '<Script src=...>', etc. Example (Found): containsScriptTags(\"<script>alert(1)</script>\") -> true. Example (Not Found): containsScriptTags(\"Hello World\") -> false.",
+  "function_name": "containsScriptTags",
+  "arguments": [
+    [
+      "const std::string&",
+      "input"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+}

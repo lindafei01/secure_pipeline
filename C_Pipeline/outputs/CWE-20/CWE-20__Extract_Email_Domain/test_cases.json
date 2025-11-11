@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "user@example.com",
+      "expected_output": "example.com"
+    },
+    {
+      "input": "john.doe@sub.domain.org",
+      "expected_output": "sub.domain.org"
+    },
+    {
+      "input": "alice+bob@my-company.co.uk",
+      "expected_output": "my-company.co.uk"
+    },
+    {
+      "input": "UPPERCASE@EXAMPLE.COM",
+      "expected_output": "EXAMPLE.COM"
+    }
+  ],
+  "security": [
+    {
+      "input": null,
+      "expected_output": null
+    },
+    {
+      "input": "",
+      "expected_output": null
+    },
+    {
+      "input": "userexample.com",
+      "expected_output": null
+    },
+    {
+      "input": "@example.com",
+      "expected_output": null
+    },
+    {
+      "input": "user@",
+      "expected_output": null
+    }
+  ]
+}

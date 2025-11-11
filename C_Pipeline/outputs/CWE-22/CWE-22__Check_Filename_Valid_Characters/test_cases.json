@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "report_2024.pdf",
+      "expected_output": "1"
+    },
+    {
+      "input": "summary.docx",
+      "expected_output": "1"
+    },
+    {
+      "input": "backup-2021.tar.gz",
+      "expected_output": "1"
+    },
+    {
+      "input": "data_1997.txt",
+      "expected_output": "1"
+    },
+    {
+      "input": "image.jpeg",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "../etc/passwd",
+      "expected_output": "0"
+    },
+    {
+      "input": "\\hidden\\secret.file",
+      "expected_output": "0"
+    },
+    {
+      "input": "/path/to/resource",
+      "expected_output": "0"
+    },
+    {
+      "input": "invalid\\file.name",
+      "expected_output": "0"
+    },
+    {
+      "input": "null_byte_\u0000_directory",
+      "expected_output": "0"
+    }
+  ]
+}

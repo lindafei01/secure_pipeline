@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/file.txt",
+      "expected_output": "0"
+    },
+    {
+      "input": "/tmp/document",
+      "expected_output": "0"
+    },
+    {
+      "input": "/home/user/docs/file",
+      "expected_output": "0"
+    },
+    {
+      "input": "/opt/app/config",
+      "expected_output": "0"
+    },
+    {
+      "input": "/var/log/syslog",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "/etc/passwd",
+      "expected_output": "1"
+    },
+    {
+      "input": "/proc/cpuinfo",
+      "expected_output": "1"
+    },
+    {
+      "input": "/sys/class/net",
+      "expected_output": "1"
+    },
+    {
+      "input": "/etc/shadow",
+      "expected_output": "1"
+    },
+    {
+      "input": "etc/shadow/backup",
+      "expected_output": "0"
+    }
+  ]
+}

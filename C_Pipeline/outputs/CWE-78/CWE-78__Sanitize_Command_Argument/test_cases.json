@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "example.txt",
+      "expected_output": "example.txt"
+    },
+    {
+      "input": "document.pdf",
+      "expected_output": "document.pdf"
+    },
+    {
+      "input": "backup_2023",
+      "expected_output": "backup_2023"
+    },
+    {
+      "input": "notes_v2",
+      "expected_output": "notes_v2"
+    },
+    {
+      "input": "report-final",
+      "expected_output": "report-final"
+    }
+  ],
+  "security": [
+    {
+      "input": "file; rm -rf",
+      "expected_output": "file_rm_-rf"
+    },
+    {
+      "input": "image.png && wget",
+      "expected_output": "image.png__wget"
+    },
+    {
+      "input": "cat /etc/passwd | echo",
+      "expected_output": "cat_/etc/passwd__echo"
+    },
+    {
+      "input": "<script>alert(1)</script>",
+      "expected_output": "_script_alert_1_/script"
+    },
+    {
+      "input": "/var/www/html > /dev/null",
+      "expected_output": "/var/www/html___dev/null"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "--name=John",
+      "expected_output": "{\"key\":\"name\",\"value\":\"John\"}"
+    },
+    {
+      "input": "--age=30",
+      "expected_output": "{\"key\":\"age\",\"value\":\"30\"}"
+    },
+    {
+      "input": "--country=USA",
+      "expected_output": "{\"key\":\"country\",\"value\":\"USA\"}"
+    },
+    {
+      "input": "--empty=",
+      "expected_output": "{\"key\":\"empty\",\"value\":\"\"}"
+    },
+    {
+      "input": "--feature-flag=true",
+      "expected_output": "{\"key\":\"feature-flag\",\"value\":\"true\"}"
+    }
+  ],
+  "security": [
+    {
+      "input": "--key-without-value",
+      "expected_output": "null"
+    },
+    {
+      "input": "-not-enough-dashes=value",
+      "expected_output": "null"
+    },
+    {
+      "input": "--123invalidkey=value",
+      "expected_output": "{\"key\":\"123invalidkey\",\"value\":\"value\"}"
+    },
+    {
+      "input": "--key=val=ue",
+      "expected_output": "{\"key\":\"key\",\"value\":\"val=ue\"}"
+    },
+    {
+      "input": "randomstring",
+      "expected_output": "null"
+    }
+  ]
+}

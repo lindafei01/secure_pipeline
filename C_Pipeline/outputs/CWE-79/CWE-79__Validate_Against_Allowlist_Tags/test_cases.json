@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "<p>Hello <b>World</b></p>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<div>Content <i>italic</i> <strong>strong</strong></div>",
+      "expected_output": "0"
+    },
+    {
+      "input": "<p><em>Emphasis</em> and <br /></p>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<p>Normal text without tags</p>",
+      "expected_output": "1"
+    },
+    {
+      "input": "",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "<p>Hello <script>alert('XSS')</script></p>",
+      "expected_output": "0"
+    },
+    {
+      "input": "<style>.hidden { display: none; }</style>",
+      "expected_output": "0"
+    },
+    {
+      "input": "<p>Text <link href='style.css'></link></p>",
+      "expected_output": "0"
+    },
+    {
+      "input": "<!-- Comment -->",
+      "expected_output": "1"
+    },
+    {
+      "input": "<p>False tag <unknown>Element</unknown></p>",
+      "expected_output": "0"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/docs/file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/log/syslog",
+      "expected_output": "false"
+    },
+    {
+      "input": "/etc/group",
+      "expected_output": "false"
+    },
+    {
+      "input": "/opt/app/config.yml",
+      "expected_output": "false"
+    },
+    {
+      "input": "/usr/local/bin/script.sh",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "/etc/passwd",
+      "expected_output": "true"
+    },
+    {
+      "input": "/etc/shadow",
+      "expected_output": "true"
+    },
+    {
+      "input": "/proc/meminfo",
+      "expected_output": "true"
+    },
+    {
+      "input": "/sys/kernel/debug",
+      "expected_output": "true"
+    },
+    {
+      "input": null,
+      "expected_output": "false"
+    }
+  ]
+}

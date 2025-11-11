@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Check_Command_Contains_Command_Substitution",
+  "description": "Write a function that checks if a command contains command substitution syntax ($(...) or `...`). Return 1 if found, 0 otherwise. Must handle NULL safely. Example (Found): has_command_substitution(\"echo $(whoami)\") -> 1. Example (Not Found): has_command_substitution(\"echo hello\") -> 0.",
+  "function_name": "has_command_substitution",
+  "arguments": [
+    [
+      "const char*",
+      "command"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

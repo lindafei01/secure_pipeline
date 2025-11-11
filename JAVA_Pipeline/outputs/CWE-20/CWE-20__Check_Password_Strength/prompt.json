@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Check_Password_Strength",
+  "description": "Write a method that checks if a password string meets minimum complexity: at least 8 characters, contains uppercase, lowercase and digit. Return true if strong, false otherwise. Handle null input safely.",
+  "function_name": "isStrongPassword",
+  "arguments": [
+    [
+      "String",
+      "password"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

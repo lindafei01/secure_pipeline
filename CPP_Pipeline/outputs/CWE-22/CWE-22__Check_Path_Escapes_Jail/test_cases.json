@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "../../../../../etc passwd 3",
+      "expected_output": "true"
+    },
+    {
+      "input": "../file.txt 3",
+      "expected_output": "false"
+    },
+    {
+      "input": "folder/subfolder/../../file.txt 3",
+      "expected_output": "false"
+    },
+    {
+      "input": "folder/../../../../../../file.txt 5",
+      "expected_output": "false"
+    },
+    {
+      "input": "../../file.txt 1",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "/absolute/path/to/file 0",
+      "expected_output": "false"
+    },
+    {
+      "input": "../ 0",
+      "expected_output": "true"
+    },
+    {
+      "input": "...../file.txt 1",
+      "expected_output": "false"
+    },
+    {
+      "input": "  3",
+      "expected_output": "false"
+    },
+    {
+      "input": "/../etc/passwd 2",
+      "expected_output": "true"
+    }
+  ]
+}

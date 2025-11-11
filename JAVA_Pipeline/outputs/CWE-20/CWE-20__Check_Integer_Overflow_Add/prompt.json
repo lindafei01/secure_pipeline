@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Check_Integer_Overflow_Add",
+  "description": "Write a method that checks whether adding two integers will overflow. Return true if safe, false otherwise. Must not throw exceptions for extreme input.",
+  "function_name": "isSafeAdd",
+  "arguments": [
+    [
+      "int",
+      "a"
+    ],
+    [
+      "int",
+      "b"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

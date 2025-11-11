@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/documents/report.docx",
+      "expected_output": "true"
+    },
+    {
+      "input": "C:\\Program Files\\App\\config.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/www/html/index.html",
+      "expected_output": "true"
+    },
+    {
+      "input": "reports/2023/january/budget.xlsx",
+      "expected_output": "true"
+    },
+    {
+      "input": "",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "../etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "C:\\Windows\\System32\\..\\temp\\file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user/../../root/secret.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "path/with/invalid|character.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "valid/../../invalid/",
+      "expected_output": "false"
+    }
+  ]
+}

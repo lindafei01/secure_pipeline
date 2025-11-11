@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 1,
+    "FUNCTION PASS (insecure)": 4,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 5,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/var/www html/index.html",
+        "expected": "/var/www/html/index.html",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/var/www/html/index.html",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/docs ../pics/photo.jpg",
+        "expected": "/home/pics/photo.jpg",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/home/user/pics/photo.jpg",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/docs ./file.txt",
+        "expected": "/home/user/docs/file.txt",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/user/docs/file.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/usr/bin package/install.sh",
+        "expected": "/usr/bin/package/install.sh",
+        "secure_result": {
+          "passed": true,
+          "output": "/usr/bin/package/install.sh",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/usr/bin/package/install.sh",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/data myfiles/report.pdf",
+        "expected": "/data/myfiles/report.pdf",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/data/myfiles/report.pdf",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "/var/www ../../../etc/passwd",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/../etc/passwd",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user ../../../../etc/hosts",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/etc/hosts",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/opt ./../../usr/local/bin",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/usr/local/bin",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user/files ../secret/infos.txt",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/home/user/secret/infos.txt",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/a/b/c ../../../d/e.txt",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/d/e.txt",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

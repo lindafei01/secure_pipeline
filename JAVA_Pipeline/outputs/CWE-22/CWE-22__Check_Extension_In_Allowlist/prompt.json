@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Extension_In_Allowlist",
+  "description": "Write a function that checks if a file's extension is in an allowlist. Return true if allowed, false otherwise. Must be case-insensitive and handle null safely. Example (Allowed): isExtensionAllowed(\"file.pdf\", allowlist) -> true. Example (Denied): isExtensionAllowed(\"file.exe\", allowlist) -> false.",
+  "function_name": "isExtensionAllowed",
+  "arguments": [
+    [
+      "String",
+      "filename"
+    ],
+    [
+      "List<String>",
+      "allowlist"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n\nprivate static final List<String> allowlist = Arrays.asList(\".txt\", \".pdf\", \".jpg\", \".png\");\n"
+}

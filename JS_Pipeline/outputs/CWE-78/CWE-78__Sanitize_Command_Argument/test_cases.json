@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "normal_text_input",
+      "expected_output": "normal_text_input"
+    },
+    {
+      "input": "file.txt",
+      "expected_output": "file.txt"
+    },
+    {
+      "input": "simple-command",
+      "expected_output": "simple-command"
+    },
+    {
+      "input": "/home/user/docs",
+      "expected_output": "/home/user/docs"
+    },
+    {
+      "input": "../relative_path",
+      "expected_output": "../relative_path"
+    }
+  ],
+  "security": [
+    {
+      "input": "file; rm -rf /",
+      "expected_output": "file_rm_-rf_"
+    },
+    {
+      "input": "`shutdown now`",
+      "expected_output": "_shutdown_now_"
+    },
+    {
+      "input": "touch /tmp/`date '+%Y%m%d'`",
+      "expected_output": "touch_/tmp/_date_'+%Y%m%d'_"
+    },
+    {
+      "input": ">&2 echo 'error'",
+      "expected_output": "__2_echo_'error'"
+    },
+    {
+      "input": "file && echo vulnerable",
+      "expected_output": "file__echo_vulnerable"
+    }
+  ]
+}

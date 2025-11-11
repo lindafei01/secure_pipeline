@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello, World!",
+      "expected_output": "Hello, World!"
+    },
+    {
+      "input": "   Leading and trailing spaces   ",
+      "expected_output": "Leading and trailing spaces"
+    },
+    {
+      "input": "\tTabbed whitespace\t",
+      "expected_output": "Tabbed whitespace"
+    },
+    {
+      "input": "\nNewline whitespace\n",
+      "expected_output": "Newline whitespace"
+    },
+    {
+      "input": "   Mixed \t\n whitespace \t\n   ",
+      "expected_output": "Mixed \t\n whitespace"
+    }
+  ],
+  "security": [
+    {
+      "input": "   ",
+      "expected_output": ""
+    },
+    {
+      "input": "null",
+      "expected_output": "null"
+    },
+    {
+      "input": "undefined",
+      "expected_output": "null"
+    },
+    {
+      "input": "",
+      "expected_output": ""
+    },
+    {
+      "input": "  \t\n  \t\n  ",
+      "expected_output": ""
+    }
+  ]
+}

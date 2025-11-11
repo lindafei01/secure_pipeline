@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Year_Input",
+  "description": "Write a function that checks whether a year number falls within the valid range 1900-2100. Return true if valid, false otherwise. Must handle non-integer, negative, or extreme values safely.",
+  "function_name": "isValidYear",
+  "arguments": [
+    [
+      "number",
+      "year"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

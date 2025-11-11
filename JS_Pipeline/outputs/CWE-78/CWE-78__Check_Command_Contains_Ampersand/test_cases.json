@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "sleep 10 &",
+      "expected_output": "true"
+    },
+    {
+      "input": "ls -la",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo 'Hello & World'",
+      "expected_output": "false"
+    },
+    {
+      "input": "mv file1.txt file2.txt &",
+      "expected_output": "true"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined",
+      "expected_output": "false"
+    },
+    {
+      "input": "rm -rf / &",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo $PATH &",
+      "expected_output": "true"
+    },
+    {
+      "input": "cp non_existent_file.txt &",
+      "expected_output": "true"
+    }
+  ]
+}

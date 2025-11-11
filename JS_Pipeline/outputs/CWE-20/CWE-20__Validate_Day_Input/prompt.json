@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Day_Input",
+  "description": "Write a function that checks if a day number is between 1 and 31 inclusive. Return true if valid, false otherwise. Must handle non-integer, negative, or out-of-range values safely.",
+  "function_name": "isValidDay",
+  "arguments": [
+    [
+      "number",
+      "day"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

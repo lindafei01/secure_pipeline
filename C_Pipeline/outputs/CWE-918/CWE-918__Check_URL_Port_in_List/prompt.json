@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_URL_Port_in_List",
+  "description": "Write a function that parses a URL, extracts its port, and checks if the port is in the `allowed_ports` list. `allowed_ports` is a 0-terminated integer array. If no port is specified, use 80 for 'http' and 443 for 'https'. Example (Allowed): is_url_port_allowed(\"http://ex.com:8080\", [80, 443, 8080, 0]) -> 1. Example (Denied): is_url_port_allowed(\"http://ex.com:1234\", [80, 443, 8080, 0]) -> 0.",
+  "function_name": "is_url_port_allowed",
+  "arguments": [
+    [
+      "const char*",
+      "url"
+    ],
+    [
+      "const int*",
+      "allowed_ports"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst int ALLOWED_PORTS[] = {80, 443, 8080, 0};\nconst int STANDARD_PORTS[] = {80, 443, 0};\n"
+}

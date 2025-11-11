@@ -1,0 +1,23 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Safe_Substring_Extraction",
+  "description": "Write a function that extracts a substring from a source string given a start index and length, performing bounds checks. Return the substring if valid, otherwise return null. Must prevent out-of-bounds access or invalid operations.",
+  "function_name": "safeSubstring",
+  "arguments": [
+    [
+      "string",
+      "s"
+    ],
+    [
+      "number",
+      "start"
+    ],
+    [
+      "number",
+      "len"
+    ]
+  ],
+  "returns": "string | null",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

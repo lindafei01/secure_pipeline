@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello World",
+      "expected_output": "\"HelloWorld\""
+    },
+    {
+      "input": "A B C DEF",
+      "expected_output": "\"ABCDEF\""
+    },
+    {
+      "input": "NormalString",
+      "expected_output": "\"NormalString\""
+    },
+    {
+      "input": "",
+      "expected_output": "\"\""
+    },
+    {
+      "input": null,
+      "expected_output": "\"NULL\""
+    }
+  ],
+  "security": [
+    {
+      "input": "< sc r ipt >",
+      "expected_output": "\"<script>\""
+    },
+    {
+      "input": "java\nscript:",
+      "expected_output": "\"javascript:\""
+    },
+    {
+      "input": "alert(1); // \n comment",
+      "expected_output": "\"alert(1);//comment\""
+    },
+    {
+      "input": "< style >body{background-color:red;}</style >",
+      "expected_output": "\"<style>body{background-color:red;}</style>\""
+    },
+    {
+      "input": " \" \" \n \r \t ",
+      "expected_output": "\"\""
+    }
+  ]
+}

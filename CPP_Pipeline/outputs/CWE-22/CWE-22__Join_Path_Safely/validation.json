@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 5,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/var/www file.txt",
+        "expected": "/var/www/file.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "/var/www/file.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/var/www/file.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user documents/report.doc",
+        "expected": "/home/user/documents/report.doc",
+        "secure_result": {
+          "passed": true,
+          "output": "/home/user/documents/report.doc",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/user/documents/report.doc",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/tmp log.txt",
+        "expected": "/tmp/log.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "/tmp/log.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/tmp/log.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/users/admin profile.jpg",
+        "expected": "/users/admin/profile.jpg",
+        "secure_result": {
+          "passed": true,
+          "output": "/users/admin/profile.jpg",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/users/admin/profile.jpg",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/etc config.cfg",
+        "expected": "/etc/config.cfg",
+        "secure_result": {
+          "passed": true,
+          "output": "/etc/config.cfg",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/etc/config.cfg",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "/var/www ../etc/passwd",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/var/www/../etc/passwd",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user ../../../root/.bashrc",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/home/user/../../../root/.bashrc",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/tmp ../bin/ls",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/tmp/../bin/ls",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/users/admin ../../etc/shadow",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/users/admin/../../etc/shadow",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/etc ../../../../boot/grub/grub.cfg",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/etc/../../../../boot/grub/grub.cfg",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

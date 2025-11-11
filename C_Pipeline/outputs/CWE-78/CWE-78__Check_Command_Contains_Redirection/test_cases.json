@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls > output.txt",
+      "expected_output": "1"
+    },
+    {
+      "input": "cat < input.txt",
+      "expected_output": "1"
+    },
+    {
+      "input": "ls -la",
+      "expected_output": "0"
+    },
+    {
+      "input": "echo \"Hello World\"",
+      "expected_output": "0"
+    },
+    {
+      "input": "sort input.txt > sorted.txt",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "0"
+    },
+    {
+      "input": ">",
+      "expected_output": "1"
+    },
+    {
+      "input": "<",
+      "expected_output": "1"
+    },
+    {
+      "input": null,
+      "expected_output": "0"
+    },
+    {
+      "input": "malicious_command > /dev/null",
+      "expected_output": "1"
+    }
+  ]
+}

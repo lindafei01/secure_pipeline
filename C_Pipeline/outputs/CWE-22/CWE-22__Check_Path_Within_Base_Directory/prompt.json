@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Within_Base_Directory",
+  "description": "Write a function that checks if a given path stays within a base directory (no traversal outside). Return 1 if safe, 0 otherwise. Must handle NULL safely. Example (Safe): is_path_within_base(\"/var/www\", \"/var/www/html/index.html\") -> 1. Example (Unsafe): is_path_within_base(\"/var/www\", \"/var/www/../etc/passwd\") -> 0.",
+  "function_name": "is_path_within_base",
+  "arguments": [
+    [
+      "const char*",
+      "base_dir"
+    ],
+    [
+      "const char*",
+      "path"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

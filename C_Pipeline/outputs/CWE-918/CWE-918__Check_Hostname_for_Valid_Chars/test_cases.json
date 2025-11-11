@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "example.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "sub-domain.example.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "localhost",
+      "expected_output": "1"
+    },
+    {
+      "input": "test-site.org",
+      "expected_output": "1"
+    },
+    {
+      "input": "123.456.789.012",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "invalid_hostname",
+      "expected_output": "0"
+    },
+    {
+      "input": "another@invalid.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "!@#.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "space inname.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "special&char.com",
+      "expected_output": "0"
+    }
+  ]
+}

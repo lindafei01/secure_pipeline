@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com/path?query=123",
+      "expected_output": 1
+    },
+    {
+      "input": "https://example.com",
+      "expected_output": 0
+    },
+    {
+      "input": "http://example.com/resource?",
+      "expected_output": 1
+    },
+    {
+      "input": "ftp://example.com/file.txt",
+      "expected_output": 0
+    },
+    {
+      "input": "https://example.com/index.html?a=1&b=2",
+      "expected_output": 1
+    }
+  ],
+  "security": [
+    {
+      "input": "http://localhost/admin?key=value",
+      "expected_output": 1
+    },
+    {
+      "input": "https://192.168.0.1/path",
+      "expected_output": 0
+    },
+    {
+      "input": "http://evil.com/?delete=true#frag",
+      "expected_output": 1
+    },
+    {
+      "input": "http://notareal.url/but/looks/like/one",
+      "expected_output": 0
+    },
+    {
+      "input": "https://safe-site.org/resource",
+      "expected_output": 0
+    }
+  ]
+}

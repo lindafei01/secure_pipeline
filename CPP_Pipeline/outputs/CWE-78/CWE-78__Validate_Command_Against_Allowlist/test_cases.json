@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls",
+      "expected_output": "true"
+    },
+    {
+      "input": "cat",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo",
+      "expected_output": "true"
+    },
+    {
+      "input": "pwd",
+      "expected_output": "true"
+    },
+    {
+      "input": "grep",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "  ",
+      "expected_output": "false"
+    },
+    {
+      "input": "ls;",
+      "expected_output": "false"
+    },
+    {
+      "input": "/bin/ls",
+      "expected_output": "false"
+    },
+    {
+      "input": " ls",
+      "expected_output": "false"
+    }
+  ]
+}

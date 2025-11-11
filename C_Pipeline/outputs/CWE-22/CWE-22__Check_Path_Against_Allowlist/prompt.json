@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Against_Allowlist",
+  "description": "Write a function that checks if a path or its parent directories match any entry in an allowlist (NULL-terminated array). Return 1 if allowed, 0 otherwise. Must handle NULL safely. Example (Allowed): is_path_allowed(\"/var/www/html/file.txt\", allowlist) -> 1. Example (Denied): is_path_allowed(\"/etc/passwd\", allowlist) -> 0.",
+  "function_name": "is_path_allowed",
+  "arguments": [
+    [
+      "const char*",
+      "path"
+    ],
+    [
+      "const char**",
+      "allowlist"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* allowlist[] = {\"/var/www\", \"/home/user\", \"/tmp\", NULL};\n"
+}

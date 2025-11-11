@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "hello world world",
+      "expected_output": "true"
+    },
+    {
+      "input": "javascript is fun script",
+      "expected_output": "true"
+    },
+    {
+      "input": "javascript is fun JavaScript",
+      "expected_output": "false"
+    },
+    {
+      "input": "123456 456",
+      "expected_output": "true"
+    },
+    {
+      "input": "the quick brown fox the quick",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "null null",
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined undefined",
+      "expected_output": "false"
+    },
+    {
+      "input": "null defined",
+      "expected_output": "false"
+    },
+    {
+      "input": "defined null",
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined defined",
+      "expected_output": "false"
+    }
+  ]
+}

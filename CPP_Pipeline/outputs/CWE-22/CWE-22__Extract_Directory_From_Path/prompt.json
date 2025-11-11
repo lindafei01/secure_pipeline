@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Extract_Directory_From_Path",
+  "description": "Write a function that extracts the directory part from a path (everything before the last separator). Return the directory string, or empty string on error. Example: extractDirectory(\"/home/user/file.txt\") -> \"/home/user\". Example: extractDirectory(\"file.txt\") -> \"\".",
+  "function_name": "extractDirectory",
+  "arguments": [
+    [
+      "const std::string&",
+      "path"
+    ]
+  ],
+  "returns": "std::string",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

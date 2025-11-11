@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_IPv4_Address",
+  "description": "Write a function that checks whether a given string is a valid IPv4 address in dotted-decimal notation (four octets 0-255). Return true if valid, otherwise false. The function should treat null, undefined, or malformed input safely.",
+  "function_name": "isValidIPv4",
+  "arguments": [
+    [
+      "string",
+      "ipStr"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

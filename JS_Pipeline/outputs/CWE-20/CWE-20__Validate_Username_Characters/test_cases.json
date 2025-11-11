@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "username123",
+      "expected_output": "true"
+    },
+    {
+      "input": "user_name",
+      "expected_output": "true"
+    },
+    {
+      "input": "123456",
+      "expected_output": "true"
+    },
+    {
+      "input": "user-name",
+      "expected_output": "false"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "user$123",
+      "expected_output": "false"
+    },
+    {
+      "input": "_userName_",
+      "expected_output": "true"
+    },
+    {
+      "input": "null",
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined",
+      "expected_output": "false"
+    },
+    {
+      "input": "john.doe",
+      "expected_output": "false"
+    }
+  ]
+}

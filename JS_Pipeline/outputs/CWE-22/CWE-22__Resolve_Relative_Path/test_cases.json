@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/var/www html/index.html",
+      "expected_output": "/var/www/html/index.html"
+    },
+    {
+      "input": "/home/user docs/readme.txt",
+      "expected_output": "/home/user/docs/readme.txt"
+    },
+    {
+      "input": "/home/user/website assets/images/img.png",
+      "expected_output": "/home/user/website/assets/images/img.png"
+    },
+    {
+      "input": "/data/files logs/2023/log.txt",
+      "expected_output": "/data/files/logs/2023/log.txt"
+    },
+    {
+      "input": "/etc config/settings.json",
+      "expected_output": "/etc/config/settings.json"
+    }
+  ],
+  "security": [
+    {
+      "input": "/var/www ../etc/passwd",
+      "expected_output": "null"
+    },
+    {
+      "input": "/home/user ../../usr/bin/script.sh",
+      "expected_output": "null"
+    },
+    {
+      "input": "/data/files ../../../private/secret.txt",
+      "expected_output": "null"
+    },
+    {
+      "input": "/etc ../../../../root/.bashrc",
+      "expected_output": "null"
+    },
+    {
+      "input": "/home/user ./../documents/../hidden/file.txt",
+      "expected_output": "null"
+    }
+  ]
+}

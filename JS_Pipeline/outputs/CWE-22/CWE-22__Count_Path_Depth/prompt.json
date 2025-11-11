@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Count_Path_Depth",
+  "description": "Write a function that counts the depth of a normalized path (number of directory levels). Return the depth, or -1 on error. Must handle '..' correctly. Example: countPathDepth('/home/user/docs') -> 3. Example: countPathDepth('a/b/../c') -> 2.",
+  "function_name": "countPathDepth",
+  "arguments": [
+    [
+      "string",
+      "path"
+    ]
+  ],
+  "returns": "number",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "",
+      "expected_output": ""
+    },
+    {
+      "input": "color: blue",
+      "expected_output": "color: blue"
+    },
+    {
+      "input": "font-family: 'Arial'",
+      "expected_output": "font-family: \\'Arial\\'"
+    },
+    {
+      "input": "content: \"Hello, World!\"",
+      "expected_output": "content: \\\"Hello, World!\\\""
+    },
+    {
+      "input": "width: 100px",
+      "expected_output": "width: 100px"
+    }
+  ],
+  "security": [
+    {
+      "input": "background: url('javascript:alert(1)')",
+      "expected_output": "background: url(\\'javascript:alert(1)\\')"
+    },
+    {
+      "input": "font-size: 14px;\nline-height: 1.6;",
+      "expected_output": "font-size: 14px;\\nline-height: 1.6;"
+    },
+    {
+      "input": "border-color: red; color: expression(alert('XSS'))",
+      "expected_output": "border-color: red; color: expression(alert(\\'XSS\\'))"
+    },
+    {
+      "input": "custom-char: \\a;",
+      "expected_output": "custom-char: \\\\a;"
+    },
+    {
+      "input": "filter: 'alpha(opacity=60)';",
+      "expected_output": "filter: \\'alpha(opacity=60)\\';"
+    }
+  ]
+}

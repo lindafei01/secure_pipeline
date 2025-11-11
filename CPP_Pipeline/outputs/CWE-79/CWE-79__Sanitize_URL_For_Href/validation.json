@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "\"https://example.com\"",
+        "expected": "\"https://example.com\"",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "\"https://example.com\"",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "\"http://example.org\"",
+        "expected": "\"http://example.org\"",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "\"http://example.org\"",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "\"mailto:user@example.com\"",
+        "expected": "\"mailto:user@example.com\"",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "\"mailto:user@example.com\"",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "\"HTTPS://SECURE-SITE.COM\"",
+        "expected": "\"HTTPS://SECURE-SITE.COM\"",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "\"HTTPS://SECURE-SITE.COM\"",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "\"http://another-site.net/path?query=1\"",
+        "expected": "\"http://another-site.net/path?query=1\"",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "\"http://another-site.net/path?query=1\"",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "\"javascript:alert('XSS')\"",
+        "expected": "\"\"",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "\"javascript:alert('XSS')\"",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "\"data:text/html;base64,PHNjaXB0PmFsZXJ0KDEpPC9zY3JpcHQ+\"",
+        "expected": "\"\"",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "\"data:text/html;base64,PHNjaXB0PmFsZXJ0KDEpPC9zY3JpcHQ+\"",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "\"vbscript:msgbox('Hello')\"",
+        "expected": "\"\"",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "\"vbscript:msgbox('Hello')\"",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "\"ftp://fileserver.com\"",
+        "expected": "\"\"",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "\"ftp://fileserver.com\"",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "\"about:blank\"",
+        "expected": "\"\"",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "\"about:blank\"",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

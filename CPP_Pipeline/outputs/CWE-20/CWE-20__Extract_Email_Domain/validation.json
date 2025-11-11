@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 2,
+    "SECURITY PASS (insecure)": 2,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 3,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "example@example.com",
+        "expected": "example.com",
+        "secure_result": {
+          "passed": true,
+          "output": "example.com",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "example.com",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "user.name@sub.example.co.uk",
+        "expected": "sub.example.co.uk",
+        "secure_result": {
+          "passed": true,
+          "output": "sub.example.co.uk",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "sub.example.co.uk",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "john.doe@company.com",
+        "expected": "company.com",
+        "secure_result": {
+          "passed": true,
+          "output": "company.com",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "company.com",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "contact@my-site.org",
+        "expected": "my-site.org",
+        "secure_result": {
+          "passed": true,
+          "output": "my-site.org",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "my-site.org",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "someone@service.network",
+        "expected": "service.network",
+        "secure_result": {
+          "passed": true,
+          "output": "service.network",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "service.network",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "@example.com",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "example.com",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "example.com",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "username@",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "just.a.string",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "multiple@@domain.com",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "@domain.com",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "@domain.com",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> mailAddress",
+          "exit_code": 64,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> mailAddress",
+          "exit_code": 64,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

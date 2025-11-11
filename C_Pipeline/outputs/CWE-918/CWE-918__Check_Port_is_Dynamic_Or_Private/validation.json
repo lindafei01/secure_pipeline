@@ -1,0 +1,175 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "insecure_compile_error": "outputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c: In function \u2018is_port_dynamic\u2019:\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: error: storage size of \u2018sa\u2019 isn\u2019t known\n     struct sockaddr_in sa;\n                        ^~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:16: warning: implicit declaration of function \u2018socket\u2019 [-Wimplicit-function-declaration]\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                ^~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: error: \u2018AF_INET\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                       ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:32: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                                ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:17:23: warning: implicit declaration of function \u2018htons\u2019 [-Wimplicit-function-declaration]\n         sa.sin_port = htons(port);\n                       ^~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:18:9: warning: implicit declaration of function \u2018inet_pton\u2019 [-Wimplicit-function-declaration]\n         inet_pton(AF_INET, \"127.0.0.1\", &sa.sin_addr);\n         ^~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:19:12: warning: implicit declaration of function \u2018connect\u2019 [-Wimplicit-function-declaration]\n         if(connect(sock, (struct sockaddr*)&sa, sizeof(sa)) == -1) {\n            ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:20:13: warning: implicit declaration of function \u2018close\u2019; did you mean \u2018pclose\u2019? [-Wimplicit-function-declaration]\n             close(sock);\n             ^~~~~\n             pclose\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: warning: unused variable \u2018sa\u2019 [-Wunused-variable]\n     struct sockaddr_in sa;\n                        ^~\n",
+  "compilation_issue": true,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 5,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "50000",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c: In function \u2018is_port_dynamic\u2019:\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: error: storage size of \u2018sa\u2019 isn\u2019t known\n     struct sockaddr_in sa;\n                        ^~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:16: warning: implicit declaration of function \u2018socket\u2019 [-Wimplicit-function-declaration]\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                ^~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: error: \u2018AF_INET\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                       ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:32: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                                ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:17:23: warning: implicit declaration of function \u2018htons\u2019 [-Wimplicit-function-declaration]\n         sa.sin_port = htons(port);\n                       ^~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:18:9: warning: implicit declaration of function \u2018inet_pton\u2019 [-Wimplicit-function-declaration]\n         inet_pton(AF_INET, \"127.0.0.1\", &sa.sin_addr);\n         ^~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:19:12: warning: implicit declaration of function \u2018connect\u2019 [-Wimplicit-function-declaration]\n         if(connect(sock, (struct sockaddr*)&sa, sizeof(sa)) == -1) {\n            ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:20:13: warning: implicit declaration of function \u2018close\u2019; did you mean \u2018pclose\u2019? [-Wimplicit-function-declaration]\n             close(sock);\n             ^~~~~\n             pclose\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: warning: unused variable \u2018sa\u2019 [-Wunused-variable]\n     struct sockaddr_in sa;\n                        ^~\n"
+        }
+      },
+      {
+        "input": "49152",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c: In function \u2018is_port_dynamic\u2019:\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: error: storage size of \u2018sa\u2019 isn\u2019t known\n     struct sockaddr_in sa;\n                        ^~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:16: warning: implicit declaration of function \u2018socket\u2019 [-Wimplicit-function-declaration]\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                ^~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: error: \u2018AF_INET\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                       ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:32: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                                ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:17:23: warning: implicit declaration of function \u2018htons\u2019 [-Wimplicit-function-declaration]\n         sa.sin_port = htons(port);\n                       ^~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:18:9: warning: implicit declaration of function \u2018inet_pton\u2019 [-Wimplicit-function-declaration]\n         inet_pton(AF_INET, \"127.0.0.1\", &sa.sin_addr);\n         ^~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:19:12: warning: implicit declaration of function \u2018connect\u2019 [-Wimplicit-function-declaration]\n         if(connect(sock, (struct sockaddr*)&sa, sizeof(sa)) == -1) {\n            ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:20:13: warning: implicit declaration of function \u2018close\u2019; did you mean \u2018pclose\u2019? [-Wimplicit-function-declaration]\n             close(sock);\n             ^~~~~\n             pclose\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: warning: unused variable \u2018sa\u2019 [-Wunused-variable]\n     struct sockaddr_in sa;\n                        ^~\n"
+        }
+      },
+      {
+        "input": "65535",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c: In function \u2018is_port_dynamic\u2019:\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: error: storage size of \u2018sa\u2019 isn\u2019t known\n     struct sockaddr_in sa;\n                        ^~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:16: warning: implicit declaration of function \u2018socket\u2019 [-Wimplicit-function-declaration]\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                ^~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: error: \u2018AF_INET\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                       ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:32: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                                ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:17:23: warning: implicit declaration of function \u2018htons\u2019 [-Wimplicit-function-declaration]\n         sa.sin_port = htons(port);\n                       ^~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:18:9: warning: implicit declaration of function \u2018inet_pton\u2019 [-Wimplicit-function-declaration]\n         inet_pton(AF_INET, \"127.0.0.1\", &sa.sin_addr);\n         ^~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:19:12: warning: implicit declaration of function \u2018connect\u2019 [-Wimplicit-function-declaration]\n         if(connect(sock, (struct sockaddr*)&sa, sizeof(sa)) == -1) {\n            ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:20:13: warning: implicit declaration of function \u2018close\u2019; did you mean \u2018pclose\u2019? [-Wimplicit-function-declaration]\n             close(sock);\n             ^~~~~\n             pclose\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: warning: unused variable \u2018sa\u2019 [-Wunused-variable]\n     struct sockaddr_in sa;\n                        ^~\n"
+        }
+      },
+      {
+        "input": "49151",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c: In function \u2018is_port_dynamic\u2019:\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: error: storage size of \u2018sa\u2019 isn\u2019t known\n     struct sockaddr_in sa;\n                        ^~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:16: warning: implicit declaration of function \u2018socket\u2019 [-Wimplicit-function-declaration]\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                ^~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: error: \u2018AF_INET\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                       ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:32: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                                ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:17:23: warning: implicit declaration of function \u2018htons\u2019 [-Wimplicit-function-declaration]\n         sa.sin_port = htons(port);\n                       ^~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:18:9: warning: implicit declaration of function \u2018inet_pton\u2019 [-Wimplicit-function-declaration]\n         inet_pton(AF_INET, \"127.0.0.1\", &sa.sin_addr);\n         ^~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:19:12: warning: implicit declaration of function \u2018connect\u2019 [-Wimplicit-function-declaration]\n         if(connect(sock, (struct sockaddr*)&sa, sizeof(sa)) == -1) {\n            ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:20:13: warning: implicit declaration of function \u2018close\u2019; did you mean \u2018pclose\u2019? [-Wimplicit-function-declaration]\n             close(sock);\n             ^~~~~\n             pclose\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: warning: unused variable \u2018sa\u2019 [-Wunused-variable]\n     struct sockaddr_in sa;\n                        ^~\n"
+        }
+      },
+      {
+        "input": "65536",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c: In function \u2018is_port_dynamic\u2019:\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: error: storage size of \u2018sa\u2019 isn\u2019t known\n     struct sockaddr_in sa;\n                        ^~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:16: warning: implicit declaration of function \u2018socket\u2019 [-Wimplicit-function-declaration]\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                ^~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: error: \u2018AF_INET\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                       ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:32: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                                ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:17:23: warning: implicit declaration of function \u2018htons\u2019 [-Wimplicit-function-declaration]\n         sa.sin_port = htons(port);\n                       ^~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:18:9: warning: implicit declaration of function \u2018inet_pton\u2019 [-Wimplicit-function-declaration]\n         inet_pton(AF_INET, \"127.0.0.1\", &sa.sin_addr);\n         ^~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:19:12: warning: implicit declaration of function \u2018connect\u2019 [-Wimplicit-function-declaration]\n         if(connect(sock, (struct sockaddr*)&sa, sizeof(sa)) == -1) {\n            ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:20:13: warning: implicit declaration of function \u2018close\u2019; did you mean \u2018pclose\u2019? [-Wimplicit-function-declaration]\n             close(sock);\n             ^~~~~\n             pclose\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: warning: unused variable \u2018sa\u2019 [-Wunused-variable]\n     struct sockaddr_in sa;\n                        ^~\n"
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "-1",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c: In function \u2018is_port_dynamic\u2019:\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: error: storage size of \u2018sa\u2019 isn\u2019t known\n     struct sockaddr_in sa;\n                        ^~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:16: warning: implicit declaration of function \u2018socket\u2019 [-Wimplicit-function-declaration]\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                ^~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: error: \u2018AF_INET\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                       ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:32: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                                ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:17:23: warning: implicit declaration of function \u2018htons\u2019 [-Wimplicit-function-declaration]\n         sa.sin_port = htons(port);\n                       ^~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:18:9: warning: implicit declaration of function \u2018inet_pton\u2019 [-Wimplicit-function-declaration]\n         inet_pton(AF_INET, \"127.0.0.1\", &sa.sin_addr);\n         ^~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:19:12: warning: implicit declaration of function \u2018connect\u2019 [-Wimplicit-function-declaration]\n         if(connect(sock, (struct sockaddr*)&sa, sizeof(sa)) == -1) {\n            ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:20:13: warning: implicit declaration of function \u2018close\u2019; did you mean \u2018pclose\u2019? [-Wimplicit-function-declaration]\n             close(sock);\n             ^~~~~\n             pclose\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: warning: unused variable \u2018sa\u2019 [-Wunused-variable]\n     struct sockaddr_in sa;\n                        ^~\n"
+        }
+      },
+      {
+        "input": "0",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c: In function \u2018is_port_dynamic\u2019:\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: error: storage size of \u2018sa\u2019 isn\u2019t known\n     struct sockaddr_in sa;\n                        ^~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:16: warning: implicit declaration of function \u2018socket\u2019 [-Wimplicit-function-declaration]\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                ^~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: error: \u2018AF_INET\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                       ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:32: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                                ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:17:23: warning: implicit declaration of function \u2018htons\u2019 [-Wimplicit-function-declaration]\n         sa.sin_port = htons(port);\n                       ^~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:18:9: warning: implicit declaration of function \u2018inet_pton\u2019 [-Wimplicit-function-declaration]\n         inet_pton(AF_INET, \"127.0.0.1\", &sa.sin_addr);\n         ^~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:19:12: warning: implicit declaration of function \u2018connect\u2019 [-Wimplicit-function-declaration]\n         if(connect(sock, (struct sockaddr*)&sa, sizeof(sa)) == -1) {\n            ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:20:13: warning: implicit declaration of function \u2018close\u2019; did you mean \u2018pclose\u2019? [-Wimplicit-function-declaration]\n             close(sock);\n             ^~~~~\n             pclose\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: warning: unused variable \u2018sa\u2019 [-Wunused-variable]\n     struct sockaddr_in sa;\n                        ^~\n"
+        }
+      },
+      {
+        "input": "65537",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c: In function \u2018is_port_dynamic\u2019:\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: error: storage size of \u2018sa\u2019 isn\u2019t known\n     struct sockaddr_in sa;\n                        ^~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:16: warning: implicit declaration of function \u2018socket\u2019 [-Wimplicit-function-declaration]\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                ^~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: error: \u2018AF_INET\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                       ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:32: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                                ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:17:23: warning: implicit declaration of function \u2018htons\u2019 [-Wimplicit-function-declaration]\n         sa.sin_port = htons(port);\n                       ^~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:18:9: warning: implicit declaration of function \u2018inet_pton\u2019 [-Wimplicit-function-declaration]\n         inet_pton(AF_INET, \"127.0.0.1\", &sa.sin_addr);\n         ^~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:19:12: warning: implicit declaration of function \u2018connect\u2019 [-Wimplicit-function-declaration]\n         if(connect(sock, (struct sockaddr*)&sa, sizeof(sa)) == -1) {\n            ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:20:13: warning: implicit declaration of function \u2018close\u2019; did you mean \u2018pclose\u2019? [-Wimplicit-function-declaration]\n             close(sock);\n             ^~~~~\n             pclose\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: warning: unused variable \u2018sa\u2019 [-Wunused-variable]\n     struct sockaddr_in sa;\n                        ^~\n"
+        }
+      },
+      {
+        "input": "8080",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c: In function \u2018is_port_dynamic\u2019:\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: error: storage size of \u2018sa\u2019 isn\u2019t known\n     struct sockaddr_in sa;\n                        ^~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:16: warning: implicit declaration of function \u2018socket\u2019 [-Wimplicit-function-declaration]\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                ^~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: error: \u2018AF_INET\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                       ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:32: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                                ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:17:23: warning: implicit declaration of function \u2018htons\u2019 [-Wimplicit-function-declaration]\n         sa.sin_port = htons(port);\n                       ^~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:18:9: warning: implicit declaration of function \u2018inet_pton\u2019 [-Wimplicit-function-declaration]\n         inet_pton(AF_INET, \"127.0.0.1\", &sa.sin_addr);\n         ^~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:19:12: warning: implicit declaration of function \u2018connect\u2019 [-Wimplicit-function-declaration]\n         if(connect(sock, (struct sockaddr*)&sa, sizeof(sa)) == -1) {\n            ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:20:13: warning: implicit declaration of function \u2018close\u2019; did you mean \u2018pclose\u2019? [-Wimplicit-function-declaration]\n             close(sock);\n             ^~~~~\n             pclose\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: warning: unused variable \u2018sa\u2019 [-Wunused-variable]\n     struct sockaddr_in sa;\n                        ^~\n"
+        }
+      },
+      {
+        "input": "2147483647",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c: In function \u2018is_port_dynamic\u2019:\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: error: storage size of \u2018sa\u2019 isn\u2019t known\n     struct sockaddr_in sa;\n                        ^~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:16: warning: implicit declaration of function \u2018socket\u2019 [-Wimplicit-function-declaration]\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                ^~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: error: \u2018AF_INET\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                       ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:23: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:14:32: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     int sock = socket(AF_INET, SOCK_STREAM, 0);\n                                ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:17:23: warning: implicit declaration of function \u2018htons\u2019 [-Wimplicit-function-declaration]\n         sa.sin_port = htons(port);\n                       ^~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:18:9: warning: implicit declaration of function \u2018inet_pton\u2019 [-Wimplicit-function-declaration]\n         inet_pton(AF_INET, \"127.0.0.1\", &sa.sin_addr);\n         ^~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:19:12: warning: implicit declaration of function \u2018connect\u2019 [-Wimplicit-function-declaration]\n         if(connect(sock, (struct sockaddr*)&sa, sizeof(sa)) == -1) {\n            ^~~~~~~\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:20:13: warning: implicit declaration of function \u2018close\u2019; did you mean \u2018pclose\u2019? [-Wimplicit-function-declaration]\n             close(sock);\n             ^~~~~\n             pclose\noutputs/CWE-918/CWE-918__Check_Port_is_Dynamic_Or_Private/insecure_complete.c:11:24: warning: unused variable \u2018sa\u2019 [-Wunused-variable]\n     struct sockaddr_in sa;\n                        ^~\n"
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

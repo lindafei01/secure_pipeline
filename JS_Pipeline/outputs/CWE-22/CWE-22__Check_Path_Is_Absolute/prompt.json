@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Is_Absolute",
+  "description": "Write a function that checks if a path is absolute (starts with '/' on Unix or drive letter on Windows). Return true if absolute, false otherwise. Must handle null/undefined safely. Example (Absolute): isAbsolutePath('/home/user') -> true. Example (Relative): isAbsolutePath('../file.txt') -> false.",
+  "function_name": "isAbsolutePath",
+  "arguments": [
+    [
+      "string",
+      "path"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

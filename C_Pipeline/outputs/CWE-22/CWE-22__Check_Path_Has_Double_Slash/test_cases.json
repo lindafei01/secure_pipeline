@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/docs",
+      "expected_output": "0"
+    },
+    {
+      "input": "/var/log/system.log",
+      "expected_output": "0"
+    },
+    {
+      "input": "/usr/local/bin",
+      "expected_output": "0"
+    },
+    {
+      "input": "/etc/hosts",
+      "expected_output": "0"
+    },
+    {
+      "input": "/tmp/",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "/home//user/docs",
+      "expected_output": "1"
+    },
+    {
+      "input": "/var//log/system.log",
+      "expected_output": "1"
+    },
+    {
+      "input": "//usr//local/bin",
+      "expected_output": "1"
+    },
+    {
+      "input": "/etc///hosts",
+      "expected_output": "1"
+    },
+    {
+      "input": "///tmp//",
+      "expected_output": "1"
+    }
+  ]
+}

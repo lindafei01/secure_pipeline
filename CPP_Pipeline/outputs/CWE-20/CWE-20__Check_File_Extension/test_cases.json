@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "document.txt .txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "image.jpeg .jpeg",
+      "expected_output": "true"
+    },
+    {
+      "input": "presentation.pptx .pdf",
+      "expected_output": "false"
+    },
+    {
+      "input": "archive.tar.gz .gz",
+      "expected_output": "true"
+    },
+    {
+      "input": "notebook.ipynb .py",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "important_file. .",
+      "expected_output": "true"
+    },
+    {
+      "input": "systemfile .sys",
+      "expected_output": "false"
+    },
+    {
+      "input": "note .",
+      "expected_output": "false"
+    },
+    {
+      "input": ".hiddenfile .hiddenfile",
+      "expected_output": "true"
+    },
+    {
+      "input": "longfilenamewithoutextension .ext",
+      "expected_output": "false"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/.ssh/id_rsa",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/log/syslog",
+      "expected_output": "false"
+    },
+    {
+      "input": "/.hidden/folder/file.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "/files/subdir/visible.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "/opt/.config/setting.conf",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "/leading/.dot",
+      "expected_output": "true"
+    },
+    {
+      "input": "/path/to/normal/file",
+      "expected_output": "false"
+    },
+    {
+      "input": "..hidden/file",
+      "expected_output": "false"
+    },
+    {
+      "input": "./relative/.hiddenfile",
+      "expected_output": "true"
+    }
+  ]
+}

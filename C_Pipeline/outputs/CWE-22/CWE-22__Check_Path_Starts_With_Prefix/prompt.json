@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Starts_With_Prefix",
+  "description": "Write a function that checks if a path starts with a given prefix directory. Return 1 if yes, 0 otherwise. Must handle trailing slashes and NULL safely. Example (Yes): path_starts_with(\"/var/www/html\", \"/var/www\") -> 1. Example (No): path_starts_with(\"/var/log\", \"/var/www\") -> 0.",
+  "function_name": "path_starts_with",
+  "arguments": [
+    [
+      "const char*",
+      "path"
+    ],
+    [
+      "const char*",
+      "prefix"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

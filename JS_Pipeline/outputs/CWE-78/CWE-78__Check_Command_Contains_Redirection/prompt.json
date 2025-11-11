@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Check_Command_Contains_Redirection",
+  "description": "Write a function that checks if a command contains redirection operators (<, >, >>). Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): hasRedirection('ls > output.txt') -> true. Example (Not Found): hasRedirection('ls -la') -> false.",
+  "function_name": "hasRedirection",
+  "arguments": [
+    [
+      "string",
+      "command"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+}

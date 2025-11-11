@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 1,
+    "FUNCTION PASS (insecure)": 1,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 1,
+    "SECURITY PASS (insecure)": 1,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 4,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "files/docs/hello",
+        "expected": "'files/docs/hello'",
+        "secure_result": {
+          "passed": true,
+          "output": "'files/docs/hello'",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "'files/docs/hello'",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "backup 'folder'",
+        "expected": "'backup '\\''folder'\\'''",
+        "secure_result": {
+          "passed": false,
+          "output": "'backup'",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "'backup'",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "",
+        "expected": "''",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-78/CWE-78__Escape_Shell_Argument/secure_complete.js argument",
+          "exit_code": 1
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-78/CWE-78__Escape_Shell_Argument/insecure_complete.js argument",
+          "exit_code": 1
+        }
+      },
+      {
+        "input": "notes and sketches",
+        "expected": "'notes and sketches'",
+        "secure_result": {
+          "passed": false,
+          "output": "'notes'",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "'notes'",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "None",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "'None'",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "'None'",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "dangerous\ncommand",
+        "expected": "'dangerous'\\''\\ncommand'",
+        "secure_result": {
+          "passed": false,
+          "output": "'dangerous'",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "'dangerous'",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "pwd; ls",
+        "expected": "'pwd; ls'",
+        "secure_result": {
+          "passed": false,
+          "output": "'pwd;'",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "'pwd;'",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "uname -a",
+        "expected": "'uname -a'",
+        "secure_result": {
+          "passed": false,
+          "output": "'uname'",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "'uname'",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "inject \"code\"",
+        "expected": "'inject \"code\"'",
+        "secure_result": {
+          "passed": false,
+          "output": "'inject'",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "'inject'",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "../secret/data",
+        "expected": "'../secret/data'",
+        "secure_result": {
+          "passed": true,
+          "output": "'../secret/data'",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "'../secret/data'",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

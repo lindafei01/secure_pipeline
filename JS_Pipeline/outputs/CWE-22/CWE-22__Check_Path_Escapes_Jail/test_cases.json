@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "../file.txt 3",
+      "expected_output": "false"
+    },
+    {
+      "input": "../../docs/report.txt 2",
+      "expected_output": "false"
+    },
+    {
+      "input": "file.txt 0",
+      "expected_output": "false"
+    },
+    {
+      "input": "../../important/data.txt 3",
+      "expected_output": "false"
+    },
+    {
+      "input": "data/../file.txt 1",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "../../../../etc/passwd 3",
+      "expected_output": "true"
+    },
+    {
+      "input": "../.. 1",
+      "expected_output": "true"
+    },
+    {
+      "input": "../../../.. 2",
+      "expected_output": "true"
+    },
+    {
+      "input": "../../../../secret/config.cfg 4",
+      "expected_output": "true"
+    },
+    {
+      "input": "../dir/../../../../.hidden 4",
+      "expected_output": "true"
+    }
+  ]
+}

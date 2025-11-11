@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Compare_Paths_Normalized",
+  "description": "Write a function that compares two paths after normalizing them (resolving '..' and '.'). Return true if they refer to the same location, false otherwise. Must handle null/undefined safely. Example (Same): pathsEqualNormalized('/home/user/../user/file.txt', '/home/user/file.txt') -> true.",
+  "function_name": "pathsEqualNormalized",
+  "arguments": [
+    [
+      "string",
+      "path1"
+    ],
+    [
+      "string",
+      "path2"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

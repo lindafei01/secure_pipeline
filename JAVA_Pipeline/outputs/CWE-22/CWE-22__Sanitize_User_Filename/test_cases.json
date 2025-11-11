@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "../../etc/passwd",
+      "expected_output": "etc_passwd"
+    },
+    {
+      "input": "safe_filename.txt",
+      "expected_output": "safe_filename.txt"
+    },
+    {
+      "input": "my::file",
+      "expected_output": "my_file"
+    },
+    {
+      "input": "some/directory/file.name",
+      "expected_output": "directory_file.name"
+    },
+    {
+      "input": "simplefile",
+      "expected_output": "simplefile"
+    }
+  ],
+  "security": [
+    {
+      "input": "/../../../etc/shadow",
+      "expected_output": "etc_shadow"
+    },
+    {
+      "input": "null\u0000byte",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "././././",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "control\bchar",
+      "expected_output": "controlchar"
+    },
+    {
+      "input": "strange?\u0007",
+      "expected_output": "strange"
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 2,
+    "FUNCTION PASS (insecure)": 2,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 1,
+    "SECURITY PASS (insecure)": 1,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 4,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "../../etc/passwd",
+        "expected": "etc_passwd",
+        "secure_result": {
+          "passed": false,
+          "output": "....etcpasswd",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": ".._.._etc_passwd",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "safe_filename.txt",
+        "expected": "safe_filename.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "safe_filename.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "safe_filename.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "my::file",
+        "expected": "my_file",
+        "secure_result": {
+          "passed": false,
+          "output": "my::file",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "my::file",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "some/directory/file.name",
+        "expected": "directory_file.name",
+        "secure_result": {
+          "passed": false,
+          "output": "somedirectoryfile.name",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "some_directory_file.name",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "simplefile",
+        "expected": "simplefile",
+        "secure_result": {
+          "passed": true,
+          "output": "simplefile",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "simplefile",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "/../../../etc/shadow",
+        "expected": "etc_shadow",
+        "secure_result": {
+          "passed": false,
+          "output": "......etcshadow",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "_.._.._.._etc_shadow",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "null\u0000byte",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1,
+          "stderr": "embedded null byte"
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": -1,
+          "stderr": "embedded null byte"
+        }
+      },
+      {
+        "input": "././././",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "....",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "._._._._",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "control\bchar",
+        "expected": "controlchar",
+        "secure_result": {
+          "passed": true,
+          "output": "controlchar",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "controlchar",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "strange?\u0007",
+        "expected": "strange",
+        "secure_result": {
+          "passed": false,
+          "output": "strange?",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "strange?",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Vector_Index",
+  "description": "Write a function that checks if an index is valid for accessing a vector (i.e., within bounds). Return true if safe, false otherwise. Must handle negative indices and out-of-bounds safely.",
+  "function_name": "isValidVectorIndex",
+  "arguments": [
+    [
+      "int",
+      "index"
+    ],
+    [
+      "size_t",
+      "vectorSize"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Starts_With_Prefix",
+  "description": "Write a function that checks if a path starts with a given prefix directory. Return true if yes, false otherwise. Must handle trailing slashes and null/undefined safely. Example (Yes): pathStartsWith('/var/www/html', '/var/www') -> true. Example (No): pathStartsWith('/var/log', '/var/www') -> false.",
+  "function_name": "pathStartsWith",
+  "arguments": [
+    [
+      "string",
+      "path"
+    ],
+    [
+      "string",
+      "prefix"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

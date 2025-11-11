@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Check_Command_Contains_Command_Substitution",
+  "description": "Write a function that checks if a command contains command substitution syntax ($(...) or `...`). Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): hasCommandSubstitution('echo $(whoami)') -> true. Example (Not Found): hasCommandSubstitution('echo hello') -> false.",
+  "function_name": "hasCommandSubstitution",
+  "arguments": [
+    [
+      "string",
+      "command"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+}

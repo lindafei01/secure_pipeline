@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 3,
+    "FUNCTION PASS (insecure)": 3,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 3,
+    "SECURITY PASS (insecure)": 3,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 2,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/home/user/./docs/../file.txt",
+        "expected": "/home/user/file.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "/home/user/file.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/user/file.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/a/./b/./c/./d/../../e",
+        "expected": "/a/b/e",
+        "secure_result": {
+          "passed": true,
+          "output": "/a/b/e",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/a/b/e",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/../",
+        "expected": "/",
+        "secure_result": {
+          "passed": true,
+          "output": "/",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/docs/././",
+        "expected": "/home/user/docs",
+        "secure_result": {
+          "passed": false,
+          "output": "/home/user/docs/",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/home/user/docs/",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/../usr/./bin/",
+        "expected": "/usr/bin",
+        "secure_result": {
+          "passed": false,
+          "output": "/usr/bin/",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/usr/bin/",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "/etc/passwd",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "/etc/passwd",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/etc/passwd",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/var/./log/../../etc/shadow",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "/etc/shadow",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/etc/shadow",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user/../../../",
+        "expected": "/",
+        "secure_result": {
+          "passed": true,
+          "output": "/",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/../../../../../../",
+        "expected": "/",
+        "secure_result": {
+          "passed": true,
+          "output": "/",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user/../.ssh/../.config/../../",
+        "expected": "/",
+        "secure_result": {
+          "passed": true,
+          "output": "/",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

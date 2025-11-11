@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Username_Length",
+  "description": "Write a function that checks a username string is between 5 and 15 characters long and contains only letters and digits. Return true if valid, false otherwise. Must handle empty input safely.",
+  "function_name": "checkUsernameLength",
+  "arguments": [
+    [
+      "const std::string&",
+      "username"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

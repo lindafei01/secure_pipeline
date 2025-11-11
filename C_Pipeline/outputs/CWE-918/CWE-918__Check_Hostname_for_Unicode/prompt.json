@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_for_Unicode",
+  "description": "Write a function that checks if a `hostname` contains any non-ASCII characters (bytes > 127). Example (Has Unicode): hostname_has_unicode(\"example\\xC2\\xA9.com\") -> 1. Example (ASCII only): hostname_has_unicode(\"example.com\") -> 0.",
+  "function_name": "hostname_has_unicode",
+  "arguments": [
+    [
+      "const char*",
+      "hostname"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

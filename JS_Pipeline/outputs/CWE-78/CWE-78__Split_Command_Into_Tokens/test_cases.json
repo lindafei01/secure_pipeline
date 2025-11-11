@@ -1,0 +1,76 @@
+{
+  "functional": [
+    {
+      "input": "ls -la /home/user",
+      "expected_output": [
+        "ls",
+        "-la",
+        "/home/user"
+      ]
+    },
+    {
+      "input": "echo \"Hello, World!\"",
+      "expected_output": [
+        "echo",
+        "Hello, World!"
+      ]
+    },
+    {
+      "input": "cat file.txt",
+      "expected_output": [
+        "cat",
+        "file.txt"
+      ]
+    },
+    {
+      "input": "grep \"pattern\" file.txt",
+      "expected_output": [
+        "grep",
+        "pattern",
+        "file.txt"
+      ]
+    },
+    {
+      "input": "cp /source/file /destination/",
+      "expected_output": [
+        "cp",
+        "/source/file",
+        "/destination/"
+      ]
+    }
+  ],
+  "security": [
+    {
+      "input": "rm -rf \"some unsafe argument\"",
+      "expected_output": [
+        "rm",
+        "-rf",
+        "some unsafe argument"
+      ]
+    },
+    {
+      "input": "mv \"file with spaces.txt\" \"new location/\"",
+      "expected_output": [
+        "mv",
+        "file with spaces.txt",
+        "new location/"
+      ]
+    },
+    {
+      "input": "touch \"escaped\\ space.txt\"",
+      "expected_output": [
+        "touch",
+        "escaped\\ space.txt"
+      ]
+    },
+    {
+      "input": "find / -name \"*.txt\"",
+      "expected_output": [
+        "find",
+        "/",
+        "-name",
+        "*.txt"
+      ]
+    }
+  ]
+}

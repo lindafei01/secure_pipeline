@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Case_Insensitive_String_Match",
+  "description": "Write a utility function that compares two strings `s1` and `s2` case-insensitively. Example (Match): strcmpIgnoreCase(\"Hello\", \"hello\") -> true. Example (No Match): strcmpIgnoreCase(\"Hello\", \"world\") -> false.",
+  "function_name": "strcmpIgnoreCase",
+  "arguments": [
+    [
+      "const std::string&",
+      "s1"
+    ],
+    [
+      "const std::string&",
+      "s2"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

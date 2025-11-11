@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/docs",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/log",
+      "expected_output": "false"
+    },
+    {
+      "input": "/usr/local/bin",
+      "expected_output": "false"
+    },
+    {
+      "input": "/etc/config",
+      "expected_output": "false"
+    },
+    {
+      "input": "/opt/app/data",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "/proc/self/fd",
+      "expected_output": "true"
+    },
+    {
+      "input": "/sys/class/net",
+      "expected_output": "true"
+    },
+    {
+      "input": "/dev/random",
+      "expected_output": "true"
+    },
+    {
+      "input": "/dev/null",
+      "expected_output": "true"
+    },
+    {
+      "input": "../proc/self",
+      "expected_output": "true"
+    }
+  ]
+}

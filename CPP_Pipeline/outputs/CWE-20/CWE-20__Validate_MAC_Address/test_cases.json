@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "00:1A:2B:3C:4D:5E",
+      "expected_output": "true"
+    },
+    {
+      "input": "FF:FF:FF:FF:FF:FF",
+      "expected_output": "true"
+    },
+    {
+      "input": "01:23:45:67:89:AB",
+      "expected_output": "true"
+    },
+    {
+      "input": "G1:H2:I3:J4:K5:L6",
+      "expected_output": "false"
+    },
+    {
+      "input": "00-1A-2B-3C-4D-5E",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "00:1A:2B",
+      "expected_output": "false"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "00:1A:2B:3C:4D:5E:6F",
+      "expected_output": "false"
+    },
+    {
+      "input": "123456789ABC",
+      "expected_output": "false"
+    },
+    {
+      "input": "00:1A:2B:3C:4D:5E ",
+      "expected_output": "false"
+    }
+  ]
+}

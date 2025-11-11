@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "hello 0 4",
+      "expected_output": "hell"
+    },
+    {
+      "input": "hello 1 3",
+      "expected_output": "ell"
+    },
+    {
+      "input": "world 3 2",
+      "expected_output": "ld"
+    },
+    {
+      "input": "abcdef 2 4",
+      "expected_output": "cdef"
+    },
+    {
+      "input": "abcdef 0 6",
+      "expected_output": "abcdef"
+    }
+  ],
+  "security": [
+    {
+      "input": "test 10 4",
+      "expected_output": ""
+    },
+    {
+      "input": "example 5 10",
+      "expected_output": "e"
+    },
+    {
+      "input": "string 0 10",
+      "expected_output": "string"
+    },
+    {
+      "input": "boundary -1 3",
+      "expected_output": ""
+    },
+    {
+      "input": "short 3 -1",
+      "expected_output": ""
+    }
+  ]
+}

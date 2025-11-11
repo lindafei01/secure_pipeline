@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Validate_Safe_HTML_Attribute",
+  "description": "You are an expert C++ security programmer. Write a function that validates if an HTML attribute value is safe (contains only alphanumerics, hyphens, and underscores). Return true if safe, false otherwise. Must handle empty strings safely. Input: A C++ string representing an HTML attribute value. Output: Boolean true if the string contains only characters from the set [a-zA-Z0-9_-], which are generally safe for attribute values, false if it contains any other characters that might enable XSS. Example (Safe): isSafeHtmlAttribute(\"user-name_123\") -> true. Example (Unsafe): isSafeHtmlAttribute(\"user' onload='alert(1)\") -> false.",
+  "function_name": "isSafeHtmlAttribute",
+  "arguments": [
+    [
+      "const std::string&",
+      "attribute"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+}

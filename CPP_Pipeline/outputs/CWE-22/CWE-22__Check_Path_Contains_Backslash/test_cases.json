@@ -1,0 +1,38 @@
+{
+  "functional": [
+    {
+      "input": "C:\\Windows",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user",
+      "expected_output": "false"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "D:/Documents/Files",
+      "expected_output": "false"
+    },
+    {
+      "input": "\\\\Network\\Share",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "C:\\Users\\Admin\\..\\Secret\\File.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "\\",
+      "expected_output": "true"
+    },
+    {
+      "input": "RegularStringWithoutPath\\Separator",
+      "expected_output": "true"
+    }
+  ]
+}

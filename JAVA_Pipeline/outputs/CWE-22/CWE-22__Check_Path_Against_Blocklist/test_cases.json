@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/etc/passwd",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/log/messages",
+      "expected_output": "false"
+    },
+    {
+      "input": "/etc/shadow",
+      "expected_output": "true"
+    },
+    {
+      "input": "/proc/uptime",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "../etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "/sys/",
+      "expected_output": "true"
+    },
+    {
+      "input": "/sys/kernel",
+      "expected_output": "true"
+    },
+    {
+      "input": "/etc/",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user/../../etc/shadow",
+      "expected_output": "false"
+    }
+  ]
+}

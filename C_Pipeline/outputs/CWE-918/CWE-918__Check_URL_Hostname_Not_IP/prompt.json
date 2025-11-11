@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_URL_Hostname_Not_IP",
+  "description": "Write a function that validates a URL. It must return 1 if the URL's hostname part is a domain name (not a literal IP address). Example (Domain): is_url_hostname_not_ip(\"http://example.com\") -> 1. Example (IP): is_url_hostname_not_ip(\"http://1.2.3.4\") -> 0. Example (Malformed): is_url_hostname_not_ip(\"bad-url\") -> 0.",
+  "function_name": "is_url_hostname_not_ip",
+  "arguments": [
+    [
+      "const char*",
+      "url"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

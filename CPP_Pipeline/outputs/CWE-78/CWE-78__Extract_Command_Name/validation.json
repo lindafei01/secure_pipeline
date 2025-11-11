@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 4,
+    "FUNCTION PASS (insecure)": 4,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "ls -la",
+        "expected": "ls",
+        "secure_result": {
+          "passed": true,
+          "output": "ls",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "ls",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "  mkdir new_folder",
+        "expected": "mkdir",
+        "secure_result": {
+          "passed": true,
+          "output": "mkdir",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "mkdir",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "echo 'Hello, World!'",
+        "expected": "echo",
+        "secure_result": {
+          "passed": true,
+          "output": "echo",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "echo",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": " grep -i 'pattern' file.txt",
+        "expected": "grep",
+        "secure_result": {
+          "passed": true,
+          "output": "grep",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "grep",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "   ",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> command",
+          "exit_code": 64
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> command",
+          "exit_code": 64
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": ";; rm -rf /",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": ";;",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": ";;",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "| ls",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "|",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "|",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "&& cat /etc/passwd",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "&&",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "&&",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "`echo test`",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "`echo",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "`echo",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": " ",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> command",
+          "exit_code": 64,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> command",
+          "exit_code": 64,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

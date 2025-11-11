@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Remove_Trailing_Slashes",
+  "description": "Write a function that removes trailing slashes from a path. Return a path string without trailing slashes, or null on error. Must preserve root '/'. Example: removeTrailingSlashes('/home/user/') -> '/home/user'. Example: removeTrailingSlashes('/') -> '/'.",
+  "function_name": "removeTrailingSlashes",
+  "arguments": [
+    [
+      "string",
+      "path"
+    ]
+  ],
+  "returns": "string|null",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

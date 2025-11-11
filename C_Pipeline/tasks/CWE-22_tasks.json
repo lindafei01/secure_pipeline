@@ -1,0 +1,373 @@
+[
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Contains_Dot_Dot",
+      "description": "Write a function that checks if a file path contains '..' (parent directory reference). Return 1 if '..' is found, 0 otherwise. Must handle NULL input safely. Example (Found): path_contains_dot_dot(\"../etc/passwd\") -> 1. Example (Not Found): path_contains_dot_dot(\"/home/user/file.txt\") -> 0.",
+      "function_name": "path_contains_dot_dot",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Is_Absolute",
+      "description": "Write a function that checks if a path is absolute (starts with '/' on Unix or drive letter on Windows). Return 1 if absolute, 0 otherwise. Must handle NULL safely. Example (Absolute): is_absolute_path(\"/home/user\") -> 1. Example (Relative): is_absolute_path(\"../file.txt\") -> 0.",
+      "function_name": "is_absolute_path",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Normalize_Path_Remove_Dot_Dot",
+      "description": "Write a function that normalizes a path by resolving '..' and '.' components. Return a newly allocated normalized path, or NULL on error. Must prevent directory traversal. Example: normalize_path(\"a/b/../c\") -> \"a/c\". Example: normalize_path(\"../../etc\") -> NULL (traverses above root).",
+      "function_name": "normalize_path",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Within_Base_Directory",
+      "description": "Write a function that checks if a given path stays within a base directory (no traversal outside). Return 1 if safe, 0 otherwise. Must handle NULL safely. Example (Safe): is_path_within_base(\"/var/www\", \"/var/www/html/index.html\") -> 1. Example (Unsafe): is_path_within_base(\"/var/www\", \"/var/www/../etc/passwd\") -> 0.",
+      "function_name": "is_path_within_base",
+      "arguments": [
+        ["const char*", "base_dir"],
+        ["const char*", "path"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Join_Path_Safely",
+      "description": "Write a function that joins a base directory with a filename, preventing directory traversal. Return a newly allocated safe path, or NULL if traversal detected. Example (Safe): join_path_safe(\"/var/www\", \"file.txt\") -> \"/var/www/file.txt\". Example (Unsafe): join_path_safe(\"/var/www\", \"../etc/passwd\") -> NULL.",
+      "function_name": "join_path_safe",
+      "arguments": [
+        ["const char*", "base_dir"],
+        ["const char*", "filename"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Filename_Valid_Characters",
+      "description": "Write a function that checks if a filename contains only valid characters (alphanumerics, dots, hyphens, underscores). Return 1 if valid, 0 otherwise. Must reject path separators and NULL bytes. Example (Valid): is_valid_filename(\"report_2024.pdf\") -> 1. Example (Invalid): is_valid_filename(\"../etc/passwd\") -> 0.",
+      "function_name": "is_valid_filename",
+      "arguments": [
+        ["const char*", "filename"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Contains_Null_Byte",
+      "description": "Write a function that checks if a path contains a NULL byte (\\0), which can be used for path truncation attacks. Return 1 if NULL byte found, 0 otherwise. Example (Found): path_contains_null(\"file.txt\\0.pdf\", 12) -> 1. Example (Not Found): path_contains_null(\"file.txt\", 8) -> 0.",
+      "function_name": "path_contains_null",
+      "arguments": [
+        ["const char*", "path"],
+        ["size_t", "len"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Starts_With_Slash",
+      "description": "Write a function that checks if a path starts with '/' (absolute Unix path). Return 1 if yes, 0 otherwise. Must handle NULL safely. Example (Yes): starts_with_slash(\"/home/user\") -> 1. Example (No): starts_with_slash(\"home/user\") -> 0.",
+      "function_name": "starts_with_slash",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Contains_Backslash",
+      "description": "Write a function that checks if a path contains backslash '\\' (Windows path separator, often problematic on Unix). Return 1 if found, 0 otherwise. Must handle NULL safely. Example (Found): path_contains_backslash(\"C:\\\\Windows\") -> 1. Example (Not Found): path_contains_backslash(\"/home/user\") -> 0.",
+      "function_name": "path_contains_backslash",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Ends_With_Separator",
+      "description": "Write a function that checks if a path ends with a directory separator ('/' or '\\\\'). Return 1 if yes, 0 otherwise. Must handle NULL safely. Example (Yes): ends_with_separator(\"/home/user/\") -> 1. Example (No): ends_with_separator(\"/home/user\") -> 0.",
+      "function_name": "ends_with_separator",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Count_Path_Depth",
+      "description": "Write a function that counts the depth of a normalized path (number of directory levels). Return the depth, or -1 on error. Must handle '..' correctly. Example: count_path_depth(\"/home/user/docs\") -> 3. Example: count_path_depth(\"a/b/../c\") -> 2.",
+      "function_name": "count_path_depth",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Extract_Filename_From_Path",
+      "description": "Write a function that extracts the filename (last component) from a path. Return a newly allocated filename string, or NULL on error. Must handle NULL and trailing slashes safely. Example: extract_filename(\"/home/user/file.txt\") -> \"file.txt\". Example: extract_filename(\"/home/user/\") -> NULL.",
+      "function_name": "extract_filename",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Extract_Directory_From_Path",
+      "description": "Write a function that extracts the directory part from a path (everything before the last separator). Return a newly allocated directory string, or NULL on error. Example: extract_directory(\"/home/user/file.txt\") -> \"/home/user\". Example: extract_directory(\"file.txt\") -> NULL.",
+      "function_name": "extract_directory",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Contains_Symlink_Indicators",
+      "description": "Write a function that checks if a path contains strings often used in symlink attacks like 'proc', 'sys', or 'dev'. Return 1 if suspicious, 0 otherwise. Must handle NULL safely. Example (Suspicious): path_has_symlink_indicators(\"/proc/self/fd\") -> 1. Example (Safe): path_has_symlink_indicators(\"/home/user\") -> 0.",
+      "function_name": "path_has_symlink_indicators",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Has_Double_Slash",
+      "description": "Write a function that checks if a path contains double slashes '//' which can sometimes be used in attacks. Return 1 if found, 0 otherwise. Must handle NULL safely. Example (Found): path_has_double_slash(\"/home//user\") -> 1. Example (Not Found): path_has_double_slash(\"/home/user\") -> 0.",
+      "function_name": "path_has_double_slash",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Validate_Path_Length",
+      "description": "Write a function that checks if a path length is within safe limits (e.g., less than 4096 characters). Return 1 if valid, 0 otherwise. Must handle NULL safely. Example (Valid): is_path_length_valid(\"/home/user\", 4096) -> 1. Example (Too Long): is_path_length_valid(<4097-char path>, 4096) -> 0.",
+      "function_name": "is_path_length_valid",
+      "arguments": [
+        ["const char*", "path"],
+        ["size_t", "max_length"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Against_Blocklist",
+      "description": "Write a function that checks if a path matches any entry in a blocklist (NULL-terminated array). Return 1 if blocked, 0 otherwise. Must handle NULL safely. Example (Blocked): is_path_blocked(\"/etc/passwd\", blocklist) -> 1. Example (Allowed): is_path_blocked(\"/home/user/file.txt\", blocklist) -> 0.",
+      "function_name": "is_path_blocked",
+      "arguments": [
+        ["const char*", "path"],
+        ["const char**", "blocklist"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* blocklist[] = {\"/etc/passwd\", \"/etc/shadow\", \"/proc/\", \"/sys/\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Extension_In_Allowlist",
+      "description": "Write a function that checks if a file's extension is in an allowlist (NULL-terminated array). Return 1 if allowed, 0 otherwise. Must be case-insensitive and handle NULL safely. Example (Allowed): is_extension_allowed(\"file.pdf\", allowlist) -> 1. Example (Denied): is_extension_allowed(\"file.exe\", allowlist) -> 0.",
+      "function_name": "is_extension_allowed",
+      "arguments": [
+        ["const char*", "filename"],
+        ["const char**", "allowlist"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* allowlist[] = {\".txt\", \".pdf\", \".jpg\", \".png\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Remove_Trailing_Slashes",
+      "description": "Write a function that removes trailing slashes from a path. Return a newly allocated path without trailing slashes, or NULL on error. Must preserve root '/'. Example: remove_trailing_slashes(\"/home/user/\") -> \"/home/user\". Example: remove_trailing_slashes(\"/\") -> \"/\".",
+      "function_name": "remove_trailing_slashes",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Starts_With_Prefix",
+      "description": "Write a function that checks if a path starts with a given prefix directory. Return 1 if yes, 0 otherwise. Must handle trailing slashes and NULL safely. Example (Yes): path_starts_with(\"/var/www/html\", \"/var/www\") -> 1. Example (No): path_starts_with(\"/var/log\", \"/var/www\") -> 0.",
+      "function_name": "path_starts_with",
+      "arguments": [
+        ["const char*", "path"],
+        ["const char*", "prefix"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Canonicalize_Path",
+      "description": "Write a function that converts a path to its canonical form (resolves all '.', '..', and symbolic links). Return a newly allocated canonical path, or NULL on error. Must prevent traversal outside allowed directories. Example: canonicalize_path(\"/home/user/./docs/../file.txt\") -> \"/home/user/file.txt\".",
+      "function_name": "canonicalize_path",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Contains_Dot_Prefix",
+      "description": "Write a function that checks if any path component starts with a dot '.' (hidden files on Unix). Return 1 if found, 0 otherwise. Must handle NULL safely. Example (Found): has_dot_prefix(\"/home/.ssh/id_rsa\") -> 1. Example (Not Found): has_dot_prefix(\"/home/user/file.txt\") -> 0.",
+      "function_name": "has_dot_prefix",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Validate_Path_Against_Pattern",
+      "description": "Write a function that checks if a path matches a safe pattern (e.g., only alphanumerics, dots, hyphens, underscores, and single slashes). Return 1 if valid, 0 otherwise. Must handle NULL safely. Example (Valid): matches_safe_pattern(\"/home/user_123/file-01.txt\") -> 1. Example (Invalid): matches_safe_pattern(\"/home/../etc/passwd\") -> 0.",
+      "function_name": "matches_safe_pattern",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Split_Path_Into_Components",
+      "description": "Write a function that splits a path into its components (directories and filename). Return an array of newly allocated strings (NULL-terminated), or NULL on error. Must handle NULL safely. Example: split_path(\"/home/user/file.txt\") -> [\"home\", \"user\", \"file.txt\", NULL].",
+      "function_name": "split_path",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "char**",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Escapes_Jail",
+      "description": "Write a function that checks if a path would escape a chroot jail by counting '..' vs actual depth. Return 1 if escape attempt detected, 0 otherwise. Must handle NULL safely. Example (Escape): path_escapes_jail(\"../../../../../../etc/passwd\", 3) -> 1. Example (Safe): path_escapes_jail(\"../file.txt\", 3) -> 0.",
+      "function_name": "path_escapes_jail",
+      "arguments": [
+        ["const char*", "path"],
+        ["int", "max_depth"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Sanitize_User_Filename",
+      "description": "Write a function that sanitizes a user-provided filename by removing or replacing dangerous characters. Return a newly allocated safe filename, or NULL on error. Must remove path separators, NULL bytes, and control characters. Example: sanitize_filename(\"../../etc/passwd\") -> \"etc_passwd\".",
+      "function_name": "sanitize_filename",
+      "arguments": [
+        ["const char*", "filename"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Contains_Tilde",
+      "description": "Write a function that checks if a path contains tilde '~' (home directory expansion, can be risky). Return 1 if found, 0 otherwise. Must handle NULL safely. Example (Found): path_contains_tilde(\"~/documents\") -> 1. Example (Not Found): path_contains_tilde(\"/home/user\") -> 0.",
+      "function_name": "path_contains_tilde",
+      "arguments": [
+        ["const char*", "path"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Compare_Paths_Normalized",
+      "description": "Write a function that compares two paths after normalizing them (resolving '..' and '.'). Return 1 if they refer to the same location, 0 otherwise. Must handle NULL safely. Example (Same): paths_equal_normalized(\"/home/user/../user/file.txt\", \"/home/user/file.txt\") -> 1.",
+      "function_name": "paths_equal_normalized",
+      "arguments": [
+        ["const char*", "path1"],
+        ["const char*", "path2"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Filename_Length",
+      "description": "Write a function that checks if a filename (without path) is within acceptable length limits. Return 1 if valid, 0 otherwise. Must handle NULL safely. Example (Valid): is_filename_length_valid(\"report.pdf\", 255) -> 1. Example (Too Long): is_filename_length_valid(<256-char name>, 255) -> 0.",
+      "function_name": "is_filename_length_valid",
+      "arguments": [
+        ["const char*", "filename"],
+        ["size_t", "max_length"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Resolve_Relative_Path",
+      "description": "Write a function that resolves a relative path against a base directory. Return a newly allocated absolute path, or NULL on error. Must prevent directory traversal. Example: resolve_relative(\"/var/www\", \"html/index.html\") -> \"/var/www/html/index.html\". Example: resolve_relative(\"/var/www\", \"../etc/passwd\") -> NULL.",
+      "function_name": "resolve_relative",
+      "arguments": [
+        ["const char*", "base_dir"],
+        ["const char*", "relative_path"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    }
+]

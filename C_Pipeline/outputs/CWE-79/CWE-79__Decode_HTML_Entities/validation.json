@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 1,
+    "FUNCTION PASS (insecure)": 1,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 1,
+    "SECURITY PASS (insecure)": 1,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 4,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "&lt;h1&gt;Hello World&lt;/h1&gt;",
+        "expected": "<h1>Hello World</h1>",
+        "secure_result": {
+          "passed": false,
+          "output": "<h1>Hello",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "<h1>Hello",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Click &quot;here&quot; for more information.",
+        "expected": "Click \"here\" for more information.",
+        "secure_result": {
+          "passed": false,
+          "output": "Click",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Click",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "&amp;&lt;&gt;",
+        "expected": "&<>",
+        "secure_result": {
+          "passed": true,
+          "output": "&<>",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "&<>",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "No encoding here!",
+        "expected": "No encoding here!",
+        "secure_result": {
+          "passed": false,
+          "output": "No",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "No",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "&lt;p&gt;Sample paragraph&lt;/p&gt;",
+        "expected": "<p>Sample paragraph</p>",
+        "secure_result": {
+          "passed": false,
+          "output": "<p>Sample",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "<p>Sample",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "&lt;script&gt;alert(&#39;Attack&#39;)&lt;/script&gt;",
+        "expected": "<script>alert('Attack')</script>",
+        "secure_result": {
+          "passed": true,
+          "output": "<script>alert('Attack')</script>",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "<script>alert('Attack')</script>",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "&lt;img src=x onerror=alert(&#39;XSS&#39;)&gt;",
+        "expected": "<img src=x onerror=alert('XSS')>",
+        "secure_result": {
+          "passed": false,
+          "output": "<img",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "<img",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "&lt;!-- comment --&gt;",
+        "expected": "<!-- comment -->",
+        "secure_result": {
+          "passed": false,
+          "output": "<!--",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "<!--",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "&lt;a href=&quot;javascript:alert(&#39;Malicious&#39;)&quot;&gt;",
+        "expected": "<a href=\"javascript:alert('Malicious')\">",
+        "secure_result": {
+          "passed": false,
+          "output": "<a",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "<a",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "&lt;body onload=alert(&quot;Loaded&quot;)&gt;",
+        "expected": "<body onload=alert(\"Loaded\")>",
+        "secure_result": {
+          "passed": false,
+          "output": "<body",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "<body",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

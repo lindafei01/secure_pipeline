@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_is_Literal_IP",
+  "description": "Write a function that checks if a `hostname` string is a literal IPv4 (e.g., '1.2.3.4') or literal IPv6 (e.g., '[::1]') address. Example (IPv4): isHostnameLiteralIP(\"127.0.0.1\") -> true. Example (Domain): isHostnameLiteralIP(\"example.com\") -> false.",
+  "function_name": "isHostnameLiteralIP",
+  "arguments": [
+    [
+      "const std::string&",
+      "hostname"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Extract_Filename_From_Path",
+  "description": "Write a function that extracts the filename (last component) from a path. Return the filename string, or empty string on error. Must handle empty string and trailing slashes safely. Example: extractFilename(\"/home/user/file.txt\") -> \"file.txt\". Example: extractFilename(\"/home/user/\") -> \"\".",
+  "function_name": "extractFilename",
+  "arguments": [
+    [
+      "const std::string&",
+      "path"
+    ]
+  ],
+  "returns": "std::string",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

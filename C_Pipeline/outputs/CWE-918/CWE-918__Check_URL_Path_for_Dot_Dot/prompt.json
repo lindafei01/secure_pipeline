@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_URL_Path_for_Dot_Dot",
+  "description": "Write a function that checks if the path component of a `url` contains a '..' sequence, which could indicate path traversal. Example (Found): url_path_has_dot_dot(\"http://ex.com/path/../etc/passwd\") -> 1. Example (Not Found): url_path_has_dot_dot(\"http://ex.com/path/foo.bar\") -> 0.",
+  "function_name": "url_path_has_dot_dot",
+  "arguments": [
+    [
+      "const char*",
+      "url"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

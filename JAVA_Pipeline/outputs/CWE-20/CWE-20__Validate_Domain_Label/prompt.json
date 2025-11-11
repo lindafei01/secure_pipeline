@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Domain_Label",
+  "description": "Write a method that checks a domain label (part of a domain name) contains only letters, digits or hyphen, does not start or end with hyphen. Return true if valid, false otherwise. Must safely handle null or empty input.",
+  "function_name": "isValidDomainLabel",
+  "arguments": [
+    [
+      "String",
+      "label"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

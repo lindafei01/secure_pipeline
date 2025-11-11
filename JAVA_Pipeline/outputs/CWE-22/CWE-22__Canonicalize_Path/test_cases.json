@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/./docs/../file.txt",
+      "expected_output": "/home/user/file.txt"
+    },
+    {
+      "input": "/home/user/docs/././file.txt",
+      "expected_output": "/home/user/docs/file.txt"
+    },
+    {
+      "input": "/home/user/../user2/file.txt",
+      "expected_output": "/home/user2/file.txt"
+    },
+    {
+      "input": "/home/./user/./docs/./file.txt",
+      "expected_output": "/home/user/docs/file.txt"
+    },
+    {
+      "input": "/home/user/docs/../../file.txt",
+      "expected_output": "/home/file.txt"
+    }
+  ],
+  "security": [
+    {
+      "input": "/home/user/../../etc/passwd",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/home/user/../../../",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/etc/passwd/../../usr/bin",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/home/user/docs/../../../../",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/../../../../",
+      "expected_output": "NULL"
+    }
+  ]
+}

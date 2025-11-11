@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Check_Password_Strength",
+  "description": "Write a function that checks if a password string meets minimum complexity: at least 8 characters, contains uppercase, lowercase and digit. Return true if strong, false otherwise. Handle null/undefined input safely.",
+  "function_name": "isStrongPassword",
+  "arguments": [
+    [
+      "string",
+      "password"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

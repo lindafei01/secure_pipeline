@@ -1,0 +1,24 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": false,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": false,
+  "has_variable_assertions": true,
+  "summary": "Secure version failed to compile",
+  "secure_compile_error": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-22/CWE-22__Check_Path_Within_Base_Directory/secure_complete.cpp: In function \u2018bool isPathWithinBase(const string&, const string&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-22/CWE-22__Check_Path_Within_Base_Directory/secure_complete.cpp:23:23: error: \u2018PATH_MAX\u2019 was not declared in this scope\n     char resolvedBase[PATH_MAX];\n                       ^~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-22/CWE-22__Check_Path_Within_Base_Directory/secure_complete.cpp:23:23: note: suggested alternative: \u2018RAND_MAX\u2019\n     char resolvedBase[PATH_MAX];\n                       ^~~~~~~~\n                       RAND_MAX\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-22/CWE-22__Check_Path_Within_Base_Directory/secure_complete.cpp:26:35: error: \u2018resolvedBase\u2019 was not declared in this scope\n     if (realpath(baseDir.c_str(), resolvedBase) == nullptr || realpath(path.c_str(), resolvedPath) == nullptr) {\n                                   ^~~~~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-22/CWE-22__Check_Path_Within_Base_Directory/secure_complete.cpp:26:86: error: \u2018resolvedPath\u2019 was not declared in this scope\n     if (realpath(baseDir.c_str(), resolvedBase) == nullptr || realpath(path.c_str(), resolvedPath) == nullptr) {\n                                                                                      ^~~~~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-22/CWE-22__Check_Path_Within_Base_Directory/secure_complete.cpp:26:86: note: suggested alternative: \u2018realpath\u2019\n     if (realpath(baseDir.c_str(), resolvedBase) == nullptr || realpath(path.c_str(), resolvedPath) == nullptr) {\n                                                                                      ^~~~~~~~~~~~\n                                                                                      realpath\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-22/CWE-22__Check_Path_Within_Base_Directory/secure_complete.cpp:30:22: error: \u2018resolvedBase\u2019 was not declared in this scope\n     std::string base(resolvedBase);\n                      ^~~~~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-22/CWE-22__Check_Path_Within_Base_Directory/secure_complete.cpp:31:24: error: \u2018resolvedPath\u2019 was not declared in this scope\n     std::string target(resolvedPath);\n                        ^~~~~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-22/CWE-22__Check_Path_Within_Base_Directory/secure_complete.cpp:31:24: note: suggested alternative: \u2018realpath\u2019\n     std::string target(resolvedPath);\n                        ^~~~~~~~~~~~\n                        realpath\n",
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": false
+  },
+  "detailed_results": {
+    "functional_tests": [],
+    "security_tests": []
+  },
+  "valid_sample": false,
+  "compilation_issue": true
+}

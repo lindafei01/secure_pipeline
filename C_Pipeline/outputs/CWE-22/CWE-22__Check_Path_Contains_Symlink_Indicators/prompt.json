@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Contains_Symlink_Indicators",
+  "description": "Write a function that checks if a path contains strings often used in symlink attacks like 'proc', 'sys', or 'dev'. Return 1 if suspicious, 0 otherwise. Must handle NULL safely. Example (Suspicious): path_has_symlink_indicators(\"/proc/self/fd\") -> 1. Example (Safe): path_has_symlink_indicators(\"/home/user\") -> 0.",
+  "function_name": "path_has_symlink_indicators",
+  "arguments": [
+    [
+      "const char*",
+      "path"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

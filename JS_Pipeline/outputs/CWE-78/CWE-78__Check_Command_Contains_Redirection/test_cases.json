@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls > output.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "cat < input.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo Hello >> log.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "ls -la",
+      "expected_output": "false"
+    },
+    {
+      "input": "grep keyword file.txt",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "rm -rf /dir > error.log",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo \"$(cat sensitive.txt)\" > exposure.log",
+      "expected_output": "true"
+    },
+    {
+      "input": "; ls",
+      "expected_output": "false"
+    },
+    {
+      "input": "&& find . -name \"*.txt\"",
+      "expected_output": "false"
+    },
+    {
+      "input": "touch \"file.txt\"; cat file.txt >> store.txt",
+      "expected_output": "true"
+    }
+  ]
+}

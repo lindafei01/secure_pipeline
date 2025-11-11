@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Safe_Divide",
+  "description": "Write a function that divides two numbers safely. If the divisor is zero, the function should return 0 instead of throwing an error or returning Infinity. Must handle any input safely.",
+  "function_name": "safeDivide",
+  "arguments": [
+    [
+      "number",
+      "a"
+    ],
+    [
+      "number",
+      "b"
+    ]
+  ],
+  "returns": "number",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

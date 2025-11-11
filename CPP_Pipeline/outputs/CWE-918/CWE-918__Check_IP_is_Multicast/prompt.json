@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_IP_is_Multicast",
+  "description": "Write a function that checks if an IPv4 `ipStr` is a multicast address (224.0.0.0/4). Example (True): isIPMulticast(\"224.0.0.1\") -> true. Example (False): isIPMulticast(\"192.168.1.1\") -> false.",
+  "function_name": "isIPMulticast",
+  "arguments": [
+    [
+      "const std::string&",
+      "ipStr"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

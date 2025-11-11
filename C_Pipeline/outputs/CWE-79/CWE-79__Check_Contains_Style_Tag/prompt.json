@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Check_Contains_Style_Tag",
+  "description": "You are an expert C security programmer. Write a function that detects <style> tags in input, which can be used for CSS-based XSS attacks. Return 1 if <style> tags are found, 0 otherwise. Must be case-insensitive and handle NULL input safely. Input: A C string to check. Output: Integer 1 if the string contains '<style' (case-insensitive) followed by '>' or whitespace, 0 otherwise. Example (Found): contains_style_tag(\"<style>body{background:url('javascript:alert(1)')}</style>\") -> 1. Example (Not Found): contains_style_tag(\"Hello World\") -> 0.",
+  "function_name": "contains_style_tag",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

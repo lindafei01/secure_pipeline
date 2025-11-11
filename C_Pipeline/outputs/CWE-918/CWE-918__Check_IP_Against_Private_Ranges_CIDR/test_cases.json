@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "10.1.1.1",
+      "expected_output": "1"
+    },
+    {
+      "input": "192.168.1.1",
+      "expected_output": "1"
+    },
+    {
+      "input": "172.16.5.4",
+      "expected_output": "1"
+    },
+    {
+      "input": "11.0.0.1",
+      "expected_output": "0"
+    },
+    {
+      "input": "8.8.8.8",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "999.999.999.999",
+      "expected_output": "0"
+    },
+    {
+      "input": "256.256.256.256",
+      "expected_output": "0"
+    },
+    {
+      "input": "0.0.0.0",
+      "expected_output": "0"
+    },
+    {
+      "input": "127.0.0.1",
+      "expected_output": "0"
+    },
+    {
+      "input": "invalid.ip.address",
+      "expected_output": "0"
+    }
+  ]
+}

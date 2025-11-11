@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Remove_Shell_Comments",
+  "description": "Write a function that removes shell comments (everything after #) from a command. Return the cleaned command, or null on error. Must handle null safely. Example: removeComments(\"ls -la # list files\") -> \"ls -la \".",
+  "function_name": "removeComments",
+  "arguments": [
+    [
+      "String",
+      "command"
+    ]
+  ],
+  "returns": "String",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

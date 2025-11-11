@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Safe_String_to_Integer_Conversion",
+  "description": "Write a function that safely converts a string to an integer only if it represents a valid integer format (optional leading sign, digits). Return the converted integer value if valid, otherwise return 0. The function must protect against NULL or invalid input and not crash.",
+  "function_name": "safe_atoi",
+  "arguments": [
+    [
+      "const char*",
+      "input_str"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

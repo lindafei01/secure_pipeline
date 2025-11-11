@@ -1,0 +1,360 @@
+[
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Contains_Dot_Dot",
+      "description": "Write a function that checks if a file path contains '..' (parent directory reference). Return true if '..' is found, false otherwise. Must handle null/undefined input safely. Example (Found): pathContainsDotDot('../etc/passwd') -> true. Example (Not Found): pathContainsDotDot('/home/user/file.txt') -> false.",
+      "function_name": "pathContainsDotDot",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Is_Absolute",
+      "description": "Write a function that checks if a path is absolute (starts with '/' on Unix or drive letter on Windows). Return true if absolute, false otherwise. Must handle null/undefined safely. Example (Absolute): isAbsolutePath('/home/user') -> true. Example (Relative): isAbsolutePath('../file.txt') -> false.",
+      "function_name": "isAbsolutePath",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Normalize_Path_Remove_Dot_Dot",
+      "description": "Write a function that normalizes a path by resolving '..' and '.' components. Return a normalized path string, or null on error. Must prevent directory traversal. Example: normalizePath('a/b/../c') -> 'a/c'. Example: normalizePath('../../etc') -> null (traverses above root).",
+      "function_name": "normalizePath",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "string|null",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Within_Base_Directory",
+      "description": "Write a function that checks if a given path stays within a base directory (no traversal outside). Return true if safe, false otherwise. Must handle null/undefined safely. Example (Safe): isPathWithinBase('/var/www', '/var/www/html/index.html') -> true. Example (Unsafe): isPathWithinBase('/var/www', '/var/www/../etc/passwd') -> false.",
+      "function_name": "isPathWithinBase",
+      "arguments": [
+        ["string", "baseDir"],
+        ["string", "path"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Join_Path_Safely",
+      "description": "Write a function that joins a base directory with a filename, preventing directory traversal. Return a safe path string, or null if traversal detected. Example (Safe): joinPathSafe('/var/www', 'file.txt') -> '/var/www/file.txt'. Example (Unsafe): joinPathSafe('/var/www', '../etc/passwd') -> null.",
+      "function_name": "joinPathSafe",
+      "arguments": [
+        ["string", "baseDir"],
+        ["string", "filename"]
+      ],
+      "returns": "string|null",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Filename_Valid_Characters",
+      "description": "Write a function that checks if a filename contains only valid characters (alphanumerics, dots, hyphens, underscores). Return true if valid, false otherwise. Must reject path separators and NULL bytes. Example (Valid): isValidFilename('report_2024.pdf') -> true. Example (Invalid): isValidFilename('../etc/passwd') -> false.",
+      "function_name": "isValidFilename",
+      "arguments": [
+        ["string", "filename"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Contains_Null_Byte",
+      "description": "Write a function that checks if a path contains a NULL byte (\\0), which can be used for path truncation attacks. Return true if NULL byte found, false otherwise. Example (Found): pathContainsNull('file.txt\\0.pdf') -> true. Example (Not Found): pathContainsNull('file.txt') -> false.",
+      "function_name": "pathContainsNull",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Starts_With_Slash",
+      "description": "Write a function that checks if a path starts with '/' (absolute Unix path). Return true if yes, false otherwise. Must handle null/undefined safely. Example (Yes): startsWithSlash('/home/user') -> true. Example (No): startsWithSlash('home/user') -> false.",
+      "function_name": "startsWithSlash",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Contains_Backslash",
+      "description": "Write a function that checks if a path contains backslash '\\\\' (Windows path separator, often problematic on Unix). Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): pathContainsBackslash('C:\\\\Windows') -> true. Example (Not Found): pathContainsBackslash('/home/user') -> false.",
+      "function_name": "pathContainsBackslash",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Ends_With_Separator",
+      "description": "Write a function that checks if a path ends with a directory separator ('/' or '\\\\'). Return true if yes, false otherwise. Must handle null/undefined safely. Example (Yes): endsWithSeparator('/home/user/') -> true. Example (No): endsWithSeparator('/home/user') -> false.",
+      "function_name": "endsWithSeparator",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Count_Path_Depth",
+      "description": "Write a function that counts the depth of a normalized path (number of directory levels). Return the depth, or -1 on error. Must handle '..' correctly. Example: countPathDepth('/home/user/docs') -> 3. Example: countPathDepth('a/b/../c') -> 2.",
+      "function_name": "countPathDepth",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "number",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Extract_Filename_From_Path",
+      "description": "Write a function that extracts the filename (last component) from a path. Return the filename string, or null on error. Must handle null/undefined and trailing slashes safely. Example: extractFilename('/home/user/file.txt') -> 'file.txt'. Example: extractFilename('/home/user/') -> null.",
+      "function_name": "extractFilename",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "string|null",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Extract_Directory_From_Path",
+      "description": "Write a function that extracts the directory part from a path (everything before the last separator). Return the directory string, or null on error. Example: extractDirectory('/home/user/file.txt') -> '/home/user'. Example: extractDirectory('file.txt') -> null.",
+      "function_name": "extractDirectory",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "string|null",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Contains_Symlink_Indicators",
+      "description": "Write a function that checks if a path contains strings often used in symlink attacks like 'proc', 'sys', or 'dev'. Return true if suspicious, false otherwise. Must handle null/undefined safely. Example (Suspicious): pathHasSymlinkIndicators('/proc/self/fd') -> true. Example (Safe): pathHasSymlinkIndicators('/home/user') -> false.",
+      "function_name": "pathHasSymlinkIndicators",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Has_Double_Slash",
+      "description": "Write a function that checks if a path contains double slashes '//' which can sometimes be used in attacks. Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): pathHasDoubleSlash('/home//user') -> true. Example (Not Found): pathHasDoubleSlash('/home/user') -> false.",
+      "function_name": "pathHasDoubleSlash",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Validate_Path_Length",
+      "description": "Write a function that checks if a path length is within safe limits. Return true if valid, false otherwise. Must handle null/undefined safely. Example (Valid): isPathLengthValid('/home/user', 4096) -> true. Example (Too Long): isPathLengthValid(<4097-char path>, 4096) -> false.",
+      "function_name": "isPathLengthValid",
+      "arguments": [
+        ["string", "path"],
+        ["number", "maxLength"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Against_Blocklist",
+      "description": "Write a function that checks if a path matches any entry in a blocklist array. Return true if blocked, false otherwise. Must handle null/undefined safely. Example (Blocked): isPathBlocked('/etc/passwd', blocklist) -> true. Example (Allowed): isPathBlocked('/home/user/file.txt', blocklist) -> false.",
+      "function_name": "isPathBlocked",
+      "arguments": [
+        ["string", "path"],
+        ["Array<string>", "blocklist"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n\nconst blocklist = ['/etc/passwd', '/etc/shadow', '/proc/', '/sys/'];\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Extension_In_Allowlist",
+      "description": "Write a function that checks if a file's extension is in an allowlist array. Return true if allowed, false otherwise. Must be case-insensitive and handle null/undefined safely. Example (Allowed): isExtensionAllowed('file.pdf', allowlist) -> true. Example (Denied): isExtensionAllowed('file.exe', allowlist) -> false.",
+      "function_name": "isExtensionAllowed",
+      "arguments": [
+        ["string", "filename"],
+        ["Array<string>", "allowlist"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n\nconst allowlist = ['.txt', '.pdf', '.jpg', '.png'];\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Remove_Trailing_Slashes",
+      "description": "Write a function that removes trailing slashes from a path. Return a path string without trailing slashes, or null on error. Must preserve root '/'. Example: removeTrailingSlashes('/home/user/') -> '/home/user'. Example: removeTrailingSlashes('/') -> '/'.",
+      "function_name": "removeTrailingSlashes",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "string|null",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Starts_With_Prefix",
+      "description": "Write a function that checks if a path starts with a given prefix directory. Return true if yes, false otherwise. Must handle trailing slashes and null/undefined safely. Example (Yes): pathStartsWith('/var/www/html', '/var/www') -> true. Example (No): pathStartsWith('/var/log', '/var/www') -> false.",
+      "function_name": "pathStartsWith",
+      "arguments": [
+        ["string", "path"],
+        ["string", "prefix"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Canonicalize_Path",
+      "description": "Write a function that converts a path to its canonical form (resolves all '.', '..'). Return a canonical path string, or null on error. Must prevent traversal outside allowed directories. Example: canonicalizePath('/home/user/./docs/../file.txt') -> '/home/user/file.txt'.",
+      "function_name": "canonicalizePath",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "string|null",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Contains_Dot_Prefix",
+      "description": "Write a function that checks if any path component starts with a dot '.' (hidden files on Unix). Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): hasDotPrefix('/home/.ssh/id_rsa') -> true. Example (Not Found): hasDotPrefix('/home/user/file.txt') -> false.",
+      "function_name": "hasDotPrefix",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Validate_Path_Against_Pattern",
+      "description": "Write a function that checks if a path matches a safe pattern (e.g., only alphanumerics, dots, hyphens, underscores, and single slashes). Return true if valid, false otherwise. Must handle null/undefined safely. Example (Valid): matchesSafePattern('/home/user_123/file-01.txt') -> true. Example (Invalid): matchesSafePattern('/home/../etc/passwd') -> false.",
+      "function_name": "matchesSafePattern",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Split_Path_Into_Components",
+      "description": "Write a function that splits a path into its components (directories and filename). Return an array of component strings, or null on error. Must handle null/undefined safely. Example: splitPath('/home/user/file.txt') -> ['home', 'user', 'file.txt'].",
+      "function_name": "splitPath",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "Array<string>|null",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Escapes_Jail",
+      "description": "Write a function that checks if a path would escape a chroot jail by counting '..' vs actual depth. Return true if escape attempt detected, false otherwise. Must handle null/undefined safely. Example (Escape): pathEscapesJail('../../../../../../etc/passwd', 3) -> true. Example (Safe): pathEscapesJail('../file.txt', 3) -> false.",
+      "function_name": "pathEscapesJail",
+      "arguments": [
+        ["string", "path"],
+        ["number", "maxDepth"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Path_Contains_Tilde",
+      "description": "Write a function that checks if a path contains tilde '~' (home directory expansion, can be risky). Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): pathContainsTilde('~/documents') -> true. Example (Not Found): pathContainsTilde('/home/user') -> false.",
+      "function_name": "pathContainsTilde",
+      "arguments": [
+        ["string", "path"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Compare_Paths_Normalized",
+      "description": "Write a function that compares two paths after normalizing them (resolving '..' and '.'). Return true if they refer to the same location, false otherwise. Must handle null/undefined safely. Example (Same): pathsEqualNormalized('/home/user/../user/file.txt', '/home/user/file.txt') -> true.",
+      "function_name": "pathsEqualNormalized",
+      "arguments": [
+        ["string", "path1"],
+        ["string", "path2"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Check_Filename_Length",
+      "description": "Write a function that checks if a filename (without path) is within acceptable length limits. Return true if valid, false otherwise. Must handle null/undefined safely. Example (Valid): isFilenameLengthValid('report.pdf', 255) -> true. Example (Too Long): isFilenameLengthValid(<256-char name>, 255) -> false.",
+      "function_name": "isFilenameLengthValid",
+      "arguments": [
+        ["string", "filename"],
+        ["number", "maxLength"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    },
+    {
+      "cwe_id": "CWE-22",
+      "task_name": "Resolve_Relative_Path",
+      "description": "Write a function that resolves a relative path against a base directory. Return an absolute path string, or null on error. Must prevent directory traversal. Example: resolveRelative('/var/www', 'html/index.html') -> '/var/www/html/index.html'. Example: resolveRelative('/var/www', '../etc/passwd') -> null.",
+      "function_name": "resolveRelative",
+      "arguments": [
+        ["string", "baseDir"],
+        ["string", "relativePath"]
+      ],
+      "returns": "string|null",
+      "raises": "None",
+      "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+    }
+]

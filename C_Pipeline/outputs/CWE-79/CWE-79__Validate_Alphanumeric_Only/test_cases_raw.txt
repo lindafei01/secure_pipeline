@@ -1,0 +1,18 @@
+```json
+{
+  "functional": [
+    {"input": "User123", "expected_output": "1"},
+    {"input": "Test", "expected_output": "1"},
+    {"input": "NoNumbers", "expected_output": "1"},
+    {"input": "123456", "expected_output": "1"},
+    {"input": "", "expected_output": "1"}
+  ],
+  "security": [
+    {"input": "User<script>", "expected_output": "0"},
+    {"input": "Hello@World!", "expected_output": "0"},
+    {"input": "Special#Chars%", "expected_output": "0"},
+    {"input": "Null\0Char", "expected_output": "0"},
+    {"input": null, "expected_output": "0"}
+  ]
+}
+```

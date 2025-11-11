@@ -1,0 +1,114 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": false,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 3,
+    "FUNCTION PASS (secure)": 3,
+    "FUNCTION PASS (insecure)": 3,
+    "SECURITY TOTAL": 3,
+    "SECURITY PASS (secure)": 3,
+    "SECURITY PASS (insecure)": 3,
+    "REQUIRES_INSECURE_IVULNERABLE": false
+  },
+  "error_rate_insecure": 0,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "http://example.com",
+        "expected": "http://example.com",
+        "secure_result": {
+          "passed": true,
+          "output": "http://example.com",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "http://example.com",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "https://secure-site.org",
+        "expected": "https://secure-site.org",
+        "secure_result": {
+          "passed": true,
+          "output": "https://secure-site.org",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "https://secure-site.org",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "mailto:user@example.com",
+        "expected": "mailto:user@example.com",
+        "secure_result": {
+          "passed": true,
+          "output": "mailto:user@example.com",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "mailto:user@example.com",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "javascript:alert('XSS')",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "vbscript:msgbox('XSS')",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

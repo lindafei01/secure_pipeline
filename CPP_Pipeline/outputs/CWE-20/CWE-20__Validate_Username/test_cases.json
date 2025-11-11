@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "validUser123",
+      "expected_output": "true"
+    },
+    {
+      "input": "short",
+      "expected_output": "true"
+    },
+    {
+      "input": "12345678901234567890",
+      "expected_output": "true"
+    },
+    {
+      "input": "user_name_with_underscores",
+      "expected_output": "true"
+    },
+    {
+      "input": "special@characters!",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "ab",
+      "expected_output": "false"
+    },
+    {
+      "input": "123456789012345678901",
+      "expected_output": "false"
+    },
+    {
+      "input": "spaces allowed",
+      "expected_output": "false"
+    },
+    {
+      "input": "_under_score_start",
+      "expected_output": "true"
+    }
+  ]
+}

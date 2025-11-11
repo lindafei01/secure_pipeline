@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Case_Insensitive_String_Start",
+  "description": "Write a utility function that checks if `str` starts with `prefix` (case-insensitive). Example (Match): str_starts_with_case(\"HttpClient\", \"http\") -> 1. Example (No Match): str_starts_with_case(\"HttpClient\", \"tcp\") -> 0.",
+  "function_name": "str_starts_with_case",
+  "arguments": [
+    [
+      "const char*",
+      "str"
+    ],
+    [
+      "const char*",
+      "prefix"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

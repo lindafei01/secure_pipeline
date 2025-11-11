@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/var/www html/index.html",
+      "expected_output": "/var/www/html/index.html"
+    },
+    {
+      "input": "/home/user/docs ../pics/photo.jpg",
+      "expected_output": "/home/pics/photo.jpg"
+    },
+    {
+      "input": "/home/user/docs ./file.txt",
+      "expected_output": "/home/user/docs/file.txt"
+    },
+    {
+      "input": "/usr/bin package/install.sh",
+      "expected_output": "/usr/bin/package/install.sh"
+    },
+    {
+      "input": "/data myfiles/report.pdf",
+      "expected_output": "/data/myfiles/report.pdf"
+    }
+  ],
+  "security": [
+    {
+      "input": "/var/www ../../../etc/passwd",
+      "expected_output": "null"
+    },
+    {
+      "input": "/home/user ../../../../etc/hosts",
+      "expected_output": "null"
+    },
+    {
+      "input": "/opt ./../../usr/local/bin",
+      "expected_output": "null"
+    },
+    {
+      "input": "/home/user/files ../secret/infos.txt",
+      "expected_output": "null"
+    },
+    {
+      "input": "/a/b/c ../../../d/e.txt",
+      "expected_output": "null"
+    }
+  ]
+}

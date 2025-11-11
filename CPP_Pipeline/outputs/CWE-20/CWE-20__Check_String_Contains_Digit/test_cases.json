@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "\"123abc\"",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"abc\"",
+      "expected_output": "false"
+    },
+    {
+      "input": "\"hello123\"",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"\"",
+      "expected_output": "false"
+    },
+    {
+      "input": "\"1\"",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "\"!@#$$%^&*()\"",
+      "expected_output": "false"
+    },
+    {
+      "input": "\"768\"",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"   \"",
+      "expected_output": "false"
+    },
+    {
+      "input": "\"text_with-no_digit\"",
+      "expected_output": "false"
+    },
+    {
+      "input": "\"\u542b\u6709\u4e2d\u6587\u5b57\u7b26123\"",
+      "expected_output": "true"
+    }
+  ]
+}

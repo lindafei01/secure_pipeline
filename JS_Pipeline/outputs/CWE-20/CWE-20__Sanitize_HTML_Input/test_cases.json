@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "<p>This is a paragraph.</p>",
+      "expected_output": "true"
+    },
+    {
+      "input": "<div><h1>Title</h1></div>",
+      "expected_output": "true"
+    },
+    {
+      "input": "<a href='https://example.com'>Link</a>",
+      "expected_output": "true"
+    },
+    {
+      "input": "Plain text with no HTML",
+      "expected_output": "true"
+    },
+    {
+      "input": "",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "<script>alert('XSS');</script>",
+      "expected_output": "false"
+    },
+    {
+      "input": "<iframe src='dangerous.html'></iframe>",
+      "expected_output": "false"
+    },
+    {
+      "input": "<object data='movie.swf'></object>",
+      "expected_output": "false"
+    },
+    {
+      "input": "<body onload='doEvil()'>",
+      "expected_output": "true"
+    },
+    {
+      "input": null,
+      "expected_output": "true"
+    }
+  ]
+}

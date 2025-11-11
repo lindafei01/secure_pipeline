@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Year_Range",
+  "description": "Write a method that checks if a year integer is between 1900 and 2100 inclusive. Return true if valid, false otherwise. Must handle negative or extremely large inputs safely.",
+  "function_name": "checkYearRange",
+  "arguments": [
+    [
+      "int",
+      "year"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

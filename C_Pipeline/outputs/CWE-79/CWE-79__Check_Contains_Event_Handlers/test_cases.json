@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "<div class='content'>Sample text</div>",
+      "expected_output": "0"
+    },
+    {
+      "input": "<img src='image.jpg' alt='an image'>",
+      "expected_output": "0"
+    },
+    {
+      "input": "<a href='http://example.com'>link</a>",
+      "expected_output": "0"
+    },
+    {
+      "input": "<input type='text' name='inputName'>",
+      "expected_output": "0"
+    },
+    {
+      "input": "<form action='/submit' method='post'></form>",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "<button onclick='alert(1)'>Click me</button>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<img src='image.jpg' onerror='alert(\"error\")'>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<body onload='init()'>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<a href='http://example.com' onmouseover='hoverFunc()'>hover here</a>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<input type='button' value='Submit' ONCLICK='submitForm()'>",
+      "expected_output": "1"
+    }
+  ]
+}

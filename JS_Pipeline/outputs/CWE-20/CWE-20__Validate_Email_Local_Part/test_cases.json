@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "john.doe",
+      "expected_output": "true"
+    },
+    {
+      "input": "jane_doe123",
+      "expected_output": "true"
+    },
+    {
+      "input": "user_name_with_underscores",
+      "expected_output": "true"
+    },
+    {
+      "input": "user.name.with.dots",
+      "expected_output": "true"
+    },
+    {
+      "input": "123456",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "john@doe",
+      "expected_output": "false"
+    },
+    {
+      "input": "jane$doe",
+      "expected_output": "false"
+    },
+    {
+      "input": "null",
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined",
+      "expected_output": "false"
+    },
+    {
+      "input": "user!name",
+      "expected_output": "false"
+    }
+  ]
+}

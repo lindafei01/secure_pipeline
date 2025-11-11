@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "ls -la # list files",
+      "expected_output": "ls -la "
+    },
+    {
+      "input": "echo Hello World",
+      "expected_output": "echo Hello World"
+    },
+    {
+      "input": "git commit -m 'Initial commit' # first commit",
+      "expected_output": "git commit -m 'Initial commit' "
+    },
+    {
+      "input": "# This is a full line comment",
+      "expected_output": ""
+    },
+    {
+      "input": "pwd",
+      "expected_output": "pwd"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "null"
+    },
+    {
+      "input": "#",
+      "expected_output": ""
+    },
+    {
+      "input": "    #only comment here",
+      "expected_output": ""
+    },
+    {
+      "input": "echo 'This is # not a comment'",
+      "expected_output": "echo 'This is # not a comment'"
+    }
+  ]
+}

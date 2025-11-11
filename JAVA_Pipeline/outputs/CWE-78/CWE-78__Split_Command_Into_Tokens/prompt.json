@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Split_Command_Into_Tokens",
+  "description": "Write a function that safely splits a command string into tokens (command and arguments). Return a List of tokens, or null on error. Must handle quotes properly. Example: splitCommand(\"ls -la /home\") -> [\"ls\", \"-la\", \"/home\"].",
+  "function_name": "splitCommand",
+  "arguments": [
+    [
+      "String",
+      "command"
+    ]
+  ],
+  "returns": "List<String>",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

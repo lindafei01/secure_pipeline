@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Sanitize_User_Filename",
+  "description": "Write a function that sanitizes a user-provided filename by removing or replacing dangerous characters. Return a newly allocated safe filename, or NULL on error. Must remove path separators, NULL bytes, and control characters. Example: sanitize_filename(\"../../etc/passwd\") -> \"etc_passwd\".",
+  "function_name": "sanitize_filename",
+  "arguments": [
+    [
+      "const char*",
+      "filename"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

@@ -1,0 +1,158 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 4,
+    "FUNCTION PASS (insecure)": 1,
+    "SECURITY TOTAL": 4,
+    "SECURITY PASS (secure)": 1,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 4,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/home/user/file.txt",
+        "expected": "['home', 'user', 'file.txt']",
+        "secure_result": {
+          "passed": true,
+          "output": "['home', 'user', 'file.txt']",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['', 'home', 'user', 'file.txt']",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/var/log/system.log",
+        "expected": "['var', 'log', 'system.log']",
+        "secure_result": {
+          "passed": true,
+          "output": "['var', 'log', 'system.log']",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['', 'var', 'log', 'system.log']",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/",
+        "expected": "[]",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "[]",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/a/b/c/d",
+        "expected": "['a', 'b', 'c', 'd']",
+        "secure_result": {
+          "passed": true,
+          "output": "['a', 'b', 'c', 'd']",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['', 'a', 'b', 'c', 'd']",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "//multiple//slashes//here",
+        "expected": "['multiple', 'slashes', 'here']",
+        "secure_result": {
+          "passed": true,
+          "output": "['multiple', 'slashes', 'here']",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['', '', 'multiple', '', 'slashes', '', 'here']",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "",
+        "expected": "None",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> path",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> path",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "None",
+        "expected": "None",
+        "secure_result": {
+          "passed": false,
+          "output": "['None']",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['None']",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/././././",
+        "expected": "[]",
+        "secure_result": {
+          "passed": false,
+          "output": "['.', '.', '.', '.']",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['', '.', '.', '.', '.']",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/path/with/trailing/slash/",
+        "expected": "['path', 'with', 'trailing', 'slash']",
+        "secure_result": {
+          "passed": true,
+          "output": "['path', 'with', 'trailing', 'slash']",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['', 'path', 'with', 'trailing', 'slash']",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

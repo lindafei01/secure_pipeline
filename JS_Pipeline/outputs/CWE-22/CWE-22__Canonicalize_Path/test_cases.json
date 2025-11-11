@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/./docs/../file.txt",
+      "expected_output": "/home/user/file.txt"
+    },
+    {
+      "input": "/a/b/c/./../../g",
+      "expected_output": "/a/g"
+    },
+    {
+      "input": "/home/./user/./files/",
+      "expected_output": "/home/user/files"
+    },
+    {
+      "input": "/usr/local/../bin/./scripts/../",
+      "expected_output": "/usr/bin"
+    },
+    {
+      "input": "/./a/b/c/./d",
+      "expected_output": "/a/b/c/d"
+    }
+  ],
+  "security": [
+    {
+      "input": "/etc/passwd/../../../../../../bigfile",
+      "expected_output": "null"
+    },
+    {
+      "input": "../../../etc/hosts",
+      "expected_output": "null"
+    },
+    {
+      "input": "/var/log/../../../../badfile",
+      "expected_output": "null"
+    },
+    {
+      "input": "../usr/local/bin/somefile",
+      "expected_output": "null"
+    },
+    {
+      "input": "/home/user/../../etc/shadow",
+      "expected_output": "null"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Check_Contains_HTML_Tags",
+  "description": "You are an expert C security programmer. Write a function that checks if a string contains HTML tags (enclosed in < and >). This is used to detect potential XSS payloads. Return 1 if HTML tags are found, 0 otherwise. Must handle NULL input safely. Input: A C string to check. Output: Integer 1 if the string contains any sequence matching '<...>', 0 otherwise. The function should identify both opening tags like '<div>' and closing tags like '</div>', as well as self-closing tags like '<br/>'. Example (Contains): contains_html_tags(\"Hello <b>World</b>\") -> 1. Example (No Tags): contains_html_tags(\"Hello World\") -> 0.",
+  "function_name": "contains_html_tags",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

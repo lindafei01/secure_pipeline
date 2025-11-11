@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "width:100px",
+      "expected_output": "0"
+    },
+    {
+      "input": "background-color:#fff",
+      "expected_output": "0"
+    },
+    {
+      "input": "height:auto",
+      "expected_output": "0"
+    },
+    {
+      "input": "",
+      "expected_output": "0"
+    },
+    {
+      "input": null,
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "width:expression(alert(1))",
+      "expected_output": "1"
+    },
+    {
+      "input": "margin:EXPRESSION(document.cookie)",
+      "expected_output": "1"
+    },
+    {
+      "input": "color:expression(alert('XSS'))",
+      "expected_output": "1"
+    },
+    {
+      "input": "border:Expression(1)",
+      "expected_output": "1"
+    },
+    {
+      "input": "padding:expression(this.style.opacity=0)",
+      "expected_output": "1"
+    }
+  ]
+}

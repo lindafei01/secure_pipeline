@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "normal_text_input",
+        "expected": "normal_text_input",
+        "secure_result": {
+          "passed": true,
+          "output": "normal_text_input",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "normal_text_input",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "file.txt",
+        "expected": "file.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "file.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "file.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "simple-command",
+        "expected": "simple-command",
+        "secure_result": {
+          "passed": true,
+          "output": "simple-command",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "simple-command",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/user/docs",
+        "expected": "/home/user/docs",
+        "secure_result": {
+          "passed": true,
+          "output": "/home/user/docs",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/user/docs",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "../relative_path",
+        "expected": "../relative_path",
+        "secure_result": {
+          "passed": true,
+          "output": "../relative_path",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "../relative_path",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "file; rm -rf /",
+        "expected": "file_rm_-rf_",
+        "secure_result": {
+          "passed": false,
+          "output": "file_",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "file",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "`shutdown now`",
+        "expected": "_shutdown_now_",
+        "secure_result": {
+          "passed": false,
+          "output": "_shutdown",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "shutdown",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "touch /tmp/`date '+%Y%m%d'`",
+        "expected": "touch_/tmp/_date_'+%Y%m%d'_",
+        "secure_result": {
+          "passed": false,
+          "output": "touch",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "touch",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": ">&2 echo 'error'",
+        "expected": "__2_echo_'error'",
+        "secure_result": {
+          "passed": false,
+          "output": "__2",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "2",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "file && echo vulnerable",
+        "expected": "file__echo_vulnerable",
+        "secure_result": {
+          "passed": false,
+          "output": "file",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "file",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

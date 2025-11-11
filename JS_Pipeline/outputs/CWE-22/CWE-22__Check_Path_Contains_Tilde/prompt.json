@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Contains_Tilde",
+  "description": "Write a function that checks if a path contains tilde '~' (home directory expansion, can be risky). Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): pathContainsTilde('~/documents') -> true. Example (Not Found): pathContainsTilde('/home/user') -> false.",
+  "function_name": "pathContainsTilde",
+  "arguments": [
+    [
+      "string",
+      "path"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

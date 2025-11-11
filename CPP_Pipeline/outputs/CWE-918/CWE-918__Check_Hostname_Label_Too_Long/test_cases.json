@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "google.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "my.verylonghostnamepartthatstartswithandendswithtoomanycharactersbyfar.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "short.segment.longersegmentbutnottoolong.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "hostname.with.averyveryveryveryveryverylonglabel.exceeding.sixtythreecharacters.com",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "host-name-with-strange_chars!@#.com",
+      "expected_output": "false"
+    },
+    {
+      "input": ".leadingdot.hostname.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "trailingdot.hostname.com.",
+      "expected_output": "false"
+    },
+    {
+      "input": "hostnamewithAdjacentspecialcharacters..com",
+      "expected_output": "false"
+    },
+    {
+      "input": "*wildcard.hostname.example.com",
+      "expected_output": "false"
+    }
+  ]
+}

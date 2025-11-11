@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Check_Contains_Event_Handlers",
+  "description": "You are an expert C++ security programmer. Write a function that detects HTML event handler attributes (onclick, onload, onerror, etc.) which can execute JavaScript and enable XSS. Return true if event handlers are found, false otherwise. Must handle empty strings safely and be case-insensitive. Input: A C++ string to check for event handler attributes. Output: Boolean true if the string contains patterns like 'on' followed by common event names (click, load, error, mouseover, etc.), false otherwise. Example (Found): containsEventHandlers(\"<img onerror='alert(1)'>\") -> true. Example (Not Found): containsEventHandlers(\"<img src='pic.jpg'>\") -> false.",
+  "function_name": "containsEventHandlers",
+  "arguments": [
+    [
+      "const std::string&",
+      "input"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+}

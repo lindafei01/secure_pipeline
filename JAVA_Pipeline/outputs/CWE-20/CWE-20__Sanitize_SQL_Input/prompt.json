@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Sanitize_SQL_Input",
+  "description": "Write a method that checks if a string contains potentially dangerous SQL characters or keywords like single quotes, semicolons, or SQL keywords (SELECT, DROP, etc.). Return true if safe, false if potentially dangerous. Must handle null input safely.",
+  "function_name": "isSafeSQL",
+  "arguments": [
+    [
+      "String",
+      "input"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

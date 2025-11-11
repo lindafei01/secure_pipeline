@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Remove_Trailing_Slashes",
+  "description": "Write a function that removes trailing slashes from a path. Return a path string without trailing slashes, or empty string on error. Must preserve root '/'. Example: removeTrailingSlashes(\"/home/user/\") -> \"/home/user\". Example: removeTrailingSlashes(\"/\") -> \"/\".",
+  "function_name": "removeTrailingSlashes",
+  "arguments": [
+    [
+      "const std::string&",
+      "path"
+    ]
+  ],
+  "returns": "std::string",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

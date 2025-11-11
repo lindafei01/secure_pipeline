@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 1,
+    "SECURITY PASS (insecure)": 1,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 4,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "Hello, World!",
+        "expected": "Hello, World!",
+        "secure_result": {
+          "passed": false,
+          "output": "Hello,",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Hello,",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "   Leading and trailing spaces   ",
+        "expected": "Leading and trailing spaces",
+        "secure_result": {
+          "passed": false,
+          "output": "Leading",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Leading",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "\tTabbed whitespace\t",
+        "expected": "Tabbed whitespace",
+        "secure_result": {
+          "passed": false,
+          "output": "Tabbed",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Tabbed",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "\nNewline whitespace\n",
+        "expected": "Newline whitespace",
+        "secure_result": {
+          "passed": false,
+          "output": "Newline",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Newline",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "   Mixed \t\n whitespace \t\n   ",
+        "expected": "Mixed \t\n whitespace",
+        "secure_result": {
+          "passed": false,
+          "output": "Mixed",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Mixed",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "   ",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Trim_Whitespace/secure_complete.js input",
+          "exit_code": 1,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Trim_Whitespace/insecure_complete.js input",
+          "exit_code": 1,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "null",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "undefined",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "undefined",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "undefined",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Trim_Whitespace/secure_complete.js input",
+          "exit_code": 1,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Trim_Whitespace/insecure_complete.js input",
+          "exit_code": 1,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "  \t\n  \t\n  ",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Trim_Whitespace/secure_complete.js input",
+          "exit_code": 1,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: /ocean/projects/cis240137p/yfei4/secure_pipeline/JS_Pipeline/outputs/CWE-20/CWE-20__Trim_Whitespace/insecure_complete.js input",
+          "exit_code": 1,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

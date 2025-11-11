@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user_123/file-01.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "user123/docs/image.png",
+      "expected_output": "true"
+    },
+    {
+      "input": "/app/config/settings.yaml",
+      "expected_output": "true"
+    },
+    {
+      "input": "backup/archive-2023.zip",
+      "expected_output": "true"
+    },
+    {
+      "input": "",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "/home/../etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "C:\\Windows\\System32\\cmd.exe",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/www/html/<script>.php",
+      "expected_output": "false"
+    },
+    {
+      "input": "../outside/directory.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user//double//slash",
+      "expected_output": "false"
+    }
+  ]
+}

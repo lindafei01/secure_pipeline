@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "report_2024.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "document-final-v2.1.pdf",
+      "expected_output": "true"
+    },
+    {
+      "input": "my_notes_2023.docx",
+      "expected_output": "true"
+    },
+    {
+      "input": "image.jpeg",
+      "expected_output": "true"
+    },
+    {
+      "input": "project_plan.md",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "file; rm -rf",
+      "expected_output": "false"
+    },
+    {
+      "input": "attack.sh",
+      "expected_output": "true"
+    },
+    {
+      "input": "../etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "filename|echo",
+      "expected_output": "false"
+    },
+    {
+      "input": "file name with spaces.txt",
+      "expected_output": "false"
+    }
+  ]
+}

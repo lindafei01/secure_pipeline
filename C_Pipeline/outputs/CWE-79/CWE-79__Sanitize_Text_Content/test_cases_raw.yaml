@@ -1,0 +1,22 @@
+functional:
+- expected_output: Hello World
+  input: Hello World
+- expected_output: '&lt;Hello&gt;'
+  input: <Hello>
+- expected_output: Hello &amp; Goodbye
+  input: Hello & Goodbye
+- expected_output: "Spaces    Tabs\tare\tfine"
+  input: "Spaces    Tabs\tare\tfine"
+- expected_output: "Normal\nText\rWith\rNewlines\n"
+  input: "Normal\nText\rWith\rNewlines\n"
+security:
+- expected_output: Hello&lt;script&gt;alert(2)&lt;/script&gt;
+  input: "Hello\x05<script>alert(2)</script>"
+- expected_output: 'Contact: &lt;a href=&#39;mailto:bob@foo.com&#39;&gt;Bob&lt;/a&gt;'
+  input: 'Contact: <a href=''mailto:bob@foo.com''>Bob</a>'
+- expected_output: '&lt;div onclick=&#34;evil()&#34;&gt;Clickable&lt;/div&gt;'
+  input: <div onclick="evil()">Clickable</div>
+- expected_output: SafeContent
+  input: "Safe\x03Content"
+- expected_output: RemoveControlChars
+  input: "Remove\vControl\aChars"

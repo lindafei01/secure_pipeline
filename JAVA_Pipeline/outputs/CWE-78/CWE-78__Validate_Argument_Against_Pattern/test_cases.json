@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "file_123.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "document.pdf",
+      "expected_output": "true"
+    },
+    {
+      "input": "photo.jpeg",
+      "expected_output": "true"
+    },
+    {
+      "input": "notes_2023",
+      "expected_output": "true"
+    },
+    {
+      "input": "backup-file.zip",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "file; rm",
+      "expected_output": "false"
+    },
+    {
+      "input": "image.jpg && rm -rf /",
+      "expected_output": "false"
+    },
+    {
+      "input": "script.sh | ls",
+      "expected_output": "false"
+    },
+    {
+      "input": "readme.md && echo hello",
+      "expected_output": "false"
+    },
+    {
+      "input": null,
+      "expected_output": "false"
+    }
+  ]
+}

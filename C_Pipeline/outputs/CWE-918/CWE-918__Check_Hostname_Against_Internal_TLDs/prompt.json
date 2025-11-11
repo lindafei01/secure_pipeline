@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_Against_Internal_TLDs",
+  "description": "Write a function that checks if a `hostname` ends with any suffix in the `internal_tlds` list (case-insensitive). `internal_tlds` is a NULL-terminated array. Example (Match): hostname_has_tld(\"db.internal\", [\".local\", \".internal\"]) -> 1. Example (No Match): hostname_has_tld(\"db.com\", [\".local\", \".internal\"]) -> 0.",
+  "function_name": "hostname_has_tld",
+  "arguments": [
+    [
+      "const char*",
+      "hostname"
+    ],
+    [
+      "const char**",
+      "internal_tlds"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* INTERNAL_TLDS[] = {\".local\", \".internal\", \".corp\", NULL};\n"
+}

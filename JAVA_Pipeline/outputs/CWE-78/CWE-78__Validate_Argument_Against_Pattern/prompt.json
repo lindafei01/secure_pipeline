@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Validate_Argument_Against_Pattern",
+  "description": "Write a function that validates an argument against a safe pattern (e.g., alphanumerics and specific safe characters). Return true if valid, false otherwise. Must handle null safely. Example (Valid): matchesArgumentPattern(\"file_123.txt\") -> true. Example (Invalid): matchesArgumentPattern(\"file; rm\") -> false.",
+  "function_name": "matchesArgumentPattern",
+  "arguments": [
+    [
+      "String",
+      "argument"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

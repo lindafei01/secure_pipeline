@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_URL_Hostname_in_Definitions",
+  "description": "Write a function that parses a URL, extracts its hostname, and checks if it matches any string in the `definitions` vector (case-insensitive). Example (Match): isURLHostnameInList(\"http://LocalHost/\", definitions) -> true. Example (No Match): isURLHostnameInList(\"http://google.com/\", definitions) -> false.",
+  "function_name": "isURLHostnameInList",
+  "arguments": [
+    [
+      "const std::string&",
+      "url"
+    ],
+    [
+      "const std::vector<std::string>&",
+      "definitions"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> definitions = {\"localhost\", \"127.0.0.1\"};\n"
+}

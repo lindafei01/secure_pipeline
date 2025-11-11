@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Check_Contains_Data_Protocol",
+  "description": "You are an expert C++ security programmer. Write a function that detects 'data:' protocol in strings, which can be used to embed executable content in XSS attacks. Return true if found, false otherwise. Must be case-insensitive and handle empty strings safely. Input: A C++ string that may contain a URL or URI. Output: Boolean true if the string contains 'data:' (case-insensitive), false otherwise. The data: protocol can embed HTML, JavaScript, or other content inline. Example (Found): containsDataProtocol(\"data:text/html,<script>alert(1)</script>\") -> true. Example (Not Found): containsDataProtocol(\"https://example.com\") -> false.",
+  "function_name": "containsDataProtocol",
+  "arguments": [
+    [
+      "const std::string&",
+      "input"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+}

@@ -1,0 +1,146 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 3,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "normal string",
+        "expected": "normal string",
+        "secure_result": {
+          "passed": false,
+          "output": "normal",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "normal",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "color: blue",
+        "expected": "color: blue",
+        "secure_result": {
+          "passed": false,
+          "output": "color:",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "color:",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "background: #fff",
+        "expected": "background: #fff",
+        "secure_result": {
+          "passed": false,
+          "output": "background:",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "background:",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "red'; background: url('javascript:alert(1)')",
+        "expected": "red\\'; background: url(\\'javascript:alert(1)\\')",
+        "secure_result": {
+          "passed": false,
+          "output": "red\\';",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "red\\';",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "font-family: 'Comic Sans'",
+        "expected": "font-family: \\'Comic Sans\\'",
+        "secure_result": {
+          "passed": false,
+          "output": "font-family:",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "font-family:",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "content: \"unsafe\"",
+        "expected": "content: \\\"unsafe\\\"",
+        "secure_result": {
+          "passed": false,
+          "output": "content:",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "content:",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "line-break: \n",
+        "expected": "line-break: \\n",
+        "secure_result": {
+          "passed": false,
+          "output": "line-break:",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "line-break:",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "control\u0007char",
+        "expected": "control\\achar",
+        "secure_result": {
+          "passed": false,
+          "output": "control\\x07char",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "control\u0007char",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

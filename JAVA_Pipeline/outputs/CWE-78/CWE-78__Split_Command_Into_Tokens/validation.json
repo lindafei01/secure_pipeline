@@ -1,0 +1,158 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 4,
+    "SECURITY PASS (secure)": 1,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 4,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "ls -la /home",
+        "expected": "['ls', '-la', '/home']",
+        "secure_result": {
+          "passed": false,
+          "output": "['ls']",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['ls']",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "echo \"Hello World\"",
+        "expected": "['echo', 'Hello World']",
+        "secure_result": {
+          "passed": false,
+          "output": "['echo']",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['echo']",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "grep \"pattern\" /file/path",
+        "expected": "['grep', 'pattern', '/file/path']",
+        "secure_result": {
+          "passed": false,
+          "output": "['grep']",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['grep']",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "java -jar \"my program.jar\"",
+        "expected": "['java', '-jar', 'my program.jar']",
+        "secure_result": {
+          "passed": false,
+          "output": "['java']",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['java']",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "cp \"file 1.txt\" \"file 2.txt\"",
+        "expected": "['cp', 'file 1.txt', 'file 2.txt']",
+        "secure_result": {
+          "passed": false,
+          "output": "['cp']",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['cp']",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "\"incomplete quote test",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['incomplete']",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "bad command \"missing end quote",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "['bad']",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['bad']",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "another 'unclosed quote test",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "['another']",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['another']",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "ls \"-l \" /home/user",
+        "expected": "['ls', '-l ', '/home/user']",
+        "secure_result": {
+          "passed": false,
+          "output": "['ls']",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "['ls']",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "file's name",
+      "expected_output": "'file'\\''s name'"
+    },
+    {
+      "input": "simplefile",
+      "expected_output": "'simplefile'"
+    },
+    {
+      "input": "a filename with spaces.txt",
+      "expected_output": "'a filename with spaces.txt'"
+    },
+    {
+      "input": "",
+      "expected_output": "''"
+    },
+    {
+      "input": "multiple'quotes'in'here",
+      "expected_output": "'multiple'\\''quotes'\\''in'\\''here'"
+    }
+  ],
+  "security": [
+    {
+      "input": "malicious;rm -rf /",
+      "expected_output": "'malicious;rm -rf /'"
+    },
+    {
+      "input": "command && echo hello",
+      "expected_output": "'command && echo hello'"
+    },
+    {
+      "input": "inject'sql' OR '1'='1",
+      "expected_output": "'inject'\\''sql'\\'' OR '\\''1'\\''='\\''1'"
+    },
+    {
+      "input": "dir/../../etc/passwd",
+      "expected_output": "'dir/../../etc/passwd'"
+    },
+    {
+      "input": null,
+      "expected_output": "null"
+    }
+  ]
+}

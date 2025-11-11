@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Validate_Safe_Characters_For_ID",
+  "description": "You are an expert C security programmer. Write a function that validates if a string is safe to use as an HTML element ID. Must contain only letters, digits, hyphens, underscores, and start with a letter. Return 1 if valid, 0 otherwise. Must handle NULL input safely. Input: A C string intended to be used as an HTML element ID attribute. Output: Integer 1 if the string starts with a letter and contains only [a-zA-Z0-9_-], 0 otherwise. Valid IDs reduce the attack surface. Example (Valid): validate_safe_id(\"user-profile-123\") -> 1. Example (Invalid): validate_safe_id(\"123-user\") -> 0 (starts with digit). Example (Invalid): validate_safe_id(\"user<script>\") -> 0.",
+  "function_name": "validate_safe_id",
+  "arguments": [
+    [
+      "const char*",
+      "id"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

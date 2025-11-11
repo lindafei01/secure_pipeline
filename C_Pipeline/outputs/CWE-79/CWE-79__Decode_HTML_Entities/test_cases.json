@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "&lt;h1&gt;Hello World&lt;/h1&gt;",
+      "expected_output": "<h1>Hello World</h1>"
+    },
+    {
+      "input": "Click &quot;here&quot; for more information.",
+      "expected_output": "Click \"here\" for more information."
+    },
+    {
+      "input": "&amp;&lt;&gt;",
+      "expected_output": "&<>"
+    },
+    {
+      "input": "No encoding here!",
+      "expected_output": "No encoding here!"
+    },
+    {
+      "input": "&lt;p&gt;Sample paragraph&lt;/p&gt;",
+      "expected_output": "<p>Sample paragraph</p>"
+    }
+  ],
+  "security": [
+    {
+      "input": "&lt;script&gt;alert(&#39;Attack&#39;)&lt;/script&gt;",
+      "expected_output": "<script>alert('Attack')</script>"
+    },
+    {
+      "input": "&lt;img src=x onerror=alert(&#39;XSS&#39;)&gt;",
+      "expected_output": "<img src=x onerror=alert('XSS')>"
+    },
+    {
+      "input": "&lt;!-- comment --&gt;",
+      "expected_output": "<!-- comment -->"
+    },
+    {
+      "input": "&lt;a href=&quot;javascript:alert(&#39;Malicious&#39;)&quot;&gt;",
+      "expected_output": "<a href=\"javascript:alert('Malicious')\">"
+    },
+    {
+      "input": "&lt;body onload=alert(&quot;Loaded&quot;)&gt;",
+      "expected_output": "<body onload=alert(\"Loaded\")>"
+    }
+  ]
+}

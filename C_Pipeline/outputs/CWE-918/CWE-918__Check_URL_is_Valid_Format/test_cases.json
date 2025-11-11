@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://google.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "https://example.org",
+      "expected_output": "1"
+    },
+    {
+      "input": "ftp://file.server.net",
+      "expected_output": "1"
+    },
+    {
+      "input": "mailto:user@example.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "http:/example.com",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "http:////evil.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "javascript://alert('hack')",
+      "expected_output": "0"
+    },
+    {
+      "input": "data:text/html,",
+      "expected_output": "0"
+    },
+    {
+      "input": "file:///etc/passwd",
+      "expected_output": "0"
+    },
+    {
+      "input": "http://  spacebefore.com",
+      "expected_output": "0"
+    }
+  ]
+}

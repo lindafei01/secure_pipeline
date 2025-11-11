@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Username_Length",
+  "description": "Write a method that checks a username string is between 5 and 15 characters long and contains only letters and digits. Return true if valid, false otherwise. Must handle null or empty input safely.",
+  "function_name": "checkUsernameLength",
+  "arguments": [
+    [
+      "String",
+      "username"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

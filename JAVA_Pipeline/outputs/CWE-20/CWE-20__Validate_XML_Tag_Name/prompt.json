@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_XML_Tag_Name",
+  "description": "Write a method that checks if a string is a valid XML tag name (starts with letter or underscore, contains only letters, digits, hyphens, underscores, or periods). Return true if valid, false otherwise. Must handle null safely.",
+  "function_name": "isValidXMLTag",
+  "arguments": [
+    [
+      "String",
+      "tagName"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

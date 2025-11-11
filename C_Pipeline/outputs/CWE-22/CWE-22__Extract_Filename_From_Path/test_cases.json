@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/document.txt",
+      "expected_output": "document.txt"
+    },
+    {
+      "input": "/var/log/system.log",
+      "expected_output": "system.log"
+    },
+    {
+      "input": "/usr/bin/",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/singlefile",
+      "expected_output": "singlefile"
+    },
+    {
+      "input": "/",
+      "expected_output": "NULL"
+    }
+  ],
+  "security": [
+    {
+      "input": "../etc/passwd",
+      "expected_output": "passwd"
+    },
+    {
+      "input": "/path/to/.hiddenfile",
+      "expected_output": ".hiddenfile"
+    },
+    {
+      "input": "/home/user//",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/tricky/..//file.txt",
+      "expected_output": "file.txt"
+    },
+    {
+      "input": "/home/user/sensitive_data/.env",
+      "expected_output": ".env"
+    }
+  ]
+}

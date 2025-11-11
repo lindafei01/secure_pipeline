@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Contains_Backslash",
+  "description": "Write a function that checks if a path contains backslash '\\\\' (Windows path separator, often problematic on Unix). Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): pathContainsBackslash('C:\\\\Windows') -> true. Example (Not Found): pathContainsBackslash('/home/user') -> false.",
+  "function_name": "pathContainsBackslash",
+  "arguments": [
+    [
+      "string",
+      "path"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

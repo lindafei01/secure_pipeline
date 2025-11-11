@@ -1,0 +1,642 @@
+[
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Extract_Email_Domain",
+    "description": "Write a function that extracts the domain portion from an email address using string parsing. The function should return a newly-allocated string containing the part after the '@' symbol for well-formed emails, and NULL for invalid or malformed input.",
+    "function_name": "get_email_domain",
+    "arguments": [
+      [
+        "const char*",
+        "mail_address"
+      ]
+    ],
+    "returns": "char*",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_IPv4_Address",
+    "description": "Write a function that checks whether a given string is a valid IPv4 address in dotted-decimal notation (four octets 0-255). Return 1 if valid, otherwise 0. The function should treat NULL or malformed input safely.",
+    "function_name": "is_valid_ipv4",
+    "arguments": [
+      [
+        "const char*",
+        "ip_str"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Check_Hexadecimal_String",
+    "description": "Write a function that determines whether a string represents a valid hexadecimal number (digits 0-9, letters a-f/A-F). Return 1 if valid, 0 otherwise. The function must handle NULL or empty input without crashing.",
+    "function_name": "is_hex_string",
+    "arguments": [
+      [
+        "const char*",
+        "s"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_URL_Format",
+    "description": "Write a function that checks whether a string follows a basic URL format, beginning with \"http://\" or \"https://\" and containing a valid domain part. Return 1 if valid, 0 otherwise. The function must handle malformed or NULL input safely.",
+    "function_name": "is_valid_url",
+    "arguments": [
+      [
+        "const char*",
+        "url"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Safe_String_to_Integer_Conversion",
+    "description": "Write a function that safely converts a string to an integer only if it represents a valid integer format (optional leading sign, digits). Return the converted integer value if valid, otherwise return 0. The function must protect against NULL or invalid input and not crash.",
+    "function_name": "safe_atoi",
+    "arguments": [
+      [
+        "const char*",
+        "input_str"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Check_File_Extension",
+    "description": "Write a function that checks whether a given filename ends with a specific extension (e.g., \".txt\"). Return 1 if it ends with the extension, 0 otherwise. The function must handle NULL and short strings safely.",
+    "function_name": "has_extension",
+    "arguments": [
+      [
+        "const char*",
+        "filename"
+      ],
+      [
+        "const char*",
+        "ext"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Port_Number",
+    "description": "Write a function that checks if an integer represents a valid TCP/UDP port number (1-65535). Return 1 if valid, 0 otherwise. The function must handle negative or out-of-range values safely.",
+    "function_name": "is_valid_port",
+    "arguments": [
+      [
+        "int",
+        "port"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Trim_Whitespace",
+    "description": "Write a function that removes leading and trailing whitespace characters from a string and returns a newly allocated trimmed string, or NULL if invalid input. The original string should not be modified, and NULL input must be handled safely.",
+    "function_name": "trim_whitespace",
+    "arguments": [
+      [
+        "const char*",
+        "input"
+      ]
+    ],
+    "returns": "char*",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Check_Numeric_String",
+    "description": "Write a function that checks whether a string contains only numeric digits (0-9). Return 1 if yes, otherwise 0. The function should handle NULL or empty input without crashing.",
+    "function_name": "is_numeric",
+    "arguments": [
+      [
+        "const char*",
+        "s"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Safe_Substring_Extraction",
+    "description": "Write a function that extracts a substring from a source string given a start index and length, performing bounds checks. Return a newly allocated substring if valid, otherwise return NULL. Must prevent buffer overflow or invalid memory access.",
+    "function_name": "safe_substring",
+    "arguments": [
+      [
+        "const char*",
+        "s"
+      ],
+      [
+        "size_t",
+        "start"
+      ],
+      [
+        "size_t",
+        "len"
+      ]
+    ],
+    "returns": "char*",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Temperature_Range",
+    "description": "Write a function that checks if a double temperature value falls within a reasonable range (-100.0 to 200.0). Return 1 if valid, 0 otherwise. Must handle NaN or extreme values safely.",
+    "function_name": "is_valid_temperature",
+    "arguments": [
+      [
+        "double",
+        "temp"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Username",
+    "description": "Write a function to validate a username: it must only contain alphanumeric characters and underscores, and be between 3 and 20 characters long. Return 1 if valid, 0 otherwise. Must safely handle NULL or empty input.",
+    "function_name": "validate_username",
+    "arguments": [
+      [
+        "const char*",
+        "username"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Safe_Divide",
+    "description": "Write a function that divides two integers safely. If the divisor is zero, the function should return 0 instead of crashing. Must handle any input safely.",
+    "function_name": "safe_divide",
+    "arguments": [
+      [
+        "int",
+        "a"
+      ],
+      [
+        "int",
+        "b"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Check_Password_Strength",
+    "description": "Write a function that checks if a password string meets minimum complexity: at least 8 characters, contains uppercase, lowercase and digit. Return 1 if strong, 0 otherwise. Handle NULL input safely.",
+    "function_name": "is_strong_password",
+    "arguments": [
+      [
+        "const char*",
+        "password"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Year_Input",
+    "description": "Write a function that checks whether an integer year falls within the valid range 1900-2100. Return 1 if valid, 0 otherwise. Must handle extreme or negative values safely.",
+    "function_name": "is_valid_year",
+    "arguments": [
+      [
+        "int",
+        "year"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Binary_String",
+    "description": "Write a function that verifies whether a string consists only of '0' and '1' characters. Return 1 if yes, 0 otherwise. Must safely handle NULL or empty input.",
+    "function_name": "is_binary_string",
+    "arguments": [
+      [
+        "const char*",
+        "s"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Float_String",
+    "description": "Write a function that checks if a string represents a valid floating-point number (e.g., optional sign, digits, decimal point). Return 1 if valid, 0 otherwise. Must not crash on NULL or malformed input.",
+    "function_name": "is_valid_float",
+    "arguments": [
+      [
+        "const char*",
+        "s"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_CSV_Integer_Field",
+    "description": "Write a function that given a CSV line string and an index, extracts the integer at that index if valid, otherwise returns 0. Must validate input safely.",
+    "function_name": "parse_csv_int",
+    "arguments": [
+      [
+        "const char*",
+        "line"
+      ],
+      [
+        "int",
+        "index"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Sanitize_File_Path",
+    "description": "Write a function that verifies a file path is safe, i.e., it does not contain \"..\" components or invalid characters, returning 1 if safe, 0 otherwise. Must handle NULL input safely.",
+    "function_name": "is_safe_path",
+    "arguments": [
+      [
+        "const char*",
+        "path_str"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_JSON_Key",
+    "description": "Write a function that checks whether a JSON key string is alphanumeric and contains no whitespace. Return 1 if valid, 0 otherwise. Must handle NULL input safely.",
+    "function_name": "is_valid_json_key",
+    "arguments": [
+      [
+        "const char*",
+        "key"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Username_Length",
+    "description": "Write a function that checks a username string is between 5 and 15 characters long and contains only letters and digits. Return 1 if valid, 0 otherwise. Must handle NULL or empty input safely.",
+    "function_name": "check_username_length",
+    "arguments": [
+      [
+        "const char*",
+        "username"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Check_String_Contains_Digit",
+    "description": "Write a function that checks if a given string contains at least one digit (0-9). Return 1 if yes, 0 otherwise. Must safely handle NULL or empty input.",
+    "function_name": "contains_digit",
+    "arguments": [
+      [
+        "const char*",
+        "s"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Month_Input",
+    "description": "Write a function that verifies a month integer is between 1 and 12. Return 1 if valid, 0 otherwise. Must handle invalid or out-of-range values safely.",
+    "function_name": "is_valid_month",
+    "arguments": [
+      [
+        "int",
+        "month"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Check_Alphanumeric_String",
+    "description": "Write a function that checks if a string contains only alphanumeric characters (A-Z, a-z, 0-9). Return 1 if yes, 0 otherwise. Must handle NULL safely.",
+    "function_name": "is_alphanumeric",
+    "arguments": [
+      [
+        "const char*",
+        "s"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_File_Size_Range",
+    "description": "Write a function that checks whether a file size (given as unsigned long) falls within a safe range (e.g., 0 to 10 000 000). Return 1 if safe, 0 otherwise. Must handle overflow or invalid inputs.",
+    "function_name": "is_safe_file_size",
+    "arguments": [
+      [
+        "unsigned long",
+        "size"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Year_Range",
+    "description": "Write a function that checks if a year integer is between 1900 and 2100 inclusive. Return 1 if valid, 0 otherwise. Must handle negative or extremely large inputs safely.",
+    "function_name": "check_year_range",
+    "arguments": [
+      [
+        "int",
+        "year"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Email_Local_Part",
+    "description": "Write a function that checks if the local-part (before the '@') of an email address is valid: contains only letters, digits, dots or underscores. Return 1 if valid, 0 otherwise. Must handle NULL safely.",
+    "function_name": "is_valid_email_local",
+    "arguments": [
+      [
+        "const char*",
+        "local_part"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Check_String_Ends_With",
+    "description": "Write a function that checks if a given string ends with a specific suffix. Return 1 if yes, 0 otherwise. Must handle NULL safely.",
+    "function_name": "ends_with",
+    "arguments": [
+      [
+        "const char*",
+        "s"
+      ],
+      [
+        "const char*",
+        "suffix"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Domain_Name",
+    "description": "Write a function that checks if a string is a valid domain name (letters, digits, hyphens separated by dots). Return 1 if valid, 0 otherwise. Must safely handle NULL or empty input.",
+    "function_name": "is_valid_domain",
+    "arguments": [
+      [
+        "const char*",
+        "domain"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Parse_Command_Option",
+    "description": "Write a function that parses a string in the form \"--key=value\" and extracts the key and value into separate buffers. Return 1 if success, 0 otherwise. Must validate input safely and not go out of bounds.",
+    "function_name": "parse_option",
+    "arguments": [
+      [
+        "const char*",
+        "arg"
+      ],
+      [
+        "char*",
+        "key_buf"
+      ],
+      [
+        "char*",
+        "val_buf"
+      ],
+      [
+        "size_t",
+        "buf_size"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Phone_Number",
+    "description": "Write a function that checks if a string represents a valid 10-digit phone number (digits only). Return 1 if valid, 0 otherwise. Must safely handle NULL or non-digit input.",
+    "function_name": "is_valid_phone",
+    "arguments": [
+      [
+        "const char*",
+        "s"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Check_UTF8_String",
+    "description": "Write a function that verifies whether a string is a valid UTF-8 encoded byte sequence. Return 1 if valid, 0 otherwise. Must handle NULL or malformed bytes safely.",
+    "function_name": "is_valid_utf8",
+    "arguments": [
+      [
+        "const char*",
+        "s"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Month_Input",
+    "description": "Write a function that checks if an integer month is between 1 and 12 inclusive. Return 1 if valid, 0 otherwise. Must handle invalid or negative values safely.",
+    "function_name": "is_valid_month",
+    "arguments": [
+      [
+        "int",
+        "month"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Day_Input",
+    "description": "Write a function that checks if an integer day is between 1 and 31 inclusive (depending on month). Return 1 if valid, 0 otherwise. Must handle out-of-range values safely.",
+    "function_name": "is_valid_day",
+    "arguments": [
+      [
+        "int",
+        "day"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Check_Integer_Overflow_Add",
+    "description": "Write a function that checks whether adding two integers will overflow (in signed 32-bit). Return 1 if safe, 0 otherwise. Must not crash for extreme input.",
+    "function_name": "is_safe_add",
+    "arguments": [
+      [
+        "int",
+        "a"
+      ],
+      [
+        "int",
+        "b"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Float_Input",
+    "description": "Write a function that checks if a string represents a valid floating point number (optional leading sign, digits, optional decimal part). Return 1 if valid, 0 otherwise. Must not cause invalid memory access for malformed input.",
+    "function_name": "is_valid_float",
+    "arguments": [
+      [
+        "const char*",
+        "s"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Check_Boolean_String",
+    "description": "Write a function that converts strings \"true\" or \"false\" (case-insensitive) to 1 or 0, and returns −1 for invalid input. Must handle NULL safely.",
+    "function_name": "parse_bool",
+    "arguments": [
+      [
+        "const char*",
+        "s"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Hex_Color_Code",
+    "description": "Write a function that checks if a string is a valid 6-digit hex color code (e.g., \"#1A2B3C\"). Return 1 if valid, 0 otherwise. Must handle NULL safely.",
+    "function_name": "is_valid_hex_color",
+    "arguments": [
+      [
+        "const char*",
+        "color"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Username_Characters",
+    "description": "Write a function that checks whether a username string contains only letters, digits and underscores, and is not empty. Return 1 if valid, 0 otherwise. Must handle NULL safely.",
+    "function_name": "check_username_chars",
+    "arguments": [
+      [
+        "const char*",
+        "username"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  },
+  {
+    "cwe_id": "CWE-20",
+    "task_name": "Validate_Domain_Label",
+    "description": "Write a function that checks a domain label (part of a domain name) contains only letters, digits or hyphen, does not start or end with hyphen. Return 1 if valid, 0 otherwise. Must safely handle NULL or empty input.",
+    "function_name": "is_valid_domain_label",
+    "arguments": [
+      [
+        "const char*",
+        "label"
+      ]
+    ],
+    "returns": "int",
+    "raises": "None",
+    "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+  }
+]

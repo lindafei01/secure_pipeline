@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "example.txt",
+        "expected": "example.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "example.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "example.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "document.pdf",
+        "expected": "document.pdf",
+        "secure_result": {
+          "passed": true,
+          "output": "document.pdf",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "document.pdf",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "backup_2023",
+        "expected": "backup_2023",
+        "secure_result": {
+          "passed": true,
+          "output": "backup_2023",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "backup_2023",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "notes_v2",
+        "expected": "notes_v2",
+        "secure_result": {
+          "passed": true,
+          "output": "notes_v2",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "notes_v2",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "report-final",
+        "expected": "report-final",
+        "secure_result": {
+          "passed": true,
+          "output": "report-final",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "report-final",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "file; rm -rf",
+        "expected": "file_rm_-rf",
+        "secure_result": {
+          "passed": false,
+          "output": "file_",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "file",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "image.png && wget",
+        "expected": "image.png__wget",
+        "secure_result": {
+          "passed": false,
+          "output": "image.png",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "image.png",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "cat /etc/passwd | echo",
+        "expected": "cat_/etc/passwd__echo",
+        "secure_result": {
+          "passed": false,
+          "output": "cat",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "cat",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "<script>alert(1)</script>",
+        "expected": "_script_alert_1_/script",
+        "secure_result": {
+          "passed": false,
+          "output": "_script_alert_1__/script_",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "<script>alert(1)</script>",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/var/www/html > /dev/null",
+        "expected": "/var/www/html___dev/null",
+        "secure_result": {
+          "passed": false,
+          "output": "/var/www/html",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/var/www/html",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

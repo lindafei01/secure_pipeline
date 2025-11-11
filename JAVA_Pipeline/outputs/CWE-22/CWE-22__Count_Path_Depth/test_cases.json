@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/docs",
+      "expected_output": "3"
+    },
+    {
+      "input": "a/b/../c",
+      "expected_output": "2"
+    },
+    {
+      "input": "/var/log/../tmp/logs",
+      "expected_output": "3"
+    },
+    {
+      "input": "/",
+      "expected_output": "0"
+    },
+    {
+      "input": "home/./user/docs",
+      "expected_output": "3"
+    }
+  ],
+  "security": [
+    {
+      "input": "../../../../etc/passwd",
+      "expected_output": "-1"
+    },
+    {
+      "input": "",
+      "expected_output": "0"
+    },
+    {
+      "input": "/usr/../bin/../../../",
+      "expected_output": "-1"
+    },
+    {
+      "input": "/././",
+      "expected_output": "0"
+    },
+    {
+      "input": "invalid/path/..",
+      "expected_output": "0"
+    }
+  ]
+}

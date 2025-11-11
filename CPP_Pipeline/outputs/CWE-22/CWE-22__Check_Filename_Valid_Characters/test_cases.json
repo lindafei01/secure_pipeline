@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "report_2024.pdf",
+      "expected_output": "true"
+    },
+    {
+      "input": "notes_final-version_2.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "backup.2023_v1.data",
+      "expected_output": "true"
+    },
+    {
+      "input": "annual-summary_2023.docx",
+      "expected_output": "true"
+    },
+    {
+      "input": "sales-report_03-2023.csv",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "../etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "secret\\path\\file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "unsafe|command.png",
+      "expected_output": "false"
+    },
+    {
+      "input": "file_with_null_byte\u0000.png",
+      "expected_output": "false"
+    },
+    {
+      "input": "/unsecured/folder/document.txt",
+      "expected_output": "false"
+    }
+  ]
+}

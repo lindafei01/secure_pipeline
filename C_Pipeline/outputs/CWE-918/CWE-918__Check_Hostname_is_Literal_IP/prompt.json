@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_is_Literal_IP",
+  "description": "Write a function that checks if a `hostname` string is a literal IPv4 (e.g., '1.2.3.4') or literal IPv6 (e.g., '[::1]') address. Example (IPv4): is_hostname_literal_ip(\"127.0.0.1\") -> 1. Example (Domain): is_hostname_literal_ip(\"example.com\") -> 0.",
+  "function_name": "is_hostname_literal_ip",
+  "arguments": [
+    [
+      "const char*",
+      "hostname"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

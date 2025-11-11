@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_IP_is_Broadcast",
+  "description": "Write a function that checks if an IPv4 `ip_str` is the 'broadcast' address '255.255.255.255'. Example (True): is_ip_broadcast(\"255.255.255.255\") -> 1. Example (False): is_ip_broadcast(\"1.2.3.4\") -> 0.",
+  "function_name": "is_ip_broadcast",
+  "arguments": [
+    [
+      "const char*",
+      "ip_str"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

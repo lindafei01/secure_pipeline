@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Extract_Port_from_URL",
+  "description": "Write a function that parses a URL and extracts the port number. If no port is specified, use 80 for 'http' and 443 for 'https'. Example (Explicit): get_url_port(\"http://ex.com:8080\") -> 8080. Example (Default): get_url_port(\"https://ex.com\") -> 443. Example (Malformed): get_url_port(\"bad-url\") -> -1.",
+  "function_name": "get_url_port",
+  "arguments": [
+    [
+      "const char*",
+      "url"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

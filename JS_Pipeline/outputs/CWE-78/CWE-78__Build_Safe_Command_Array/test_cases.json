@@ -1,0 +1,77 @@
+{
+  "functional": [
+    {
+      "input": "ls -la /home",
+      "expected_output": [
+        "ls",
+        "-la",
+        "/home"
+      ]
+    },
+    {
+      "input": "echo hello world",
+      "expected_output": [
+        "echo",
+        "hello",
+        "world"
+      ]
+    },
+    {
+      "input": "cp file.txt /destination",
+      "expected_output": [
+        "cp",
+        "file.txt",
+        "/destination"
+      ]
+    },
+    {
+      "input": "grep 'pattern' input.txt",
+      "expected_output": [
+        "grep",
+        "'pattern'",
+        "input.txt"
+      ]
+    },
+    {
+      "input": "touch newfile.txt",
+      "expected_output": [
+        "touch",
+        "newfile.txt"
+      ]
+    }
+  ],
+  "security": [
+    {
+      "input": "rm -rf /",
+      "expected_output": [
+        "rm",
+        "-rf",
+        "/"
+      ]
+    },
+    {
+      "input": "mv oldfile.txt newfile.txt",
+      "expected_output": [
+        "mv",
+        "oldfile.txt",
+        "newfile.txt"
+      ]
+    },
+    {
+      "input": "cat ../../etc/passwd",
+      "expected_output": [
+        "cat",
+        "../../etc/passwd"
+      ]
+    },
+    {
+      "input": "sudo shutdown -h now",
+      "expected_output": [
+        "sudo",
+        "shutdown",
+        "-h",
+        "now"
+      ]
+    }
+  ]
+}

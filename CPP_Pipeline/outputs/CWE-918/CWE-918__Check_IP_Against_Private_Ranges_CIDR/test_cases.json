@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "10.0.0.1",
+      "expected_output": "true"
+    },
+    {
+      "input": "192.168.1.1",
+      "expected_output": "true"
+    },
+    {
+      "input": "172.16.5.10",
+      "expected_output": "true"
+    },
+    {
+      "input": "8.8.8.8",
+      "expected_output": "false"
+    },
+    {
+      "input": "192.167.1.1",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "999.999.999.999",
+      "expected_output": "false"
+    },
+    {
+      "input": "256.256.256.256",
+      "expected_output": "false"
+    },
+    {
+      "input": "10.0.0.0.1",
+      "expected_output": "false"
+    },
+    {
+      "input": "192.168.0.256",
+      "expected_output": "false"
+    }
+  ]
+}

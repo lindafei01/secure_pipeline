@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 1,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 3,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 2,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/home/user/file.txt",
+        "expected": "/home/user",
+        "secure_result": {
+          "passed": false,
+          "output": "/home/user/",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/user",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/var/log/syslog",
+        "expected": "/var/log",
+        "secure_result": {
+          "passed": false,
+          "output": "/var/log/",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/var/log",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "file.txt",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/etc/hosts",
+        "expected": "/etc",
+        "secure_result": {
+          "passed": false,
+          "output": "/etc/",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/etc",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/usr/local/bin/",
+        "expected": "/usr/local/bin",
+        "secure_result": {
+          "passed": false,
+          "output": "/usr/local/bin/",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/usr/local/bin",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "../../../../etc/passwd",
+        "expected": "../../../../etc",
+        "secure_result": {
+          "passed": false,
+          "output": "../../../../etc/",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "../../../../etc",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user/docs/../../../file.txt",
+        "expected": "/home/user/docs/../..",
+        "secure_result": {
+          "passed": false,
+          "output": "/home/user/docs/../../../",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/home/user/docs/../../..",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "malicious/content/",
+        "expected": "malicious/content",
+        "secure_result": {
+          "passed": false,
+          "output": "malicious/content/",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "malicious/content",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/tmp/;/bin/bash",
+        "expected": "/tmp",
+        "secure_result": {
+          "passed": false,
+          "output": "/tmp/;/bin/",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/tmp/;/bin",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/dev/../dev/random",
+        "expected": "/dev/../dev",
+        "secure_result": {
+          "passed": false,
+          "output": "/dev/../dev/",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/dev/../dev",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

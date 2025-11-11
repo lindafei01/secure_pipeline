@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "report.txt .txt",
+      "expected_output": "1"
+    },
+    {
+      "input": "archive.tar.gz .gz",
+      "expected_output": "1"
+    },
+    {
+      "input": "note.TXT .txt",
+      "expected_output": "0"
+    },
+    {
+      "input": "README .txt",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "NULL .txt",
+      "expected_output": "0"
+    },
+    {
+      "input": "file.txt NULL",
+      "expected_output": "0"
+    },
+    {
+      "input": "\"\" .txt",
+      "expected_output": "0"
+    },
+    {
+      "input": "file.txt \"\"",
+      "expected_output": "0"
+    },
+    {
+      "input": "a .txt",
+      "expected_output": "0"
+    }
+  ]
+}

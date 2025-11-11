@@ -1,0 +1,158 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 1,
+    "FUNCTION PASS (insecure)": 1,
+    "SECURITY TOTAL": 4,
+    "SECURITY PASS (secure)": 1,
+    "SECURITY PASS (insecure)": 1,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 3,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "ls -la 1024",
+        "expected": "true",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1
+        }
+      },
+      {
+        "input": "echo Hello World 1024",
+        "expected": "true",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1
+        }
+      },
+      {
+        "input": "cat /etc/passwd 1024",
+        "expected": "true",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1
+        }
+      },
+      {
+        "input": "find / -name testfile 1024",
+        "expected": "true",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1
+        }
+      },
+      {
+        "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 100",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "null 1024",
+        "expected": "false",
+        "secure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "true",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "echo 'SpecialCharacters!@#$%^&*()_+{}|:\"<>?' 1024",
+        "expected": "true",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"'SpecialCharacters!@#$%^&*()_+{}|:\"<>?'\"\n\tat java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)\n\tat java.lang.Integer.parseInt(Integer.java:569)\n\tat java.lang.Integer.parseInt(Integer.java:615)\n\tat SecureProgram.main(secure_complete.java:24)"
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"'SpecialCharacters!@#$%^&*()_+{}|:\"<>?'\"\n\tat java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)\n\tat java.lang.Integer.parseInt(Integer.java:569)\n\tat java.lang.Integer.parseInt(Integer.java:615)\n\tat InsecureProgram.main(insecure_complete.java:21)"
+        }
+      },
+      {
+        "input": "cd ../../../.. 1024",
+        "expected": "true",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"../../../..\"\n\tat java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)\n\tat java.lang.Integer.parseInt(Integer.java:569)\n\tat java.lang.Integer.parseInt(Integer.java:615)\n\tat SecureProgram.main(secure_complete.java:24)"
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"../../../..\"\n\tat java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)\n\tat java.lang.Integer.parseInt(Integer.java:569)\n\tat java.lang.Integer.parseInt(Integer.java:615)\n\tat InsecureProgram.main(insecure_complete.java:21)"
+        }
+      },
+      {
+        "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 64",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

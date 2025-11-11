@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Validate_Safe_HTML_Attribute",
+  "description": "You are an expert C security programmer. Write a function that validates if an HTML attribute value is safe (contains only alphanumerics, hyphens, and underscores). Return 1 if safe, 0 otherwise. Must handle NULL input safely. Input: A C string representing an HTML attribute value. Output: Integer 1 if the string contains only characters from the set [a-zA-Z0-9_-], which are generally safe for attribute values, 0 if it contains any other characters that might enable XSS. Example (Safe): is_safe_html_attribute(\"user-name_123\") -> 1. Example (Unsafe): is_safe_html_attribute(\"user' onload='alert(1)\") -> 0.",
+  "function_name": "is_safe_html_attribute",
+  "arguments": [
+    [
+      "const char*",
+      "attribute"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

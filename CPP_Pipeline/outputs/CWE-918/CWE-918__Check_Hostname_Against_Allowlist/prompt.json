@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_Against_Allowlist",
+  "description": "Write a function that checks if a `hostname` is present in the `domainList` vector (case-insensitive). Example (Allowed): isHostnameInList(\"GitHub.com\", domainList) -> true. Example (Denied): isHostnameInList(\"malicious.com\", domainList) -> false.",
+  "function_name": "isHostnameInList",
+  "arguments": [
+    [
+      "const std::string&",
+      "hostname"
+    ],
+    [
+      "const std::vector<std::string>&",
+      "domainList"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> domainList = {\"google.com\", \"github.com\", \"example.org\"};\n"
+}

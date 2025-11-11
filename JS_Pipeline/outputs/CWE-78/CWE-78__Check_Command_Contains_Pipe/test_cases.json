@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls | grep test",
+      "expected_output": "true"
+    },
+    {
+      "input": "ls -la",
+      "expected_output": "false"
+    },
+    {
+      "input": "cat file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo Hello | wc -l",
+      "expected_output": "true"
+    },
+    {
+      "input": "ps aux | sort -k 3 | head -n 5",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined",
+      "expected_output": "false"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo \\|",
+      "expected_output": "false"
+    },
+    {
+      "input": "ls \\| grep",
+      "expected_output": "false"
+    }
+  ]
+}

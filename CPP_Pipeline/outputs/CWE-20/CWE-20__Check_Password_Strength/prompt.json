@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Check_Password_Strength",
+  "description": "Write a function that checks if a password string meets minimum complexity: at least 8 characters, contains uppercase, lowercase and digit. Return true if strong, false otherwise. Handle empty input safely.",
+  "function_name": "isStrongPassword",
+  "arguments": [
+    [
+      "const std::string&",
+      "password"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

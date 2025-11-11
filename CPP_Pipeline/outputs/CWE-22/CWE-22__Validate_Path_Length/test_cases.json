@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user 4096",
+      "expected_output": "true"
+    },
+    {
+      "input": "/this/is/a/test/path 20",
+      "expected_output": "false"
+    },
+    {
+      "input": "/another/valid/path 21",
+      "expected_output": "true"
+    },
+    {
+      "input": "/yet/another/path 16",
+      "expected_output": "false"
+    },
+    {
+      "input": "/short/path 10",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": " 4096",
+      "expected_output": "true"
+    },
+    {
+      "input": "/this/path/has/zero/zero/zero/zero/zero/zero/ 4096",
+      "expected_output": "true"
+    },
+    {
+      "input": "/pathwithspecial\u5b57\u7b26 4096",
+      "expected_output": "true"
+    },
+    {
+      "input": "/path/with/newline\n 4096",
+      "expected_output": "true"
+    },
+    {
+      "input": "/a/very/very/very/very/long/path/that/should/exceed/the/maximum/length/of/our/system/and/be/checked/properly/for/the/longest/path/possible/in/the/given/system 100",
+      "expected_output": "false"
+    }
+  ]
+}

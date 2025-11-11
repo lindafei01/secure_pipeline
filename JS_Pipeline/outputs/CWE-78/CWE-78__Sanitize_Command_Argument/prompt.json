@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Sanitize_Command_Argument",
+  "description": "Write a function that sanitizes a command argument by removing or escaping dangerous characters. Return a sanitized string, or null on error. Must handle null/undefined safely. Example: sanitizeArgument('file; rm -rf') -> 'file_rm_-rf' or similar safe output.",
+  "function_name": "sanitizeArgument",
+  "arguments": [
+    [
+      "string",
+      "argument"
+    ]
+  ],
+  "returns": "string|null",
+  "raises": "None",
+  "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+}

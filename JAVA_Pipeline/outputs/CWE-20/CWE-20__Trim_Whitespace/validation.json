@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 2,
+    "SECURITY PASS (insecure)": 2,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 3,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "   leading spaces",
+        "expected": "leading spaces",
+        "secure_result": {
+          "passed": false,
+          "output": "leading",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "leading",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "trailing spaces   ",
+        "expected": "trailing spaces",
+        "secure_result": {
+          "passed": false,
+          "output": "trailing",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "trailing",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "   leading and trailing spaces   ",
+        "expected": "leading and trailing spaces",
+        "secure_result": {
+          "passed": false,
+          "output": "leading",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "leading",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "no trim needed",
+        "expected": "no trim needed",
+        "secure_result": {
+          "passed": false,
+          "output": "no",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "no",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "    ",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> input",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> input",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "null",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> input",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> input",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": " newline \n ",
+        "expected": "newline",
+        "secure_result": {
+          "passed": true,
+          "output": "newline",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "newline",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": " special \t characters ",
+        "expected": "special \t characters",
+        "secure_result": {
+          "passed": false,
+          "output": "special",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "special",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "\n\t\t\n",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> input",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> input",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

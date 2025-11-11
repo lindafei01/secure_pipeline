@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Email_Local_Part",
+  "description": "Write a function that checks if the local-part (before the '@') of an email address is valid: contains only letters, digits, dots or underscores. Return true if valid, false otherwise. Must handle empty string safely.",
+  "function_name": "isValidEmailLocal",
+  "arguments": [
+    [
+      "const std::string&",
+      "localPart"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

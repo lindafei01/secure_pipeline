@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_IP_is_Unspecified",
+  "description": "Write a function that checks if an IPv4 `ipStr` is the 'unspecified' address '0.0.0.0'. Example (True): isIPUnspecified(\"0.0.0.0\") -> true. Example (False): isIPUnspecified(\"1.2.3.4\") -> false.",
+  "function_name": "isIPUnspecified",
+  "arguments": [
+    [
+      "const std::string&",
+      "ipStr"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

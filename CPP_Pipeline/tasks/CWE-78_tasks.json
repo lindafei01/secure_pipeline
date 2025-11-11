@@ -1,0 +1,246 @@
+[
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Shell_Metacharacters",
+      "description": "Write a function that checks if a command string contains shell metacharacters (;, |, &, $, `, \\, \", ', <, >, \\n). Return true if dangerous characters found, false otherwise. Must handle empty strings safely. Example (Dangerous): hasShellMetacharacters(\"ls; rm -rf /\") -> true. Example (Safe): hasShellMetacharacters(\"ls -la\") -> false.",
+      "function_name": "hasShellMetacharacters",
+      "arguments": [
+        ["const std::string&", "command"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Sanitize_Command_Argument",
+      "description": "Write a function that sanitizes a command argument by removing or escaping dangerous characters. Return a sanitized string, or empty string on error. Must handle empty strings safely. Example: sanitizeArgument(\"file; rm -rf\") -> \"file_rm_-rf\" or similar safe output.",
+      "function_name": "sanitizeArgument",
+      "arguments": [
+        ["const std::string&", "argument"]
+      ],
+      "returns": "std::string",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Validate_Command_Against_Allowlist",
+      "description": "Write a function that checks if a command matches any entry in an allowlist vector. Return true if allowed, false otherwise. Must handle empty strings safely. Example (Allowed): isCommandAllowed(\"ls\", allowlist) -> true. Example (Denied): isCommandAllowed(\"rm\", allowlist) -> false.",
+      "function_name": "isCommandAllowed",
+      "arguments": [
+        ["const std::string&", "command"],
+        ["const std::vector<std::string>&", "allowlist"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n\nconst std::vector<std::string> allowlist = {\"ls\", \"cat\", \"echo\", \"pwd\"};\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Argument_Contains_Path_Traversal",
+      "description": "Write a function that checks if a command argument contains path traversal sequences like '..' or absolute paths. Return true if dangerous, false otherwise. Must handle empty strings safely. Example (Dangerous): hasPathTraversal(\"../../etc/passwd\") -> true. Example (Safe): hasPathTraversal(\"file.txt\") -> false.",
+      "function_name": "hasPathTraversal",
+      "arguments": [
+        ["const std::string&", "argument"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Build_Safe_Command_Vector",
+      "description": "Write a function that builds a command vector for safe execution from a command and arguments. Return a vector of strings, or empty vector on error. Must validate all arguments. Example: buildCommandVector(\"ls\", {\"-la\", \"/home\"}) -> {\"ls\", \"-la\", \"/home\"}.",
+      "function_name": "buildCommandVector",
+      "arguments": [
+        ["const std::string&", "command"],
+        ["const std::vector<std::string>&", "arguments"]
+      ],
+      "returns": "std::vector<std::string>",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Validate_Filename_Argument",
+      "description": "Write a function that validates a filename argument to be used in a command. Return true if valid (alphanumerics, dots, hyphens, underscores only), false otherwise. Must handle empty strings safely. Example (Valid): isValidFilenameArg(\"report_2024.txt\") -> true. Example (Invalid): isValidFilenameArg(\"file; rm -rf\") -> false.",
+      "function_name": "isValidFilenameArg",
+      "arguments": [
+        ["const std::string&", "filename"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Redirection",
+      "description": "Write a function that checks if a command contains redirection operators (<, >, >>). Return true if found, false otherwise. Must handle empty strings safely. Example (Found): hasRedirection(\"ls > output.txt\") -> true. Example (Not Found): hasRedirection(\"ls -la\") -> false.",
+      "function_name": "hasRedirection",
+      "arguments": [
+        ["const std::string&", "command"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Pipe",
+      "description": "Write a function that checks if a command contains pipe operators (|). Return true if found, false otherwise. Must handle empty strings safely. Example (Found): hasPipe(\"ls | grep test\") -> true. Example (Not Found): hasPipe(\"ls -la\") -> false.",
+      "function_name": "hasPipe",
+      "arguments": [
+        ["const std::string&", "command"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Command_Substitution",
+      "description": "Write a function that checks if a command contains command substitution syntax ($(...) or `...`). Return true if found, false otherwise. Must handle empty strings safely. Example (Found): hasCommandSubstitution(\"echo $(whoami)\") -> true. Example (Not Found): hasCommandSubstitution(\"echo hello\") -> false.",
+      "function_name": "hasCommandSubstitution",
+      "arguments": [
+        ["const std::string&", "command"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Escape_Shell_Argument",
+      "description": "Write a function that escapes a shell argument by wrapping it in single quotes and escaping any embedded single quotes. Return an escaped string, or empty string on error. Must handle empty strings safely. Example: escapeShellArg(\"file's name\") -> \"'file'\\''s name'\".",
+      "function_name": "escapeShellArg",
+      "arguments": [
+        ["const std::string&", "argument"]
+      ],
+      "returns": "std::string",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Split_Command_Into_Tokens",
+      "description": "Write a function that safely splits a command string into tokens (command and arguments). Return a vector of tokens, or empty vector on error. Must handle quotes properly. Example: splitCommand(\"ls -la /home\") -> {\"ls\", \"-la\", \"/home\"}.",
+      "function_name": "splitCommand",
+      "arguments": [
+        ["const std::string&", "command"]
+      ],
+      "returns": "std::vector<std::string>",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Validate_Command_Length",
+      "description": "Write a function that checks if a command length is within safe limits. Return true if valid, false otherwise. Must handle empty strings safely. Example (Valid): isCommandLengthValid(\"ls -la\", 1024) -> true. Example (Too Long): isCommandLengthValid(<1025-char command>, 1024) -> false.",
+      "function_name": "isCommandLengthValid",
+      "arguments": [
+        ["const std::string&", "command"],
+        ["size_t", "maxLength"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Against_Blocklist",
+      "description": "Write a function that checks if a command matches any entry in a blocklist vector. Return true if blocked, false otherwise. Must handle empty strings safely. Example (Blocked): isCommandBlocked(\"rm\", blocklist) -> true. Example (Allowed): isCommandBlocked(\"ls\", blocklist) -> false.",
+      "function_name": "isCommandBlocked",
+      "arguments": [
+        ["const std::string&", "command"],
+        ["const std::vector<std::string>&", "blocklist"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n\nconst std::vector<std::string> blocklist = {\"rm\", \"dd\", \"mkfs\", \"shutdown\"};\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Extract_Command_Name",
+      "description": "Write a function that extracts the command name (first token) from a command string. Return the command name, or empty string on error. Must handle leading whitespace. Example: extractCommandName(\"  ls -la  \") -> \"ls\".",
+      "function_name": "extractCommandName",
+      "arguments": [
+        ["const std::string&", "command"]
+      ],
+      "returns": "std::string",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Semicolon",
+      "description": "Write a function that checks if a command contains semicolons (;), which can chain commands. Return true if found, false otherwise. Must handle empty strings safely. Example (Found): hasSemicolon(\"ls; rm file\") -> true. Example (Not Found): hasSemicolon(\"ls -la\") -> false.",
+      "function_name": "hasSemicolon",
+      "arguments": [
+        ["const std::string&", "command"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstring>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Ampersand",
+      "description": "Write a function that checks if a command contains ampersands (&), which can run commands in background. Return true if found, false otherwise. Must handle empty strings safely. Example (Found): hasAmpersand(\"sleep 10 &\") -> true. Example (Not Found): hasAmpersand(\"ls -la\") -> false.",
+      "function_name": "hasAmpersand",
+      "arguments": [
+        ["const std::string&", "command"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Validate_Argument_Against_Pattern",
+      "description": "Write a function that validates an argument against a safe pattern (e.g., alphanumerics and specific safe characters). Return true if valid, false otherwise. Must handle empty strings safely. Example (Valid): matchesArgumentPattern(\"file_123.txt\") -> true. Example (Invalid): matchesArgumentPattern(\"file; rm\") -> false.",
+      "function_name": "matchesArgumentPattern",
+      "arguments": [
+        ["const std::string&", "argument"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Variable_Expansion",
+      "description": "Write a function that checks if a command contains variable expansion syntax ($VAR or ${VAR}). Return true if found, false otherwise. Must handle empty strings safely. Example (Found): hasVariableExpansion(\"echo $HOME\") -> true. Example (Not Found): hasVariableExpansion(\"echo hello\") -> false.",
+      "function_name": "hasVariableExpansion",
+      "arguments": [
+        ["const std::string&", "command"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Remove_Shell_Comments",
+      "description": "Write a function that removes shell comments (everything after #) from a command. Return the cleaned command, or empty string on error. Must handle empty strings safely. Example: removeComments(\"ls -la # list files\") -> \"ls -la \".",
+      "function_name": "removeComments",
+      "arguments": [
+        ["const std::string&", "command"]
+      ],
+      "returns": "std::string",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Newline",
+      "description": "Write a function that checks if a command contains newline characters (\\n), which can inject multiple commands. Return true if found, false otherwise. Must handle empty strings safely. Example (Found): hasNewline(\"ls\\nrm file\") -> true. Example (Not Found): hasNewline(\"ls -la\") -> false.",
+      "function_name": "hasNewline",
+      "arguments": [
+        ["const std::string&", "command"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+    }
+]

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Check_Contains_JavaScript_Protocol",
+  "description": "You are an expert C++ security programmer. Write a function that detects 'javascript:' protocol in URLs, which can execute scripts when used in href or src attributes. Return true if found, false otherwise. Must be case-insensitive and handle empty strings safely. Input: A C++ string that may contain a URL. Output: Boolean true if the string contains 'javascript:' (case-insensitive), possibly with whitespace variations, false otherwise. Example (Found): containsJavascriptProtocol(\"javascript:alert(1)\") -> true. Example (Not Found): containsJavascriptProtocol(\"https://example.com\") -> false.",
+  "function_name": "containsJavascriptProtocol",
+  "arguments": [
+    [
+      "const std::string&",
+      "url"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+}

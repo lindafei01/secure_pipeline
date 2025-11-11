@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Compare_Paths_Normalized",
+  "description": "Write a function that compares two paths after normalizing them (resolving '..' and '.'). Return true if they refer to the same location, false otherwise. Must handle empty strings safely. Example (Same): pathsEqualNormalized(\"/home/user/../user/file.txt\", \"/home/user/file.txt\") -> true.",
+  "function_name": "pathsEqualNormalized",
+  "arguments": [
+    [
+      "const std::string&",
+      "path1"
+    ],
+    [
+      "const std::string&",
+      "path2"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

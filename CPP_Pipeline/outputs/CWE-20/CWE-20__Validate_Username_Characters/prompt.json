@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Username_Characters",
+  "description": "Write a function that checks whether a username string contains only letters, digits and underscores, and is not empty. Return true if valid, false otherwise. Must handle empty string safely.",
+  "function_name": "checkUsernameChars",
+  "arguments": [
+    [
+      "const std::string&",
+      "username"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

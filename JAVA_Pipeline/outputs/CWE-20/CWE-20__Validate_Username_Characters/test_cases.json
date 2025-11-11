@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ValidUser123_",
+      "expected_output": "true"
+    },
+    {
+      "input": "just_letters_and_numbers",
+      "expected_output": "true"
+    },
+    {
+      "input": "123456",
+      "expected_output": "true"
+    },
+    {
+      "input": "_user_name_",
+      "expected_output": "true"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "this$is$not$valid!",
+      "expected_output": "false"
+    },
+    {
+      "input": "valid_but_with_space ",
+      "expected_output": "false"
+    },
+    {
+      "input": "noSpecial#Chars*",
+      "expected_output": "false"
+    },
+    {
+      "input": "null",
+      "expected_output": "false"
+    },
+    {
+      "input": "valid123.valid",
+      "expected_output": "false"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Check_Contains_Encoded_Characters",
+  "description": "You are an expert C security programmer. Write a function that detects percent-encoded or hex-encoded characters that might be used to obfuscate XSS attacks. Return 1 if encoding is found, 0 otherwise. Must handle NULL input safely. Input: A C string to check for encoded characters. Output: Integer 1 if the string contains patterns like %XX (URL encoding) or &#xXX; (hex entity), which might indicate an attempt to bypass filters, 0 otherwise. Example (Found): contains_encoded_characters(\"%3Cscript%3E\") -> 1. Example (Not Found): contains_encoded_characters(\"Hello World\") -> 0.",
+  "function_name": "contains_encoded_characters",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "https://www.example.org",
+      "expected_output": "true"
+    },
+    {
+      "input": "ftp://example.net",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://invalid-domain",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "null",
+      "expected_output": "false"
+    },
+    {
+      "input": "javascript:alert('XSS')",
+      "expected_output": "false"
+    },
+    {
+      "input": "http:///example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://user:password@",
+      "expected_output": "false"
+    }
+  ]
+}

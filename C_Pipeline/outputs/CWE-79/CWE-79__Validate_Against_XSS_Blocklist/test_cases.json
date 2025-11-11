@@ -1,0 +1,34 @@
+{
+  "functional": [
+    {
+      "input": "Hello World",
+      "expected_output": "0"
+    },
+    {
+      "input": "Welcome to the site!",
+      "expected_output": "0"
+    },
+    {
+      "input": "Contact us via email",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "<SCRIPT>alert('XSS')<SCRIPT>",
+      "expected_output": "1"
+    },
+    {
+      "input": "onload=alert('test')",
+      "expected_output": "1"
+    },
+    {
+      "input": "javascript:alert('hack')",
+      "expected_output": "1"
+    },
+    {
+      "input": "onclick=\"<script>alert('xss')</script>\"",
+      "expected_output": "1"
+    }
+  ]
+}

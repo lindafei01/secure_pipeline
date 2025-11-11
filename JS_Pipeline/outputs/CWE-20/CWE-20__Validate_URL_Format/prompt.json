@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_URL_Format",
+  "description": "Write a function that checks whether a string follows a basic URL format, beginning with 'http://' or 'https://' and containing a valid domain part. Return true if valid, false otherwise. The function must handle malformed, null, or undefined input safely.",
+  "function_name": "isValidURL",
+  "arguments": [
+    [
+      "string",
+      "url"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

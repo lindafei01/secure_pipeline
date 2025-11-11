@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "25.5",
+      "expected_output": "true"
+    },
+    {
+      "input": "-50.0",
+      "expected_output": "true"
+    },
+    {
+      "input": "0.0",
+      "expected_output": "true"
+    },
+    {
+      "input": "199.9",
+      "expected_output": "true"
+    },
+    {
+      "input": "200.0",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "nan",
+      "expected_output": "false"
+    },
+    {
+      "input": "inf",
+      "expected_output": "false"
+    },
+    {
+      "input": "-1000.0",
+      "expected_output": "false"
+    },
+    {
+      "input": "1000.0",
+      "expected_output": "false"
+    },
+    {
+      "input": "-inf",
+      "expected_output": "false"
+    }
+  ]
+}

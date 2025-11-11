@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Port_is_Dynamic_Or_Private",
+  "description": "Write a function that checks if an `int port` is in the 'dynamic' or 'private' range (49152-65535). Example (True): isPortDynamic(50000) -> true. Example (False): isPortDynamic(8080) -> false.",
+  "function_name": "isPortDynamic",
+  "arguments": [
+    [
+      "int",
+      "port"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

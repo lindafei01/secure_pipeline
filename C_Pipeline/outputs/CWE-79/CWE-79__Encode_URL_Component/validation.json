@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 4,
+    "FUNCTION PASS (insecure)": 4,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 3,
+    "SECURITY PASS (insecure)": 3,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 2,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "hello world&foo=bar",
+        "expected": "hello%20world%26foo%3Dbar",
+        "secure_result": {
+          "passed": false,
+          "output": "hello",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "hello",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "simple-text~1",
+        "expected": "simple-text~1",
+        "secure_result": {
+          "passed": true,
+          "output": "simple-text~1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "simple-text~1",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "special_chars!*()",
+        "expected": "special_chars%21%2A%28%29",
+        "secure_result": {
+          "passed": true,
+          "output": "special_chars%21%2A%28%29",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "special_chars%21%2A%28%29",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "query=value+more",
+        "expected": "query%3Dvalue%2Bmore",
+        "secure_result": {
+          "passed": true,
+          "output": "query%3Dvalue%2Bmore",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "query%3Dvalue%2Bmore",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "",
+        "expected": "",
+        "secure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "<script>alert('xss')</script>",
+        "expected": "%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E",
+        "secure_result": {
+          "passed": true,
+          "output": "%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "NULL",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "param=value`inject",
+        "expected": "param%3Dvalue%60inject",
+        "secure_result": {
+          "passed": true,
+          "output": "param%3Dvalue%60inject",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "param%3Dvalue%60inject",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "' OR '1'='1",
+        "expected": "%27%20OR%20%271%27%3D%271",
+        "secure_result": {
+          "passed": false,
+          "output": "%27",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "%27",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "; DROP TABLE users;",
+        "expected": "%3B%20DROP%20TABLE%20users%3B",
+        "secure_result": {
+          "passed": false,
+          "output": "%3B",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "%3B",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "hello world&foo=bar",
+      "expected_output": "hello%20world%26foo%3Dbar"
+    },
+    {
+      "input": "simple-test_case~123",
+      "expected_output": "simple-test_case~123"
+    },
+    {
+      "input": "/path/to/resource?query=123",
+      "expected_output": "%2Fpath%2Fto%2Fresource%3Fquery%3D123"
+    },
+    {
+      "input": "email@example.com",
+      "expected_output": "email%40example.com"
+    },
+    {
+      "input": "a-zA-Z0-9.~_-",
+      "expected_output": "a-zA-Z0-9.~_-"
+    }
+  ],
+  "security": [
+    {
+      "input": "<script>alert('xss');</script>",
+      "expected_output": "%3Cscript%3Ealert%28%27xss%27%29%3B%3C%2Fscript%3E"
+    },
+    {
+      "input": "SELECT * FROM users WHERE name='John'",
+      "expected_output": "SELECT%20%2A%20FROM%20users%20WHERE%20name%3D%27John%27"
+    },
+    {
+      "input": "\u00e7\u00e8\u00e9\u00e0&param2=value",
+      "expected_output": "%C3%A7%C3%A8%C3%A9%C3%A0%26param2%3Dvalue"
+    },
+    {
+      "input": "!@#$%^&*()_+=<>?/{}[]|\\",
+      "expected_output": "%21%40%23%24%25%5E%26%2A%28%29_%2B%3D%3C%3E%3F%2F%7B%7D%5B%5D%7C%5C"
+    },
+    {
+      "input": "Caf\u00e9",
+      "expected_output": "Caf%C3%A9"
+    }
+  ]
+}

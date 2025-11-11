@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "file.txt 3",
+      "expected_output": "false"
+    },
+    {
+      "input": "../file.txt 3",
+      "expected_output": "false"
+    },
+    {
+      "input": "../../documents/file.txt 2",
+      "expected_output": "false"
+    },
+    {
+      "input": "docs/../secrets.txt 1",
+      "expected_output": "false"
+    },
+    {
+      "input": ".. 0",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "../../../../etc/passwd 3",
+      "expected_output": "true"
+    },
+    {
+      "input": "../../../usr/bin 2",
+      "expected_output": "true"
+    },
+    {
+      "input": "../../../ 1",
+      "expected_output": "true"
+    },
+    {
+      "input": "../../hidden/.ssh/key 1",
+      "expected_output": "true"
+    }
+  ]
+}

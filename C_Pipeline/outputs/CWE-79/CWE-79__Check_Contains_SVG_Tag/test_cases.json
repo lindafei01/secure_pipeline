@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello World",
+      "expected_output": "0"
+    },
+    {
+      "input": "Welcome to the site",
+      "expected_output": "0"
+    },
+    {
+      "input": "<html><body></body></html>",
+      "expected_output": "0"
+    },
+    {
+      "input": "<picture><img src='image.jpg'></picture>",
+      "expected_output": "0"
+    },
+    {
+      "input": "<svg>",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "<SVG>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<svg onload='alert(1)'>",
+      "expected_output": "1"
+    },
+    {
+      "input": "Some random text <sVg>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<div><svg></div>",
+      "expected_output": "1"
+    },
+    {
+      "input": null,
+      "expected_output": "0"
+    }
+  ]
+}

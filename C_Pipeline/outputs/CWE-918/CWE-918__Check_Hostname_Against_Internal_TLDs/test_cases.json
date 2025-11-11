@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "db.internal",
+      "expected_output": "1"
+    },
+    {
+      "input": "server.local",
+      "expected_output": "1"
+    },
+    {
+      "input": "files.corp",
+      "expected_output": "1"
+    },
+    {
+      "input": "website.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "research.lab",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "user.sensitive.local",
+      "expected_output": "1"
+    },
+    {
+      "input": "hidden.internal.secret",
+      "expected_output": "1"
+    },
+    {
+      "input": "network.intrusion.local",
+      "expected_output": "1"
+    },
+    {
+      "input": "database.exposed.com.",
+      "expected_output": "0"
+    },
+    {
+      "input": "malicious.site.org",
+      "expected_output": "0"
+    }
+  ]
+}

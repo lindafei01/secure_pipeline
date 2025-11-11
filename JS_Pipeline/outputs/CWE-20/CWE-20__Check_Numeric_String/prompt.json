@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Check_Numeric_String",
+  "description": "Write a function that checks whether a string contains only numeric digits (0-9). Return true if yes, otherwise false. The function should handle null, undefined, or empty input without throwing errors.",
+  "function_name": "isNumeric",
+  "arguments": [
+    [
+      "string",
+      "s"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

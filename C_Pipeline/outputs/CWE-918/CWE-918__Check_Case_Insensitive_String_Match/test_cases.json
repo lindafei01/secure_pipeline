@@ -1,0 +1,76 @@
+{
+  "functional": [
+    {
+      "input": [
+        "Hello",
+        "hello"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "World",
+        "WORLD"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "Test",
+        "TeSt"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "Case",
+        "cASe"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "Functional",
+        "Mismatch"
+      ],
+      "expected_output": 0
+    }
+  ],
+  "security": [
+    {
+      "input": [
+        "Admin",
+        "admin"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "PASSWORD",
+        "password"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "1234",
+        "1234"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "Mixed123",
+        "mixed123"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "Sensitive",
+        "sEnSiTiVe"
+      ],
+      "expected_output": 1
+    }
+  ]
+}

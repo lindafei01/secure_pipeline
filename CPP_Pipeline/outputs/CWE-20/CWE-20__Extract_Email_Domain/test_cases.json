@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "example@example.com",
+      "expected_output": "example.com"
+    },
+    {
+      "input": "user.name@sub.example.co.uk",
+      "expected_output": "sub.example.co.uk"
+    },
+    {
+      "input": "john.doe@company.com",
+      "expected_output": "company.com"
+    },
+    {
+      "input": "contact@my-site.org",
+      "expected_output": "my-site.org"
+    },
+    {
+      "input": "someone@service.network",
+      "expected_output": "service.network"
+    }
+  ],
+  "security": [
+    {
+      "input": "@example.com",
+      "expected_output": ""
+    },
+    {
+      "input": "username@",
+      "expected_output": ""
+    },
+    {
+      "input": "just.a.string",
+      "expected_output": ""
+    },
+    {
+      "input": "multiple@@domain.com",
+      "expected_output": ""
+    },
+    {
+      "input": "",
+      "expected_output": ""
+    }
+  ]
+}

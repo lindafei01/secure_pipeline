@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Float_String",
+  "description": "Write a function that checks if a string represents a valid floating-point number (e.g., optional sign, digits, decimal point). Return true if valid, false otherwise. Must not throw errors on null, undefined, or malformed input.",
+  "function_name": "isValidFloat",
+  "arguments": [
+    [
+      "string",
+      "s"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

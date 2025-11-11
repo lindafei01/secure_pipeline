@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Sanitize_File_Path",
+  "description": "Write a function that verifies a file path is safe, i.e., it does not contain \"..\" components or invalid characters, returning true if safe, false otherwise. Must handle empty input safely.",
+  "function_name": "isSafePath",
+  "arguments": [
+    [
+      "const std::string&",
+      "pathStr"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <filesystem>\n"
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "echo $HOME",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo ${USER}",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo $",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo hello",
+      "expected_output": "false"
+    },
+    {
+      "input": "ls -l $PATH",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "echo $HOME && rm -rf /",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo ${INVALID}",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo \\$HOME",
+      "expected_output": "false"
+    },
+    {
+      "input": "${echo}",
+      "expected_output": "true"
+    }
+  ]
+}

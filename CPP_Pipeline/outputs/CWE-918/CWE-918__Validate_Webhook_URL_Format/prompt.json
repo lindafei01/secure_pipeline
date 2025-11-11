@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Validate_Webhook_URL_Format",
+  "description": "Write a function that validates a `webhookURL`. It must use 'https' and its hostname must NOT be a literal IP address. Example (Valid): isValidWebhookURL(\"https://hooks.example.com\") -> true. Example (Bad Scheme): isValidWebhookURL(\"http://hooks.example.com\") -> false.",
+  "function_name": "isValidWebhookURL",
+  "arguments": [
+    [
+      "const std::string&",
+      "webhookURL"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Check_Integer_Overflow_Add",
+  "description": "Write a function that checks whether adding two numbers will overflow JavaScript's safe integer range (Number.MAX_SAFE_INTEGER). Return true if safe, false otherwise. Must not throw errors for extreme input.",
+  "function_name": "isSafeAdd",
+  "arguments": [
+    [
+      "number",
+      "a"
+    ],
+    [
+      "number",
+      "b"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

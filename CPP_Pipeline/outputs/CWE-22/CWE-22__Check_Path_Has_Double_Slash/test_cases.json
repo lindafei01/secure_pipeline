@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home//user",
+      "expected_output": "true"
+    },
+    {
+      "input": "/profile/settings",
+      "expected_output": "false"
+    },
+    {
+      "input": "/documents//files//notes",
+      "expected_output": "true"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "/etc//passwd",
+      "expected_output": "true"
+    },
+    {
+      "input": "//////////",
+      "expected_output": "true"
+    },
+    {
+      "input": "/bin///bash",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/log",
+      "expected_output": "false"
+    },
+    {
+      "input": "/../",
+      "expected_output": "false"
+    }
+  ]
+}

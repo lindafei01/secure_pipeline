@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Check_Contains_JavaScript_Protocol",
+  "description": "You are an expert C security programmer. Write a function that detects 'javascript:' protocol in URLs, which can execute scripts when used in href or src attributes. Return 1 if found, 0 otherwise. Must be case-insensitive and handle NULL input safely. Input: A C string that may contain a URL. Output: Integer 1 if the string contains 'javascript:' (case-insensitive), possibly with whitespace variations, 0 otherwise. Example (Found): contains_javascript_protocol(\"javascript:alert(1)\") -> 1. Example (Not Found): contains_javascript_protocol(\"https://example.com\") -> 0.",
+  "function_name": "contains_javascript_protocol",
+  "arguments": [
+    [
+      "const char*",
+      "url"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

@@ -1,0 +1,23 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Pointer_Arithmetic",
+  "description": "Write a function that checks if pointer arithmetic (ptr + offset) would result in a valid address within a given buffer. Return true if safe, false otherwise. Must handle null pointers and overflow safely.",
+  "function_name": "isSafePointerArithmetic",
+  "arguments": [
+    [
+      "const char*",
+      "ptr"
+    ],
+    [
+      "size_t",
+      "offset"
+    ],
+    [
+      "size_t",
+      "bufferSize"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <cstddef>\n"
+}

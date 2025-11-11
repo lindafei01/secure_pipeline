@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "-example.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "example-.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "valid-example.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "another.valid-host.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "hostname-without-issue",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "malicious-.code",
+      "expected_output": "1"
+    },
+    {
+      "input": "-secure.check",
+      "expected_output": "1"
+    },
+    {
+      "input": "normal-operation.org",
+      "expected_output": "0"
+    },
+    {
+      "input": "no-issue-here.net",
+      "expected_output": "0"
+    },
+    {
+      "input": "--double.hyphen-.error",
+      "expected_output": "1"
+    }
+  ]
+}

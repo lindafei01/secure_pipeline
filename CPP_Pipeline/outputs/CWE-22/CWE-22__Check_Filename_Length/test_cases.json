@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "report.pdf 255",
+      "expected_output": "true"
+    },
+    {
+      "input": "a_very_long_filename_that_exceeds_the_limit_for_a_single_file.txt 50",
+      "expected_output": "false"
+    },
+    {
+      "input": "notes.txt 100",
+      "expected_output": "true"
+    },
+    {
+      "input": "image.jpg 9",
+      "expected_output": "false"
+    },
+    {
+      "input": "README.md 8",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": " 255",
+      "expected_output": "false"
+    },
+    {
+      "input": "nul.dat 255",
+      "expected_output": "true"
+    },
+    {
+      "input": "con.txt 255",
+      "expected_output": "true"
+    },
+    {
+      "input": "aux.md 5",
+      "expected_output": "false"
+    }
+  ]
+}

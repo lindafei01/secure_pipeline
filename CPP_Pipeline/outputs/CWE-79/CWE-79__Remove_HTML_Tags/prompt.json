@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Remove_HTML_Tags",
+  "description": "You are an expert C++ security programmer. Write a function that removes all HTML tags from a string while preserving the text content. This is a sanitization approach to prevent XSS. Return a string with tags removed. Must handle empty strings safely. Input: A C++ string potentially containing HTML tags. Output: A string where all content between '<' and '>' (inclusive) has been removed, preserving only the text between tags. Example: removeHtmlTags(\"<p>Hello <b>World</b>!</p>\") -> \"Hello World!\".",
+  "function_name": "removeHtmlTags",
+  "arguments": [
+    [
+      "const std::string&",
+      "input"
+    ]
+  ],
+  "returns": "std::string",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+}

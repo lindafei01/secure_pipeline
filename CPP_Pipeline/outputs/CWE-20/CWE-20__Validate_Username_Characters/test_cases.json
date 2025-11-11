@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "valid_username123",
+      "expected_output": "true"
+    },
+    {
+      "input": "username_with_numbers_12345",
+      "expected_output": "true"
+    },
+    {
+      "input": "simpleUserName",
+      "expected_output": "true"
+    },
+    {
+      "input": "Another_Username_321",
+      "expected_output": "true"
+    },
+    {
+      "input": "UserName2023_",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "username@domain.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "user.name!",
+      "expected_output": "false"
+    },
+    {
+      "input": "name with spaces",
+      "expected_output": "false"
+    },
+    {
+      "input": "username#1234",
+      "expected_output": "false"
+    }
+  ]
+}

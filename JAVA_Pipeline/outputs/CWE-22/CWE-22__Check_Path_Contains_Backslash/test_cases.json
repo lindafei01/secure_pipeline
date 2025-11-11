@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "C:\\\\Windows",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/docs",
+      "expected_output": "false"
+    },
+    {
+      "input": "C:/Windows/System32",
+      "expected_output": "false"
+    },
+    {
+      "input": "Program Files\\\\Java",
+      "expected_output": "true"
+    },
+    {
+      "input": "documents/\\reports",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "randomstringwithoutbackslash",
+      "expected_output": "false"
+    },
+    {
+      "input": "normalstring/with\\backslash",
+      "expected_output": "true"
+    },
+    {
+      "input": "/minimal\\",
+      "expected_output": "true"
+    }
+  ]
+}

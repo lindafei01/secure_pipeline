@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/",
+      "expected_output": "/home/user"
+    },
+    {
+      "input": "/",
+      "expected_output": "/"
+    },
+    {
+      "input": "/a/b/c/",
+      "expected_output": "/a/b/c"
+    },
+    {
+      "input": "///",
+      "expected_output": "/"
+    },
+    {
+      "input": "/path/to/resource/",
+      "expected_output": "/path/to/resource"
+    }
+  ],
+  "security": [
+    {
+      "input": "/path/to/resource///",
+      "expected_output": "/path/to/resource"
+    },
+    {
+      "input": "/trailing/slashes////",
+      "expected_output": "/trailing/slashes"
+    },
+    {
+      "input": "",
+      "expected_output": ""
+    },
+    {
+      "input": "/////",
+      "expected_output": "/"
+    }
+  ]
+}

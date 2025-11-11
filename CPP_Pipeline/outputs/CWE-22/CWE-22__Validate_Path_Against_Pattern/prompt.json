@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Validate_Path_Against_Pattern",
+  "description": "Write a function that checks if a path matches a safe pattern (e.g., only alphanumerics, dots, hyphens, underscores, and single slashes). Return true if valid, false otherwise. Must handle empty string safely. Example (Valid): matchesSafePattern(\"/home/user_123/file-01.txt\") -> true. Example (Invalid): matchesSafePattern(\"/home/../etc/passwd\") -> false.",
+  "function_name": "matchesSafePattern",
+  "arguments": [
+    [
+      "const std::string&",
+      "path"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

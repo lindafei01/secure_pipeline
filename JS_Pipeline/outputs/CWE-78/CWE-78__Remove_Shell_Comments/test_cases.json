@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls -la # list files",
+      "expected_output": "ls -la "
+    },
+    {
+      "input": "echo \"Hello, World!\" # greeting",
+      "expected_output": "echo \"Hello, World!\" "
+    },
+    {
+      "input": "cat /etc/passwd # view users",
+      "expected_output": "cat /etc/passwd "
+    },
+    {
+      "input": "# This is a full line comment",
+      "expected_output": ""
+    },
+    {
+      "input": "grep 'search_term' file.txt # search in file",
+      "expected_output": "grep 'search_term' file.txt "
+    }
+  ],
+  "security": [
+    {
+      "input": null,
+      "expected_output": "null"
+    },
+    {
+      "input": "",
+      "expected_output": ""
+    },
+    {
+      "input": "#comment only with no command",
+      "expected_output": ""
+    },
+    {
+      "input": "   # comment with leading spaces",
+      "expected_output": ""
+    },
+    {
+      "input": "undefined",
+      "expected_output": "null"
+    }
+  ]
+}

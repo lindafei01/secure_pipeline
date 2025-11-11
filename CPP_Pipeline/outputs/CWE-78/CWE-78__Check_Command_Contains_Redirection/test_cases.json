@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls > output.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "cat < input.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo 'Hello World!' >> logfile.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "grep 'search' filename",
+      "expected_output": "false"
+    },
+    {
+      "input": "ls -la",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "    ",
+      "expected_output": "false"
+    },
+    {
+      "input": ">>",
+      "expected_output": "true"
+    },
+    {
+      "input": "< >",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo test>file",
+      "expected_output": "true"
+    }
+  ]
+}

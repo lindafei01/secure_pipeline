@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "https://www.example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "ftp://example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "https:/example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://ex ample.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://malicious-site<script>alert(1)</script>.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://localhost",
+      "expected_output": "true"
+    }
+  ]
+}

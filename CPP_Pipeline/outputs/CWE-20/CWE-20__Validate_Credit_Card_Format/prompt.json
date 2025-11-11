@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Credit_Card_Format",
+  "description": "Write a function that checks if a string matches a basic credit card number format (13-19 digits, spaces optional). Return true if format is valid, false otherwise. Must handle empty string safely. Note: This does not validate the actual card number validity.",
+  "function_name": "isValidCardFormat",
+  "arguments": [
+    [
+      "const std::string&",
+      "cardNumber"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

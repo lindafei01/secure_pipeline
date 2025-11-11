@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Escape_Shell_Argument",
+  "description": "Write a function that escapes a shell argument by wrapping it in single quotes and escaping any embedded single quotes. Return an escaped string, or null on error. Must handle null safely. Example: escapeShellArg(\"file's name\") -> \"'file'\\\\''s name'\".",
+  "function_name": "escapeShellArg",
+  "arguments": [
+    [
+      "String",
+      "argument"
+    ]
+  ],
+  "returns": "String",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n"
+}

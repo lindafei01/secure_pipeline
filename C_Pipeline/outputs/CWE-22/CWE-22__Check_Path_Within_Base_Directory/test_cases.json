@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/var/www /var/www/html/index.html",
+      "expected_output": "1"
+    },
+    {
+      "input": "/home/user /home/user/docs/report.pdf",
+      "expected_output": "1"
+    },
+    {
+      "input": "/etc /etc/nginx/nginx.conf",
+      "expected_output": "1"
+    },
+    {
+      "input": "/usr/local /usr/local/bin/script.sh",
+      "expected_output": "1"
+    },
+    {
+      "input": "/var/log /var/log/apache2/error.log",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "/var/www /var/www/../etc/passwd",
+      "expected_output": "0"
+    },
+    {
+      "input": "/home/user /home/user/../../root/.bashrc",
+      "expected_output": "0"
+    },
+    {
+      "input": "/etc /etc/../proc/cpuinfo",
+      "expected_output": "0"
+    },
+    {
+      "input": "/usr/local /usr/local/../../../etc/shadow",
+      "expected_output": "0"
+    },
+    {
+      "input": "/var/log /var/log/../../tmp/exploit.sh",
+      "expected_output": "0"
+    }
+  ]
+}

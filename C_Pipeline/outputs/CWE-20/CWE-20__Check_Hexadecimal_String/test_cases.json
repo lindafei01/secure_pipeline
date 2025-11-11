@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "1A3f",
+      "expected_output": 1
+    },
+    {
+      "input": "abcDEF",
+      "expected_output": 1
+    },
+    {
+      "input": "123456",
+      "expected_output": 1
+    },
+    {
+      "input": "G1",
+      "expected_output": 0
+    }
+  ],
+  "security": [
+    {
+      "input": "NULL",
+      "expected_output": 0
+    },
+    {
+      "input": "",
+      "expected_output": 0
+    },
+    {
+      "input": "0x1A3F",
+      "expected_output": 0
+    },
+    {
+      "input": " 1A3F",
+      "expected_output": 0
+    },
+    {
+      "input": "-1A3F",
+      "expected_output": 0
+    }
+  ]
+}

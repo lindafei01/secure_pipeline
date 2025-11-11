@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "\"Hello <b>World</b>\"",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"Good Morning\"",
+      "expected_output": "false"
+    },
+    {
+      "input": "\"<div id='container'>Content</div>\"",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"Text with no tags\"",
+      "expected_output": "false"
+    },
+    {
+      "input": "\"<img src='image.png' alt='Image'/>\"",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "\"<script>alert('XSS');</script>\"",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"Normal content with <Unexpected>\"",
+      "expected_output": "true"
+    },
+    {
+      "input": "\"Non-tag markers <> like <3 in text\"",
+      "expected_output": "false"
+    },
+    {
+      "input": "\"Incomplete tag <br\"",
+      "expected_output": "false"
+    },
+    {
+      "input": "\"Empty string with no tags\"",
+      "expected_output": "false"
+    }
+  ]
+}

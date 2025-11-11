@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls -la # list files",
+      "expected_output": "ls -la "
+    },
+    {
+      "input": "echo 'Hello World' # this is a comment",
+      "expected_output": "echo 'Hello World' "
+    },
+    {
+      "input": "# just a comment",
+      "expected_output": ""
+    },
+    {
+      "input": "gcc main.c -o main",
+      "expected_output": "gcc main.c -o main"
+    },
+    {
+      "input": "mkdir new_folder # create a new folder",
+      "expected_output": "mkdir new_folder "
+    }
+  ],
+  "security": [
+    {
+      "input": "some_command # comment with malicious attempt; rm -rf /",
+      "expected_output": "some_command "
+    },
+    {
+      "input": "command #",
+      "expected_output": "command "
+    },
+    {
+      "input": "    # leading whitespace with comment",
+      "expected_output": ""
+    },
+    {
+      "input": "print_file file.txt#no space before comment",
+      "expected_output": "print_file file.txt"
+    },
+    {
+      "input": "ls -la##multiple hashes",
+      "expected_output": "ls -la"
+    }
+  ]
+}

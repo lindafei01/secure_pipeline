@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user_123/file-01.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": ".",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/test_001/docs",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/file.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/docs/file-01_underscore.doc",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "/home/../etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user/test//file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user/docs/./file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home//@user/file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user/docs\file.txt",
+      "expected_output": "false"
+    }
+  ]
+}

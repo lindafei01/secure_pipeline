@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "   leading spaces",
+      "expected_output": "leading spaces"
+    },
+    {
+      "input": "trailing spaces   ",
+      "expected_output": "trailing spaces"
+    },
+    {
+      "input": "   leading and trailing spaces   ",
+      "expected_output": "leading and trailing spaces"
+    },
+    {
+      "input": "no trim needed",
+      "expected_output": "no trim needed"
+    },
+    {
+      "input": "    ",
+      "expected_output": ""
+    }
+  ],
+  "security": [
+    {
+      "input": "null",
+      "expected_output": "null"
+    },
+    {
+      "input": "",
+      "expected_output": ""
+    },
+    {
+      "input": " newline \n ",
+      "expected_output": "newline"
+    },
+    {
+      "input": " special \t characters ",
+      "expected_output": "special \t characters"
+    },
+    {
+      "input": "\n\t\t\n",
+      "expected_output": ""
+    }
+  ]
+}

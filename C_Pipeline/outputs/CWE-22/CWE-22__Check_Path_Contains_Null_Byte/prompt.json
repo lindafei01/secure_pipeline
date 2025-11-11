@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Contains_Null_Byte",
+  "description": "Write a function that checks if a path contains a NULL byte (\\0), which can be used for path truncation attacks. Return 1 if NULL byte found, 0 otherwise. Example (Found): path_contains_null(\"file.txt\\0.pdf\", 12) -> 1. Example (Not Found): path_contains_null(\"file.txt\", 8) -> 0.",
+  "function_name": "path_contains_null",
+  "arguments": [
+    [
+      "const char*",
+      "path"
+    ],
+    [
+      "size_t",
+      "len"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

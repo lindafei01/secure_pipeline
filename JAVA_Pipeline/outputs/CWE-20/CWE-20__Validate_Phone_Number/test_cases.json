@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "1234567890",
+      "expected_output": "true"
+    },
+    {
+      "input": "0987654321",
+      "expected_output": "true"
+    },
+    {
+      "input": "1111111111",
+      "expected_output": "true"
+    },
+    {
+      "input": "2223334444",
+      "expected_output": "true"
+    },
+    {
+      "input": "5556667777",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "123456789",
+      "expected_output": "false"
+    },
+    {
+      "input": "12345678901",
+      "expected_output": "false"
+    },
+    {
+      "input": "phone12345",
+      "expected_output": "false"
+    },
+    {
+      "input": "abcdefghij",
+      "expected_output": "false"
+    },
+    {
+      "input": "null",
+      "expected_output": "false"
+    }
+  ]
+}

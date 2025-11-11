@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "Plain text string",
+      "expected_output": "Plain text string"
+    },
+    {
+      "input": "<div>This <i>is</i> a <b>test</b>.</div>",
+      "expected_output": "This is a test."
+    },
+    {
+      "input": "<h1>Header</h1><p>Paragraph</p>",
+      "expected_output": "HeaderParagraph"
+    },
+    {
+      "input": "<body><header>Welcome</header><footer>Goodbye</footer></body>",
+      "expected_output": "WelcomeGoodbye"
+    }
+  ],
+  "security": [
+    {
+      "input": "<script>alert('xss');</script>",
+      "expected_output": "alert('xss');"
+    },
+    {
+      "input": "<img src='image.jpg' onerror='evilFunction()'>",
+      "expected_output": ""
+    },
+    {
+      "input": "<a href='http://malicious.com'>Click me</a>",
+      "expected_output": "Click me"
+    },
+    {
+      "input": "<!-- hidden comment -->Visible content",
+      "expected_output": "Visible content"
+    },
+    {
+      "input": "<style>body { background: url('evil.com/image.jpg'); }</style>",
+      "expected_output": ""
+    }
+  ]
+}

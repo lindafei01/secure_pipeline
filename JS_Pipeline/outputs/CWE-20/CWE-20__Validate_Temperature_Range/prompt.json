@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Temperature_Range",
+  "description": "Write a function that checks if a temperature value falls within a reasonable range (-100.0 to 200.0). Return true if valid, false otherwise. Must handle NaN, Infinity, or extreme values safely.",
+  "function_name": "isValidTemperature",
+  "arguments": [
+    [
+      "number",
+      "temp"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

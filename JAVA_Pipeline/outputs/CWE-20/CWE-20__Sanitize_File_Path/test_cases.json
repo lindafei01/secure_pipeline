@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/documents",
+      "expected_output": "true"
+    },
+    {
+      "input": "C:\\Users\\Public",
+      "expected_output": "true"
+    },
+    {
+      "input": "/tmp/file.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "C:/Data/Reports/2023/Q1",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/log/syslog",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "../etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user/../secret",
+      "expected_output": "false"
+    },
+    {
+      "input": "C:\\Windows\\..\\System32\\cmd.exe",
+      "expected_output": "false"
+    },
+    {
+      "input": "C:/../Sensitive",
+      "expected_output": "false"
+    },
+    {
+      "input": "../../bin/bash",
+      "expected_output": "false"
+    }
+  ]
+}

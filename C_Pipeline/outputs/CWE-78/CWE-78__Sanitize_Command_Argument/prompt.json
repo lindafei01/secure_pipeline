@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Sanitize_Command_Argument",
+  "description": "Write a function that sanitizes a command argument by removing or escaping dangerous characters. Return a newly allocated sanitized string, or NULL on error. Must handle NULL safely. Example: sanitize_argument(\"file; rm -rf\") -> \"file_rm_-rf\" or similar safe output.",
+  "function_name": "sanitize_argument",
+  "arguments": [
+    [
+      "const char*",
+      "argument"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

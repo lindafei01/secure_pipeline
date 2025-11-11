@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/var/www/html /var/www",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/log /var/www",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user/documents /home/user",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/admin/data/ /home/admin",
+      "expected_output": "true"
+    },
+    {
+      "input": "/usr/bin /usr",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "/etc/passwd /etc",
+      "expected_output": "true"
+    },
+    {
+      "input": "/bin/bash /usr",
+      "expected_output": "false"
+    },
+    {
+      "input": " /",
+      "expected_output": "false"
+    },
+    {
+      "input": " /not_exist",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/lib/mysql /var/lib",
+      "expected_output": "true"
+    }
+  ]
+}

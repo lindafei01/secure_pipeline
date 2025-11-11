@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user",
+      "expected_output": "1"
+    },
+    {
+      "input": "../file.txt",
+      "expected_output": "0"
+    },
+    {
+      "input": "C:\\Program Files\\App",
+      "expected_output": "1"
+    },
+    {
+      "input": "Documents/Project",
+      "expected_output": "0"
+    },
+    {
+      "input": "/var/log/system.log",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "null",
+      "expected_output": "0"
+    },
+    {
+      "input": "",
+      "expected_output": "0"
+    },
+    {
+      "input": "C:",
+      "expected_output": "0"
+    },
+    {
+      "input": "c:\\",
+      "expected_output": "1"
+    },
+    {
+      "input": "/etc/passwd",
+      "expected_output": "1"
+    }
+  ]
+}

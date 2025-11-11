@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/var/www file.txt",
+      "expected_output": "/var/www/file.txt"
+    },
+    {
+      "input": "/home/user documents/report.doc",
+      "expected_output": "/home/user/documents/report.doc"
+    },
+    {
+      "input": "/tmp log.txt",
+      "expected_output": "/tmp/log.txt"
+    },
+    {
+      "input": "/users/admin profile.jpg",
+      "expected_output": "/users/admin/profile.jpg"
+    },
+    {
+      "input": "/etc config.cfg",
+      "expected_output": "/etc/config.cfg"
+    }
+  ],
+  "security": [
+    {
+      "input": "/var/www ../etc/passwd",
+      "expected_output": ""
+    },
+    {
+      "input": "/home/user ../../../root/.bashrc",
+      "expected_output": ""
+    },
+    {
+      "input": "/tmp ../bin/ls",
+      "expected_output": ""
+    },
+    {
+      "input": "/users/admin ../../etc/shadow",
+      "expected_output": ""
+    },
+    {
+      "input": "/etc ../../../../boot/grub/grub.cfg",
+      "expected_output": ""
+    }
+  ]
+}

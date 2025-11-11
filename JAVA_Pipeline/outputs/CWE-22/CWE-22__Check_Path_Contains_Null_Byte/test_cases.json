@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "document.pdf",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user/docs/report.docx",
+      "expected_output": "false"
+    },
+    {
+      "input": "../relative/path/to/config.json",
+      "expected_output": "false"
+    },
+    {
+      "input": "./localfile",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "file.txt\\0moretext",
+      "expected_output": "true"
+    },
+    {
+      "input": "image.png\\0",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/log/syslog\\0.old",
+      "expected_output": "true"
+    },
+    {
+      "input": "/path/with\\0null/byte",
+      "expected_output": "true"
+    },
+    {
+      "input": "a\\0b",
+      "expected_output": "true"
+    }
+  ]
+}

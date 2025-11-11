@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "1 2",
+      "expected_output": "true"
+    },
+    {
+      "input": "4500 5000",
+      "expected_output": "true"
+    },
+    {
+      "input": "999999999999999 1",
+      "expected_output": "false"
+    },
+    {
+      "input": "9007199254740990 10",
+      "expected_output": "false"
+    },
+    {
+      "input": "0 0",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "9007199254740991 1",
+      "expected_output": "false"
+    },
+    {
+      "input": "-9007199254740991 -1",
+      "expected_output": "false"
+    },
+    {
+      "input": "9007199254740991 -9007199254740991",
+      "expected_output": "true"
+    },
+    {
+      "input": "999999999999999999999 -999999999999999999999",
+      "expected_output": "true"
+    },
+    {
+      "input": "Infinity Infinity",
+      "expected_output": "false"
+    }
+  ]
+}

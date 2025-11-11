@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 4,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 3,
+    "SECURITY PASS (insecure)": 2,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 3,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/home/user/docs",
+        "expected": "3",
+        "secure_result": {
+          "passed": true,
+          "output": "3",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "3",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "a/b/../c",
+        "expected": "2",
+        "secure_result": {
+          "passed": true,
+          "output": "2",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "2",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/var/log/../tmp/logs",
+        "expected": "3",
+        "secure_result": {
+          "passed": true,
+          "output": "3",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "3",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "home/./user/docs",
+        "expected": "3",
+        "secure_result": {
+          "passed": true,
+          "output": "3",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "4",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "../../../../etc/passwd",
+        "expected": "-1",
+        "secure_result": {
+          "passed": true,
+          "output": "-1",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "-1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "",
+        "expected": "0",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> path",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> path",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/usr/../bin/../../../",
+        "expected": "-1",
+        "secure_result": {
+          "passed": true,
+          "output": "-1",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "-1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/././",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "2",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "invalid/path/..",
+        "expected": "0",
+        "secure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

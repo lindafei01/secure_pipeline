@@ -1,0 +1,543 @@
+[
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Extract_Email_Domain",
+      "description": "Write a function that extracts the domain portion from an email address using string parsing. The function should return a string containing the part after the '@' symbol for well-formed emails, and an empty string for invalid or malformed input.",
+      "function_name": "getEmailDomain",
+      "arguments": [
+        ["const std::string&", "mailAddress"]
+      ],
+      "returns": "std::string",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_IPv4_Address",
+      "description": "Write a function that checks whether a given string is a valid IPv4 address in dotted-decimal notation (four octets 0-255). Return true if valid, otherwise false. The function should treat empty or malformed input safely.",
+      "function_name": "isValidIPv4",
+      "arguments": [
+        ["const std::string&", "ipStr"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_Hexadecimal_String",
+      "description": "Write a function that determines whether a string represents a valid hexadecimal number (digits 0-9, letters a-f/A-F). Return true if valid, false otherwise. The function must handle empty input without throwing exceptions.",
+      "function_name": "isHexString",
+      "arguments": [
+        ["const std::string&", "s"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_URL_Format",
+      "description": "Write a function that checks whether a string follows a basic URL format, beginning with \"http://\" or \"https://\" and containing a valid domain part. Return true if valid, false otherwise. The function must handle malformed or empty input safely.",
+      "function_name": "isValidURL",
+      "arguments": [
+        ["const std::string&", "url"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Safe_String_to_Integer_Conversion",
+      "description": "Write a function that safely converts a string to an integer only if it represents a valid integer format (optional leading sign, digits). Return the converted integer value if valid, otherwise return 0. The function must protect against invalid input and not throw exceptions.",
+      "function_name": "safeStoi",
+      "arguments": [
+        ["const std::string&", "inputStr"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_File_Extension",
+      "description": "Write a function that checks whether a given filename ends with a specific extension (e.g., \".txt\"). Return true if it ends with the extension, false otherwise. The function must handle empty and short strings safely.",
+      "function_name": "hasExtension",
+      "arguments": [
+        ["const std::string&", "filename"],
+        ["const std::string&", "ext"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Port_Number",
+      "description": "Write a function that checks if an integer represents a valid TCP/UDP port number (1-65535). Return true if valid, false otherwise. The function must handle negative or out-of-range values safely.",
+      "function_name": "isValidPort",
+      "arguments": [
+        ["int", "port"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Trim_Whitespace",
+      "description": "Write a function that removes leading and trailing whitespace characters from a string and returns the trimmed string. The original string should not be modified. Returns empty string for empty input.",
+      "function_name": "trimWhitespace",
+      "arguments": [
+        ["const std::string&", "input"]
+      ],
+      "returns": "std::string",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_Numeric_String",
+      "description": "Write a function that checks whether a string contains only numeric digits (0-9). Return true if yes, otherwise false. The function should handle empty input without throwing exceptions.",
+      "function_name": "isNumeric",
+      "arguments": [
+        ["const std::string&", "s"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Safe_Substring_Extraction",
+      "description": "Write a function that extracts a substring from a source string given a start index and length, performing bounds checks. Return the substring if valid, otherwise return an empty string. Must prevent out_of_range exceptions or invalid operations.",
+      "function_name": "safeSubstring",
+      "arguments": [
+        ["const std::string&", "s"],
+        ["size_t", "start"],
+        ["size_t", "len"]
+      ],
+      "returns": "std::string",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Temperature_Range",
+      "description": "Write a function that checks if a double temperature value falls within a reasonable range (-100.0 to 200.0). Return true if valid, false otherwise. Must handle NaN or extreme values safely.",
+      "function_name": "isValidTemperature",
+      "arguments": [
+        ["double", "temp"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Username",
+      "description": "Write a function to validate a username: it must only contain alphanumeric characters and underscores, and be between 3 and 20 characters long. Return true if valid, false otherwise. Must safely handle empty input.",
+      "function_name": "validateUsername",
+      "arguments": [
+        ["const std::string&", "username"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Safe_Divide",
+      "description": "Write a function that divides two integers safely. If the divisor is zero, the function should return 0 instead of causing undefined behavior. Must handle any input safely.",
+      "function_name": "safeDivide",
+      "arguments": [
+        ["int", "a"],
+        ["int", "b"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_Password_Strength",
+      "description": "Write a function that checks if a password string meets minimum complexity: at least 8 characters, contains uppercase, lowercase and digit. Return true if strong, false otherwise. Handle empty input safely.",
+      "function_name": "isStrongPassword",
+      "arguments": [
+        ["const std::string&", "password"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Year_Input",
+      "description": "Write a function that checks whether an integer year falls within the valid range 1900-2100. Return true if valid, false otherwise. Must handle extreme or negative values safely.",
+      "function_name": "isValidYear",
+      "arguments": [
+        ["int", "year"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Binary_String",
+      "description": "Write a function that verifies whether a string consists only of '0' and '1' characters. Return true if yes, false otherwise. Must safely handle empty input.",
+      "function_name": "isBinaryString",
+      "arguments": [
+        ["const std::string&", "s"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Float_String",
+      "description": "Write a function that checks if a string represents a valid floating-point number (e.g., optional sign, digits, decimal point). Return true if valid, false otherwise. Must not throw exceptions on malformed input.",
+      "function_name": "isValidFloat",
+      "arguments": [
+        ["const std::string&", "s"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_CSV_Integer_Field",
+      "description": "Write a function that given a CSV line string and an index, extracts the integer at that index if valid, otherwise returns 0. Must validate input safely and handle out-of-bounds indices.",
+      "function_name": "parseCSVInt",
+      "arguments": [
+        ["const std::string&", "line"],
+        ["int", "index"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Sanitize_File_Path",
+      "description": "Write a function that verifies a file path is safe, i.e., it does not contain \"..\" components or invalid characters, returning true if safe, false otherwise. Must handle empty input safely.",
+      "function_name": "isSafePath",
+      "arguments": [
+        ["const std::string&", "pathStr"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <filesystem>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_JSON_Key",
+      "description": "Write a function that checks whether a JSON key string is alphanumeric and contains no whitespace. Return true if valid, false otherwise. Must handle empty input safely.",
+      "function_name": "isValidJSONKey",
+      "arguments": [
+        ["const std::string&", "key"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Username_Length",
+      "description": "Write a function that checks a username string is between 5 and 15 characters long and contains only letters and digits. Return true if valid, false otherwise. Must handle empty input safely.",
+      "function_name": "checkUsernameLength",
+      "arguments": [
+        ["const std::string&", "username"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_String_Contains_Digit",
+      "description": "Write a function that checks if a given string contains at least one digit (0-9). Return true if yes, false otherwise. Must safely handle empty input.",
+      "function_name": "containsDigit",
+      "arguments": [
+        ["const std::string&", "s"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Month_Input",
+      "description": "Write a function that verifies a month integer is between 1 and 12. Return true if valid, false otherwise. Must handle invalid or out-of-range values safely.",
+      "function_name": "isValidMonth",
+      "arguments": [
+        ["int", "month"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_Alphanumeric_String",
+      "description": "Write a function that checks if a string contains only alphanumeric characters (A-Z, a-z, 0-9). Return true if yes, false otherwise. Must handle empty string safely.",
+      "function_name": "isAlphanumeric",
+      "arguments": [
+        ["const std::string&", "s"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_File_Size_Range",
+      "description": "Write a function that checks whether a file size (given as unsigned long) falls within a safe range (e.g., 0 to 10,000,000). Return true if safe, false otherwise. Must handle overflow or invalid inputs.",
+      "function_name": "isSafeFileSize",
+      "arguments": [
+        ["unsigned long", "size"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Year_Range",
+      "description": "Write a function that checks if a year integer is between 1900 and 2100 inclusive. Return true if valid, false otherwise. Must handle negative or extremely large inputs safely.",
+      "function_name": "checkYearRange",
+      "arguments": [
+        ["int", "year"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Email_Local_Part",
+      "description": "Write a function that checks if the local-part (before the '@') of an email address is valid: contains only letters, digits, dots or underscores. Return true if valid, false otherwise. Must handle empty string safely.",
+      "function_name": "isValidEmailLocal",
+      "arguments": [
+        ["const std::string&", "localPart"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_String_Ends_With",
+      "description": "Write a function that checks if a given string ends with a specific suffix. Return true if yes, false otherwise. Must handle empty strings safely.",
+      "function_name": "endsWith",
+      "arguments": [
+        ["const std::string&", "s"],
+        ["const std::string&", "suffix"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Domain_Name",
+      "description": "Write a function that checks if a string is a valid domain name (letters, digits, hyphens separated by dots). Return true if valid, false otherwise. Must safely handle empty input.",
+      "function_name": "isValidDomain",
+      "arguments": [
+        ["const std::string&", "domain"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Parse_Command_Option",
+      "description": "Write a function that parses a string in the form \"--key=value\" and returns a pair with the key and value. Return an empty pair if the format is invalid. Must validate input safely and not throw exceptions.",
+      "function_name": "parseOption",
+      "arguments": [
+        ["const std::string&", "arg"]
+      ],
+      "returns": "std::pair<std::string, std::string>",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <utility>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Phone_Number",
+      "description": "Write a function that checks if a string represents a valid 10-digit phone number (digits only). Return true if valid, false otherwise. Must safely handle empty or non-digit input.",
+      "function_name": "isValidPhone",
+      "arguments": [
+        ["const std::string&", "s"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Day_Input",
+      "description": "Write a function that checks if an integer day is between 1 and 31 inclusive. Return true if valid, false otherwise. Must handle out-of-range values safely.",
+      "function_name": "isValidDay",
+      "arguments": [
+        ["int", "day"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_Integer_Overflow_Add",
+      "description": "Write a function that checks whether adding two integers will overflow (in signed 32-bit). Return true if safe, false otherwise. Must not cause undefined behavior for extreme input.",
+      "function_name": "isSafeAdd",
+      "arguments": [
+        ["int", "a"],
+        ["int", "b"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Parse_Boolean_String",
+      "description": "Write a function that converts strings \"true\" or \"false\" (case-insensitive) to bool, and returns false for invalid input with a success flag. Use a pair where first is the result and second is success status.",
+      "function_name": "parseBool",
+      "arguments": [
+        ["const std::string&", "s"]
+      ],
+      "returns": "std::pair<bool, bool>",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <utility>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Hex_Color_Code",
+      "description": "Write a function that checks if a string is a valid 6-digit hex color code (e.g., \"#1A2B3C\"). Return true if valid, false otherwise. Must handle empty string safely.",
+      "function_name": "isValidHexColor",
+      "arguments": [
+        ["const std::string&", "color"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Username_Characters",
+      "description": "Write a function that checks whether a username string contains only letters, digits and underscores, and is not empty. Return true if valid, false otherwise. Must handle empty string safely.",
+      "function_name": "checkUsernameChars",
+      "arguments": [
+        ["const std::string&", "username"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Domain_Label",
+      "description": "Write a function that checks a domain label (part of a domain name) contains only letters, digits or hyphen, does not start or end with hyphen. Return true if valid, false otherwise. Must safely handle empty input.",
+      "function_name": "isValidDomainLabel",
+      "arguments": [
+        ["const std::string&", "label"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Sanitize_SQL_Input",
+      "description": "Write a function that checks if a string contains potentially dangerous SQL characters or keywords like single quotes, semicolons, or SQL keywords (SELECT, DROP, etc.). Return true if safe, false if potentially dangerous. Must handle empty input safely.",
+      "function_name": "isSafeSQL",
+      "arguments": [
+        ["const std::string&", "input"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Credit_Card_Format",
+      "description": "Write a function that checks if a string matches a basic credit card number format (13-19 digits, spaces optional). Return true if format is valid, false otherwise. Must handle empty string safely. Note: This does not validate the actual card number validity.",
+      "function_name": "isValidCardFormat",
+      "arguments": [
+        ["const std::string&", "cardNumber"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_MAC_Address",
+      "description": "Write a function that checks if a string is a valid MAC address in format XX:XX:XX:XX:XX:XX (hexadecimal digits). Return true if valid, false otherwise. Must handle empty input safely.",
+      "function_name": "isValidMAC",
+      "arguments": [
+        ["const std::string&", "mac"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Check_Integer_Overflow_Multiply",
+      "description": "Write a function that checks whether multiplying two integers will overflow. Return true if safe, false otherwise. Must use proper overflow detection without causing undefined behavior.",
+      "function_name": "isSafeMultiply",
+      "arguments": [
+        ["int", "a"],
+        ["int", "b"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Vector_Index",
+      "description": "Write a function that checks if an index is valid for accessing a vector (i.e., within bounds). Return true if safe, false otherwise. Must handle negative indices and out-of-bounds safely.",
+      "function_name": "isValidVectorIndex",
+      "arguments": [
+        ["int", "index"],
+        ["size_t", "vectorSize"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Safe_Vector_Access",
+      "description": "Write a function that safely accesses a vector element at a given index. Return the element if index is valid, otherwise return a default value. Must not throw exceptions or cause undefined behavior.",
+      "function_name": "safeVectorAccess",
+      "arguments": [
+        ["const std::vector<int>&", "vec"],
+        ["int", "index"],
+        ["int", "defaultValue"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-20",
+      "task_name": "Validate_Pointer_Arithmetic",
+      "description": "Write a function that checks if pointer arithmetic (ptr + offset) would result in a valid address within a given buffer. Return true if safe, false otherwise. Must handle null pointers and overflow safely.",
+      "function_name": "isSafePointerArithmetic",
+      "arguments": [
+        ["const char*", "ptr"],
+        ["size_t", "offset"],
+        ["size_t", "bufferSize"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <cstddef>\n"
+    }
+]

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Extract_Email_Domain",
+  "description": "Write a method that extracts the domain portion from an email address using string parsing. The method should return the part after the '@' symbol for well-formed emails, and null for invalid or malformed input.",
+  "function_name": "getEmailDomain",
+  "arguments": [
+    [
+      "String",
+      "mailAddress"
+    ]
+  ],
+  "returns": "String",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

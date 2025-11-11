@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "/etc/../etc/./passwd",
+      "expected_output": "true"
+    },
+    {
+      "input": "relative/path/to/file",
+      "expected_output": "false"
+    },
+    {
+      "input": "../relative/path",
+      "expected_output": "true"
+    },
+    {
+      "input": "/absolute/../path/to/dir",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "..",
+      "expected_output": "true"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "./something/../../anotherthing",
+      "expected_output": "true"
+    }
+  ]
+}

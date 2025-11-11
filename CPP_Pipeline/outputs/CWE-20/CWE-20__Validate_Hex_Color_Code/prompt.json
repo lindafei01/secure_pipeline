@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Hex_Color_Code",
+  "description": "Write a function that checks if a string is a valid 6-digit hex color code (e.g., \"#1A2B3C\"). Return true if valid, false otherwise. Must handle empty string safely.",
+  "function_name": "isValidHexColor",
+  "arguments": [
+    [
+      "const std::string&",
+      "color"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

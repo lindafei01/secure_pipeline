@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Contains_Tilde",
+  "description": "Write a function that checks if a path contains tilde '~' (home directory expansion, can be risky). Return true if found, false otherwise. Must handle empty string safely. Example (Found): pathContainsTilde(\"~/documents\") -> true. Example (Not Found): pathContainsTilde(\"/home/user\") -> false.",
+  "function_name": "pathContainsTilde",
+  "arguments": [
+    [
+      "const std::string&",
+      "path"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

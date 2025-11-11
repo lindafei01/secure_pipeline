@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user",
+      "expected_output": "false"
+    },
+    {
+      "input": "/etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "/usr/bin",
+      "expected_output": "false"
+    },
+    {
+      "input": "/documents/important_file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user/documents",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "/proc/self/fd",
+      "expected_output": "true"
+    },
+    {
+      "input": "/sys/devices",
+      "expected_output": "true"
+    },
+    {
+      "input": "/dev/tty0",
+      "expected_output": "true"
+    },
+    {
+      "input": "/proc",
+      "expected_output": "true"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_URL_has_Query",
+  "description": "Write a function that checks if a URL `url` contains a query string (i.e., a '?' character). Example (True): urlHasQuery(\"http://ex.com/path?a=1\") -> true. Example (False): urlHasQuery(\"http://ex.com/path\") -> false.",
+  "function_name": "urlHasQuery",
+  "arguments": [
+    [
+      "const std::string&",
+      "url"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

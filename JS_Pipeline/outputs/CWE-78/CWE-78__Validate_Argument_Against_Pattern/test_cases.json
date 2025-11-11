@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "file_123.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "my_document_v2.pdf",
+      "expected_output": "true"
+    },
+    {
+      "input": "archive-2023.tar.gz",
+      "expected_output": "true"
+    },
+    {
+      "input": "image1.jpg",
+      "expected_output": "true"
+    },
+    {
+      "input": "folder/file_name.docx",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "file; rm",
+      "expected_output": "false"
+    },
+    {
+      "input": "../../etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "$(echo malicious)",
+      "expected_output": "false"
+    },
+    {
+      "input": "name|ls",
+      "expected_output": "false"
+    },
+    {
+      "input": "filename.txt && rm -rf /",
+      "expected_output": "false"
+    }
+  ]
+}

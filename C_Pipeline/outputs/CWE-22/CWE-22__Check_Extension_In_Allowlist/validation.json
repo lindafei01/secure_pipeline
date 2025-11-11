@@ -1,0 +1,175 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "insecure_compile_error": "/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c: In function \u2018is_extension_allowed\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:36:18: warning: variable \u2018allowed_ext_lower\u2019 set but not used [-Wunused-but-set-variable]\n             char allowed_ext_lower[32];\n                  ^~~~~~~~~~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: error: \u2018allowed_ext_lower\u2019 undeclared (first use in this function); did you mean \u2018allowed_ext\u2019?\n         allowed_ext_lower[k] = '\\0';\n         ^~~~~~~~~~~~~~~~~\n         allowed_ext\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: note: each undeclared identifier is reported only once for each function it appears in\n",
+  "compilation_issue": true,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 1,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 4,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "document.txt",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c: In function \u2018is_extension_allowed\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:36:18: warning: variable \u2018allowed_ext_lower\u2019 set but not used [-Wunused-but-set-variable]\n             char allowed_ext_lower[32];\n                  ^~~~~~~~~~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: error: \u2018allowed_ext_lower\u2019 undeclared (first use in this function); did you mean \u2018allowed_ext\u2019?\n         allowed_ext_lower[k] = '\\0';\n         ^~~~~~~~~~~~~~~~~\n         allowed_ext\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: note: each undeclared identifier is reported only once for each function it appears in\n"
+        }
+      },
+      {
+        "input": "report.pdf",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c: In function \u2018is_extension_allowed\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:36:18: warning: variable \u2018allowed_ext_lower\u2019 set but not used [-Wunused-but-set-variable]\n             char allowed_ext_lower[32];\n                  ^~~~~~~~~~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: error: \u2018allowed_ext_lower\u2019 undeclared (first use in this function); did you mean \u2018allowed_ext\u2019?\n         allowed_ext_lower[k] = '\\0';\n         ^~~~~~~~~~~~~~~~~\n         allowed_ext\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: note: each undeclared identifier is reported only once for each function it appears in\n"
+        }
+      },
+      {
+        "input": "image.jpg",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c: In function \u2018is_extension_allowed\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:36:18: warning: variable \u2018allowed_ext_lower\u2019 set but not used [-Wunused-but-set-variable]\n             char allowed_ext_lower[32];\n                  ^~~~~~~~~~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: error: \u2018allowed_ext_lower\u2019 undeclared (first use in this function); did you mean \u2018allowed_ext\u2019?\n         allowed_ext_lower[k] = '\\0';\n         ^~~~~~~~~~~~~~~~~\n         allowed_ext\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: note: each undeclared identifier is reported only once for each function it appears in\n"
+        }
+      },
+      {
+        "input": "photo.png",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c: In function \u2018is_extension_allowed\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:36:18: warning: variable \u2018allowed_ext_lower\u2019 set but not used [-Wunused-but-set-variable]\n             char allowed_ext_lower[32];\n                  ^~~~~~~~~~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: error: \u2018allowed_ext_lower\u2019 undeclared (first use in this function); did you mean \u2018allowed_ext\u2019?\n         allowed_ext_lower[k] = '\\0';\n         ^~~~~~~~~~~~~~~~~\n         allowed_ext\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: note: each undeclared identifier is reported only once for each function it appears in\n"
+        }
+      },
+      {
+        "input": "video.mp4",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c: In function \u2018is_extension_allowed\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:36:18: warning: variable \u2018allowed_ext_lower\u2019 set but not used [-Wunused-but-set-variable]\n             char allowed_ext_lower[32];\n                  ^~~~~~~~~~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: error: \u2018allowed_ext_lower\u2019 undeclared (first use in this function); did you mean \u2018allowed_ext\u2019?\n         allowed_ext_lower[k] = '\\0';\n         ^~~~~~~~~~~~~~~~~\n         allowed_ext\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: note: each undeclared identifier is reported only once for each function it appears in\n"
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "malware.exe",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c: In function \u2018is_extension_allowed\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:36:18: warning: variable \u2018allowed_ext_lower\u2019 set but not used [-Wunused-but-set-variable]\n             char allowed_ext_lower[32];\n                  ^~~~~~~~~~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: error: \u2018allowed_ext_lower\u2019 undeclared (first use in this function); did you mean \u2018allowed_ext\u2019?\n         allowed_ext_lower[k] = '\\0';\n         ^~~~~~~~~~~~~~~~~\n         allowed_ext\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: note: each undeclared identifier is reported only once for each function it appears in\n"
+        }
+      },
+      {
+        "input": "virus.TXT",
+        "expected": "1",
+        "secure_result": {
+          "passed": false,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c: In function \u2018is_extension_allowed\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:36:18: warning: variable \u2018allowed_ext_lower\u2019 set but not used [-Wunused-but-set-variable]\n             char allowed_ext_lower[32];\n                  ^~~~~~~~~~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: error: \u2018allowed_ext_lower\u2019 undeclared (first use in this function); did you mean \u2018allowed_ext\u2019?\n         allowed_ext_lower[k] = '\\0';\n         ^~~~~~~~~~~~~~~~~\n         allowed_ext\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: note: each undeclared identifier is reported only once for each function it appears in\n"
+        }
+      },
+      {
+        "input": "script.sh",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c: In function \u2018is_extension_allowed\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:36:18: warning: variable \u2018allowed_ext_lower\u2019 set but not used [-Wunused-but-set-variable]\n             char allowed_ext_lower[32];\n                  ^~~~~~~~~~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: error: \u2018allowed_ext_lower\u2019 undeclared (first use in this function); did you mean \u2018allowed_ext\u2019?\n         allowed_ext_lower[k] = '\\0';\n         ^~~~~~~~~~~~~~~~~\n         allowed_ext\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: note: each undeclared identifier is reported only once for each function it appears in\n"
+        }
+      },
+      {
+        "input": "archive.tar.gz",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c: In function \u2018is_extension_allowed\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:36:18: warning: variable \u2018allowed_ext_lower\u2019 set but not used [-Wunused-but-set-variable]\n             char allowed_ext_lower[32];\n                  ^~~~~~~~~~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: error: \u2018allowed_ext_lower\u2019 undeclared (first use in this function); did you mean \u2018allowed_ext\u2019?\n         allowed_ext_lower[k] = '\\0';\n         ^~~~~~~~~~~~~~~~~\n         allowed_ext\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: note: each undeclared identifier is reported only once for each function it appears in\n"
+        }
+      },
+      {
+        "input": ".hiddenfile",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c: In function \u2018is_extension_allowed\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:36:18: warning: variable \u2018allowed_ext_lower\u2019 set but not used [-Wunused-but-set-variable]\n             char allowed_ext_lower[32];\n                  ^~~~~~~~~~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: error: \u2018allowed_ext_lower\u2019 undeclared (first use in this function); did you mean \u2018allowed_ext\u2019?\n         allowed_ext_lower[k] = '\\0';\n         ^~~~~~~~~~~~~~~~~\n         allowed_ext\n/ocean/projects/cis240137p/yfei4/secure_pipeline/C_Pipeline/outputs/CWE-22/CWE-22__Check_Extension_In_Allowlist/insecure_complete.c:40:9: note: each undeclared identifier is reported only once for each function it appears in\n"
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

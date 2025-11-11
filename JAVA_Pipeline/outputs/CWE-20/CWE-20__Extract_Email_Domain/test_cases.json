@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "user@example.com",
+      "expected_output": "example.com"
+    },
+    {
+      "input": "admin@subdomain.example.com",
+      "expected_output": "subdomain.example.com"
+    },
+    {
+      "input": "person.name@company.org",
+      "expected_output": "company.org"
+    },
+    {
+      "input": "contact@domain-with-dash.net",
+      "expected_output": "domain-with-dash.net"
+    },
+    {
+      "input": "user90@localhost",
+      "expected_output": "localhost"
+    }
+  ],
+  "security": [
+    {
+      "input": "nouser@.com",
+      "expected_output": "null"
+    },
+    {
+      "input": "invalid-email.com",
+      "expected_output": "null"
+    },
+    {
+      "input": "@nodomain.com",
+      "expected_output": "null"
+    },
+    {
+      "input": "user@com",
+      "expected_output": "com"
+    },
+    {
+      "input": "user@-invalid.com",
+      "expected_output": "null"
+    }
+  ]
+}

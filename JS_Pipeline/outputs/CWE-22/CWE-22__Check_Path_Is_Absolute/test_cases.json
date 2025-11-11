@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user",
+      "expected_output": "true"
+    },
+    {
+      "input": "../file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "/",
+      "expected_output": "true"
+    },
+    {
+      "input": "documents/report.docx",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/log/syslog",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined",
+      "expected_output": "false"
+    },
+    {
+      "input": "/etc/passwd",
+      "expected_output": "true"
+    },
+    {
+      "input": "C:/Windows/System32",
+      "expected_output": "false"
+    }
+  ]
+}

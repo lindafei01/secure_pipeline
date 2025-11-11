@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "user-name_123",
+      "expected_output": "1"
+    },
+    {
+      "input": "validAttribute",
+      "expected_output": "1"
+    },
+    {
+      "input": "attribute_with-hyphens",
+      "expected_output": "1"
+    },
+    {
+      "input": "another_safe_123",
+      "expected_output": "1"
+    },
+    {
+      "input": "",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "user' onload='alert(1)",
+      "expected_output": "0"
+    },
+    {
+      "input": "attribute<script>alert('xss')",
+      "expected_output": "0"
+    },
+    {
+      "input": "invalid#attribute",
+      "expected_output": "0"
+    },
+    {
+      "input": "attribute with spaces",
+      "expected_output": "0"
+    },
+    {
+      "input": null,
+      "expected_output": "0"
+    }
+  ]
+}

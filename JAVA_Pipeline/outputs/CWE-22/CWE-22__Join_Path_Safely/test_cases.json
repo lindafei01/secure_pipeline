@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/var/www file.txt",
+      "expected_output": "/var/www/file.txt"
+    },
+    {
+      "input": "/usr/local lib.so",
+      "expected_output": "/usr/local/lib.so"
+    },
+    {
+      "input": "/home/user documents/notes.txt",
+      "expected_output": "/home/user/documents/notes.txt"
+    },
+    {
+      "input": "/tmp data",
+      "expected_output": "/tmp/data"
+    },
+    {
+      "input": "/opt/bin script.sh",
+      "expected_output": "/opt/bin/script.sh"
+    }
+  ],
+  "security": [
+    {
+      "input": "/var/www ../etc/passwd",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/home/user ../../secret.txt",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/var/log ./../logfile",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/etc ../var/log/syslog",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/root ./../bashrc",
+      "expected_output": "NULL"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+```json
+{
+  "functional": [
+    {"input": "file.txt", "expected_output": "false"},
+    {"input": "document.pdf", "expected_output": "false"},
+    {"input": "image.jpeg", "expected_output": "false"},
+    {"input": "archive.tar.gz", "expected_output": "false"},
+    {"input": "presentation.pptx", "expected_output": "false"}
+  ],
+  "security": [
+    {"input": "data.bin\0extra", "expected_output": "true"},
+    {"input": "config.xml\0backup", "expected_output": "true"},
+    {"input": "\0system.log", "expected_output": "true"},
+    {"input": "note.txt\0spam", "expected_output": "true"},
+    {"input": "report.docx\0metadata", "expected_output": "true"}
+  ]
+}
+```

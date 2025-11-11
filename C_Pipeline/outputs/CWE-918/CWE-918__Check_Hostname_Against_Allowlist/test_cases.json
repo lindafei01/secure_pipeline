@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Google.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "GITHUB.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "example.org",
+      "expected_output": "1"
+    },
+    {
+      "input": "EXAMPLE.ORG",
+      "expected_output": "1"
+    },
+    {
+      "input": "github.com",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "malicious.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "notallowed.org",
+      "expected_output": "0"
+    },
+    {
+      "input": "fake.github.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "unauthorized.google.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "example.com",
+      "expected_output": "0"
+    }
+  ]
+}

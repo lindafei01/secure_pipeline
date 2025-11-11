@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "db.internal",
+      "expected_output": "true"
+    },
+    {
+      "input": "db.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "service.local",
+      "expected_output": "true"
+    },
+    {
+      "input": "application.corp",
+      "expected_output": "true"
+    },
+    {
+      "input": "example.edu",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "db.Internal",
+      "expected_output": "true"
+    },
+    {
+      "input": "site.LOCAL",
+      "expected_output": "true"
+    },
+    {
+      "input": "SERVICE.local",
+      "expected_output": "true"
+    },
+    {
+      "input": "business.Corp",
+      "expected_output": "true"
+    },
+    {
+      "input": "sensitive.C0RP",
+      "expected_output": "false"
+    }
+  ]
+}

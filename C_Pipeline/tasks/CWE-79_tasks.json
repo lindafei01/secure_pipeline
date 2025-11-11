@@ -1,0 +1,365 @@
+[
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Escape_HTML_Special_Characters",
+      "description": "You are an expert C security programmer. Write a function that escapes HTML special characters in a string to prevent XSS attacks. The function must handle the following characters: '<' -> '&lt;', '>' -> '&gt;', '&' -> '&amp;', '\"' -> '&quot;', \"'\" -> '&#39;'. Return a newly allocated escaped string, or NULL on error. Must handle NULL input safely. Input: A C string that may contain HTML special characters. Output: A newly allocated string with all HTML special characters replaced by their entity equivalents. The caller is responsible for freeing the returned string. Example: escape_html(\"<script>alert('XSS')</script>\") -> \"&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;\".",
+      "function_name": "escape_html",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Check_Contains_HTML_Tags",
+      "description": "You are an expert C security programmer. Write a function that checks if a string contains HTML tags (enclosed in < and >). This is used to detect potential XSS payloads. Return 1 if HTML tags are found, 0 otherwise. Must handle NULL input safely. Input: A C string to check. Output: Integer 1 if the string contains any sequence matching '<...>', 0 otherwise. The function should identify both opening tags like '<div>' and closing tags like '</div>', as well as self-closing tags like '<br/>'. Example (Contains): contains_html_tags(\"Hello <b>World</b>\") -> 1. Example (No Tags): contains_html_tags(\"Hello World\") -> 0.",
+      "function_name": "contains_html_tags",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Check_Contains_Script_Tags",
+      "description": "You are an expert C security programmer. Write a function that detects <script> tags (case-insensitive) in a string, which are commonly used in XSS attacks. Return 1 if <script> tags are found, 0 otherwise. Must handle NULL input safely. Input: A C string to analyze. Output: Integer 1 if the string contains '<script' (case-insensitive) followed by '>' or whitespace, 0 otherwise. The detection should work for variations like '<script>', '<SCRIPT>', '<Script src=...>', etc. Example (Found): contains_script_tags(\"<script>alert(1)</script>\") -> 1. Example (Not Found): contains_script_tags(\"Hello World\") -> 0.",
+      "function_name": "contains_script_tags",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Remove_HTML_Tags",
+      "description": "You are an expert C security programmer. Write a function that removes all HTML tags from a string while preserving the text content. This is a sanitization approach to prevent XSS. Return a newly allocated string with tags removed, or NULL on error. Must handle NULL input safely. Input: A C string potentially containing HTML tags. Output: A newly allocated string where all content between '<' and '>' (inclusive) has been removed, preserving only the text between tags. The caller is responsible for freeing the returned string. Example: remove_html_tags(\"<p>Hello <b>World</b>!</p>\") -> \"Hello World!\".",
+      "function_name": "remove_html_tags",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Escape_JavaScript_String",
+      "description": "You are an expert C security programmer. Write a function that escapes special characters for safe inclusion in JavaScript strings. The function must escape: backslash (\\), single quote ('), double quote (\"), newline (\\n), carriage return (\\r), and tab (\\t) by prefixing them with backslash. Return a newly allocated escaped string, or NULL on error. Must handle NULL input safely. Input: A C string that will be embedded in a JavaScript context. Output: A newly allocated string where special characters are escaped. This prevents breaking out of JavaScript string literals. Example: escape_js_string(\"Hello\\n'World'\") -> \"Hello\\\\n\\\\'World\\\\'\".",
+      "function_name": "escape_js_string",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Check_Contains_Event_Handlers",
+      "description": "You are an expert C security programmer. Write a function that detects HTML event handler attributes (onclick, onload, onerror, etc.) which can execute JavaScript and enable XSS. Return 1 if event handlers are found, 0 otherwise. Must handle NULL input safely and be case-insensitive. Input: A C string to check for event handler attributes. Output: Integer 1 if the string contains patterns like 'on' followed by common event names (click, load, error, mouseover, etc.), 0 otherwise. Example (Found): contains_event_handlers(\"<img onerror='alert(1)'>\") -> 1. Example (Not Found): contains_event_handlers(\"<img src='pic.jpg'>\") -> 0.",
+      "function_name": "contains_event_handlers",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Validate_Safe_HTML_Attribute",
+      "description": "You are an expert C security programmer. Write a function that validates if an HTML attribute value is safe (contains only alphanumerics, hyphens, and underscores). Return 1 if safe, 0 otherwise. Must handle NULL input safely. Input: A C string representing an HTML attribute value. Output: Integer 1 if the string contains only characters from the set [a-zA-Z0-9_-], which are generally safe for attribute values, 0 if it contains any other characters that might enable XSS. Example (Safe): is_safe_html_attribute(\"user-name_123\") -> 1. Example (Unsafe): is_safe_html_attribute(\"user' onload='alert(1)\") -> 0.",
+      "function_name": "is_safe_html_attribute",
+      "arguments": [
+        ["const char*", "attribute"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Escape_HTML_Attribute_Value",
+      "description": "You are an expert C security programmer. Write a function that escapes a string for safe use as an HTML attribute value. Must escape: '\"' -> '&quot;', \"'\" -> '&#39;', '<' -> '&lt;', '>' -> '&gt;', '&' -> '&amp;'. Return a newly allocated escaped string, or NULL on error. Must handle NULL input safely. Input: A C string to be used as an HTML attribute value. Output: A newly allocated string with characters that could break out of attribute context properly escaped. Example: escape_html_attribute(\"value='test'\") -> \"value=&#39;test&#39;\".",
+      "function_name": "escape_html_attribute",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Check_Contains_JavaScript_Protocol",
+      "description": "You are an expert C security programmer. Write a function that detects 'javascript:' protocol in URLs, which can execute scripts when used in href or src attributes. Return 1 if found, 0 otherwise. Must be case-insensitive and handle NULL input safely. Input: A C string that may contain a URL. Output: Integer 1 if the string contains 'javascript:' (case-insensitive), possibly with whitespace variations, 0 otherwise. Example (Found): contains_javascript_protocol(\"javascript:alert(1)\") -> 1. Example (Not Found): contains_javascript_protocol(\"https://example.com\") -> 0.",
+      "function_name": "contains_javascript_protocol",
+      "arguments": [
+        ["const char*", "url"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Sanitize_URL_For_Href",
+      "description": "You are an expert C security programmer. Write a function that sanitizes a URL for safe use in href attributes. Only allow http:, https:, and mailto: protocols. Return a newly allocated sanitized URL or NULL if the URL is dangerous. Must handle NULL input safely. Input: A C string representing a URL. Output: A newly allocated string containing the URL if it starts with an allowed protocol (http://, https://, or mailto:, case-insensitive), or NULL if the URL uses a dangerous protocol like javascript:, data:, or vbscript:. Example (Safe): sanitize_url_for_href(\"https://example.com\") -> \"https://example.com\". Example (Dangerous): sanitize_url_for_href(\"javascript:alert(1)\") -> NULL.",
+      "function_name": "sanitize_url_for_href",
+      "arguments": [
+        ["const char*", "url"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Encode_URL_Component",
+      "description": "You are an expert C security programmer. Write a function that URL-encodes a string (percent-encoding). Encode all characters except alphanumerics, hyphen, underscore, period, and tilde. Return a newly allocated encoded string, or NULL on error. Must handle NULL input safely. Input: A C string to be used as a URL component (query parameter value, path component, etc.). Output: A newly allocated string where unsafe characters are replaced with %XX where XX is the hexadecimal ASCII value. This prevents special characters from being interpreted as URL syntax. Example: encode_url_component(\"hello world&foo=bar\") -> \"hello%20world%26foo%3Dbar\".",
+      "function_name": "encode_url_component",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Check_Contains_Data_Protocol",
+      "description": "You are an expert C security programmer. Write a function that detects 'data:' protocol in strings, which can be used to embed executable content in XSS attacks. Return 1 if found, 0 otherwise. Must be case-insensitive and handle NULL input safely. Input: A C string that may contain a URL or URI. Output: Integer 1 if the string contains 'data:' (case-insensitive), 0 otherwise. The data: protocol can embed HTML, JavaScript, or other content inline. Example (Found): contains_data_protocol(\"data:text/html,<script>alert(1)</script>\") -> 1. Example (Not Found): contains_data_protocol(\"https://example.com\") -> 0.",
+      "function_name": "contains_data_protocol",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Validate_Against_XSS_Blocklist",
+      "description": "You are an expert C security programmer. Write a function that checks if input contains known XSS patterns from a blocklist. The blocklist is a NULL-terminated array of strings. Return 1 if any pattern is found (case-insensitive), 0 otherwise. Must handle NULL input safely. Input: A C string to check, and a NULL-terminated array of dangerous patterns. Output: Integer 1 if the input contains any of the blocklisted patterns, 0 otherwise. The search should be case-insensitive. Example (Blocked): validate_against_xss_blocklist(\"<SCRIPT>alert</SCRIPT>\", [\"<script\", \"onerror\", \"javascript:\", NULL]) -> 1. Example (Clean): validate_against_xss_blocklist(\"Hello World\", [\"<script\", \"onerror\", NULL]) -> 0.",
+      "function_name": "validate_against_xss_blocklist",
+      "arguments": [
+        ["const char*", "input"],
+        ["const char**", "blocklist"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* xss_blocklist[] = {\"<script\", \"javascript:\", \"onerror=\", \"onload=\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Escape_CSS_Value",
+      "description": "You are an expert C security programmer. Write a function that escapes special characters for safe use in CSS values. Must escape: backslash (\\), single quote ('), double quote (\"), newline (\\n), and other control characters. Return a newly allocated escaped string, or NULL on error. Must handle NULL input safely. Input: A C string to be used in a CSS context (e.g., as part of a style attribute). Output: A newly allocated string with special characters escaped to prevent CSS injection attacks that could lead to XSS. Example: escape_css_value(\"red'; background: url('javascript:alert(1)')\") should escape the quotes and special characters.",
+      "function_name": "escape_css_value",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Check_Contains_Style_Tag",
+      "description": "You are an expert C security programmer. Write a function that detects <style> tags in input, which can be used for CSS-based XSS attacks. Return 1 if <style> tags are found, 0 otherwise. Must be case-insensitive and handle NULL input safely. Input: A C string to check. Output: Integer 1 if the string contains '<style' (case-insensitive) followed by '>' or whitespace, 0 otherwise. Example (Found): contains_style_tag(\"<style>body{background:url('javascript:alert(1)')}</style>\") -> 1. Example (Not Found): contains_style_tag(\"Hello World\") -> 0.",
+      "function_name": "contains_style_tag",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Strip_Whitespace_For_Comparison",
+      "description": "You are an expert C security programmer. Write a function that removes all whitespace from a string for comparison purposes. This helps detect obfuscated XSS attacks like '< script >' or 'java\\nscript:'. Return a newly allocated string with whitespace removed, or NULL on error. Must handle NULL input safely. Input: A C string potentially containing whitespace. Output: A newly allocated string with all space, tab, newline, and carriage return characters removed. This normalized form can be used to detect XSS patterns that use whitespace for obfuscation. Example: strip_whitespace(\"< s c r i p t >\") -> \"<script>\".",
+      "function_name": "strip_whitespace",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Check_Contains_Iframe_Tag",
+      "description": "You are an expert C security programmer. Write a function that detects <iframe> tags, which can be used to embed malicious content in XSS attacks. Return 1 if <iframe> tags are found, 0 otherwise. Must be case-insensitive and handle NULL input safely. Input: A C string to analyze. Output: Integer 1 if the string contains '<iframe' (case-insensitive) followed by '>' or whitespace, 0 otherwise. Example (Found): contains_iframe_tag(\"<iframe src='evil.com'></iframe>\") -> 1. Example (Not Found): contains_iframe_tag(\"Hello World\") -> 0.",
+      "function_name": "contains_iframe_tag",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Validate_Input_Length",
+      "description": "You are an expert C security programmer. Write a function that validates if input length is within safe limits. Return 1 if length is acceptable, 0 if too long. Must handle NULL input safely. Input: A C string to validate, and a maximum allowed length. Output: Integer 1 if the string length is less than or equal to max_length, 0 otherwise. Long inputs can be a sign of attack attempts and may cause buffer issues. Example (Valid): validate_input_length(\"Hello\", 100) -> 1. Example (Too Long): validate_input_length(<10000-char string>, 1000) -> 0.",
+      "function_name": "validate_input_length",
+      "arguments": [
+        ["const char*", "input"],
+        ["size_t", "max_length"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Decode_HTML_Entities",
+      "description": "You are an expert C security programmer. Write a function that decodes common HTML entities back to their character equivalents. This can help normalize input before further validation. Return a newly allocated decoded string, or NULL on error. Must handle NULL input safely. Input: A C string containing HTML entities. Output: A newly allocated string where entities like '&lt;', '&gt;', '&amp;', '&quot;', and '&#39;' are replaced with their corresponding characters ('<', '>', '&', '\"', \"'\"). This normalization helps detect encoded XSS attacks. Example: decode_html_entities(\"&lt;script&gt;alert(1)&lt;/script&gt;\") -> \"<script>alert(1)</script>\".",
+      "function_name": "decode_html_entities",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Check_Contains_Encoded_Characters",
+      "description": "You are an expert C security programmer. Write a function that detects percent-encoded or hex-encoded characters that might be used to obfuscate XSS attacks. Return 1 if encoding is found, 0 otherwise. Must handle NULL input safely. Input: A C string to check for encoded characters. Output: Integer 1 if the string contains patterns like %XX (URL encoding) or &#xXX; (hex entity), which might indicate an attempt to bypass filters, 0 otherwise. Example (Found): contains_encoded_characters(\"%3Cscript%3E\") -> 1. Example (Not Found): contains_encoded_characters(\"Hello World\") -> 0.",
+      "function_name": "contains_encoded_characters",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Validate_Alphanumeric_Only",
+      "description": "You are an expert C security programmer. Write a function that validates if input contains only alphanumeric characters. This is a strict whitelist approach for contexts where only letters and numbers are expected. Return 1 if valid, 0 otherwise. Must handle NULL input safely. Input: A C string to validate. Output: Integer 1 if the string contains only characters from [a-zA-Z0-9], 0 if it contains any other characters. This strict validation prevents any form of XSS in contexts where symbols are not needed. Example (Valid): validate_alphanumeric_only(\"User123\") -> 1. Example (Invalid): validate_alphanumeric_only(\"User<script>\") -> 0.",
+      "function_name": "validate_alphanumeric_only",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Check_Contains_SVG_Tag",
+      "description": "You are an expert C security programmer. Write a function that detects <svg> tags, which can contain embedded scripts and be used in XSS attacks. Return 1 if <svg> tags are found, 0 otherwise. Must be case-insensitive and handle NULL input safely. Input: A C string to check. Output: Integer 1 if the string contains '<svg' (case-insensitive) followed by '>' or whitespace, 0 otherwise. SVG tags can contain <script> elements or event handlers. Example (Found): contains_svg_tag(\"<svg onload='alert(1)'>\") -> 1. Example (Not Found): contains_svg_tag(\"Hello World\") -> 0.",
+      "function_name": "contains_svg_tag",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Sanitize_Text_Content",
+      "description": "You are an expert C security programmer. Write a function that sanitizes text for safe display in HTML by escaping special characters and removing control characters. Return a newly allocated sanitized string, or NULL on error. Must handle NULL input safely. Input: A C string representing user-provided text content. Output: A newly allocated string where HTML special characters are escaped and control characters (ASCII 0-31 except space, tab, newline, carriage return) are removed. This provides defense-in-depth against various XSS vectors. Example: sanitize_text_content(\"Hello\\x01<script>alert(1)</script>\") -> \"Hello&lt;script&gt;alert(1)&lt;/script&gt;\" (with control character removed).",
+      "function_name": "sanitize_text_content",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "char*",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Check_Contains_Object_Tag",
+      "description": "You are an expert C security programmer. Write a function that detects <object> tags, which can be used to embed Flash or other plugins that may execute scripts. Return 1 if <object> tags are found, 0 otherwise. Must be case-insensitive and handle NULL input safely. Input: A C string to analyze. Output: Integer 1 if the string contains '<object' (case-insensitive) followed by '>' or whitespace, 0 otherwise. Example (Found): contains_object_tag(\"<object data='evil.swf'></object>\") -> 1. Example (Not Found): contains_object_tag(\"Hello World\") -> 0.",
+      "function_name": "contains_object_tag",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Check_Contains_Embed_Tag",
+      "description": "You are an expert C security programmer. Write a function that detects <embed> tags, which can embed external content and potentially execute scripts. Return 1 if <embed> tags are found, 0 otherwise. Must be case-insensitive and handle NULL input safely. Input: A C string to check. Output: Integer 1 if the string contains '<embed' (case-insensitive) followed by '>' or whitespace, 0 otherwise. Example (Found): contains_embed_tag(\"<embed src='evil.swf'>\") -> 1. Example (Not Found): contains_embed_tag(\"Hello World\") -> 0.",
+      "function_name": "contains_embed_tag",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Validate_Safe_Characters_For_ID",
+      "description": "You are an expert C security programmer. Write a function that validates if a string is safe to use as an HTML element ID. Must contain only letters, digits, hyphens, underscores, and start with a letter. Return 1 if valid, 0 otherwise. Must handle NULL input safely. Input: A C string intended to be used as an HTML element ID attribute. Output: Integer 1 if the string starts with a letter and contains only [a-zA-Z0-9_-], 0 otherwise. Valid IDs reduce the attack surface. Example (Valid): validate_safe_id(\"user-profile-123\") -> 1. Example (Invalid): validate_safe_id(\"123-user\") -> 0 (starts with digit). Example (Invalid): validate_safe_id(\"user<script>\") -> 0.",
+      "function_name": "validate_safe_id",
+      "arguments": [
+        ["const char*", "id"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Check_Contains_Base64_Encoded_Script",
+      "description": "You are an expert C security programmer. Write a function that detects potential base64-encoded scripts by looking for 'data:text/html;base64,' or similar patterns. Return 1 if found, 0 otherwise. Must handle NULL input safely. Input: A C string that may contain base64-encoded content. Output: Integer 1 if the string contains patterns like 'data:text/html;base64,' or 'data:text/javascript;base64,' which might encode XSS payloads, 0 otherwise. Example (Found): contains_base64_script(\"data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==\") -> 1. Example (Not Found): contains_base64_script(\"https://example.com\") -> 0.",
+      "function_name": "contains_base64_script",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Check_Contains_Expression_Syntax",
+      "description": "You are an expert C security programmer. Write a function that detects CSS expression() syntax, which was historically used for XSS in Internet Explorer. Return 1 if found, 0 otherwise. Must be case-insensitive and handle NULL input safely. Input: A C string, typically from a style attribute or CSS content. Output: Integer 1 if the string contains 'expression(' (case-insensitive), 0 otherwise. While less relevant in modern browsers, this check provides defense-in-depth. Example (Found): contains_expression_syntax(\"width:expression(alert(1))\") -> 1. Example (Not Found): contains_expression_syntax(\"width:100px\") -> 0.",
+      "function_name": "contains_expression_syntax",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Validate_Against_Allowlist_Tags",
+      "description": "You are an expert C security programmer. Write a function that checks if HTML content contains only tags from an allowlist. The allowlist is a NULL-terminated array of allowed tag names. Return 1 if all tags are allowed, 0 if any forbidden tag is found. Must handle NULL input safely and be case-insensitive. Input: A C string containing HTML, and a NULL-terminated array of allowed tag names (without angle brackets). Output: Integer 1 if the input contains no tags, or all tags present are in the allowlist, 0 if any tag not in the allowlist is found. Example (Allowed): validate_allowlist_tags(\"<p>Hello <b>World</b></p>\", [\"p\", \"b\", \"i\", NULL]) -> 1. Example (Forbidden): validate_allowlist_tags(\"<p>Hello <script>alert(1)</script></p>\", [\"p\", \"b\", NULL]) -> 0.",
+      "function_name": "validate_allowlist_tags",
+      "arguments": [
+        ["const char*", "html"],
+        ["const char**", "allowlist"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* safe_tags[] = {\"p\", \"b\", \"i\", \"em\", \"strong\", \"br\", NULL};\n"
+    },
+    {
+      "cwe_id": "CWE-79",
+      "task_name": "Check_Contains_Meta_Tag",
+      "description": "You are an expert C security programmer. Write a function that detects <meta> tags, which can be used for meta-refresh based XSS attacks. Return 1 if <meta> tags are found, 0 otherwise. Must be case-insensitive and handle NULL input safely. Input: A C string to analyze. Output: Integer 1 if the string contains '<meta' (case-insensitive) followed by '>' or whitespace, 0 otherwise. Meta tags with http-equiv='refresh' can redirect to javascript: URLs. Example (Found): contains_meta_tag(\"<meta http-equiv='refresh' content='0;url=javascript:alert(1)'>\") -> 1. Example (Not Found): contains_meta_tag(\"Hello World\") -> 0.",
+      "function_name": "contains_meta_tag",
+      "arguments": [
+        ["const char*", "input"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+    }
+]

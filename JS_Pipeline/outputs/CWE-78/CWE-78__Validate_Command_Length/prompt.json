@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Validate_Command_Length",
+  "description": "Write a function that checks if a command length is within safe limits. Return true if valid, false otherwise. Must handle null/undefined safely. Example (Valid): isCommandLengthValid('ls -la', 1024) -> true. Example (Too Long): isCommandLengthValid(<1025-char command>, 1024) -> false.",
+  "function_name": "isCommandLengthValid",
+  "arguments": [
+    [
+      "string",
+      "command"
+    ],
+    [
+      "number",
+      "maxLength"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+}

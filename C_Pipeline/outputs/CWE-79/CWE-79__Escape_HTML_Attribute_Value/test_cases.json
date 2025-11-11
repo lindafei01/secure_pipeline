@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello World",
+      "expected_output": "Hello World"
+    },
+    {
+      "input": "<div>Hello</div>",
+      "expected_output": "&lt;div&gt;Hello&lt;/div&gt;"
+    },
+    {
+      "input": "Click \"here\"!",
+      "expected_output": "Click &quot;here&quot;!"
+    },
+    {
+      "input": "It's sunny",
+      "expected_output": "It&#39;s sunny"
+    },
+    {
+      "input": "Income & Age",
+      "expected_output": "Income &amp; Age"
+    }
+  ],
+  "security": [
+    {
+      "input": "\" onmouseover=alert(1) \"",
+      "expected_output": "&quot; onmouseover=alert(1) &quot;"
+    },
+    {
+      "input": "><img src=x onerror=alert(1)>",
+      "expected_output": "&gt;&lt;img src=x onerror=alert(1)&gt;"
+    },
+    {
+      "input": "& <script>alert('XSS')</script>",
+      "expected_output": "&amp; &lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;"
+    },
+    {
+      "input": "normal & 'alert'",
+      "expected_output": "normal &amp; &#39;alert&#39;"
+    },
+    {
+      "input": "< & \" ' >",
+      "expected_output": "&lt; &amp; &quot; &#39; &gt;"
+    }
+  ]
+}

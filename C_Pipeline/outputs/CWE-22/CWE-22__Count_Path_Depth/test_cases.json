@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/docs",
+      "expected_output": "3"
+    },
+    {
+      "input": "a/b/c",
+      "expected_output": "3"
+    },
+    {
+      "input": "a/b/../c",
+      "expected_output": "2"
+    },
+    {
+      "input": "",
+      "expected_output": "0"
+    },
+    {
+      "input": "/root/../etc/",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "/path/to/malicious/../../data",
+      "expected_output": "0"
+    },
+    {
+      "input": "a/../../b",
+      "expected_output": "0"
+    },
+    {
+      "input": "/../../..",
+      "expected_output": "0"
+    },
+    {
+      "input": "////////",
+      "expected_output": "0"
+    },
+    {
+      "input": "a/b/../../../c",
+      "expected_output": "0"
+    }
+  ]
+}

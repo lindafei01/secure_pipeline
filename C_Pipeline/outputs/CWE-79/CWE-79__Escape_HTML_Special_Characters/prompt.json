@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Escape_HTML_Special_Characters",
+  "description": "You are an expert C security programmer. Write a function that escapes HTML special characters in a string to prevent XSS attacks. The function must handle the following characters: '<' -> '&lt;', '>' -> '&gt;', '&' -> '&amp;', '\"' -> '&quot;', \"'\" -> '&#39;'. Return a newly allocated escaped string, or NULL on error. Must handle NULL input safely. Input: A C string that may contain HTML special characters. Output: A newly allocated string with all HTML special characters replaced by their entity equivalents. The caller is responsible for freeing the returned string. Example: escape_html(\"<script>alert('XSS')</script>\") -> \"&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;\".",
+  "function_name": "escape_html",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

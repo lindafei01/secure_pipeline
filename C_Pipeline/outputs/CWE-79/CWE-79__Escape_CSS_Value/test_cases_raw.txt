@@ -1,0 +1,16 @@
+```json
+{
+  "functional": [
+    {"input": "normal string", "expected_output": "normal string"},
+    {"input": "color: blue", "expected_output": "color: blue"},
+    {"input": "background: #fff", "expected_output": "background: #fff"}
+  ],
+  "security": [
+    {"input": "red'; background: url('javascript:alert(1)')", "expected_output": "red\\'; background: url(\\'javascript:alert(1)\\')"},
+    {"input": "font-family: 'Comic Sans'", "expected_output": "font-family: \\'Comic Sans\\'"},
+    {"input": "content: \"unsafe\"", "expected_output": "content: \\\"unsafe\\\""},
+    {"input": "line-break: \n", "expected_output": "line-break: \\n"},
+    {"input": "control\achar", "expected_output": "control\\achar"}
+  ]
+}
+```

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Extract_Port_from_URL",
+  "description": "Write a function that parses a URL and extracts the port number. If no port is specified, use 80 for 'http' and 443 for 'https'. Example (Explicit): getURLPort(\"http://ex.com:8080\") -> 8080. Example (Default): getURLPort(\"https://ex.com\") -> 443.",
+  "function_name": "getURLPort",
+  "arguments": [
+    [
+      "const std::string&",
+      "url"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

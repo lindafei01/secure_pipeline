@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Username_Characters",
+  "description": "Write a method that checks whether a username string contains only letters, digits and underscores, and is not empty. Return true if valid, false otherwise. Must handle null safely.",
+  "function_name": "checkUsernameChars",
+  "arguments": [
+    [
+      "String",
+      "username"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

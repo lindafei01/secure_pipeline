@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_File_Size_Range",
+  "description": "Write a function that checks whether a file size (given as unsigned long) falls within a safe range (e.g., 0 to 10,000,000). Return true if safe, false otherwise. Must handle overflow or invalid inputs.",
+  "function_name": "isSafeFileSize",
+  "arguments": [
+    [
+      "unsigned long",
+      "size"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 4,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "/home/user/./docs/../file.txt",
+        "expected": "/home/user/file.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "/home/user/file.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/user/file.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/a/b/c/./../../g",
+        "expected": "/a/g",
+        "secure_result": {
+          "passed": true,
+          "output": "/a/g",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/a/g",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/home/./user/./files/",
+        "expected": "/home/user/files",
+        "secure_result": {
+          "passed": true,
+          "output": "/home/user/files",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/home/user/files",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/usr/local/../bin/./scripts/../",
+        "expected": "/usr/bin",
+        "secure_result": {
+          "passed": true,
+          "output": "/usr/bin",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/usr/bin",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "/./a/b/c/./d",
+        "expected": "/a/b/c/d",
+        "secure_result": {
+          "passed": true,
+          "output": "/a/b/c/d",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "/a/b/c/d",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "/etc/passwd/../../../../../../bigfile",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/bigfile",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "../../../etc/hosts",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/etc/hosts",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/var/log/../../../../badfile",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/badfile",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "../usr/local/bin/somefile",
+        "expected": "null",
+        "secure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/usr/local/bin/somefile",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/home/user/../../etc/shadow",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "/etc/shadow",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/etc/shadow",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

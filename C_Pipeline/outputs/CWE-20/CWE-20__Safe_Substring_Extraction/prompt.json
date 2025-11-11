@@ -1,0 +1,23 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Safe_Substring_Extraction",
+  "description": "Write a function that extracts a substring from a source string given a start index and length, performing bounds checks. Return a newly allocated substring if valid, otherwise return NULL. Must prevent buffer overflow or invalid memory access.",
+  "function_name": "safe_substring",
+  "arguments": [
+    [
+      "const char*",
+      "s"
+    ],
+    [
+      "size_t",
+      "start"
+    ],
+    [
+      "size_t",
+      "len"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

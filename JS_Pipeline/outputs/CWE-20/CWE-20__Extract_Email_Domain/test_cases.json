@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "user@example.com",
+      "expected_output": "example.com"
+    },
+    {
+      "input": "contact@company.co.uk",
+      "expected_output": "company.co.uk"
+    },
+    {
+      "input": "admin@subdomain.website.org",
+      "expected_output": "subdomain.website.org"
+    },
+    {
+      "input": "name@domain.io",
+      "expected_output": "domain.io"
+    },
+    {
+      "input": "employee123@nonprofit.net",
+      "expected_output": "nonprofit.net"
+    }
+  ],
+  "security": [
+    {
+      "input": "noatsymbol.com",
+      "expected_output": null
+    },
+    {
+      "input": "@missingusername.com",
+      "expected_output": "missingusername.com"
+    },
+    {
+      "input": "invalid@.com",
+      "expected_output": ".com"
+    },
+    {
+      "input": "user@@doubleat.com",
+      "expected_output": null
+    },
+    {
+      "input": "name@localhost",
+      "expected_output": "localhost"
+    }
+  ]
+}

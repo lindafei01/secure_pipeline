@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/var/www /var/www/html/index.html",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user /home/user/documents/report.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "/usr/local /usr/local/bin/bash",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/www /var/www/images/../html/index.html",
+      "expected_output": "true"
+    },
+    {
+      "input": "/opt/application /opt/application/config/settings.ini",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "/var/www /var/www/../etc/passwd",
+      "expected_output": "false"
+    },
+    {
+      "input": "/home/user /home/../root/.bashrc",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/www /var/www/../../../../etc/hosts",
+      "expected_output": "false"
+    },
+    {
+      "input": "/usr/bin /usr/bin/../../../etc/shadow",
+      "expected_output": "false"
+    },
+    {
+      "input": "/opt/data /opt/data/../../../../var/log/syslog",
+      "expected_output": "false"
+    }
+  ]
+}

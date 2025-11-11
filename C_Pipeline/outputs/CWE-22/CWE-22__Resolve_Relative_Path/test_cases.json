@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/var/www html/index.html",
+      "expected_output": "/var/www/html/index.html"
+    },
+    {
+      "input": "/home/user docs/report.txt",
+      "expected_output": "/home/user/docs/report.txt"
+    },
+    {
+      "input": "/opt/app bin/execute.sh",
+      "expected_output": "/opt/app/bin/execute.sh"
+    },
+    {
+      "input": "/usr/local src/main.c",
+      "expected_output": "/usr/local/src/main.c"
+    },
+    {
+      "input": "/data/projects project1/readme.md",
+      "expected_output": "/data/projects/project1/readme.md"
+    }
+  ],
+  "security": [
+    {
+      "input": "/var/www ../etc/passwd",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/home/user ..",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/app/config ../../system/shadow",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/opt/bin ../../../important/file.txt",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/home/user/profile ../../../../etc/hosts",
+      "expected_output": "NULL"
+    }
+  ]
+}

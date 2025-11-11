@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls -la",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo Hello",
+      "expected_output": "false"
+    },
+    {
+      "input": "cd /home/user",
+      "expected_output": "false"
+    },
+    {
+      "input": "grep 'pattern' file",
+      "expected_output": "false"
+    },
+    {
+      "input": "pwd",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "ls\nrm file",
+      "expected_output": "true"
+    },
+    {
+      "input": "cat file.txt && echo Done\nshutdown -h now",
+      "expected_output": "true"
+    },
+    {
+      "input": "; echo unsafe\nls",
+      "expected_output": "true"
+    },
+    {
+      "input": "cp somefile \nmkdir /newdir",
+      "expected_output": "true"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    }
+  ]
+}

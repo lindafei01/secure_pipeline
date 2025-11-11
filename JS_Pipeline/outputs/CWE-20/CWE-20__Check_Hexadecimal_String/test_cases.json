@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "1A3f",
+      "expected_output": "true"
+    },
+    {
+      "input": "abc123",
+      "expected_output": "true"
+    },
+    {
+      "input": "456G",
+      "expected_output": "false"
+    },
+    {
+      "input": "00ff",
+      "expected_output": "true"
+    },
+    {
+      "input": "123xg",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": " ",
+      "expected_output": "false"
+    },
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined",
+      "expected_output": "false"
+    },
+    {
+      "input": "0xFF",
+      "expected_output": "false"
+    }
+  ]
+}

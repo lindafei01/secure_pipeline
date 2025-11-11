@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_Has_Invalid_Chars",
+  "description": "Write a function that checks if a `hostname` contains any invalid characters specified in `invalidChars` (a string, e.g., \"_!\"). Example (Invalid): hostnameHasInvalidChars(\"my_host\", \"_!\") -> true. Example (Valid): hostnameHasInvalidChars(\"my-host\", \"_!\") -> false.",
+  "function_name": "hostnameHasInvalidChars",
+  "arguments": [
+    [
+      "const std::string&",
+      "hostname"
+    ],
+    [
+      "const std::string&",
+      "invalidChars"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

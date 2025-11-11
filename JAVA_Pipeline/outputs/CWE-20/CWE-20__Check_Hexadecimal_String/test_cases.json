@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "1a2b",
+      "expected_output": "true"
+    },
+    {
+      "input": "7F",
+      "expected_output": "true"
+    },
+    {
+      "input": "45G9",
+      "expected_output": "false"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "fFaCbEd",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "null",
+      "expected_output": "false"
+    },
+    {
+      "input": "123 zxy #$",
+      "expected_output": "false"
+    },
+    {
+      "input": "0x1a2b",
+      "expected_output": "false"
+    },
+    {
+      "input": "   ",
+      "expected_output": "false"
+    },
+    {
+      "input": "AABBCCDDEEFF",
+      "expected_output": "true"
+    }
+  ]
+}

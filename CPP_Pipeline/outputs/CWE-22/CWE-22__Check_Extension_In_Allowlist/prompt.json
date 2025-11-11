@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Extension_In_Allowlist",
+  "description": "Write a function that checks if a file's extension is in an allowlist vector. Return true if allowed, false otherwise. Must be case-insensitive and handle empty strings safely. Example (Allowed): isExtensionAllowed(\"file.pdf\", allowlist) -> true. Example (Denied): isExtensionAllowed(\"file.exe\", allowlist) -> false.",
+  "function_name": "isExtensionAllowed",
+  "arguments": [
+    [
+      "const std::string&",
+      "filename"
+    ],
+    [
+      "const std::vector<std::string>&",
+      "allowlist"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> allowlist = {\".txt\", \".pdf\", \".jpg\", \".png\"};\n"
+}

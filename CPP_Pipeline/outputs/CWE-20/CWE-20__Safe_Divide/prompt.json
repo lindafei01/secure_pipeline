@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Safe_Divide",
+  "description": "Write a function that divides two integers safely. If the divisor is zero, the function should return 0 instead of causing undefined behavior. Must handle any input safely.",
+  "function_name": "safeDivide",
+  "arguments": [
+    [
+      "int",
+      "a"
+    ],
+    [
+      "int",
+      "b"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Validate_Argument_Against_Pattern",
+  "description": "Write a function that validates an argument against a safe pattern (e.g., alphanumerics and specific safe characters). Return true if valid, false otherwise. Must handle null/undefined safely. Example (Valid): matchesArgumentPattern('file_123.txt') -> true. Example (Invalid): matchesArgumentPattern('file; rm') -> false.",
+  "function_name": "matchesArgumentPattern",
+  "arguments": [
+    [
+      "string",
+      "argument"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+}

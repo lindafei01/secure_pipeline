@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Join_Path_Safely",
+  "description": "Write a function that joins a base directory with a filename, preventing directory traversal. Return a newly allocated safe path, or NULL if traversal detected. Example (Safe): join_path_safe(\"/var/www\", \"file.txt\") -> \"/var/www/file.txt\". Example (Unsafe): join_path_safe(\"/var/www\", \"../etc/passwd\") -> NULL.",
+  "function_name": "join_path_safe",
+  "arguments": [
+    [
+      "const char*",
+      "base_dir"
+    ],
+    [
+      "const char*",
+      "filename"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Binary_String",
+  "description": "Write a method that verifies whether a string consists only of '0' and '1' characters. Return true if yes, false otherwise. Must safely handle null or empty input.",
+  "function_name": "isBinaryString",
+  "arguments": [
+    [
+      "String",
+      "s"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

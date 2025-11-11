@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "20.5",
+      "expected_output": "true"
+    },
+    {
+      "input": "-150.0",
+      "expected_output": "false"
+    },
+    {
+      "input": "0.0",
+      "expected_output": "true"
+    },
+    {
+      "input": "200.0",
+      "expected_output": "true"
+    },
+    {
+      "input": "-99.9",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "300.0",
+      "expected_output": "false"
+    },
+    {
+      "input": "-1000.0",
+      "expected_output": "false"
+    },
+    {
+      "input": "Double.POSITIVE_INFINITY",
+      "expected_output": "false"
+    },
+    {
+      "input": "Double.NaN",
+      "expected_output": "false"
+    },
+    {
+      "input": "Double.NEGATIVE_INFINITY",
+      "expected_output": "false"
+    }
+  ]
+}

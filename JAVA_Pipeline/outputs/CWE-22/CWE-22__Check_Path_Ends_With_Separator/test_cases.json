@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/docs",
+      "expected_output": "false"
+    },
+    {
+      "input": "/",
+      "expected_output": "true"
+    },
+    {
+      "input": "/usr/local/bin/",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/docs/file.txt",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "/..",
+      "expected_output": "false"
+    },
+    {
+      "input": "../relative/path/",
+      "expected_output": "true"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "////",
+      "expected_output": "true"
+    },
+    {
+      "input": "null",
+      "expected_output": "false"
+    }
+  ]
+}

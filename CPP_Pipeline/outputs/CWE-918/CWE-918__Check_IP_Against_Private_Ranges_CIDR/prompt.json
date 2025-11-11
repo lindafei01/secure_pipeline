@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_IP_Against_Private_Ranges_CIDR",
+  "description": "Write a function that checks if an IPv4 `ipStr` falls within any of the `ipRanges` vector. Each range is a CIDR string. Example (Blocked): isIPInRanges(\"10.0.0.1\", ipRanges) -> true. Example (Public): isIPInRanges(\"8.8.8.8\", ipRanges) -> false.",
+  "function_name": "isIPInRanges",
+  "arguments": [
+    [
+      "const std::string&",
+      "ipStr"
+    ],
+    [
+      "const std::vector<std::string>&",
+      "ipRanges"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> ipRanges = {\"10.0.0.0/8\", \"172.16.0.0/12\", \"192.168.0.0/16\"};\n"
+}

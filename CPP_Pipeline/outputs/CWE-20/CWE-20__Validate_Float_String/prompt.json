@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Float_String",
+  "description": "Write a function that checks if a string represents a valid floating-point number (e.g., optional sign, digits, decimal point). Return true if valid, false otherwise. Must not throw exceptions on malformed input.",
+  "function_name": "isValidFloat",
+  "arguments": [
+    [
+      "const std::string&",
+      "s"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 1,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 4,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "ls -la",
+        "expected": "ls",
+        "secure_result": {
+          "passed": true,
+          "output": "ls",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "ls",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "   cd /home/user",
+        "expected": "cd",
+        "secure_result": {
+          "passed": true,
+          "output": "cd",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "cd",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "echo Hello World",
+        "expected": "echo",
+        "secure_result": {
+          "passed": true,
+          "output": "echo",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "echo",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "rm -rf /path/to/remove",
+        "expected": "rm",
+        "secure_result": {
+          "passed": true,
+          "output": "rm",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "rm",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "mkdir new_folder",
+        "expected": "mkdir",
+        "secure_result": {
+          "passed": true,
+          "output": "mkdir",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "mkdir",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> command",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> command",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "  ",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> command",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> command",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": " ; rm -rf /*",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": ";",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "\t\n  ",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> command",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> command",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": " # comment",
+        "expected": "null",
+        "secure_result": {
+          "passed": false,
+          "output": "#",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "#",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

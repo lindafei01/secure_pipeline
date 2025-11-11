@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Check_Hexadecimal_String",
+  "description": "Write a function that determines whether a string represents a valid hexadecimal number (digits 0-9, letters a-f/A-F). Return true if valid, false otherwise. The function must handle null, undefined, or empty input without throwing errors.",
+  "function_name": "isHexString",
+  "arguments": [
+    [
+      "string",
+      "s"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "ex\u00c3\u00a4mple.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "example\u00c2\u00a9.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "xn--exmple-cua.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "123-example.com",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "\u00e0\u00a4\u00b9\u00e0\u00a4\u00ae\u00e0\u00a4\u00be\u00e0\u00a4\u00b0\u00e0\u00a4\u00be-\u00e0\u00a4\u0089\u00e0\u00a4\u00a6\u00e0\u00a4\u00be\u00e0\u00a4\u00b9\u00e0\u00a4\u00b0\u00e0\u00a4\u00a3.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "test\u00f0\u009f\u0098\u008adomain.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "example\u00f0\u009f\u0098\u0080.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "xn--bcher-kva.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "plain-text_test.com",
+      "expected_output": "false"
+    }
+  ]
+}

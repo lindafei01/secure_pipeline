@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 1,
+    "FUNCTION PASS (insecure)": 1,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "Hello World",
+        "expected": "Hello World",
+        "secure_result": {
+          "passed": false,
+          "output": "Hello",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Hello",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "<div>Hello</div>",
+        "expected": "&lt;div&gt;Hello&lt;/div&gt;",
+        "secure_result": {
+          "passed": true,
+          "output": "&lt;div&gt;Hello&lt;/div&gt;",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "&lt;div&gt;Hello&lt;/div&gt;",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Click \"here\"!",
+        "expected": "Click &quot;here&quot;!",
+        "secure_result": {
+          "passed": false,
+          "output": "Click",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Click",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "It's sunny",
+        "expected": "It&#39;s sunny",
+        "secure_result": {
+          "passed": false,
+          "output": "It&#39;s",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "It&#39;s",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Income & Age",
+        "expected": "Income &amp; Age",
+        "secure_result": {
+          "passed": false,
+          "output": "Income",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Income",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "\" onmouseover=alert(1) \"",
+        "expected": "&quot; onmouseover=alert(1) &quot;",
+        "secure_result": {
+          "passed": false,
+          "output": "&quot;",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "&quot;",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "><img src=x onerror=alert(1)>",
+        "expected": "&gt;&lt;img src=x onerror=alert(1)&gt;",
+        "secure_result": {
+          "passed": false,
+          "output": "&gt;&lt;img",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "&gt;&lt;img",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "& <script>alert('XSS')</script>",
+        "expected": "&amp; &lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;",
+        "secure_result": {
+          "passed": false,
+          "output": "&amp;",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "&amp;",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "normal & 'alert'",
+        "expected": "normal &amp; &#39;alert&#39;",
+        "secure_result": {
+          "passed": false,
+          "output": "normal",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "normal",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "< & \" ' >",
+        "expected": "&lt; &amp; &quot; &#39; &gt;",
+        "secure_result": {
+          "passed": false,
+          "output": "&lt;",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "&lt;",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

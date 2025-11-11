@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/.ssh/id_rsa",
+      "expected_output": "1"
+    },
+    {
+      "input": "/home/user/file.txt",
+      "expected_output": "0"
+    },
+    {
+      "input": "/usr/local/bin",
+      "expected_output": "0"
+    },
+    {
+      "input": "/home/user/.config/settings",
+      "expected_output": "1"
+    },
+    {
+      "input": "../../folder/.hidden_subfolder",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "NULL",
+      "expected_output": "0"
+    },
+    {
+      "input": "/home/.././.hidden",
+      "expected_output": "1"
+    },
+    {
+      "input": "/home/user/..",
+      "expected_output": "0"
+    },
+    {
+      "input": "../.malicious_file",
+      "expected_output": "1"
+    },
+    {
+      "input": "/var/log/../hidden",
+      "expected_output": "0"
+    }
+  ]
+}

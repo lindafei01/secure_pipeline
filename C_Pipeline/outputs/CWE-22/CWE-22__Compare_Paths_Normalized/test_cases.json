@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/../user/file.txt /home/user/file.txt",
+      "expected_output": "1"
+    },
+    {
+      "input": "/var/log/../log/syslog /var/log/syslog",
+      "expected_output": "1"
+    },
+    {
+      "input": "/etc/init.d/../../etc/init.d /etc/init.d",
+      "expected_output": "1"
+    },
+    {
+      "input": "./relative/path ./relative/path",
+      "expected_output": "1"
+    },
+    {
+      "input": "/usr/bin/././bash /usr/bin/bash",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "/home/user/file.txt NULL",
+      "expected_output": "0"
+    },
+    {
+      "input": "NULL /home/user/file.txt",
+      "expected_output": "0"
+    },
+    {
+      "input": "/secure/./path/doc.txt /secure/path/./../../etc/passwd",
+      "expected_output": "0"
+    },
+    {
+      "input": "/home/user/folder/../../home/root /home/root/.",
+      "expected_output": "1"
+    },
+    {
+      "input": "NULL NULL",
+      "expected_output": "1"
+    }
+  ]
+}

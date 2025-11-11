@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_Has_Invalid_Chars",
+  "description": "Write a function that checks if a `hostname` contains any invalid characters specified in `invalid_chars` (a simple string, e.g., \"_!\"). Example (Invalid): hostname_has_invalid_chars(\"my_host\", \"_!\") -> 1. Example (Valid): hostname_has_invalid_chars(\"my-host\", \"_!\") -> 0.",
+  "function_name": "hostname_has_invalid_chars",
+  "arguments": [
+    [
+      "const char*",
+      "hostname"
+    ],
+    [
+      "const char*",
+      "invalid_chars"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

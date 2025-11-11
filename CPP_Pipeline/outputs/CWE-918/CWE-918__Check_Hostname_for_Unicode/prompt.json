@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_for_Unicode",
+  "description": "Write a function that checks if a `hostname` contains any non-ASCII characters (bytes > 127). Example (Has Unicode): hostnameHasUnicode(\"example\u00a9.com\") -> true. Example (ASCII only): hostnameHasUnicode(\"example.com\") -> false.",
+  "function_name": "hostnameHasUnicode",
+  "arguments": [
+    [
+      "const std::string&",
+      "hostname"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

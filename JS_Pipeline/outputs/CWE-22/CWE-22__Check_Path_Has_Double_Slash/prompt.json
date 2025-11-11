@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Has_Double_Slash",
+  "description": "Write a function that checks if a path contains double slashes '//' which can sometimes be used in attacks. Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): pathHasDoubleSlash('/home//user') -> true. Example (Not Found): pathHasDoubleSlash('/home/user') -> false.",
+  "function_name": "pathHasDoubleSlash",
+  "arguments": [
+    [
+      "string",
+      "path"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

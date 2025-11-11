@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Remove_Trailing_Slashes",
+  "description": "Write a function that removes trailing slashes from a path. Return a newly allocated path without trailing slashes, or NULL on error. Must preserve root '/'. Example: remove_trailing_slashes(\"/home/user/\") -> \"/home/user\". Example: remove_trailing_slashes(\"/\") -> \"/\".",
+  "function_name": "remove_trailing_slashes",
+  "arguments": [
+    [
+      "const char*",
+      "path"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

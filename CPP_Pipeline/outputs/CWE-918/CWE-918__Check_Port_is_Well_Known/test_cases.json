@@ -1,0 +1,58 @@
+{
+  "functional": [
+    {
+      "input": "80",
+      "expected_output": "true"
+    },
+    {
+      "input": "443",
+      "expected_output": "true"
+    },
+    {
+      "input": "21",
+      "expected_output": "true"
+    },
+    {
+      "input": "22",
+      "expected_output": "true"
+    },
+    {
+      "input": "1023",
+      "expected_output": "true"
+    },
+    {
+      "input": "1024",
+      "expected_output": "false"
+    },
+    {
+      "input": "8080",
+      "expected_output": "false"
+    },
+    {
+      "input": "65535",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "0",
+      "expected_output": "false"
+    },
+    {
+      "input": "-1",
+      "expected_output": "false"
+    },
+    {
+      "input": "-1023",
+      "expected_output": "false"
+    },
+    {
+      "input": "100000",
+      "expected_output": "false"
+    },
+    {
+      "input": "2147483647",
+      "expected_output": "false"
+    }
+  ]
+}

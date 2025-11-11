@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Resolve_Relative_Path",
+  "description": "Write a function that resolves a relative path against a base directory. Return an absolute path string, or null on error. Must prevent directory traversal. Example: resolveRelative('/var/www', 'html/index.html') -> '/var/www/html/index.html'. Example: resolveRelative('/var/www', '../etc/passwd') -> null.",
+  "function_name": "resolveRelative",
+  "arguments": [
+    [
+      "string",
+      "baseDir"
+    ],
+    [
+      "string",
+      "relativePath"
+    ]
+  ],
+  "returns": "string|null",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

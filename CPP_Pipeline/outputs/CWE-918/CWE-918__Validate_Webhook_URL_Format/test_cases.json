@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "https://hooks.example.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "https://webhook.site/id",
+      "expected_output": "true"
+    },
+    {
+      "input": "https://api.company.org/webhooks",
+      "expected_output": "true"
+    },
+    {
+      "input": "ftp://hooks.example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://ssl.example.com",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "https://192.168.1.1/webhook",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://255.255.255.255",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://[2001:0db8:85a3:0000:0000:8a2e:0370:7334]",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://localhost/webhook",
+      "expected_output": "true"
+    },
+    {
+      "input": "ftp://127.0.0.1/webhook",
+      "expected_output": "false"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "functional": [
+    {
+      "input": "Hello World",
+      "expected_output": "0"
+    },
+    {
+      "input": "This is a simple test",
+      "expected_output": "0"
+    },
+    {
+      "input": "No encoding here",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "%3Cscript%3E",
+      "expected_output": "1"
+    },
+    {
+      "input": "Hello%20World",
+      "expected_output": "1"
+    },
+    {
+      "input": "&#x1F600;",
+      "expected_output": "1"
+    },
+    {
+      "input": "Normal text &#x0026; encoded",
+      "expected_output": "1"
+    },
+    {
+      "input": "Mixed %20 and &#x20;",
+      "expected_output": "1"
+    }
+  ]
+}

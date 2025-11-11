@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Check_Integer_Overflow_Multiply",
+  "description": "Write a function that checks whether multiplying two integers will overflow. Return true if safe, false otherwise. Must use proper overflow detection without causing undefined behavior.",
+  "function_name": "isSafeMultiply",
+  "arguments": [
+    [
+      "int",
+      "a"
+    ],
+    [
+      "int",
+      "b"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

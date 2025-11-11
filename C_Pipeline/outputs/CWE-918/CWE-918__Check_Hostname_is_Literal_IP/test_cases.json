@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "192.168.1.1",
+      "expected_output": 1
+    },
+    {
+      "input": "example.com",
+      "expected_output": 0
+    },
+    {
+      "input": "[2001:0db8:85a3:0000:0000:8a2e:0370:7334]",
+      "expected_output": 1
+    },
+    {
+      "input": "localhost",
+      "expected_output": 0
+    },
+    {
+      "input": "8.8.8.8",
+      "expected_output": 1
+    }
+  ],
+  "security": [
+    {
+      "input": "999.999.999.999",
+      "expected_output": 0
+    },
+    {
+      "input": "[::zzzz]",
+      "expected_output": 0
+    },
+    {
+      "input": "256.256.256.256",
+      "expected_output": 0
+    },
+    {
+      "input": "",
+      "expected_output": 0
+    },
+    {
+      "input": "[::1]:8080",
+      "expected_output": 0
+    }
+  ]
+}

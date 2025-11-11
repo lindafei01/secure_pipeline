@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "hello 0 5",
+      "expected_output": "hello"
+    },
+    {
+      "input": "hello 1 3",
+      "expected_output": "ell"
+    },
+    {
+      "input": "world 2 3",
+      "expected_output": "rld"
+    },
+    {
+      "input": "openai 4 2",
+      "expected_output": "ai"
+    },
+    {
+      "input": "test 2 10",
+      "expected_output": "null"
+    }
+  ],
+  "security": [
+    {
+      "input": "security -1 4",
+      "expected_output": "null"
+    },
+    {
+      "input": "example 3 0",
+      "expected_output": ""
+    },
+    {
+      "input": "example 10 3",
+      "expected_output": "null"
+    },
+    {
+      "input": "openai 5 -1",
+      "expected_output": "null"
+    }
+  ]
+}

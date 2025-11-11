@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/file.txt",
+      "expected_output": "file.txt"
+    },
+    {
+      "input": "/home/user/",
+      "expected_output": ""
+    },
+    {
+      "input": "/home/user/file/",
+      "expected_output": ""
+    },
+    {
+      "input": "",
+      "expected_output": ""
+    },
+    {
+      "input": "/home/user/.hiddenfile",
+      "expected_output": ".hiddenfile"
+    }
+  ],
+  "security": [
+    {
+      "input": "/home/user/file.txt/",
+      "expected_output": ""
+    },
+    {
+      "input": "/home/user//////",
+      "expected_output": ""
+    },
+    {
+      "input": "/",
+      "expected_output": ""
+    },
+    {
+      "input": "./file.txt",
+      "expected_output": "file.txt"
+    },
+    {
+      "input": ".",
+      "expected_output": ""
+    }
+  ]
+}

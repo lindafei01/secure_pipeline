@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 1,
+    "FUNCTION PASS (insecure)": 1,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 2,
+    "SECURITY PASS (insecure)": 2,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 3,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "Hello World",
+        "expected": "Hello World",
+        "secure_result": {
+          "passed": false,
+          "output": "Hello",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Hello",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "<Hello>",
+        "expected": "&lt;Hello&gt;",
+        "secure_result": {
+          "passed": true,
+          "output": "&lt;Hello&gt;",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "&lt;Hello&gt;",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Hello & Goodbye",
+        "expected": "Hello &amp; Goodbye",
+        "secure_result": {
+          "passed": false,
+          "output": "Hello",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Hello",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Spaces    Tabs\tare\tfine",
+        "expected": "Spaces    Tabs\tare\tfine",
+        "secure_result": {
+          "passed": false,
+          "output": "Spaces",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Spaces",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Normal\nText\rWith\rNewlines\n",
+        "expected": "Normal\nText\rWith\rNewlines\n",
+        "secure_result": {
+          "passed": false,
+          "output": "Normal",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Normal",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "Hello\u0005<script>alert(2)</script>",
+        "expected": "Hello&lt;script&gt;alert(2)&lt;/script&gt;",
+        "secure_result": {
+          "passed": true,
+          "output": "Hello&lt;script&gt;alert(2)&lt;/script&gt;",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "Hello&lt;script&gt;alert(2)&lt;/script&gt;",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "Contact: <a href='mailto:bob@foo.com'>Bob</a>",
+        "expected": "Contact: &lt;a href=&#39;mailto:bob@foo.com&#39;&gt;Bob&lt;/a&gt;",
+        "secure_result": {
+          "passed": false,
+          "output": "Contact:",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Contact:",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "<div onclick=\"evil()\">Clickable</div>",
+        "expected": "&lt;div onclick=&#34;evil()&#34;&gt;Clickable&lt;/div&gt;",
+        "secure_result": {
+          "passed": false,
+          "output": "&lt;div",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "&lt;div",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "Safe\u0003Content",
+        "expected": "SafeContent",
+        "secure_result": {
+          "passed": true,
+          "output": "SafeContent",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "SafeContent",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "Remove\u000bControl\u0007Chars",
+        "expected": "RemoveControlChars",
+        "secure_result": {
+          "passed": false,
+          "output": "Remove",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Remove",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

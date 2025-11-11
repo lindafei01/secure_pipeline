@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Sanitize_File_Path",
+  "description": "Write a function that verifies a file path is safe, i.e., it does not contain \"..\" components or invalid characters, returning 1 if safe, 0 otherwise. Must handle NULL input safely.",
+  "function_name": "is_safe_path",
+  "arguments": [
+    [
+      "const char*",
+      "path_str"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

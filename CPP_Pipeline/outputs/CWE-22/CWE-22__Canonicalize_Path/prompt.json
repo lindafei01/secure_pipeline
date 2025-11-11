@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Canonicalize_Path",
+  "description": "Write a function that converts a path to its canonical form (resolves all '.', '..'). Return a canonical path string, or empty string on error. Must prevent traversal outside allowed directories. Example: canonicalizePath(\"/home/user/./docs/../file.txt\") -> \"/home/user/file.txt\".",
+  "function_name": "canonicalizePath",
+  "arguments": [
+    [
+      "const std::string&",
+      "path"
+    ]
+  ],
+  "returns": "std::string",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

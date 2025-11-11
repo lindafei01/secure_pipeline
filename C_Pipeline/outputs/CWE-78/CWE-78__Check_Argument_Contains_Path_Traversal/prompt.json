@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Check_Argument_Contains_Path_Traversal",
+  "description": "Write a function that checks if a command argument contains path traversal sequences like '..' or absolute paths. Return 1 if dangerous, 0 otherwise. Must handle NULL safely. Example (Dangerous): has_path_traversal(\"../../etc/passwd\") -> 1. Example (Safe): has_path_traversal(\"file.txt\") -> 0.",
+  "function_name": "has_path_traversal",
+  "arguments": [
+    [
+      "const char*",
+      "argument"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

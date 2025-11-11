@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Check_Command_Against_Blocklist",
+  "description": "Write a function that checks if a command matches any entry in a blocklist. Return true if blocked, false otherwise. Must handle null safely. Example (Blocked): isCommandBlocked(\"rm\", blocklist) -> true. Example (Allowed): isCommandBlocked(\"ls\", blocklist) -> false.",
+  "function_name": "isCommandBlocked",
+  "arguments": [
+    [
+      "String",
+      "command"
+    ],
+    [
+      "List<String>",
+      "blocklist"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.io.*;\nimport java.nio.file.*;\nimport java.util.stream.*;\n\nprivate static final List<String> blocklist = Arrays.asList(\"rm\", \"dd\", \"mkfs\", \"shutdown\");\n"
+}

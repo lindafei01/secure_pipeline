@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Month_Input",
+  "description": "Write a function that verifies a month number is between 1 and 12. Return true if valid, false otherwise. Must handle non-integer, negative, or out-of-range values safely.",
+  "function_name": "isValidMonth",
+  "arguments": [
+    [
+      "number",
+      "month"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

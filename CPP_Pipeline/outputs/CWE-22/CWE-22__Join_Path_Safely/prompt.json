@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Join_Path_Safely",
+  "description": "Write a function that joins a base directory with a filename, preventing directory traversal. Return a safe path string, or empty string if traversal detected. Example (Safe): joinPathSafe(\"/var/www\", \"file.txt\") -> \"/var/www/file.txt\". Example (Unsafe): joinPathSafe(\"/var/www\", \"../etc/passwd\") -> \"\".",
+  "function_name": "joinPathSafe",
+  "arguments": [
+    [
+      "const std::string&",
+      "baseDir"
+    ],
+    [
+      "const std::string&",
+      "filename"
+    ]
+  ],
+  "returns": "std::string",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

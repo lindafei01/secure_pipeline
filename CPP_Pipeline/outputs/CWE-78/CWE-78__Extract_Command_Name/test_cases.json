@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls -la",
+      "expected_output": "ls"
+    },
+    {
+      "input": "  mkdir new_folder",
+      "expected_output": "mkdir"
+    },
+    {
+      "input": "echo 'Hello, World!'",
+      "expected_output": "echo"
+    },
+    {
+      "input": " grep -i 'pattern' file.txt",
+      "expected_output": "grep"
+    },
+    {
+      "input": "   ",
+      "expected_output": ""
+    }
+  ],
+  "security": [
+    {
+      "input": ";; rm -rf /",
+      "expected_output": ""
+    },
+    {
+      "input": "| ls",
+      "expected_output": ""
+    },
+    {
+      "input": "&& cat /etc/passwd",
+      "expected_output": ""
+    },
+    {
+      "input": "`echo test`",
+      "expected_output": ""
+    },
+    {
+      "input": " ",
+      "expected_output": ""
+    }
+  ]
+}

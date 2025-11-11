@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "example.com",
+      "expected_output": 0
+    },
+    {
+      "input": "valid-hostname.com",
+      "expected_output": 0
+    },
+    {
+      "input": "simple-domain.org",
+      "expected_output": 0
+    },
+    {
+      "input": "hello-world.net",
+      "expected_output": 0
+    },
+    {
+      "input": "standard.hostname",
+      "expected_output": 0
+    }
+  ],
+  "security": [
+    {
+      "input": "example\u00a9.com",
+      "expected_output": 1
+    },
+    {
+      "input": "unicode\u2018.com",
+      "expected_output": 1
+    },
+    {
+      "input": "nonascii\u03a9.com",
+      "expected_output": 1
+    },
+    {
+      "input": "international\u4303.com",
+      "expected_output": 1
+    },
+    {
+      "input": "emoji\ud83d\ude00.test",
+      "expected_output": 1
+    }
+  ]
+}

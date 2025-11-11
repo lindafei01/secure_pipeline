@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Sanitize_URL_For_Href",
+  "description": "You are an expert C security programmer. Write a function that sanitizes a URL for safe use in href attributes. Only allow http:, https:, and mailto: protocols. Return a newly allocated sanitized URL or NULL if the URL is dangerous. Must handle NULL input safely. Input: A C string representing a URL. Output: A newly allocated string containing the URL if it starts with an allowed protocol (http://, https://, or mailto:, case-insensitive), or NULL if the URL uses a dangerous protocol like javascript:, data:, or vbscript:. Example (Safe): sanitize_url_for_href(\"https://example.com\") -> \"https://example.com\". Example (Dangerous): sanitize_url_for_href(\"javascript:alert(1)\") -> NULL.",
+  "function_name": "sanitize_url_for_href",
+  "arguments": [
+    [
+      "const char*",
+      "url"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

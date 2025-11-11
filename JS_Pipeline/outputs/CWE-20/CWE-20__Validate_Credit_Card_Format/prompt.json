@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Credit_Card_Format",
+  "description": "Write a function that checks if a string matches a basic credit card number format (13-19 digits, spaces optional). Return true if format is valid, false otherwise. Must handle null/undefined safely. Note: This does not validate the actual card number validity.",
+  "function_name": "isValidCardFormat",
+  "arguments": [
+    [
+      "string",
+      "cardNumber"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/var/www file.txt",
+      "expected_output": "/var/www/file.txt"
+    },
+    {
+      "input": "/usr/local bin/script.sh",
+      "expected_output": "/usr/local/bin/script.sh"
+    },
+    {
+      "input": "/home/user docs/report.pdf",
+      "expected_output": "/home/user/docs/report.pdf"
+    },
+    {
+      "input": "/tmp logs/logfile.log",
+      "expected_output": "/tmp/logs/logfile.log"
+    },
+    {
+      "input": "/lib64 libm.so",
+      "expected_output": "/lib64/libm.so"
+    }
+  ],
+  "security": [
+    {
+      "input": "/var/www ../etc/passwd",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/etc ../../../../passwd",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/home/user ..",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/base_dir ./../another_dir/file",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/files case/test/../../../etc/shadow",
+      "expected_output": "NULL"
+    }
+  ]
+}

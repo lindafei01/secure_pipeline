@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "data:text/html,<script>alert(1)</script>",
+      "expected_output": "true"
+    },
+    {
+      "input": "Data:text/plain;base64,aGVsbG8gd29ybGQ=",
+      "expected_output": "true"
+    },
+    {
+      "input": "https://example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "some text without any url",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "data:application/javascript;base64,alert('XSS')",
+      "expected_output": "true"
+    },
+    {
+      "input": "   data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA",
+      "expected_output": "true"
+    },
+    {
+      "input": "mailto:info@example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "DATA:video/mp4;base64,AAAAFGZ0eXBtcDQyAAAAAG1wNDFtcDQyaXNvbWF2aXNkYXNoZ21vZgAAAAODEFkhAPZQ6zz45Vb3EOOEcQHNRo=",
+      "expected_output": "true"
+    },
+    {
+      "input": "file:///home/user/docs/index.html",
+      "expected_output": "false"
+    }
+  ]
+}

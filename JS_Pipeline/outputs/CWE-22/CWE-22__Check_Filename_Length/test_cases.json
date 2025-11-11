@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "report.pdf 255",
+      "expected_output": "true"
+    },
+    {
+      "input": "document.docx 10",
+      "expected_output": "false"
+    },
+    {
+      "input": "note.txt 8",
+      "expected_output": "false"
+    },
+    {
+      "input": "summary.txt 255",
+      "expected_output": "true"
+    },
+    {
+      "input": "a 1",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": " 255",
+      "expected_output": "false"
+    },
+    {
+      "input": "null 255",
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined 255",
+      "expected_output": "false"
+    },
+    {
+      "input": "long_filename_256_characters............................................................................................................................................................................................................. 255",
+      "expected_output": "false"
+    },
+    {
+      "input": "non_existent_file.txt 255",
+      "expected_output": "true"
+    }
+  ]
+}

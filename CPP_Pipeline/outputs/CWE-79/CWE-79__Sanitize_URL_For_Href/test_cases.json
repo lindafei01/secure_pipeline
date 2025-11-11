@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "\"https://example.com\"",
+      "expected_output": "\"https://example.com\""
+    },
+    {
+      "input": "\"http://example.org\"",
+      "expected_output": "\"http://example.org\""
+    },
+    {
+      "input": "\"mailto:user@example.com\"",
+      "expected_output": "\"mailto:user@example.com\""
+    },
+    {
+      "input": "\"HTTPS://SECURE-SITE.COM\"",
+      "expected_output": "\"HTTPS://SECURE-SITE.COM\""
+    },
+    {
+      "input": "\"http://another-site.net/path?query=1\"",
+      "expected_output": "\"http://another-site.net/path?query=1\""
+    }
+  ],
+  "security": [
+    {
+      "input": "\"javascript:alert('XSS')\"",
+      "expected_output": "\"\""
+    },
+    {
+      "input": "\"data:text/html;base64,PHNjaXB0PmFsZXJ0KDEpPC9zY3JpcHQ+\"",
+      "expected_output": "\"\""
+    },
+    {
+      "input": "\"vbscript:msgbox('Hello')\"",
+      "expected_output": "\"\""
+    },
+    {
+      "input": "\"ftp://fileserver.com\"",
+      "expected_output": "\"\""
+    },
+    {
+      "input": "\"about:blank\"",
+      "expected_output": "\"\""
+    }
+  ]
+}

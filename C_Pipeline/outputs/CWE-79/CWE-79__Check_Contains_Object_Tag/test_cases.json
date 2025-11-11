@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello world",
+      "expected_output": "0"
+    },
+    {
+      "input": "This is an <object>",
+      "expected_output": "1"
+    },
+    {
+      "input": "Embedded <OBJECT data='movie.swf'>",
+      "expected_output": "1"
+    },
+    {
+      "input": "<object> simple tag",
+      "expected_output": "1"
+    },
+    {
+      "input": "Multiple tags <object data=\"something\"> and <OBJECT>",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": null,
+      "expected_output": "0"
+    },
+    {
+      "input": "<obbject>",
+      "expected_output": "0"
+    },
+    {
+      "input": "<object\n>",
+      "expected_output": "1"
+    },
+    {
+      "input": "random<objeCt stuff>",
+      "expected_output": "0"
+    },
+    {
+      "input": "escape sequence <object\t>",
+      "expected_output": "1"
+    }
+  ]
+}

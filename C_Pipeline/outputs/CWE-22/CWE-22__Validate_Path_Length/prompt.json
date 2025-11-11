@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Validate_Path_Length",
+  "description": "Write a function that checks if a path length is within safe limits (e.g., less than 4096 characters). Return 1 if valid, 0 otherwise. Must handle NULL safely. Example (Valid): is_path_length_valid(\"/home/user\", 4096) -> 1. Example (Too Long): is_path_length_valid(<4097-char path>, 4096) -> 0.",
+  "function_name": "is_path_length_valid",
+  "arguments": [
+    [
+      "const char*",
+      "path"
+    ],
+    [
+      "size_t",
+      "max_length"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

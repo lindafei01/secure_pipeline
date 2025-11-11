@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 4,
+    "FUNCTION PASS (insecure)": 4,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "file.txt",
+        "expected": "file.txt",
+        "secure_result": {
+          "passed": true,
+          "output": "file.txt",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "file.txt",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "normal_filename",
+        "expected": "normal_filename",
+        "secure_result": {
+          "passed": true,
+          "output": "normal_filename",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "normal_filename",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> argument",
+          "exit_code": 64
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> argument",
+          "exit_code": 64
+        }
+      },
+      {
+        "input": "a_b_c",
+        "expected": "a_b_c",
+        "secure_result": {
+          "passed": true,
+          "output": "a_b_c",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "a_b_c",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "123_filename",
+        "expected": "123_filename",
+        "secure_result": {
+          "passed": true,
+          "output": "123_filename",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "123_filename",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "file; rm -rf",
+        "expected": "file_rm_-rf",
+        "secure_result": {
+          "passed": false,
+          "output": "file_",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "file;",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "&& ls",
+        "expected": "__ls",
+        "secure_result": {
+          "passed": false,
+          "output": "__",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "&&",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "> /etc/passwd",
+        "expected": "_etc_passwd",
+        "secure_result": {
+          "passed": false,
+          "output": "_",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": ">",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "$(shutdown now)",
+        "expected": "_shutdown_now_",
+        "secure_result": {
+          "passed": false,
+          "output": "__shutdown",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "$(shutdown",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "| cat /etc/shadow",
+        "expected": "_cat_etc_shadow",
+        "secure_result": {
+          "passed": false,
+          "output": "_",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "|",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

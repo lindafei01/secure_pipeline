@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://host.com/",
+      "expected_output": 1
+    },
+    {
+      "input": "http://host.com/path/to/resource",
+      "expected_output": 1
+    },
+    {
+      "input": "https://example.com/index.html",
+      "expected_output": 1
+    },
+    {
+      "input": "ftp://fileserver.com/download",
+      "expected_output": 1
+    },
+    {
+      "input": "http://localhost:8080/app",
+      "expected_output": 1
+    }
+  ],
+  "security": [
+    {
+      "input": "http://user:pass@host.com/",
+      "expected_output": 0
+    },
+    {
+      "input": "http://admin:@127.0.0.1/",
+      "expected_output": 0
+    },
+    {
+      "input": "https://username:password@example.com/resource",
+      "expected_output": 0
+    },
+    {
+      "input": "ftp://user:1234@ftpserver.com/download",
+      "expected_output": 0
+    },
+    {
+      "input": "http://guest:guest@mysite.com/home",
+      "expected_output": 0
+    }
+  ]
+}

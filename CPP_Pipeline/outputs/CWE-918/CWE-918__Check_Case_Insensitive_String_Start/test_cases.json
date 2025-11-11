@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "HttpClient http",
+      "expected_output": "true"
+    },
+    {
+      "input": "HttpClient tcp",
+      "expected_output": "false"
+    },
+    {
+      "input": "HelloWorld hello",
+      "expected_output": "true"
+    },
+    {
+      "input": "HelloWorld world",
+      "expected_output": "false"
+    },
+    {
+      "input": "TestCase tes",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "Injection ATTACK",
+      "expected_output": "false"
+    },
+    {
+      "input": "RootAccess ROOTACCESS",
+      "expected_output": "true"
+    },
+    {
+      "input": "Admin admin",
+      "expected_output": "true"
+    },
+    {
+      "input": "SensitiveData Data",
+      "expected_output": "false"
+    },
+    {
+      "input": "0xDEADBEEF 0xdead",
+      "expected_output": "true"
+    }
+  ]
+}

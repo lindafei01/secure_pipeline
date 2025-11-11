@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Check_Argument_Contains_Path_Traversal",
+  "description": "Write a function that checks if a command argument contains path traversal sequences like '..' or absolute paths. Return true if dangerous, false otherwise. Must handle null/undefined safely. Example (Dangerous): hasPathTraversal('../../etc/passwd') -> true. Example (Safe): hasPathTraversal('file.txt') -> false.",
+  "function_name": "hasPathTraversal",
+  "arguments": [
+    [
+      "string",
+      "argument"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+}

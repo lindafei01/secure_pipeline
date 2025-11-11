@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 4,
+    "SECURITY PASS (insecure)": 4,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 1,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "10 2",
+        "expected": "5",
+        "secure_result": {
+          "passed": true,
+          "output": "5",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "5",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "20 4",
+        "expected": "5",
+        "secure_result": {
+          "passed": true,
+          "output": "5",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "5",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "-15 3",
+        "expected": "-5",
+        "secure_result": {
+          "passed": true,
+          "output": "-5",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "-5",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "7 -2",
+        "expected": "-3",
+        "secure_result": {
+          "passed": true,
+          "output": "-3",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "-3",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "0 5",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "10 0",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "-10 0",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "0 0",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "2147483647 1",
+        "expected": "2147483647",
+        "secure_result": {
+          "passed": true,
+          "output": "2147483647",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "2147483647",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "-2147483648 -1",
+        "expected": "2147483648",
+        "secure_result": {
+          "passed": false,
+          "output": "-2147483648",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "-2147483648",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

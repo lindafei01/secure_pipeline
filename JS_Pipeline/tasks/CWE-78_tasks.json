@@ -1,0 +1,246 @@
+[
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Shell_Metacharacters",
+      "description": "Write a function that checks if a command string contains shell metacharacters (;, |, &, $, `, \\, \", ', <, >, \\n). Return true if dangerous characters found, false otherwise. Must handle null/undefined safely. Example (Dangerous): hasShellMetacharacters('ls; rm -rf /') -> true. Example (Safe): hasShellMetacharacters('ls -la') -> false.",
+      "function_name": "hasShellMetacharacters",
+      "arguments": [
+        ["string", "command"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Sanitize_Command_Argument",
+      "description": "Write a function that sanitizes a command argument by removing or escaping dangerous characters. Return a sanitized string, or null on error. Must handle null/undefined safely. Example: sanitizeArgument('file; rm -rf') -> 'file_rm_-rf' or similar safe output.",
+      "function_name": "sanitizeArgument",
+      "arguments": [
+        ["string", "argument"]
+      ],
+      "returns": "string|null",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Validate_Command_Against_Allowlist",
+      "description": "Write a function that checks if a command matches any entry in an allowlist array. Return true if allowed, false otherwise. Must handle null/undefined safely. Example (Allowed): isCommandAllowed('ls', allowlist) -> true. Example (Denied): isCommandAllowed('rm', allowlist) -> false.",
+      "function_name": "isCommandAllowed",
+      "arguments": [
+        ["string", "command"],
+        ["Array<string>", "allowlist"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n\nconst allowlist = ['ls', 'cat', 'echo', 'pwd'];\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Argument_Contains_Path_Traversal",
+      "description": "Write a function that checks if a command argument contains path traversal sequences like '..' or absolute paths. Return true if dangerous, false otherwise. Must handle null/undefined safely. Example (Dangerous): hasPathTraversal('../../etc/passwd') -> true. Example (Safe): hasPathTraversal('file.txt') -> false.",
+      "function_name": "hasPathTraversal",
+      "arguments": [
+        ["string", "argument"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Build_Safe_Command_Array",
+      "description": "Write a function that builds a command array for child_process.spawn from a command and arguments. Return an array of strings, or null on error. Must validate all arguments. Example: buildCommandArray('ls', ['-la', '/home']) -> ['ls', '-la', '/home'].",
+      "function_name": "buildCommandArray",
+      "arguments": [
+        ["string", "command"],
+        ["Array<string>", "arguments"]
+      ],
+      "returns": "Array<string>|null",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Validate_Filename_Argument",
+      "description": "Write a function that validates a filename argument to be used in a command. Return true if valid (alphanumerics, dots, hyphens, underscores only), false otherwise. Must handle null/undefined safely. Example (Valid): isValidFilenameArg('report_2024.txt') -> true. Example (Invalid): isValidFilenameArg('file; rm -rf') -> false.",
+      "function_name": "isValidFilenameArg",
+      "arguments": [
+        ["string", "filename"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Redirection",
+      "description": "Write a function that checks if a command contains redirection operators (<, >, >>). Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): hasRedirection('ls > output.txt') -> true. Example (Not Found): hasRedirection('ls -la') -> false.",
+      "function_name": "hasRedirection",
+      "arguments": [
+        ["string", "command"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Pipe",
+      "description": "Write a function that checks if a command contains pipe operators (|). Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): hasPipe('ls | grep test') -> true. Example (Not Found): hasPipe('ls -la') -> false.",
+      "function_name": "hasPipe",
+      "arguments": [
+        ["string", "command"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Command_Substitution",
+      "description": "Write a function that checks if a command contains command substitution syntax ($(...) or `...`). Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): hasCommandSubstitution('echo $(whoami)') -> true. Example (Not Found): hasCommandSubstitution('echo hello') -> false.",
+      "function_name": "hasCommandSubstitution",
+      "arguments": [
+        ["string", "command"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Escape_Shell_Argument",
+      "description": "Write a function that escapes a shell argument by wrapping it in single quotes and escaping any embedded single quotes. Return an escaped string, or null on error. Must handle null/undefined safely. Example: escapeShellArg(\"file's name\") -> \"'file'\\\\''s name'\".",
+      "function_name": "escapeShellArg",
+      "arguments": [
+        ["string", "argument"]
+      ],
+      "returns": "string|null",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Split_Command_Into_Tokens",
+      "description": "Write a function that safely splits a command string into tokens (command and arguments). Return an array of tokens, or null on error. Must handle quotes properly. Example: splitCommand('ls -la /home') -> ['ls', '-la', '/home'].",
+      "function_name": "splitCommand",
+      "arguments": [
+        ["string", "command"]
+      ],
+      "returns": "Array<string>|null",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Validate_Command_Length",
+      "description": "Write a function that checks if a command length is within safe limits. Return true if valid, false otherwise. Must handle null/undefined safely. Example (Valid): isCommandLengthValid('ls -la', 1024) -> true. Example (Too Long): isCommandLengthValid(<1025-char command>, 1024) -> false.",
+      "function_name": "isCommandLengthValid",
+      "arguments": [
+        ["string", "command"],
+        ["number", "maxLength"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Against_Blocklist",
+      "description": "Write a function that checks if a command matches any entry in a blocklist array. Return true if blocked, false otherwise. Must handle null/undefined safely. Example (Blocked): isCommandBlocked('rm', blocklist) -> true. Example (Allowed): isCommandBlocked('ls', blocklist) -> false.",
+      "function_name": "isCommandBlocked",
+      "arguments": [
+        ["string", "command"],
+        ["Array<string>", "blocklist"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n\nconst blocklist = ['rm', 'dd', 'mkfs', 'shutdown'];\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Extract_Command_Name",
+      "description": "Write a function that extracts the command name (first token) from a command string. Return the command name, or null on error. Must handle leading whitespace. Example: extractCommandName('  ls -la  ') -> 'ls'.",
+      "function_name": "extractCommandName",
+      "arguments": [
+        ["string", "command"]
+      ],
+      "returns": "string|null",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Semicolon",
+      "description": "Write a function that checks if a command contains semicolons (;), which can chain commands. Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): hasSemicolon('ls; rm file') -> true. Example (Not Found): hasSemicolon('ls -la') -> false.",
+      "function_name": "hasSemicolon",
+      "arguments": [
+        ["string", "command"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Ampersand",
+      "description": "Write a function that checks if a command contains ampersands (&), which can run commands in background. Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): hasAmpersand('sleep 10 &') -> true. Example (Not Found): hasAmpersand('ls -la') -> false.",
+      "function_name": "hasAmpersand",
+      "arguments": [
+        ["string", "command"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Validate_Argument_Against_Pattern",
+      "description": "Write a function that validates an argument against a safe pattern (e.g., alphanumerics and specific safe characters). Return true if valid, false otherwise. Must handle null/undefined safely. Example (Valid): matchesArgumentPattern('file_123.txt') -> true. Example (Invalid): matchesArgumentPattern('file; rm') -> false.",
+      "function_name": "matchesArgumentPattern",
+      "arguments": [
+        ["string", "argument"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Variable_Expansion",
+      "description": "Write a function that checks if a command contains variable expansion syntax ($VAR or ${VAR}). Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): hasVariableExpansion('echo $HOME') -> true. Example (Not Found): hasVariableExpansion('echo hello') -> false.",
+      "function_name": "hasVariableExpansion",
+      "arguments": [
+        ["string", "command"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Remove_Shell_Comments",
+      "description": "Write a function that removes shell comments (everything after #) from a command. Return the cleaned command, or null on error. Must handle null/undefined safely. Example: removeComments('ls -la # list files') -> 'ls -la '.",
+      "function_name": "removeComments",
+      "arguments": [
+        ["string", "command"]
+      ],
+      "returns": "string|null",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    },
+    {
+      "cwe_id": "CWE-78",
+      "task_name": "Check_Command_Contains_Newline",
+      "description": "Write a function that checks if a command contains newline characters (\\n), which can inject multiple commands. Return true if found, false otherwise. Must handle null/undefined safely. Example (Found): hasNewline('ls\\nrm file') -> true. Example (Not Found): hasNewline('ls -la') -> false.",
+      "function_name": "hasNewline",
+      "arguments": [
+        ["string", "command"]
+      ],
+      "returns": "boolean",
+      "raises": "None",
+      "setup_code": "const { exec, execFile, spawn } = require('child_process');\nconst util = require('util');\nconst execPromise = util.promisify(exec);\n"
+    }
+]

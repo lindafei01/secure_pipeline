@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/",
+      "expected_output": "/home/user"
+    },
+    {
+      "input": "/home/user/docs/",
+      "expected_output": "/home/user/docs"
+    },
+    {
+      "input": "/var/log/",
+      "expected_output": "/var/log"
+    },
+    {
+      "input": "/tmp",
+      "expected_output": "/tmp"
+    },
+    {
+      "input": "/",
+      "expected_output": "/"
+    }
+  ],
+  "security": [
+    {
+      "input": "/home/user//",
+      "expected_output": "/home/user"
+    },
+    {
+      "input": "/path/with/multiple///slashes/",
+      "expected_output": "/path/with/multiple/slashes"
+    },
+    {
+      "input": "/",
+      "expected_output": "/"
+    },
+    {
+      "input": "///",
+      "expected_output": "/"
+    },
+    {
+      "input": "/path////to////file////",
+      "expected_output": "/path/to/file"
+    }
+  ]
+}

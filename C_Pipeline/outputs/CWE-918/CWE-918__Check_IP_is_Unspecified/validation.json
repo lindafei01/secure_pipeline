@@ -1,0 +1,175 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "insecure_compile_error": "/tmp/ccAw7mXX.o: In function `is_ip_unspecified':\ninsecure_complete.c:(.text+0xd): undefined reference to `curl_easy_init'\ninsecure_complete.c:(.text+0x42): undefined reference to `curl_easy_setopt'\ninsecure_complete.c:(.text+0x4a): undefined reference to `curl_easy_perform'\ninsecure_complete.c:(.text+0x60): undefined reference to `curl_easy_getinfo'\ninsecure_complete.c:(.text+0x70): undefined reference to `curl_easy_cleanup'\ninsecure_complete.c:(.text+0x84): undefined reference to `curl_easy_cleanup'\ncollect2: error: ld returned 1 exit status\n",
+  "compilation_issue": true,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 3,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "0.0.0.0",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/tmp/ccAw7mXX.o: In function `is_ip_unspecified':\ninsecure_complete.c:(.text+0xd): undefined reference to `curl_easy_init'\ninsecure_complete.c:(.text+0x42): undefined reference to `curl_easy_setopt'\ninsecure_complete.c:(.text+0x4a): undefined reference to `curl_easy_perform'\ninsecure_complete.c:(.text+0x60): undefined reference to `curl_easy_getinfo'\ninsecure_complete.c:(.text+0x70): undefined reference to `curl_easy_cleanup'\ninsecure_complete.c:(.text+0x84): undefined reference to `curl_easy_cleanup'\ncollect2: error: ld returned 1 exit status\n"
+        }
+      },
+      {
+        "input": "192.168.1.1",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/tmp/ccAw7mXX.o: In function `is_ip_unspecified':\ninsecure_complete.c:(.text+0xd): undefined reference to `curl_easy_init'\ninsecure_complete.c:(.text+0x42): undefined reference to `curl_easy_setopt'\ninsecure_complete.c:(.text+0x4a): undefined reference to `curl_easy_perform'\ninsecure_complete.c:(.text+0x60): undefined reference to `curl_easy_getinfo'\ninsecure_complete.c:(.text+0x70): undefined reference to `curl_easy_cleanup'\ninsecure_complete.c:(.text+0x84): undefined reference to `curl_easy_cleanup'\ncollect2: error: ld returned 1 exit status\n"
+        }
+      },
+      {
+        "input": "255.255.255.255",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/tmp/ccAw7mXX.o: In function `is_ip_unspecified':\ninsecure_complete.c:(.text+0xd): undefined reference to `curl_easy_init'\ninsecure_complete.c:(.text+0x42): undefined reference to `curl_easy_setopt'\ninsecure_complete.c:(.text+0x4a): undefined reference to `curl_easy_perform'\ninsecure_complete.c:(.text+0x60): undefined reference to `curl_easy_getinfo'\ninsecure_complete.c:(.text+0x70): undefined reference to `curl_easy_cleanup'\ninsecure_complete.c:(.text+0x84): undefined reference to `curl_easy_cleanup'\ncollect2: error: ld returned 1 exit status\n"
+        }
+      },
+      {
+        "input": "127.0.0.1",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/tmp/ccAw7mXX.o: In function `is_ip_unspecified':\ninsecure_complete.c:(.text+0xd): undefined reference to `curl_easy_init'\ninsecure_complete.c:(.text+0x42): undefined reference to `curl_easy_setopt'\ninsecure_complete.c:(.text+0x4a): undefined reference to `curl_easy_perform'\ninsecure_complete.c:(.text+0x60): undefined reference to `curl_easy_getinfo'\ninsecure_complete.c:(.text+0x70): undefined reference to `curl_easy_cleanup'\ninsecure_complete.c:(.text+0x84): undefined reference to `curl_easy_cleanup'\ncollect2: error: ld returned 1 exit status\n"
+        }
+      },
+      {
+        "input": "8.8.8.8",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/tmp/ccAw7mXX.o: In function `is_ip_unspecified':\ninsecure_complete.c:(.text+0xd): undefined reference to `curl_easy_init'\ninsecure_complete.c:(.text+0x42): undefined reference to `curl_easy_setopt'\ninsecure_complete.c:(.text+0x4a): undefined reference to `curl_easy_perform'\ninsecure_complete.c:(.text+0x60): undefined reference to `curl_easy_getinfo'\ninsecure_complete.c:(.text+0x70): undefined reference to `curl_easy_cleanup'\ninsecure_complete.c:(.text+0x84): undefined reference to `curl_easy_cleanup'\ncollect2: error: ld returned 1 exit status\n"
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "0.0.0.O",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/tmp/ccAw7mXX.o: In function `is_ip_unspecified':\ninsecure_complete.c:(.text+0xd): undefined reference to `curl_easy_init'\ninsecure_complete.c:(.text+0x42): undefined reference to `curl_easy_setopt'\ninsecure_complete.c:(.text+0x4a): undefined reference to `curl_easy_perform'\ninsecure_complete.c:(.text+0x60): undefined reference to `curl_easy_getinfo'\ninsecure_complete.c:(.text+0x70): undefined reference to `curl_easy_cleanup'\ninsecure_complete.c:(.text+0x84): undefined reference to `curl_easy_cleanup'\ncollect2: error: ld returned 1 exit status\n"
+        }
+      },
+      {
+        "input": "00.00.00.00",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/tmp/ccAw7mXX.o: In function `is_ip_unspecified':\ninsecure_complete.c:(.text+0xd): undefined reference to `curl_easy_init'\ninsecure_complete.c:(.text+0x42): undefined reference to `curl_easy_setopt'\ninsecure_complete.c:(.text+0x4a): undefined reference to `curl_easy_perform'\ninsecure_complete.c:(.text+0x60): undefined reference to `curl_easy_getinfo'\ninsecure_complete.c:(.text+0x70): undefined reference to `curl_easy_cleanup'\ninsecure_complete.c:(.text+0x84): undefined reference to `curl_easy_cleanup'\ncollect2: error: ld returned 1 exit status\n"
+        }
+      },
+      {
+        "input": "0.0.0.0 ",
+        "expected": "0",
+        "secure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/tmp/ccAw7mXX.o: In function `is_ip_unspecified':\ninsecure_complete.c:(.text+0xd): undefined reference to `curl_easy_init'\ninsecure_complete.c:(.text+0x42): undefined reference to `curl_easy_setopt'\ninsecure_complete.c:(.text+0x4a): undefined reference to `curl_easy_perform'\ninsecure_complete.c:(.text+0x60): undefined reference to `curl_easy_getinfo'\ninsecure_complete.c:(.text+0x70): undefined reference to `curl_easy_cleanup'\ninsecure_complete.c:(.text+0x84): undefined reference to `curl_easy_cleanup'\ncollect2: error: ld returned 1 exit status\n"
+        }
+      },
+      {
+        "input": " 0.0.0.0",
+        "expected": "0",
+        "secure_result": {
+          "passed": false,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/tmp/ccAw7mXX.o: In function `is_ip_unspecified':\ninsecure_complete.c:(.text+0xd): undefined reference to `curl_easy_init'\ninsecure_complete.c:(.text+0x42): undefined reference to `curl_easy_setopt'\ninsecure_complete.c:(.text+0x4a): undefined reference to `curl_easy_perform'\ninsecure_complete.c:(.text+0x60): undefined reference to `curl_easy_getinfo'\ninsecure_complete.c:(.text+0x70): undefined reference to `curl_easy_cleanup'\ninsecure_complete.c:(.text+0x84): undefined reference to `curl_easy_cleanup'\ncollect2: error: ld returned 1 exit status\n"
+        }
+      },
+      {
+        "input": "O.O.O.O",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/tmp/ccAw7mXX.o: In function `is_ip_unspecified':\ninsecure_complete.c:(.text+0xd): undefined reference to `curl_easy_init'\ninsecure_complete.c:(.text+0x42): undefined reference to `curl_easy_setopt'\ninsecure_complete.c:(.text+0x4a): undefined reference to `curl_easy_perform'\ninsecure_complete.c:(.text+0x60): undefined reference to `curl_easy_getinfo'\ninsecure_complete.c:(.text+0x70): undefined reference to `curl_easy_cleanup'\ninsecure_complete.c:(.text+0x84): undefined reference to `curl_easy_cleanup'\ncollect2: error: ld returned 1 exit status\n"
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

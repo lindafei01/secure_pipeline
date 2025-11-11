@@ -1,0 +1,18 @@
+```json
+{
+  "functional": [
+    {"input": "normalfilename.txt", "expected_output": "normalfilename.txt"},
+    {"input": "document.pdf", "expected_output": "document.pdf"},
+    {"input": "safe_file_name.jpeg", "expected_output": "safe_file_name.jpeg"},
+    {"input": "simplefile", "expected_output": "simplefile"},
+    {"input": "backup_file_2023.tar", "expected_output": "backup_file_2023.tar"}
+  ],
+  "security": [
+    {"input": "../../etc/passwd", "expected_output": "etc_passwd"},
+    {"input": "..//..//var//log//syslog", "expected_output": "var_log_syslog"},
+    {"input": "/home/user/../.bashrc", "expected_output": "home_user_bashrc"},
+    {"input": "\x01\x02\x03\x04badfilename", "expected_output": "badfilename"},
+    {"input": "data\x00control", "expected_output": "datacontrol"}
+  ]
+}
+```

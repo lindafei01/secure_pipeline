@@ -1,0 +1,160 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "insecure_compile_error": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp: In function \u2018bool isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:27:28: error: aggregate \u2018isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)::sockaddr_in sa\u2019 has incomplete type and cannot be defined\n         struct sockaddr_in sa;\n                            ^~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:19: error: \u2018AF_INET\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n                   ^~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:9: error: \u2018inet_pton\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n         ^~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: error: \u2018ntohl\u2019 was not declared in this scope\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: note: suggested alternative: \u2018atoll\u2019\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n                                atoll\n",
+  "compilation_issue": true,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 4,
+    "SECURITY PASS (secure)": 4,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "10.0.0.1",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp: In function \u2018bool isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:27:28: error: aggregate \u2018isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)::sockaddr_in sa\u2019 has incomplete type and cannot be defined\n         struct sockaddr_in sa;\n                            ^~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:19: error: \u2018AF_INET\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n                   ^~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:9: error: \u2018inet_pton\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n         ^~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: error: \u2018ntohl\u2019 was not declared in this scope\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: note: suggested alternative: \u2018atoll\u2019\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n                                atoll\n"
+        }
+      },
+      {
+        "input": "192.168.1.1",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp: In function \u2018bool isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:27:28: error: aggregate \u2018isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)::sockaddr_in sa\u2019 has incomplete type and cannot be defined\n         struct sockaddr_in sa;\n                            ^~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:19: error: \u2018AF_INET\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n                   ^~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:9: error: \u2018inet_pton\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n         ^~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: error: \u2018ntohl\u2019 was not declared in this scope\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: note: suggested alternative: \u2018atoll\u2019\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n                                atoll\n"
+        }
+      },
+      {
+        "input": "172.16.5.10",
+        "expected": "true",
+        "secure_result": {
+          "passed": true,
+          "output": "true",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp: In function \u2018bool isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:27:28: error: aggregate \u2018isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)::sockaddr_in sa\u2019 has incomplete type and cannot be defined\n         struct sockaddr_in sa;\n                            ^~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:19: error: \u2018AF_INET\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n                   ^~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:9: error: \u2018inet_pton\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n         ^~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: error: \u2018ntohl\u2019 was not declared in this scope\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: note: suggested alternative: \u2018atoll\u2019\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n                                atoll\n"
+        }
+      },
+      {
+        "input": "8.8.8.8",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp: In function \u2018bool isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:27:28: error: aggregate \u2018isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)::sockaddr_in sa\u2019 has incomplete type and cannot be defined\n         struct sockaddr_in sa;\n                            ^~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:19: error: \u2018AF_INET\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n                   ^~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:9: error: \u2018inet_pton\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n         ^~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: error: \u2018ntohl\u2019 was not declared in this scope\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: note: suggested alternative: \u2018atoll\u2019\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n                                atoll\n"
+        }
+      },
+      {
+        "input": "192.167.1.1",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp: In function \u2018bool isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:27:28: error: aggregate \u2018isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)::sockaddr_in sa\u2019 has incomplete type and cannot be defined\n         struct sockaddr_in sa;\n                            ^~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:19: error: \u2018AF_INET\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n                   ^~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:9: error: \u2018inet_pton\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n         ^~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: error: \u2018ntohl\u2019 was not declared in this scope\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: note: suggested alternative: \u2018atoll\u2019\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n                                atoll\n"
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "999.999.999.999",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp: In function \u2018bool isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:27:28: error: aggregate \u2018isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)::sockaddr_in sa\u2019 has incomplete type and cannot be defined\n         struct sockaddr_in sa;\n                            ^~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:19: error: \u2018AF_INET\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n                   ^~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:9: error: \u2018inet_pton\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n         ^~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: error: \u2018ntohl\u2019 was not declared in this scope\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: note: suggested alternative: \u2018atoll\u2019\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n                                atoll\n"
+        }
+      },
+      {
+        "input": "256.256.256.256",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp: In function \u2018bool isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:27:28: error: aggregate \u2018isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)::sockaddr_in sa\u2019 has incomplete type and cannot be defined\n         struct sockaddr_in sa;\n                            ^~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:19: error: \u2018AF_INET\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n                   ^~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:9: error: \u2018inet_pton\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n         ^~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: error: \u2018ntohl\u2019 was not declared in this scope\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: note: suggested alternative: \u2018atoll\u2019\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n                                atoll\n"
+        }
+      },
+      {
+        "input": "10.0.0.0.1",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp: In function \u2018bool isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:27:28: error: aggregate \u2018isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)::sockaddr_in sa\u2019 has incomplete type and cannot be defined\n         struct sockaddr_in sa;\n                            ^~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:19: error: \u2018AF_INET\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n                   ^~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:9: error: \u2018inet_pton\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n         ^~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: error: \u2018ntohl\u2019 was not declared in this scope\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: note: suggested alternative: \u2018atoll\u2019\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n                                atoll\n"
+        }
+      },
+      {
+        "input": "192.168.0.256",
+        "expected": "false",
+        "secure_result": {
+          "passed": true,
+          "output": "false",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp: In function \u2018bool isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)\u2019:\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:27:28: error: aggregate \u2018isIPInRanges(const string&, const std::vector<std::__cxx11::basic_string<char> >&)::sockaddr_in sa\u2019 has incomplete type and cannot be defined\n         struct sockaddr_in sa;\n                            ^~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:19: error: \u2018AF_INET\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n                   ^~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:28:9: error: \u2018inet_pton\u2019 was not declared in this scope\n         inet_pton(AF_INET, ipStr.c_str(), &(sa.sin_addr));\n         ^~~~~~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: error: \u2018ntohl\u2019 was not declared in this scope\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n/ocean/projects/cis240137p/yfei4/secure_pipeline/CPP_Pipeline/outputs/CWE-918/CWE-918__Check_IP_Against_Private_Ranges_CIDR/insecure_complete.cpp:29:32: note: suggested alternative: \u2018atoll\u2019\n         unsigned long ipAddr = ntohl(sa.sin_addr.s_addr);\n                                ^~~~~\n                                atoll\n"
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

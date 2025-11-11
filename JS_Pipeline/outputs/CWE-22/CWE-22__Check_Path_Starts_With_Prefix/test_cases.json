@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "/var/www/html /var/www",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/www /var/www",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/www/html /var",
+      "expected_output": "true"
+    },
+    {
+      "input": "/var/www/html /var/log",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/log/apache2 /var/www",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "/var/www/html ",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/www/html null",
+      "expected_output": "false"
+    },
+    {
+      "input": "/var/www/html undefined",
+      "expected_output": "false"
+    },
+    {
+      "input": " /var/www",
+      "expected_output": "false"
+    }
+  ]
+}

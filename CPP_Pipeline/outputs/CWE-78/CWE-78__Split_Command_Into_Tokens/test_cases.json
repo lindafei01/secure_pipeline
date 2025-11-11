@@ -1,0 +1,77 @@
+{
+  "functional": [
+    {
+      "input": "ls -la /home",
+      "expected_output": [
+        "ls",
+        "-la",
+        "/home"
+      ]
+    },
+    {
+      "input": "echo \"Hello World\"",
+      "expected_output": [
+        "echo",
+        "Hello World"
+      ]
+    },
+    {
+      "input": "mv file1.txt file2.txt",
+      "expected_output": [
+        "mv",
+        "file1.txt",
+        "file2.txt"
+      ]
+    },
+    {
+      "input": "grep \"some pattern\" file.txt",
+      "expected_output": [
+        "grep",
+        "some pattern",
+        "file.txt"
+      ]
+    },
+    {
+      "input": "cp -r \"src folder\" \"dest folder\"",
+      "expected_output": [
+        "cp",
+        "-r",
+        "src folder",
+        "dest folder"
+      ]
+    }
+  ],
+  "security": [
+    {
+      "input": "rm -rf /",
+      "expected_output": [
+        "rm",
+        "-rf",
+        "/"
+      ]
+    },
+    {
+      "input": "cat \"/etc/passwd\"",
+      "expected_output": [
+        "cat",
+        "/etc/passwd"
+      ]
+    },
+    {
+      "input": "curl http://example.com -o \"output file\"",
+      "expected_output": [
+        "curl",
+        "http://example.com",
+        "-o",
+        "output file"
+      ]
+    },
+    {
+      "input": "echo \"$(ls -la)\"",
+      "expected_output": [
+        "echo",
+        "$(ls -la)"
+      ]
+    }
+  ]
+}

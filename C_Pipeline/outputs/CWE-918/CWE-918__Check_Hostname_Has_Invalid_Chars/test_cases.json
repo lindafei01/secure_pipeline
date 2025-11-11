@@ -1,0 +1,76 @@
+{
+  "functional": [
+    {
+      "input": [
+        "my_host",
+        "_!"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "my-host",
+        "_!"
+      ],
+      "expected_output": 0
+    },
+    {
+      "input": [
+        "example.com",
+        "_!"
+      ],
+      "expected_output": 0
+    },
+    {
+      "input": [
+        "example_com",
+        "_!"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "hello-world",
+        "@#$"
+      ],
+      "expected_output": 0
+    }
+  ],
+  "security": [
+    {
+      "input": [
+        "admin_user",
+        "*&^"
+      ],
+      "expected_output": 0
+    },
+    {
+      "input": [
+        "!dangerous",
+        "!"
+      ],
+      "expected_output": 1
+    },
+    {
+      "input": [
+        "secure-host",
+        "<>?"
+      ],
+      "expected_output": 0
+    },
+    {
+      "input": [
+        "bad_host_name",
+        " "
+      ],
+      "expected_output": 0
+    },
+    {
+      "input": [
+        "123_inval!d",
+        "!"
+      ],
+      "expected_output": 1
+    }
+  ]
+}

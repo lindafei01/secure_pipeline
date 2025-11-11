@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Remove_Shell_Comments",
+  "description": "Write a function that removes shell comments (everything after #) from a command. Return the cleaned command, or empty string on error. Must handle empty strings safely. Example: removeComments(\"ls -la # list files\") -> \"ls -la \".",
+  "function_name": "removeComments",
+  "arguments": [
+    [
+      "const std::string&",
+      "command"
+    ]
+  ],
+  "returns": "std::string",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+}

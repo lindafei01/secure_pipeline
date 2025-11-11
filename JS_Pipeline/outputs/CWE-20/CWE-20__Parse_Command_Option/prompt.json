@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Parse_Command_Option",
+  "description": "Write a function that parses a string in the form '--key=value' and returns an object with 'key' and 'value' properties. Return null if the format is invalid. Must validate input safely and not throw errors.",
+  "function_name": "parseOption",
+  "arguments": [
+    [
+      "string",
+      "arg"
+    ]
+  ],
+  "returns": "object | null",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

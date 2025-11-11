@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "document.pdf",
+      "expected_output": "1"
+    },
+    {
+      "input": "notes.txt",
+      "expected_output": "1"
+    },
+    {
+      "input": "image_backup2024.tar.gz",
+      "expected_output": "1"
+    },
+    {
+      "input": "project-report_version2.docx",
+      "expected_output": "1"
+    },
+    {
+      "input": "README.md",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "rm -rf /",
+      "expected_output": "0"
+    },
+    {
+      "input": "attack_vector.sh",
+      "expected_output": "1"
+    },
+    {
+      "input": "; shutdown now",
+      "expected_output": "0"
+    },
+    {
+      "input": "valid-file..name",
+      "expected_output": "1"
+    },
+    {
+      "input": "| whoami",
+      "expected_output": "0"
+    }
+  ]
+}

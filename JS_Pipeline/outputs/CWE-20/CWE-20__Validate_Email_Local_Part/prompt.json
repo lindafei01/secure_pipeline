@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Email_Local_Part",
+  "description": "Write a function that checks if the local-part (before the '@') of an email address is valid: contains only letters, digits, dots or underscores. Return true if valid, false otherwise. Must handle null/undefined safely.",
+  "function_name": "isValidEmailLocal",
+  "arguments": [
+    [
+      "string",
+      "localPart"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "// No additional setup required for JavaScript\n"
+}

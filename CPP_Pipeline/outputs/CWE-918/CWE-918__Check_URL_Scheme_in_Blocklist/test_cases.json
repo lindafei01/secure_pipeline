@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://secure.com",
+      "expected_output": "false"
+    },
+    {
+      "input": "ftp://files.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "gopher://info.com",
+      "expected_output": "true"
+    },
+    {
+      "input": "mailto:someone@example.com",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "FILE:///etc/passwd",
+      "expected_output": "true"
+    },
+    {
+      "input": "ftp://192.168.0.1",
+      "expected_output": "true"
+    },
+    {
+      "input": "gOpHeR://legacy.system",
+      "expected_output": "true"
+    },
+    {
+      "input": "ldaps://secure.server",
+      "expected_output": "false"
+    },
+    {
+      "input": "HTTP://another-example.com",
+      "expected_output": "false"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "hello world&foo=bar",
+      "expected_output": "hello%20world%26foo%3Dbar"
+    },
+    {
+      "input": "simple-text~1",
+      "expected_output": "simple-text~1"
+    },
+    {
+      "input": "special_chars!*()",
+      "expected_output": "special_chars%21%2A%28%29"
+    },
+    {
+      "input": "query=value+more",
+      "expected_output": "query%3Dvalue%2Bmore"
+    },
+    {
+      "input": "",
+      "expected_output": ""
+    }
+  ],
+  "security": [
+    {
+      "input": "<script>alert('xss')</script>",
+      "expected_output": "%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E"
+    },
+    {
+      "input": "NULL",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "param=value`inject",
+      "expected_output": "param%3Dvalue%60inject"
+    },
+    {
+      "input": "' OR '1'='1",
+      "expected_output": "%27%20OR%20%271%27%3D%271"
+    },
+    {
+      "input": "; DROP TABLE users;",
+      "expected_output": "%3B%20DROP%20TABLE%20users%3B"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "functional": [
+    {
+      "input": "../file.txt 3",
+      "expected_output": "0"
+    },
+    {
+      "input": "subdir/file.txt 3",
+      "expected_output": "0"
+    },
+    {
+      "input": "/home/user/docs 5",
+      "expected_output": "0"
+    },
+    {
+      "input": "relative/path/file.txt 6",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "../../../../../../etc/passwd 3",
+      "expected_output": "1"
+    },
+    {
+      "input": "../../../secret 2",
+      "expected_output": "1"
+    },
+    {
+      "input": "../../../../path/to/file 4",
+      "expected_output": "1"
+    },
+    {
+      "input": "../../dangerous/path 2",
+      "expected_output": "1"
+    }
+  ]
+}

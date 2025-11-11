@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Phone_Number",
+  "description": "Write a method that checks if a string represents a valid 10-digit phone number (digits only). Return true if valid, false otherwise. Must safely handle null or non-digit input.",
+  "function_name": "isValidPhone",
+  "arguments": [
+    [
+      "String",
+      "s"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\n"
+}

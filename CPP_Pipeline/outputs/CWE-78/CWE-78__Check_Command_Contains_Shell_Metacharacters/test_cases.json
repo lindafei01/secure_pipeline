@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo Hello",
+      "expected_output": "false"
+    },
+    {
+      "input": "grep pattern file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "cat /home/user/docs/file",
+      "expected_output": "false"
+    },
+    {
+      "input": "cd /var/www/html",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "ls; rm -rf /",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo `uname -a`",
+      "expected_output": "true"
+    },
+    {
+      "input": "cat file.txt | sort",
+      "expected_output": "true"
+    },
+    {
+      "input": "gcc program.c && ./a.out",
+      "expected_output": "true"
+    },
+    {
+      "input": "rm -rf *",
+      "expected_output": "true"
+    }
+  ]
+}

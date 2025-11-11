@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Escape_Shell_Argument",
+  "description": "Write a function that escapes a shell argument by wrapping it in single quotes and escaping any embedded single quotes. Return a newly allocated escaped string, or NULL on error. Must handle NULL safely. Example: escape_shell_arg(\"file's name\") -> \"'file'\\''s name'\".",
+  "function_name": "escape_shell_arg",
+  "arguments": [
+    [
+      "const char*",
+      "argument"
+    ]
+  ],
+  "returns": "char*",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

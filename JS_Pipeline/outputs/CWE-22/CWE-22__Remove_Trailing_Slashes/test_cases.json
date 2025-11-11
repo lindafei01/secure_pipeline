@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/",
+      "expected_output": "/home/user"
+    },
+    {
+      "input": "/home/user/docs/",
+      "expected_output": "/home/user/docs"
+    },
+    {
+      "input": "/",
+      "expected_output": "/"
+    },
+    {
+      "input": "/var/www/html////",
+      "expected_output": "/var/www/html"
+    },
+    {
+      "input": "/tmp/",
+      "expected_output": "/tmp"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "null"
+    },
+    {
+      "input": "////",
+      "expected_output": "/"
+    },
+    {
+      "input": "/./././././",
+      "expected_output": "/."
+    },
+    {
+      "input": "/home/user/../user///",
+      "expected_output": "/home/user/.."
+    },
+    {
+      "input": "/a/ ./../..///",
+      "expected_output": "/a/ ./../.."
+    }
+  ]
+}

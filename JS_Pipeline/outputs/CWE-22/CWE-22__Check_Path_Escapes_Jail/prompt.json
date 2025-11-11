@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Escapes_Jail",
+  "description": "Write a function that checks if a path would escape a chroot jail by counting '..' vs actual depth. Return true if escape attempt detected, false otherwise. Must handle null/undefined safely. Example (Escape): pathEscapesJail('../../../../../../etc/passwd', 3) -> true. Example (Safe): pathEscapesJail('../file.txt', 3) -> false.",
+  "function_name": "pathEscapesJail",
+  "arguments": [
+    [
+      "string",
+      "path"
+    ],
+    [
+      "number",
+      "maxDepth"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

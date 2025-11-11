@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 3,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 3,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "a/b/c",
+        "expected": "a/b/c",
+        "secure_result": {
+          "passed": true,
+          "output": "a/b/c",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "a/b/c",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "a/./b/c",
+        "expected": "a/b/c",
+        "secure_result": {
+          "passed": true,
+          "output": "a/b/c",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "a/b/c",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "a/b/../c",
+        "expected": "a/c",
+        "secure_result": {
+          "passed": true,
+          "output": "a/c",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "a/bc",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "./a/b",
+        "expected": "a/b",
+        "secure_result": {
+          "passed": true,
+          "output": "a/b",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "a/b",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "a/b/c/.",
+        "expected": "a/b/c",
+        "secure_result": {
+          "passed": true,
+          "output": "a/b/c",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "a/b/c/",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "../a/b",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "a/b",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "a/../../b",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "ab",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "/a/b/../..",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "/a",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "a/./.././",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "a",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "../../etc/passwd",
+        "expected": "NULL",
+        "secure_result": {
+          "passed": true,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "etc/passwd",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

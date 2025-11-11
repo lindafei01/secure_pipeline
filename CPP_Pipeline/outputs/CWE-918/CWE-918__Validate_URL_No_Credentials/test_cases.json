@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://host.com/",
+      "expected_output": "true"
+    },
+    {
+      "input": "https://www.example.com/path?name=value#anchor",
+      "expected_output": "true"
+    },
+    {
+      "input": "ftp://user@host.com/",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://admin:1234@secure.net/",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://host.com/resource?id=123",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "http://username:password@127.0.0.1/",
+      "expected_output": "false"
+    },
+    {
+      "input": "https://admin:admin@secure-server.org/",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://%75sername:%70assword@localhost/",
+      "expected_output": "false"
+    },
+    {
+      "input": "http://user%3Ainfo%40example.com/",
+      "expected_output": "true"
+    },
+    {
+      "input": "ftp://:@192.168.0.1/",
+      "expected_output": "false"
+    }
+  ]
+}

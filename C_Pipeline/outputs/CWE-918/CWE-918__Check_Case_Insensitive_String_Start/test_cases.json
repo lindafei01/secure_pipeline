@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "HttpClient,http",
+      "expected_output": 1
+    },
+    {
+      "input": "HttpClient,tcp",
+      "expected_output": 0
+    },
+    {
+      "input": "HelloWorld,hello",
+      "expected_output": 1
+    },
+    {
+      "input": "HelloWorld,world",
+      "expected_output": 0
+    },
+    {
+      "input": "SensitiveCase,Sensitive",
+      "expected_output": 1
+    }
+  ],
+  "security": [
+    {
+      "input": "ImportantData,HACK",
+      "expected_output": 0
+    },
+    {
+      "input": "SecureSystem,secure",
+      "expected_output": 1
+    },
+    {
+      "input": "SafeProtocol,SAFE",
+      "expected_output": 1
+    },
+    {
+      "input": "CaseInsensitive,CASEin",
+      "expected_output": 1
+    },
+    {
+      "input": "ExploitExample,EXPLOIT",
+      "expected_output": 1
+    }
+  ]
+}

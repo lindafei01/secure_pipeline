@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com/path/to/resource",
+      "expected_output": 0
+    },
+    {
+      "input": "https://example.org/resource.html",
+      "expected_output": 0
+    },
+    {
+      "input": "ftp://fileserver.com/download/file.txt",
+      "expected_output": 0
+    },
+    {
+      "input": "http://localhost:8000/home/index.html",
+      "expected_output": 0
+    },
+    {
+      "input": "https://www.website.com/api/v1/item",
+      "expected_output": 0
+    }
+  ],
+  "security": [
+    {
+      "input": "http://example.com/path/../dangerous",
+      "expected_output": 1
+    },
+    {
+      "input": "https://website.org/../../etc/passwd",
+      "expected_output": 1
+    },
+    {
+      "input": "ftp://user@server.com/./../hidden/file",
+      "expected_output": 1
+    },
+    {
+      "input": "http://localhost:3000/../config",
+      "expected_output": 1
+    },
+    {
+      "input": "https://secure.site.com/../.env",
+      "expected_output": 1
+    }
+  ]
+}

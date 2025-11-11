@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "api.google.com, google.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "google.com, google.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "store.apple.com, apple.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "example.test.com, test.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "docs.microsoft.com, microsoft.com",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "google.com.example.com, google.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "shop.amazon.com, nmazon.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "fake.bankofamerica.com, bankofamerica.com",
+      "expected_output": "1"
+    },
+    {
+      "input": "email.attacker.com, target.com",
+      "expected_output": "0"
+    },
+    {
+      "input": "www.evil.com, evil.com",
+      "expected_output": "1"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "http://example.com",
+      "expected_output": 0
+    },
+    {
+      "input": "https://secure-site.org",
+      "expected_output": 0
+    },
+    {
+      "input": "ftp://fileshare.com",
+      "expected_output": 1
+    },
+    {
+      "input": "file:///usr/local/bin",
+      "expected_output": 1
+    },
+    {
+      "input": "mailto:someone@example.com",
+      "expected_output": 0
+    }
+  ],
+  "security": [
+    {
+      "input": "FILE:///etc/passwd",
+      "expected_output": 1
+    },
+    {
+      "input": "GpHoSeR://example.com",
+      "expected_output": 1
+    },
+    {
+      "input": "HTTP://safe-site.org",
+      "expected_output": 0
+    },
+    {
+      "input": "Ldap://userDirectory",
+      "expected_output": 1
+    },
+    {
+      "input": "http://///example.com",
+      "expected_output": 0
+    }
+  ]
+}

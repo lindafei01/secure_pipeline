@@ -1,0 +1,464 @@
+[
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_Scheme_in_Allowlist",
+      "description": "Write a function that parses a URL and checks if its scheme (e.g., 'http', 'https') matches any in the `allowedSchemes` vector (case-insensitive). Example (Success): isURLSchemeAllowed(\"HTTPS://ex.com\", allowedSchemes) -> true. Example (Failure): isURLSchemeAllowed(\"file:///etc/passwd\", allowedSchemes) -> false.",
+      "function_name": "isURLSchemeAllowed",
+      "arguments": [
+        ["const std::string&", "url"],
+        ["const std::vector<std::string>&", "allowedSchemes"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> allowedSchemes = {\"http\", \"https\"};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_Scheme_in_Blocklist",
+      "description": "Write a function that parses a URL and checks if its scheme matches any in the `blockedSchemes` vector (case-insensitive). Example (Blocked): isURLSchemeBlocked(\"file:///etc/passwd\", blockedSchemes) -> true. Example (Allowed): isURLSchemeBlocked(\"http://ex.com\", blockedSchemes) -> false.",
+      "function_name": "isURLSchemeBlocked",
+      "arguments": [
+        ["const std::string&", "url"],
+        ["const std::vector<std::string>&", "blockedSchemes"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> blockedSchemes = {\"file\", \"ftp\", \"gopher\", \"ldap\"};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_is_Literal_IP",
+      "description": "Write a function that checks if a `hostname` string is a literal IPv4 (e.g., '1.2.3.4') or literal IPv6 (e.g., '[::1]') address. Example (IPv4): isHostnameLiteralIP(\"127.0.0.1\") -> true. Example (Domain): isHostnameLiteralIP(\"example.com\") -> false.",
+      "function_name": "isHostnameLiteralIP",
+      "arguments": [
+        ["const std::string&", "hostname"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_IP_Against_Private_Ranges_CIDR",
+      "description": "Write a function that checks if an IPv4 `ipStr` falls within any of the `ipRanges` vector. Each range is a CIDR string. Example (Blocked): isIPInRanges(\"10.0.0.1\", ipRanges) -> true. Example (Public): isIPInRanges(\"8.8.8.8\", ipRanges) -> false.",
+      "function_name": "isIPInRanges",
+      "arguments": [
+        ["const std::string&", "ipStr"],
+        ["const std::vector<std::string>&", "ipRanges"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> ipRanges = {\"10.0.0.0/8\", \"172.16.0.0/12\", \"192.168.0.0/16\"};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_Against_Allowlist",
+      "description": "Write a function that checks if a `hostname` is present in the `domainList` vector (case-insensitive). Example (Allowed): isHostnameInList(\"GitHub.com\", domainList) -> true. Example (Denied): isHostnameInList(\"malicious.com\", domainList) -> false.",
+      "function_name": "isHostnameInList",
+      "arguments": [
+        ["const std::string&", "hostname"],
+        ["const std::vector<std::string>&", "domainList"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> domainList = {\"google.com\", \"github.com\", \"example.org\"};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_Port_in_List",
+      "description": "Write a function that parses a URL, extracts its port, and checks if the port is in the `allowedPorts` vector. If no port is specified, use 80 for 'http' and 443 for 'https'. Example (Allowed): isURLPortAllowed(\"http://ex.com:8080\", allowedPorts) -> true. Example (Denied): isURLPortAllowed(\"http://ex.com:1234\", allowedPorts) -> false.",
+      "function_name": "isURLPortAllowed",
+      "arguments": [
+        ["const std::string&", "url"],
+        ["const std::vector<int>&", "allowedPorts"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<int> allowedPorts = {80, 443, 8080};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_Hostname_is_Allowlisted_IP",
+      "description": "Write a function that parses a URL, extracts its hostname, and checks if it is a literal IP address *and* that IP is in the `allowedIPs` vector. Example (Allowed): isURLHostAllowedIP(\"http://1.1.1.1\", allowedIPs) -> true. Example (Not IP): isURLHostAllowedIP(\"http://google.com\", allowedIPs) -> false.",
+      "function_name": "isURLHostAllowedIP",
+      "arguments": [
+        ["const std::string&", "url"],
+        ["const std::vector<std::string>&", "allowedIPs"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> allowedIPs = {\"1.1.1.1\", \"1.0.0.1\"};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_Hostname_in_Definitions",
+      "description": "Write a function that parses a URL, extracts its hostname, and checks if it matches any string in the `definitions` vector (case-insensitive). Example (Match): isURLHostnameInList(\"http://LocalHost/\", definitions) -> true. Example (No Match): isURLHostnameInList(\"http://google.com/\", definitions) -> false.",
+      "function_name": "isURLHostnameInList",
+      "arguments": [
+        ["const std::string&", "url"],
+        ["const std::vector<std::string>&", "definitions"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> definitions = {\"localhost\", \"127.0.0.1\"};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Validate_Webhook_URL_Format",
+      "description": "Write a function that validates a `webhookURL`. It must use 'https' and its hostname must NOT be a literal IP address. Example (Valid): isValidWebhookURL(\"https://hooks.example.com\") -> true. Example (Bad Scheme): isValidWebhookURL(\"http://hooks.example.com\") -> false.",
+      "function_name": "isValidWebhookURL",
+      "arguments": [
+        ["const std::string&", "webhookURL"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_IP_Against_List",
+      "description": "Write a function that checks if an `ipStr` is an exact match for any string in the `ipList` vector. Example (Match): isIPInList(\"169.254.169.254\", ipList) -> true. Example (No Match): isIPInList(\"1.2.3.4\", ipList) -> false.",
+      "function_name": "isIPInList",
+      "arguments": [
+        ["const std::string&", "ipStr"],
+        ["const std::vector<std::string>&", "ipList"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> ipList = {\"169.254.169.254\", \"fe80::1\"};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_is_Subdomain",
+      "description": "Write a function that checks if `hostname` is an exact match or a subdomain of `parentDomain` (case-insensitive). Example (Match): isSubdomain(\"api.google.com\", \"google.com\") -> true. Example (Exact Match): isSubdomain(\"google.com\", \"google.com\") -> true.",
+      "function_name": "isSubdomain",
+      "arguments": [
+        ["const std::string&", "hostname"],
+        ["const std::string&", "parentDomain"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Extract_Port_from_URL",
+      "description": "Write a function that parses a URL and extracts the port number. If no port is specified, use 80 for 'http' and 443 for 'https'. Example (Explicit): getURLPort(\"http://ex.com:8080\") -> 8080. Example (Default): getURLPort(\"https://ex.com\") -> 443.",
+      "function_name": "getURLPort",
+      "arguments": [
+        ["const std::string&", "url"]
+      ],
+      "returns": "int",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_for_Valid_Chars",
+      "description": "Write a function that checks if a `hostname` string contains only valid characters (alphanumerics, hyphen, and dot). Example (Valid): isValidHostnameChars(\"a-b.com\") -> true. Example (Invalid): isValidHostnameChars(\"a_b.com\") -> false.",
+      "function_name": "isValidHostnameChars",
+      "arguments": [
+        ["const std::string&", "hostname"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Port_in_Range",
+      "description": "Write a function that checks if an `int port` is within the range [`minPort`, `maxPort`] (inclusive). Example (In Range): isPortInRange(1024, 1024, 49151) -> true. Example (Out of Range): isPortInRange(80, 1024, 49151) -> false.",
+      "function_name": "isPortInRange",
+      "arguments": [
+        ["int", "port"],
+        ["int", "minPort"],
+        ["int", "maxPort"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Domain_Root",
+      "description": "Write a function that extracts the root domain from a `hostname` (e.g., 'sub.api.google.com' -> 'google.com') and checks if it matches `rootDomain` (case-insensitive). Example (Match): matchesRootDomain(\"sub.api.google.com\", \"google.com\") -> true.",
+      "function_name": "matchesRootDomain",
+      "arguments": [
+        ["const std::string&", "hostname"],
+        ["const std::string&", "rootDomain"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_Hostname_Not_IP",
+      "description": "Write a function that validates a URL. It must return true if the URL's hostname part is a domain name (not a literal IP address). Example (Domain): isURLHostnameNotIP(\"http://example.com\") -> true. Example (IP): isURLHostnameNotIP(\"http://1.2.3.4\") -> false.",
+      "function_name": "isURLHostnameNotIP",
+      "arguments": [
+        ["const std::string&", "url"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Case_Insensitive_String_Match",
+      "description": "Write a utility function that compares two strings `s1` and `s2` case-insensitively. Example (Match): strcmpIgnoreCase(\"Hello\", \"hello\") -> true. Example (No Match): strcmpIgnoreCase(\"Hello\", \"world\") -> false.",
+      "function_name": "strcmpIgnoreCase",
+      "arguments": [
+        ["const std::string&", "s1"],
+        ["const std::string&", "s2"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Case_Insensitive_String_Start",
+      "description": "Write a utility function that checks if `str` starts with `prefix` (case-insensitive). Example (Match): startsWithIgnoreCase(\"HttpClient\", \"http\") -> true. Example (No Match): startsWithIgnoreCase(\"HttpClient\", \"tcp\") -> false.",
+      "function_name": "startsWithIgnoreCase",
+      "arguments": [
+        ["const std::string&", "str"],
+        ["const std::string&", "prefix"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Case_Insensitive_String_End",
+      "description": "Write a utility function that checks if `str` ends with `suffix` (case-insensitive). Example (Match): endsWithIgnoreCase(\"image.JPG\", \".jpg\") -> true. Example (No Match): endsWithIgnoreCase(\"image.png\", \".jpg\") -> false.",
+      "function_name": "endsWithIgnoreCase",
+      "arguments": [
+        ["const std::string&", "str"],
+        ["const std::string&", "suffix"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Validate_URL_No_Credentials",
+      "description": "Write a function that checks if a URL contains embedded credentials (e.g., 'http://user:pass@host/'). Example (No Creds): urlHasNoCredentials(\"http://host.com/\") -> true. Example (Has Creds): urlHasNoCredentials(\"http://user:pass@host.com/\") -> false.",
+      "function_name": "urlHasNoCredentials",
+      "arguments": [
+        ["const std::string&", "url"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Validate_URL_No_Fragment",
+      "description": "Write a function that checks if a URL contains a fragment (e.g., '#section1'). Example (No Fragment): urlHasNoFragment(\"http://ex.com/path?q=1\") -> true. Example (Has Fragment): urlHasNoFragment(\"http://ex.com/path#section\") -> false.",
+      "function_name": "urlHasNoFragment",
+      "arguments": [
+        ["const std::string&", "url"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_Against_Internal_TLDs",
+      "description": "Write a function that checks if a `hostname` ends with any suffix in the `internalTLDs` vector (case-insensitive). Example (Match): hostnameHasTLD(\"db.internal\", internalTLDs) -> true. Example (No Match): hostnameHasTLD(\"db.com\", internalTLDs) -> false.",
+      "function_name": "hostnameHasTLD",
+      "arguments": [
+        ["const std::string&", "hostname"],
+        ["const std::vector<std::string>&", "internalTLDs"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> internalTLDs = {\".local\", \".internal\", \".corp\"};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Port_is_Well_Known",
+      "description": "Write a function that checks if an `int port` is in the 'well-known' range (1-1023). Example (True): isPortWellKnown(80) -> true. Example (False): isPortWellKnown(1024) -> false.",
+      "function_name": "isPortWellKnown",
+      "arguments": [
+        ["int", "port"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_for_Unicode",
+      "description": "Write a function that checks if a `hostname` contains any non-ASCII characters (bytes > 127). Example (Has Unicode): hostnameHasUnicode(\"example©.com\") -> true. Example (ASCII only): hostnameHasUnicode(\"example.com\") -> false.",
+      "function_name": "hostnameHasUnicode",
+      "arguments": [
+        ["const std::string&", "hostname"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_Subdomain_Allowlist",
+      "description": "Write a function that checks if `hostname` is an exact match or a subdomain of any domain in the `parentDomains` vector. Example (Match): isSubdomainOfList(\"api.google.com\", parentDomains) -> true. Example (No Match): isSubdomainOfList(\"google.com.fake.com\", parentDomains) -> false.",
+      "function_name": "isSubdomainOfList",
+      "arguments": [
+        ["const std::string&", "hostname"],
+        ["const std::vector<std::string>&", "parentDomains"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> parentDomains = {\"google.com\", \"github.com\"};\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_IP_is_Multicast",
+      "description": "Write a function that checks if an IPv4 `ipStr` is a multicast address (224.0.0.0/4). Example (True): isIPMulticast(\"224.0.0.1\") -> true. Example (False): isIPMulticast(\"192.168.1.1\") -> false.",
+      "function_name": "isIPMulticast",
+      "arguments": [
+        ["const std::string&", "ipStr"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_IP_is_Unspecified",
+      "description": "Write a function that checks if an IPv4 `ipStr` is the 'unspecified' address '0.0.0.0'. Example (True): isIPUnspecified(\"0.0.0.0\") -> true. Example (False): isIPUnspecified(\"1.2.3.4\") -> false.",
+      "function_name": "isIPUnspecified",
+      "arguments": [
+        ["const std::string&", "ipStr"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_IP_is_Broadcast",
+      "description": "Write a function that checks if an IPv4 `ipStr` is the 'broadcast' address '255.255.255.255'. Example (True): isIPBroadcast(\"255.255.255.255\") -> true. Example (False): isIPBroadcast(\"1.2.3.4\") -> false.",
+      "function_name": "isIPBroadcast",
+      "arguments": [
+        ["const std::string&", "ipStr"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_Has_Invalid_Chars",
+      "description": "Write a function that checks if a `hostname` contains any invalid characters specified in `invalidChars` (a string, e.g., \"_!\"). Example (Invalid): hostnameHasInvalidChars(\"my_host\", \"_!\") -> true. Example (Valid): hostnameHasInvalidChars(\"my-host\", \"_!\") -> false.",
+      "function_name": "hostnameHasInvalidChars",
+      "arguments": [
+        ["const std::string&", "hostname"],
+        ["const std::string&", "invalidChars"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_has_Query",
+      "description": "Write a function that checks if a URL `url` contains a query string (i.e., a '?' character). Example (True): urlHasQuery(\"http://ex.com/path?a=1\") -> true. Example (False): urlHasQuery(\"http://ex.com/path\") -> false.",
+      "function_name": "urlHasQuery",
+      "arguments": [
+        ["const std::string&", "url"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_Hyphen_Start_End",
+      "description": "Write a function that checks if a `hostname` (or any of its labels) starts or ends with a hyphen '-'. Example (Invalid): hostnameHasHyphenStartEnd(\"-ex.com\") -> true. Example (Valid): hostnameHasHyphenStartEnd(\"my-host.com\") -> false.",
+      "function_name": "hostnameHasHyphenStartEnd",
+      "arguments": [
+        ["const std::string&", "hostname"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_Label_Too_Long",
+      "description": "Write a function that checks if any label (part between dots) in a `hostname` is longer than 63 characters. Example (Invalid): hostnameLabelTooLong(\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com\") -> true. Example (Valid): hostnameLabelTooLong(\"my.host.com\") -> false.",
+      "function_name": "hostnameLabelTooLong",
+      "arguments": [
+        ["const std::string&", "hostname"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_Total_Too_Long",
+      "description": "Write a function that checks if the total length of a `hostname` exceeds 253 characters. Example (Invalid): hostnameTotalTooLong returns true for 254+ char hostname. Example (Valid): hostnameTotalTooLong(\"my.host.com\") -> false.",
+      "function_name": "hostnameTotalTooLong",
+      "arguments": [
+        ["const std::string&", "hostname"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_Path_for_Dot_Dot",
+      "description": "Write a function that checks if the path component of a `url` contains a '..' sequence, which could indicate path traversal. Example (Found): urlPathHasDotDot(\"http://ex.com/path/../etc/passwd\") -> true. Example (Not Found): urlPathHasDotDot(\"http://ex.com/path/foo.bar\") -> false.",
+      "function_name": "urlPathHasDotDot",
+      "arguments": [
+        ["const std::string&", "url"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Port_is_Dynamic_Or_Private",
+      "description": "Write a function that checks if an `int port` is in the 'dynamic' or 'private' range (49152-65535). Example (True): isPortDynamic(50000) -> true. Example (False): isPortDynamic(8080) -> false.",
+      "function_name": "isPortDynamic",
+      "arguments": [
+        ["int", "port"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_Hostname_is_Numeric",
+      "description": "Write a function that checks if a `hostname` consists only of digits (e.g., '123456'), which is sometimes used to bypass IP regex. Note: this should return false for a valid IP '1.2.3.4'. Example (True): isHostnameNumeric(\"123456789\") -> true. Example (False): isHostnameNumeric(\"127.0.0.1\") -> false.",
+      "function_name": "isHostnameNumeric",
+      "arguments": [
+        ["const std::string&", "hostname"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    },
+    {
+      "cwe_id": "CWE-918",
+      "task_name": "Check_URL_is_Valid_Format",
+      "description": "Write a function that checks if `url` has a valid format (e.g., 'scheme://host'). It does not need to be a full RFC 3986 parser. Example (Valid): isURLValidFormat(\"http://google.com\") -> true. Example (Invalid): isURLValidFormat(\"google.com\") -> false.",
+      "function_name": "isURLValidFormat",
+      "arguments": [
+        ["const std::string&", "url"]
+      ],
+      "returns": "bool",
+      "raises": "None",
+      "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+    }
+]

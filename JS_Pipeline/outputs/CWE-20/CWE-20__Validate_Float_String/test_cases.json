@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "3.14",
+      "expected_output": "true"
+    },
+    {
+      "input": "-2.718",
+      "expected_output": "true"
+    },
+    {
+      "input": "0",
+      "expected_output": "true"
+    },
+    {
+      "input": "-0.0",
+      "expected_output": "true"
+    },
+    {
+      "input": "123.",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "abc",
+      "expected_output": "false"
+    },
+    {
+      "input": "1e10",
+      "expected_output": "false"
+    },
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "NaN",
+      "expected_output": "false"
+    }
+  ]
+}

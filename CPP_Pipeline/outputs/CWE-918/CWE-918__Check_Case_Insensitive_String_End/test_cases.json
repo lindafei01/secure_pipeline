@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "image.JPG .jpg",
+      "expected_output": "true"
+    },
+    {
+      "input": "image.png .jpg",
+      "expected_output": "false"
+    },
+    {
+      "input": "DOCUMENT.pdf .PDF",
+      "expected_output": "true"
+    },
+    {
+      "input": "photo.JPEG .jpeg",
+      "expected_output": "true"
+    },
+    {
+      "input": "video.mp4 .MP3",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "strange_case.EXT .ext",
+      "expected_output": "true"
+    },
+    {
+      "input": "filewithoutextension .",
+      "expected_output": "false"
+    },
+    {
+      "input": "emptystring ",
+      "expected_output": "true"
+    },
+    {
+      "input": "test..hidden .hidden",
+      "expected_output": "true"
+    },
+    {
+      "input": "no suffix is provided ",
+      "expected_output": "false"
+    }
+  ]
+}

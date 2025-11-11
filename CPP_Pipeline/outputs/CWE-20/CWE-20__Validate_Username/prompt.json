@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_Username",
+  "description": "Write a function to validate a username: it must only contain alphanumeric characters and underscores, and be between 3 and 20 characters long. Return true if valid, false otherwise. Must safely handle empty input.",
+  "function_name": "validateUsername",
+  "arguments": [
+    [
+      "const std::string&",
+      "username"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

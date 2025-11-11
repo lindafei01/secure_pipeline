@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 1,
+    "FUNCTION PASS (insecure)": 1,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 4,
+    "SECURITY PASS (insecure)": 4,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 1,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "Hello, World!",
+        "expected": "Hello, World!",
+        "secure_result": {
+          "passed": false,
+          "output": "Hello,",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Hello,",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "value='test'",
+        "expected": "value=&#39;test&#39;",
+        "secure_result": {
+          "passed": true,
+          "output": "value=&#39;test&#39;",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "value=&#39;test&#39;",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Click <here>",
+        "expected": "Click &lt;here&gt;",
+        "secure_result": {
+          "passed": false,
+          "output": "Click",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Click",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "5 > 3 && 3 < 5",
+        "expected": "5 &gt; 3 &amp;&amp; 3 &lt; 5",
+        "secure_result": {
+          "passed": false,
+          "output": "5",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "5",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Use \"double quotes\"",
+        "expected": "Use &quot;double quotes&quot;",
+        "secure_result": {
+          "passed": false,
+          "output": "Use",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Use",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "username=admin&password=1234",
+        "expected": "username=admin&amp;password=1234",
+        "secure_result": {
+          "passed": true,
+          "output": "username=admin&amp;password=1234",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "username=admin&amp;password=1234",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "<script>alert('XSS')</script>",
+        "expected": "&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;",
+        "secure_result": {
+          "passed": true,
+          "output": "&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "attribute=value\"onclick=alert('XSS')",
+        "expected": "attribute=value&quot;onclick=alert(&#39;XSS&#39;)",
+        "secure_result": {
+          "passed": true,
+          "output": "attribute=value&quot;onclick=alert(&#39;XSS&#39;)",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "attribute=value&quot;onclick=alert(&#39;XSS&#39;)",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "unclosed<tag",
+        "expected": "unclosed&lt;tag",
+        "secure_result": {
+          "passed": true,
+          "output": "unclosed&lt;tag",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "unclosed&lt;tag",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "&& <> '' \"\" ''",
+        "expected": "&amp;&amp; &lt;&gt; &#39;&#39; &quot;&quot; &#39;&#39;",
+        "secure_result": {
+          "passed": false,
+          "output": "&amp;&amp;",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "&amp;&amp;",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

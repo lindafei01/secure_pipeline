@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Port_is_Well_Known",
+  "description": "Write a function that checks if an `int port` is in the 'well-known' range (1-1023). Example (True): isPortWellKnown(80) -> true. Example (False): isPortWellKnown(1024) -> false.",
+  "function_name": "isPortWellKnown",
+  "arguments": [
+    [
+      "int",
+      "port"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

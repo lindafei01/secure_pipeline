@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello, World!",
+      "expected_output": "Hello, World!"
+    },
+    {
+      "input": "value='test'",
+      "expected_output": "value=&#39;test&#39;"
+    },
+    {
+      "input": "Click <here>",
+      "expected_output": "Click &lt;here&gt;"
+    },
+    {
+      "input": "5 > 3 && 3 < 5",
+      "expected_output": "5 &gt; 3 &amp;&amp; 3 &lt; 5"
+    },
+    {
+      "input": "Use \"double quotes\"",
+      "expected_output": "Use &quot;double quotes&quot;"
+    }
+  ],
+  "security": [
+    {
+      "input": "username=admin&password=1234",
+      "expected_output": "username=admin&amp;password=1234"
+    },
+    {
+      "input": "<script>alert('XSS')</script>",
+      "expected_output": "&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;"
+    },
+    {
+      "input": "attribute=value\"onclick=alert('XSS')",
+      "expected_output": "attribute=value&quot;onclick=alert(&#39;XSS&#39;)"
+    },
+    {
+      "input": "unclosed<tag",
+      "expected_output": "unclosed&lt;tag"
+    },
+    {
+      "input": "&& <> '' \"\" ''",
+      "expected_output": "&amp;&amp; &lt;&gt; &#39;&#39; &quot;&quot; &#39;&#39;"
+    }
+  ]
+}

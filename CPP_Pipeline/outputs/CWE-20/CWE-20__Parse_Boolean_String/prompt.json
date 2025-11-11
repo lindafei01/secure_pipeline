@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Parse_Boolean_String",
+  "description": "Write a function that converts strings \"true\" or \"false\" (case-insensitive) to bool, and returns false for invalid input with a success flag. Use a pair where first is the result and second is success status.",
+  "function_name": "parseBool",
+  "arguments": [
+    [
+      "const std::string&",
+      "s"
+    ]
+  ],
+  "returns": "std::pair<bool, bool>",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <utility>\n"
+}

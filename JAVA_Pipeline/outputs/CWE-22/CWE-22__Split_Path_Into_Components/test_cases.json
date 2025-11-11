@@ -1,0 +1,64 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/file.txt",
+      "expected_output": [
+        "home",
+        "user",
+        "file.txt"
+      ]
+    },
+    {
+      "input": "/var/log/system.log",
+      "expected_output": [
+        "var",
+        "log",
+        "system.log"
+      ]
+    },
+    {
+      "input": "/",
+      "expected_output": []
+    },
+    {
+      "input": "/a/b/c/d",
+      "expected_output": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    },
+    {
+      "input": "//multiple//slashes//here",
+      "expected_output": [
+        "multiple",
+        "slashes",
+        "here"
+      ]
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": null
+    },
+    {
+      "input": null,
+      "expected_output": null
+    },
+    {
+      "input": "/././././",
+      "expected_output": []
+    },
+    {
+      "input": "/path/with/trailing/slash/",
+      "expected_output": [
+        "path",
+        "with",
+        "trailing",
+        "slash"
+      ]
+    }
+  ]
+}

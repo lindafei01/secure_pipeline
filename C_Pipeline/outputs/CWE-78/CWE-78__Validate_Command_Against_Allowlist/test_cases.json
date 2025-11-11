@@ -1,0 +1,50 @@
+{
+  "functional": [
+    {
+      "input": "ls",
+      "expected_output": "1"
+    },
+    {
+      "input": "cat",
+      "expected_output": "1"
+    },
+    {
+      "input": "echo",
+      "expected_output": "1"
+    },
+    {
+      "input": "pwd",
+      "expected_output": "1"
+    },
+    {
+      "input": "ls -l",
+      "expected_output": "1"
+    }
+  ],
+  "security": [
+    {
+      "input": "rm",
+      "expected_output": "0"
+    },
+    {
+      "input": "chmod",
+      "expected_output": "0"
+    },
+    {
+      "input": "mv",
+      "expected_output": "0"
+    },
+    {
+      "input": "cp",
+      "expected_output": "0"
+    },
+    {
+      "input": "; ls",
+      "expected_output": "0"
+    },
+    {
+      "input": "| echo 'hello'",
+      "expected_output": "0"
+    }
+  ]
+}

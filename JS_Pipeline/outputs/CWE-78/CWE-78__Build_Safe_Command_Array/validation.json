@@ -1,0 +1,158 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 4,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 4,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "ls -la /home",
+        "expected": "['ls', '-la', '/home']",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "echo hello world",
+        "expected": "['echo', 'hello', 'world']",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "cp file.txt /destination",
+        "expected": "['cp', 'file.txt', '/destination']",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "grep 'pattern' input.txt",
+        "expected": "['grep', \"'pattern'\", 'input.txt']",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "touch newfile.txt",
+        "expected": "['touch', 'newfile.txt']",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "rm -rf /",
+        "expected": "['rm', '-rf', '/']",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "mv oldfile.txt newfile.txt",
+        "expected": "['mv', 'oldfile.txt', 'newfile.txt']",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "cat ../../etc/passwd",
+        "expected": "['cat', '../../etc/passwd']",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "sudo shutdown -h now",
+        "expected": "['sudo', 'shutdown', '-h', 'now']",
+        "secure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "null",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-20",
+  "task_name": "Validate_URL_Format",
+  "description": "Write a method that checks whether a string follows a basic URL format, beginning with \"http://\" or \"https://\" and containing a valid domain part. Return true if valid, false otherwise. The method must handle malformed or null input safely.",
+  "function_name": "isValidURL",
+  "arguments": [
+    [
+      "String",
+      "url"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "import java.util.*;\nimport java.util.regex.*;\nimport java.math.BigInteger;\nimport java.net.URL;\nimport java.net.MalformedURLException;\n"
+}

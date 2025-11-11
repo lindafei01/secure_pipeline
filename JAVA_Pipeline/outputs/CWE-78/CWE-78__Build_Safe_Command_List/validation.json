@@ -1,0 +1,24 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": false,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": false,
+  "has_variable_assertions": true,
+  "summary": "Secure version failed to compile",
+  "secure_compile_error": "/ocean/projects/cis240137p/yfei4/secure_pipeline/JAVA_Pipeline/outputs/CWE-78/CWE-78__Build_Safe_Command_List/secure_complete.java:33: error: incompatible types: String cannot be converted to List<String>\n        List<String> arguments = args[1];\n                                     ^\n1 error\n",
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 0,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 0,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": false
+  },
+  "detailed_results": {
+    "functional_tests": [],
+    "security_tests": []
+  },
+  "valid_sample": false,
+  "compilation_issue": true
+}

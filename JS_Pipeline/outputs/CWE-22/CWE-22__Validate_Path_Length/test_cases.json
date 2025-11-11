@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/docs 4096",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user/docs/file.txt 4096",
+      "expected_output": "true"
+    },
+    {
+      "input": "/home/user 10",
+      "expected_output": "false"
+    },
+    {
+      "input": "/folder/subfolder/anotherfolder/endfolder 30",
+      "expected_output": "true"
+    },
+    {
+      "input": "/a/very/long/path/that/exceeds/the/normal/usual/length/and/should/not/be/valid 50",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "null 4096",
+      "expected_output": "false"
+    },
+    {
+      "input": "undefined 4096",
+      "expected_output": "false"
+    },
+    {
+      "input": "/safe/path/leading/to/../attempting/trick/../path 4096",
+      "expected_output": "true"
+    },
+    {
+      "input": "../../etc/passwd 4096",
+      "expected_output": "true"
+    }
+  ]
+}

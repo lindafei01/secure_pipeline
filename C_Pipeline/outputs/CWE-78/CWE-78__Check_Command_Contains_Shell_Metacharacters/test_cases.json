@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "ls -al",
+      "expected_output": "0"
+    },
+    {
+      "input": "echo HelloWorld",
+      "expected_output": "0"
+    },
+    {
+      "input": "cd /var/log",
+      "expected_output": "0"
+    },
+    {
+      "input": "grep 'pattern' filename",
+      "expected_output": "0"
+    },
+    {
+      "input": "cat file.txt",
+      "expected_output": "0"
+    }
+  ],
+  "security": [
+    {
+      "input": "ls; rm -rf /",
+      "expected_output": "1"
+    },
+    {
+      "input": "echo `whoami`",
+      "expected_output": "1"
+    },
+    {
+      "input": "cat file.txt | grep pattern",
+      "expected_output": "1"
+    },
+    {
+      "input": "var=$(ls); echo $var",
+      "expected_output": "1"
+    },
+    {
+      "input": "ping google.com & echo done",
+      "expected_output": "1"
+    }
+  ]
+}

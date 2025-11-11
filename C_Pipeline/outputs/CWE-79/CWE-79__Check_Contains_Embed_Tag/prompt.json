@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Check_Contains_Embed_Tag",
+  "description": "You are an expert C security programmer. Write a function that detects <embed> tags, which can embed external content and potentially execute scripts. Return 1 if <embed> tags are found, 0 otherwise. Must be case-insensitive and handle NULL input safely. Input: A C string to check. Output: Integer 1 if the string contains '<embed' (case-insensitive) followed by '>' or whitespace, 0 otherwise. Example (Found): contains_embed_tag(\"<embed src='evil.swf'>\") -> 1. Example (Not Found): contains_embed_tag(\"Hello World\") -> 0.",
+  "function_name": "contains_embed_tag",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

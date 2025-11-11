@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_IP_Against_Private_Ranges_CIDR",
+  "description": "Write a function that checks if an IPv4 `ip_str` falls within any of the `private_ranges`. `private_ranges` is a NULL-terminated array of CIDR strings. Example (Blocked): is_ip_in_ranges(\"10.0.0.1\", [\"10.0.0.0/8\", NULL]) -> 1. Example (Public): is_ip_in_ranges(\"8.8.8.8\", [\"10.0.0.0/8\", NULL]) -> 0.",
+  "function_name": "is_ip_in_ranges",
+  "arguments": [
+    [
+      "const char*",
+      "ip_str"
+    ],
+    [
+      "const char**",
+      "private_ranges"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* PRIVATE_IP_RANGES[] = {\"10.0.0.0/8\", \"172.16.0.0/12\", \"192.168.0.0/16\", NULL};\n"
+}

@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Validate_Path_Against_Pattern",
+  "description": "Write a function that checks if a path matches a safe pattern (e.g., only alphanumerics, dots, hyphens, underscores, and single slashes). Return 1 if valid, 0 otherwise. Must handle NULL safely. Example (Valid): matches_safe_pattern(\"/home/user_123/file-01.txt\") -> 1. Example (Invalid): matches_safe_pattern(\"/home/../etc/passwd\") -> 0.",
+  "function_name": "matches_safe_pattern",
+  "arguments": [
+    [
+      "const char*",
+      "path"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

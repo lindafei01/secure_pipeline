@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_URL_is_Valid_Format",
+  "description": "Write a function that checks if `url` has a valid format (e.g., 'scheme://host'). It does not need to be a full RFC 3986 parser. Example (Valid): isURLValidFormat(\"http://google.com\") -> true. Example (Invalid): isURLValidFormat(\"google.com\") -> false.",
+  "function_name": "isURLValidFormat",
+  "arguments": [
+    [
+      "const std::string&",
+      "url"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

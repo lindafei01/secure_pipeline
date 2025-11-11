@@ -1,0 +1,175 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "insecure_compile_error": "outputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c: In function \u2018hostname_has_hyphen_start_end\u2019:\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: error: storage size of \u2018hints\u2019 isn\u2019t known\n     struct addrinfo hints, *res;\n                     ^~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     hints.ai_socktype = SOCK_STREAM;\n                         ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:18:19: warning: implicit declaration of function \u2018getaddrinfo\u2019 [-Wimplicit-function-declaration]\n     if ((result = getaddrinfo(hostname, NULL, &hints, &res)) != 0) {\n                   ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:22:5: warning: implicit declaration of function \u2018freeaddrinfo\u2019 [-Wimplicit-function-declaration]\n     freeaddrinfo(res);\n     ^~~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:12:9: warning: variable \u2018result\u2019 set but not used [-Wunused-but-set-variable]\n     int result;\n         ^~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: warning: unused variable \u2018hints\u2019 [-Wunused-variable]\n     struct addrinfo hints, *res;\n                     ^~~~~\n",
+  "compilation_issue": true,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 5,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "-example.com",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c: In function \u2018hostname_has_hyphen_start_end\u2019:\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: error: storage size of \u2018hints\u2019 isn\u2019t known\n     struct addrinfo hints, *res;\n                     ^~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     hints.ai_socktype = SOCK_STREAM;\n                         ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:18:19: warning: implicit declaration of function \u2018getaddrinfo\u2019 [-Wimplicit-function-declaration]\n     if ((result = getaddrinfo(hostname, NULL, &hints, &res)) != 0) {\n                   ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:22:5: warning: implicit declaration of function \u2018freeaddrinfo\u2019 [-Wimplicit-function-declaration]\n     freeaddrinfo(res);\n     ^~~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:12:9: warning: variable \u2018result\u2019 set but not used [-Wunused-but-set-variable]\n     int result;\n         ^~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: warning: unused variable \u2018hints\u2019 [-Wunused-variable]\n     struct addrinfo hints, *res;\n                     ^~~~~\n"
+        }
+      },
+      {
+        "input": "example-.com",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c: In function \u2018hostname_has_hyphen_start_end\u2019:\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: error: storage size of \u2018hints\u2019 isn\u2019t known\n     struct addrinfo hints, *res;\n                     ^~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     hints.ai_socktype = SOCK_STREAM;\n                         ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:18:19: warning: implicit declaration of function \u2018getaddrinfo\u2019 [-Wimplicit-function-declaration]\n     if ((result = getaddrinfo(hostname, NULL, &hints, &res)) != 0) {\n                   ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:22:5: warning: implicit declaration of function \u2018freeaddrinfo\u2019 [-Wimplicit-function-declaration]\n     freeaddrinfo(res);\n     ^~~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:12:9: warning: variable \u2018result\u2019 set but not used [-Wunused-but-set-variable]\n     int result;\n         ^~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: warning: unused variable \u2018hints\u2019 [-Wunused-variable]\n     struct addrinfo hints, *res;\n                     ^~~~~\n"
+        }
+      },
+      {
+        "input": "valid-example.com",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c: In function \u2018hostname_has_hyphen_start_end\u2019:\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: error: storage size of \u2018hints\u2019 isn\u2019t known\n     struct addrinfo hints, *res;\n                     ^~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     hints.ai_socktype = SOCK_STREAM;\n                         ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:18:19: warning: implicit declaration of function \u2018getaddrinfo\u2019 [-Wimplicit-function-declaration]\n     if ((result = getaddrinfo(hostname, NULL, &hints, &res)) != 0) {\n                   ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:22:5: warning: implicit declaration of function \u2018freeaddrinfo\u2019 [-Wimplicit-function-declaration]\n     freeaddrinfo(res);\n     ^~~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:12:9: warning: variable \u2018result\u2019 set but not used [-Wunused-but-set-variable]\n     int result;\n         ^~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: warning: unused variable \u2018hints\u2019 [-Wunused-variable]\n     struct addrinfo hints, *res;\n                     ^~~~~\n"
+        }
+      },
+      {
+        "input": "another.valid-host.com",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c: In function \u2018hostname_has_hyphen_start_end\u2019:\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: error: storage size of \u2018hints\u2019 isn\u2019t known\n     struct addrinfo hints, *res;\n                     ^~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     hints.ai_socktype = SOCK_STREAM;\n                         ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:18:19: warning: implicit declaration of function \u2018getaddrinfo\u2019 [-Wimplicit-function-declaration]\n     if ((result = getaddrinfo(hostname, NULL, &hints, &res)) != 0) {\n                   ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:22:5: warning: implicit declaration of function \u2018freeaddrinfo\u2019 [-Wimplicit-function-declaration]\n     freeaddrinfo(res);\n     ^~~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:12:9: warning: variable \u2018result\u2019 set but not used [-Wunused-but-set-variable]\n     int result;\n         ^~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: warning: unused variable \u2018hints\u2019 [-Wunused-variable]\n     struct addrinfo hints, *res;\n                     ^~~~~\n"
+        }
+      },
+      {
+        "input": "hostname-without-issue",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c: In function \u2018hostname_has_hyphen_start_end\u2019:\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: error: storage size of \u2018hints\u2019 isn\u2019t known\n     struct addrinfo hints, *res;\n                     ^~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     hints.ai_socktype = SOCK_STREAM;\n                         ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:18:19: warning: implicit declaration of function \u2018getaddrinfo\u2019 [-Wimplicit-function-declaration]\n     if ((result = getaddrinfo(hostname, NULL, &hints, &res)) != 0) {\n                   ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:22:5: warning: implicit declaration of function \u2018freeaddrinfo\u2019 [-Wimplicit-function-declaration]\n     freeaddrinfo(res);\n     ^~~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:12:9: warning: variable \u2018result\u2019 set but not used [-Wunused-but-set-variable]\n     int result;\n         ^~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: warning: unused variable \u2018hints\u2019 [-Wunused-variable]\n     struct addrinfo hints, *res;\n                     ^~~~~\n"
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "malicious-.code",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c: In function \u2018hostname_has_hyphen_start_end\u2019:\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: error: storage size of \u2018hints\u2019 isn\u2019t known\n     struct addrinfo hints, *res;\n                     ^~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     hints.ai_socktype = SOCK_STREAM;\n                         ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:18:19: warning: implicit declaration of function \u2018getaddrinfo\u2019 [-Wimplicit-function-declaration]\n     if ((result = getaddrinfo(hostname, NULL, &hints, &res)) != 0) {\n                   ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:22:5: warning: implicit declaration of function \u2018freeaddrinfo\u2019 [-Wimplicit-function-declaration]\n     freeaddrinfo(res);\n     ^~~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:12:9: warning: variable \u2018result\u2019 set but not used [-Wunused-but-set-variable]\n     int result;\n         ^~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: warning: unused variable \u2018hints\u2019 [-Wunused-variable]\n     struct addrinfo hints, *res;\n                     ^~~~~\n"
+        }
+      },
+      {
+        "input": "-secure.check",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c: In function \u2018hostname_has_hyphen_start_end\u2019:\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: error: storage size of \u2018hints\u2019 isn\u2019t known\n     struct addrinfo hints, *res;\n                     ^~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     hints.ai_socktype = SOCK_STREAM;\n                         ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:18:19: warning: implicit declaration of function \u2018getaddrinfo\u2019 [-Wimplicit-function-declaration]\n     if ((result = getaddrinfo(hostname, NULL, &hints, &res)) != 0) {\n                   ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:22:5: warning: implicit declaration of function \u2018freeaddrinfo\u2019 [-Wimplicit-function-declaration]\n     freeaddrinfo(res);\n     ^~~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:12:9: warning: variable \u2018result\u2019 set but not used [-Wunused-but-set-variable]\n     int result;\n         ^~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: warning: unused variable \u2018hints\u2019 [-Wunused-variable]\n     struct addrinfo hints, *res;\n                     ^~~~~\n"
+        }
+      },
+      {
+        "input": "normal-operation.org",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c: In function \u2018hostname_has_hyphen_start_end\u2019:\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: error: storage size of \u2018hints\u2019 isn\u2019t known\n     struct addrinfo hints, *res;\n                     ^~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     hints.ai_socktype = SOCK_STREAM;\n                         ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:18:19: warning: implicit declaration of function \u2018getaddrinfo\u2019 [-Wimplicit-function-declaration]\n     if ((result = getaddrinfo(hostname, NULL, &hints, &res)) != 0) {\n                   ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:22:5: warning: implicit declaration of function \u2018freeaddrinfo\u2019 [-Wimplicit-function-declaration]\n     freeaddrinfo(res);\n     ^~~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:12:9: warning: variable \u2018result\u2019 set but not used [-Wunused-but-set-variable]\n     int result;\n         ^~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: warning: unused variable \u2018hints\u2019 [-Wunused-variable]\n     struct addrinfo hints, *res;\n                     ^~~~~\n"
+        }
+      },
+      {
+        "input": "no-issue-here.net",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c: In function \u2018hostname_has_hyphen_start_end\u2019:\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: error: storage size of \u2018hints\u2019 isn\u2019t known\n     struct addrinfo hints, *res;\n                     ^~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     hints.ai_socktype = SOCK_STREAM;\n                         ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:18:19: warning: implicit declaration of function \u2018getaddrinfo\u2019 [-Wimplicit-function-declaration]\n     if ((result = getaddrinfo(hostname, NULL, &hints, &res)) != 0) {\n                   ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:22:5: warning: implicit declaration of function \u2018freeaddrinfo\u2019 [-Wimplicit-function-declaration]\n     freeaddrinfo(res);\n     ^~~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:12:9: warning: variable \u2018result\u2019 set but not used [-Wunused-but-set-variable]\n     int result;\n         ^~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: warning: unused variable \u2018hints\u2019 [-Wunused-variable]\n     struct addrinfo hints, *res;\n                     ^~~~~\n"
+        }
+      },
+      {
+        "input": "--double.hyphen-.error",
+        "expected": "1",
+        "secure_result": {
+          "passed": true,
+          "output": "1",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "COMPILATION_FAILED",
+          "exit_code": 1,
+          "stderr": "outputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c: In function \u2018hostname_has_hyphen_start_end\u2019:\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: error: storage size of \u2018hints\u2019 isn\u2019t known\n     struct addrinfo hints, *res;\n                     ^~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: error: \u2018SOCK_STREAM\u2019 undeclared (first use in this function)\n     hints.ai_socktype = SOCK_STREAM;\n                         ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:15:25: note: each undeclared identifier is reported only once for each function it appears in\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:18:19: warning: implicit declaration of function \u2018getaddrinfo\u2019 [-Wimplicit-function-declaration]\n     if ((result = getaddrinfo(hostname, NULL, &hints, &res)) != 0) {\n                   ^~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:22:5: warning: implicit declaration of function \u2018freeaddrinfo\u2019 [-Wimplicit-function-declaration]\n     freeaddrinfo(res);\n     ^~~~~~~~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:12:9: warning: variable \u2018result\u2019 set but not used [-Wunused-but-set-variable]\n     int result;\n         ^~~~~~\noutputs/CWE-918/CWE-918__Check_Hostname_Hyphen_Start_End/insecure_complete.c:11:21: warning: unused variable \u2018hints\u2019 [-Wunused-variable]\n     struct addrinfo hints, *res;\n                     ^~~~~\n"
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

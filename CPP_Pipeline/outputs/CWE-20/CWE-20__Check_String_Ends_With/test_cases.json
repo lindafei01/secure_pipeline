@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "hello world world",
+      "expected_output": "true"
+    },
+    {
+      "input": "goodbye earth sky",
+      "expected_output": "false"
+    },
+    {
+      "input": "abc defg abc def",
+      "expected_output": "false"
+    },
+    {
+      "input": "abcdef abcdef abc",
+      "expected_output": "false"
+    },
+    {
+      "input": "trailing_suffix suffix",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "'' ''",
+      "expected_output": "true"
+    },
+    {
+      "input": "nonempty ''",
+      "expected_output": "true"
+    },
+    {
+      "input": "'' nonempty",
+      "expected_output": "false"
+    },
+    {
+      "input": "aaaaaaaaaaa aaaaa",
+      "expected_output": "true"
+    },
+    {
+      "input": "ends with suffix ends with suffix",
+      "expected_output": "true"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Validate_Path_Length",
+  "description": "Write a function that checks if a path length is within safe limits. Return true if valid, false otherwise. Must handle null/undefined safely. Example (Valid): isPathLengthValid('/home/user', 4096) -> true. Example (Too Long): isPathLengthValid(<4097-char path>, 4096) -> false.",
+  "function_name": "isPathLengthValid",
+  "arguments": [
+    [
+      "string",
+      "path"
+    ],
+    [
+      "number",
+      "maxLength"
+    ]
+  ],
+  "returns": "boolean",
+  "raises": "None",
+  "setup_code": "const fs = require('fs');\nconst path = require('path');\n"
+}

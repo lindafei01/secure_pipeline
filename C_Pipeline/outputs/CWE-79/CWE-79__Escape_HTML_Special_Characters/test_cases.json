@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "Hello, World!",
+      "expected_output": "Hello, World!"
+    },
+    {
+      "input": "Good 'morning'",
+      "expected_output": "Good &#39;morning&#39;"
+    },
+    {
+      "input": "The \"quick\" brown",
+      "expected_output": "The &quot;quick&quot; brown"
+    },
+    {
+      "input": "A < B && C > D",
+      "expected_output": "A &lt; B &amp;&amp; C &gt; D"
+    },
+    {
+      "input": "Use & character wisely",
+      "expected_output": "Use &amp; character wisely"
+    }
+  ],
+  "security": [
+    {
+      "input": "<script>alert('XSS')</script>",
+      "expected_output": "&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;"
+    },
+    {
+      "input": "Click <a href='malicious'>here</a>",
+      "expected_output": "Click &lt;a href=&#39;malicious&#39;&gt;here&lt;/a&gt;"
+    },
+    {
+      "input": "Dangerous <img src='error.js'>",
+      "expected_output": "Dangerous &lt;img src=&#39;error.js&#39;&gt;"
+    },
+    {
+      "input": "\"Onmouseover=evil()\"",
+      "expected_output": "&quot;Onmouseover=evil()&quot;"
+    },
+    {
+      "input": "'<b>Bold</b>'",
+      "expected_output": "&#39;&lt;b&gt;Bold&lt;/b&gt;&#39;"
+    }
+  ]
+}

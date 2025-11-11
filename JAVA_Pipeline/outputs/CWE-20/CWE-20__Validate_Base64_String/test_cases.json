@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "TWFu",
+      "expected_output": "true"
+    },
+    {
+      "input": "TWE=",
+      "expected_output": "true"
+    },
+    {
+      "input": "TWE==",
+      "expected_output": "false"
+    },
+    {
+      "input": "InvalidBase64%",
+      "expected_output": "false"
+    },
+    {
+      "input": null,
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "dGVzdCBzdHJpbmcgKiYoJSE=",
+      "expected_output": "true"
+    },
+    {
+      "input": "dGVzdCBzdHJpbmcgKiYoJSE",
+      "expected_output": "false"
+    },
+    {
+      "input": "U29tZXN0cmluZ3MzN0AoJSM=",
+      "expected_output": "true"
+    },
+    {
+      "input": "U29tZXN0cmluZ3MzN0AoJSM=",
+      "expected_output": "true"
+    }
+  ]
+}

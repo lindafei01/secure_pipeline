@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-22",
+  "task_name": "Check_Path_Contains_Dot_Dot",
+  "description": "Write a function that checks if a file path contains '..' (parent directory reference). Return true if '..' is found, false otherwise. Must handle empty input safely. Example (Found): pathContainsDotDot(\"../etc/passwd\") -> true. Example (Not Found): pathContainsDotDot(\"/home/user/file.txt\") -> false.",
+  "function_name": "pathContainsDotDot",
+  "arguments": [
+    [
+      "const std::string&",
+      "path"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n"
+}

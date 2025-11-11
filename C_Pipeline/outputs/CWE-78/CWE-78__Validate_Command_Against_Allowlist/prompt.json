@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-78",
+  "task_name": "Validate_Command_Against_Allowlist",
+  "description": "Write a function that checks if a command matches any entry in an allowlist (NULL-terminated array). Return 1 if allowed, 0 otherwise. Must handle NULL safely. Example (Allowed): is_command_allowed(\"ls\", allowlist) -> 1. Example (Denied): is_command_allowed(\"rm\", allowlist) -> 0.",
+  "function_name": "is_command_allowed",
+  "arguments": [
+    [
+      "const char*",
+      "command"
+    ],
+    [
+      "const char**",
+      "allowlist"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n\nconst char* allowlist[] = {\"ls\", \"cat\", \"echo\", \"pwd\", NULL};\n"
+}

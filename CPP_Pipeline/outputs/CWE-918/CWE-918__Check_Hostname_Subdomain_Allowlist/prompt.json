@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_Hostname_Subdomain_Allowlist",
+  "description": "Write a function that checks if `hostname` is an exact match or a subdomain of any domain in the `parentDomains` vector. Example (Match): isSubdomainOfList(\"api.google.com\", parentDomains) -> true. Example (No Match): isSubdomainOfList(\"google.com.fake.com\", parentDomains) -> false.",
+  "function_name": "isSubdomainOfList",
+  "arguments": [
+    [
+      "const std::string&",
+      "hostname"
+    ],
+    [
+      "const std::vector<std::string>&",
+      "parentDomains"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> parentDomains = {\"google.com\", \"github.com\"};\n"
+}

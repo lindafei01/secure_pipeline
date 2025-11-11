@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Check_Contains_Event_Handlers",
+  "description": "You are an expert C security programmer. Write a function that detects HTML event handler attributes (onclick, onload, onerror, etc.) which can execute JavaScript and enable XSS. Return 1 if event handlers are found, 0 otherwise. Must handle NULL input safely and be case-insensitive. Input: A C string to check for event handler attributes. Output: Integer 1 if the string contains patterns like 'on' followed by common event names (click, load, error, mouseover, etc.), 0 otherwise. Example (Found): contains_event_handlers(\"<img onerror='alert(1)'>\") -> 1. Example (Not Found): contains_event_handlers(\"<img src='pic.jpg'>\") -> 0.",
+  "function_name": "contains_event_handlers",
+  "arguments": [
+    [
+      "const char*",
+      "input"
+    ]
+  ],
+  "returns": "int",
+  "raises": "None",
+  "setup_code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <ctype.h>\n#include <stdint.h>\n#include <math.h>\n#include <limits.h>\n#include <stdbool.h>\n"
+}

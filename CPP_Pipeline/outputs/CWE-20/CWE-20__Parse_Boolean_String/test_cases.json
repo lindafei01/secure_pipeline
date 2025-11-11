@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "true",
+      "expected_output": "{\"first\":true,\"second\":true}"
+    },
+    {
+      "input": "false",
+      "expected_output": "{\"first\":false,\"second\":true}"
+    },
+    {
+      "input": "TRUE",
+      "expected_output": "{\"first\":true,\"second\":true}"
+    },
+    {
+      "input": "FALSE",
+      "expected_output": "{\"first\":false,\"second\":true}"
+    },
+    {
+      "input": "TrUe",
+      "expected_output": "{\"first\":true,\"second\":true}"
+    }
+  ],
+  "security": [
+    {
+      "input": "yes",
+      "expected_output": "{\"first\":false,\"second\":false}"
+    },
+    {
+      "input": "no",
+      "expected_output": "{\"first\":false,\"second\":false}"
+    },
+    {
+      "input": "123",
+      "expected_output": "{\"first\":false,\"second\":false}"
+    },
+    {
+      "input": "truest",
+      "expected_output": "{\"first\":false,\"second\":false}"
+    },
+    {
+      "input": "",
+      "expected_output": "{\"first\":false,\"second\":false}"
+    }
+  ]
+}

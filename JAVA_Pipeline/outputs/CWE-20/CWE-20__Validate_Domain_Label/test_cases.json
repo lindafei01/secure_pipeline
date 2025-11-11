@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "example",
+      "expected_output": "true"
+    },
+    {
+      "input": "my-domain123",
+      "expected_output": "true"
+    },
+    {
+      "input": "123",
+      "expected_output": "true"
+    },
+    {
+      "input": "invalid-",
+      "expected_output": "false"
+    },
+    {
+      "input": "-invalid",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "-",
+      "expected_output": "false"
+    },
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "valid-label",
+      "expected_output": "true"
+    },
+    {
+      "input": "very-long-domain-label-that-is-perfectly-valid-and-contains-hyphens-and-numbers-123-456",
+      "expected_output": "true"
+    }
+  ]
+}

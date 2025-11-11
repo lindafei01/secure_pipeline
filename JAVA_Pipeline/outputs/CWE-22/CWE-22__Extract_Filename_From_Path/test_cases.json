@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/file.txt",
+      "expected_output": "file.txt"
+    },
+    {
+      "input": "/home/user/docs/report.docx",
+      "expected_output": "report.docx"
+    },
+    {
+      "input": "/home/user/",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/var/log/system.log",
+      "expected_output": "system.log"
+    },
+    {
+      "input": "relative/path/to/readme.md",
+      "expected_output": "readme.md"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "NULL"
+    },
+    {
+      "input": null,
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/only/one/trailing/slash/",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "../../up/one/level/file.txt",
+      "expected_output": "file.txt"
+    }
+  ]
+}

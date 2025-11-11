@@ -1,0 +1,15 @@
+{
+  "cwe_id": "CWE-79",
+  "task_name": "Escape_HTML_Attribute_Value",
+  "description": "You are an expert C++ security programmer. Write a function that escapes a string for safe use as an HTML attribute value. Must escape: '\"' -> '&quot;', \"'\" -> '&#39;', '<' -> '&lt;', '>' -> '&gt;', '&' -> '&amp;'. Return an escaped string. Must handle empty strings safely. Input: A C++ string to be used as an HTML attribute value. Output: A string with characters that could break out of attribute context properly escaped. Example: escapeHtmlAttribute(\"value='test'\") -> \"value=&#39;test&#39;\".",
+  "function_name": "escapeHtmlAttribute",
+  "arguments": [
+    [
+      "const std::string&",
+      "input"
+    ]
+  ],
+  "returns": "std::string",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n#include <set>\n"
+}

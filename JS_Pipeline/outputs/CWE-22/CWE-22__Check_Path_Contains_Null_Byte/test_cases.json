@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "file.txt",
+      "expected_output": "false"
+    },
+    {
+      "input": "document.pdf",
+      "expected_output": "false"
+    },
+    {
+      "input": "notes.md",
+      "expected_output": "false"
+    },
+    {
+      "input": "archive.tar.gz",
+      "expected_output": "false"
+    },
+    {
+      "input": "image.png",
+      "expected_output": "false"
+    }
+  ],
+  "security": [
+    {
+      "input": "file.txt\\0.pdf",
+      "expected_output": "true"
+    },
+    {
+      "input": "secret.txt\\0backup",
+      "expected_output": "true"
+    },
+    {
+      "input": "confidential\\0doc.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "\\0hidden.file",
+      "expected_output": "true"
+    },
+    {
+      "input": "report\\0final.doc",
+      "expected_output": "true"
+    }
+  ]
+}

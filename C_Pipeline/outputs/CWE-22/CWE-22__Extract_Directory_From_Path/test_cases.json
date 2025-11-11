@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "/home/user/file.txt",
+      "expected_output": "/home/user"
+    },
+    {
+      "input": "/var/log/syslog",
+      "expected_output": "/var/log"
+    },
+    {
+      "input": "file.txt",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "/etc/hosts",
+      "expected_output": "/etc"
+    },
+    {
+      "input": "/usr/local/bin/",
+      "expected_output": "/usr/local/bin"
+    }
+  ],
+  "security": [
+    {
+      "input": "../../../../etc/passwd",
+      "expected_output": "../../../../etc"
+    },
+    {
+      "input": "/home/user/docs/../../../file.txt",
+      "expected_output": "/home/user/docs/../.."
+    },
+    {
+      "input": "malicious/content/",
+      "expected_output": "malicious/content"
+    },
+    {
+      "input": "/tmp/;/bin/bash",
+      "expected_output": "/tmp"
+    },
+    {
+      "input": "/dev/../dev/random",
+      "expected_output": "/dev/../dev"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "functional": [
+    {
+      "input": "hello",
+      "expected_output": "hello"
+    },
+    {
+      "input": "  hello",
+      "expected_output": "hello"
+    },
+    {
+      "input": "hello  ",
+      "expected_output": "hello"
+    },
+    {
+      "input": "  hello  world  ",
+      "expected_output": "hello  world"
+    }
+  ],
+  "security": [
+    {
+      "input": "NULL",
+      "expected_output": "NULL"
+    },
+    {
+      "input": "",
+      "expected_output": ""
+    },
+    {
+      "input": "   ",
+      "expected_output": ""
+    },
+    {
+      "input": " 123  ",
+      "expected_output": "123"
+    }
+  ]
+}

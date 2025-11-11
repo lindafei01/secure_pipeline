@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 5,
+    "FUNCTION PASS (insecure)": 5,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 4,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "1,2,3,4 2",
+        "expected": "3",
+        "secure_result": {
+          "passed": true,
+          "output": "3",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "3",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "10,20,30,40 0",
+        "expected": "10",
+        "secure_result": {
+          "passed": true,
+          "output": "10",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "10",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "100,200,300,400 3",
+        "expected": "400",
+        "secure_result": {
+          "passed": true,
+          "output": "400",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "400",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "42,-17,3,8 1",
+        "expected": "-17",
+        "secure_result": {
+          "passed": true,
+          "output": "-17",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "-17",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "5 0",
+        "expected": "5",
+        "secure_result": {
+          "passed": true,
+          "output": "5",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "5",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "1,2,3,4 5",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.ArrayIndexOutOfBoundsException: 5\n\tat InsecureProgram.parseCSVInt(insecure_complete.java:8)\n\tat InsecureProgram.main(insecure_complete.java:18)"
+        }
+      },
+      {
+        "input": "10,20,30 100",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.ArrayIndexOutOfBoundsException: 100\n\tat InsecureProgram.parseCSVInt(insecure_complete.java:8)\n\tat InsecureProgram.main(insecure_complete.java:18)"
+        }
+      },
+      {
+        "input": "hello,world,99 2",
+        "expected": "0",
+        "secure_result": {
+          "passed": false,
+          "output": "99",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "99",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "10,a,b,30 1",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"a\"\n\tat java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)\n\tat java.lang.Integer.parseInt(Integer.java:580)\n\tat java.lang.Integer.parseInt(Integer.java:615)\n\tat InsecureProgram.parseCSVInt(insecure_complete.java:8)\n\tat InsecureProgram.main(insecure_complete.java:18)"
+        }
+      },
+      {
+        "input": "1,2,3 -1",
+        "expected": "0",
+        "secure_result": {
+          "passed": true,
+          "output": "0",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 1,
+          "stderr": "Exception in thread \"main\" java.lang.ArrayIndexOutOfBoundsException: -1\n\tat InsecureProgram.parseCSVInt(insecure_complete.java:8)\n\tat InsecureProgram.main(insecure_complete.java:18)"
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

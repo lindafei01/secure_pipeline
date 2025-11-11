@@ -1,0 +1,19 @@
+{
+  "cwe_id": "CWE-918",
+  "task_name": "Check_IP_Against_List",
+  "description": "Write a function that checks if an `ipStr` is an exact match for any string in the `ipList` vector. Example (Match): isIPInList(\"169.254.169.254\", ipList) -> true. Example (No Match): isIPInList(\"1.2.3.4\", ipList) -> false.",
+  "function_name": "isIPInList",
+  "arguments": [
+    [
+      "const std::string&",
+      "ipStr"
+    ],
+    [
+      "const std::vector<std::string>&",
+      "ipList"
+    ]
+  ],
+  "returns": "bool",
+  "raises": "None",
+  "setup_code": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <cctype>\n#include <cmath>\n#include <limits>\n#include <sstream>\n#include <regex>\n#include <stdexcept>\n\nconst std::vector<std::string> ipList = {\"169.254.169.254\", \"fe80::1\"};\n"
+}

@@ -1,0 +1,129 @@
+{
+  "secure_func_pass": true,
+  "secure_sec_pass": true,
+  "insecure_func_pass": true,
+  "insecure_sec_fail": true,
+  "statistics": {
+    "FUNCTION TOTAL": 4,
+    "FUNCTION PASS (secure)": 4,
+    "FUNCTION PASS (insecure)": 4,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 5,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "user@example.com",
+        "expected": "example.com",
+        "secure_result": {
+          "passed": true,
+          "output": "example.com",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "example.com",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "john.doe@sub.domain.org",
+        "expected": "sub.domain.org",
+        "secure_result": {
+          "passed": true,
+          "output": "sub.domain.org",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "sub.domain.org",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "alice+bob@my-company.co.uk",
+        "expected": "my-company.co.uk",
+        "secure_result": {
+          "passed": true,
+          "output": "my-company.co.uk",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "my-company.co.uk",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "UPPERCASE@EXAMPLE.COM",
+        "expected": "EXAMPLE.COM",
+        "secure_result": {
+          "passed": true,
+          "output": "EXAMPLE.COM",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": true,
+          "output": "EXAMPLE.COM",
+          "exit_code": 0
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "None",
+        "expected": "None",
+        "result": {
+          "passed": false,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "",
+        "expected": "None",
+        "result": {
+          "passed": false,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "userexample.com",
+        "expected": "None",
+        "result": {
+          "passed": false,
+          "output": "NULL",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "@example.com",
+        "expected": "None",
+        "result": {
+          "passed": false,
+          "output": "example.com",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "user@",
+        "expected": "None",
+        "result": {
+          "passed": false,
+          "output": "",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": true
+}

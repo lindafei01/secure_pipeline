@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "echo $(whoami)",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo 'Hello, world!'",
+      "expected_output": "false"
+    },
+    {
+      "input": "date `date +%Y-%m-%d`",
+      "expected_output": "true"
+    },
+    {
+      "input": "ls -la /home/user",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo $(echo 'nested $(date)')",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo $(injection_test)",
+      "expected_output": "true"
+    },
+    {
+      "input": "cd $(malicious_command) && rm -rf /",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo 'Single quote with `backticks`'",
+      "expected_output": "true"
+    },
+    {
+      "input": "date",
+      "expected_output": "false"
+    }
+  ]
+}

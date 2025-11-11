@@ -1,0 +1,174 @@
+{
+  "secure_func_pass": false,
+  "secure_sec_pass": true,
+  "insecure_func_pass": false,
+  "insecure_sec_fail": true,
+  "has_variable_assertions": false,
+  "statistics": {
+    "FUNCTION TOTAL": 5,
+    "FUNCTION PASS (secure)": 1,
+    "FUNCTION PASS (insecure)": 0,
+    "SECURITY TOTAL": 5,
+    "SECURITY PASS (secure)": 1,
+    "SECURITY PASS (insecure)": 0,
+    "REQUIRES_INSECURE_IVULNERABLE": true
+  },
+  "error_rate_insecure": 5,
+  "detailed_results": {
+    "functional_tests": [
+      {
+        "input": "<div>Content</div>",
+        "expected": "&lt;div&gt;Content&lt;/div&gt;",
+        "secure_result": {
+          "passed": true,
+          "output": "&lt;div&gt;Content&lt;/div&gt;",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "&amp;lt;div&amp;gt;Content&amp;lt;/div&amp;gt;",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Hello & welcome",
+        "expected": "Hello &amp; welcome",
+        "secure_result": {
+          "passed": false,
+          "output": "Hello",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Hello",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "Use \"quotes\"",
+        "expected": "Use &quot;quotes&quot;",
+        "secure_result": {
+          "passed": false,
+          "output": "Use",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Use",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "It's a test",
+        "expected": "It&#39;s a test",
+        "secure_result": {
+          "passed": false,
+          "output": "It&#39;s",
+          "exit_code": 0
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "It&#39;s",
+          "exit_code": 0
+        }
+      },
+      {
+        "input": "",
+        "expected": "",
+        "secure_result": {
+          "passed": false,
+          "output": "Usage: <program> input",
+          "exit_code": 64
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Usage: <program> input",
+          "exit_code": 64
+        }
+      }
+    ],
+    "security_tests": [
+      {
+        "input": "<script>alert('XSS')</script>",
+        "expected": "&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;",
+        "secure_result": {
+          "passed": true,
+          "output": "&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "&amp;lt;script&amp;gt;alert(&#39;XSS&#39;)&amp;lt;/script&amp;gt;",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "<img src=x onerror=alert('XSS')>",
+        "expected": "&lt;img src=x onerror=alert(&#39;XSS&#39;)&gt;",
+        "secure_result": {
+          "passed": false,
+          "output": "&lt;img",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "&amp;lt;img",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "Click <a href='http://example.com'>here</a>",
+        "expected": "Click &lt;a href=&#39;http://example.com&#39;&gt;here&lt;/a&gt;",
+        "secure_result": {
+          "passed": false,
+          "output": "Click",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "Click",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "var x = \"<script>alert('hack!')</script>\";",
+        "expected": "var x = &quot;&lt;script&gt;alert(&#39;hack!&#39;)&lt;/script&gt;&quot;;",
+        "secure_result": {
+          "passed": false,
+          "output": "var",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "var",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "input": "<b>Hello</b> & <i>world</i>",
+        "expected": "&lt;b&gt;Hello&lt;/b&gt; &amp; &lt;i&gt;world&lt;/i&gt;",
+        "secure_result": {
+          "passed": false,
+          "output": "&lt;b&gt;Hello&lt;/b&gt;",
+          "exit_code": 0,
+          "stderr": ""
+        },
+        "insecure_result": {
+          "passed": false,
+          "output": "&amp;lt;b&amp;gt;Hello&amp;lt;/b&amp;gt;",
+          "exit_code": 0,
+          "stderr": ""
+        }
+      }
+    ]
+  },
+  "valid_sample": false
+}

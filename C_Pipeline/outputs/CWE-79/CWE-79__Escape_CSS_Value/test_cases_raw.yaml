@@ -1,0 +1,18 @@
+functional:
+- expected_output: normal string
+  input: normal string
+- expected_output: 'color: blue'
+  input: 'color: blue'
+- expected_output: 'background: #fff'
+  input: 'background: #fff'
+security:
+- expected_output: 'red\''; background: url(\''javascript:alert(1)\'')'
+  input: 'red''; background: url(''javascript:alert(1)'')'
+- expected_output: 'font-family: \''Comic Sans\'''
+  input: 'font-family: ''Comic Sans'''
+- expected_output: 'content: \"unsafe\"'
+  input: 'content: "unsafe"'
+- expected_output: 'line-break: \n'
+  input: "line-break: \n"
+- expected_output: control\achar
+  input: "control\achar"

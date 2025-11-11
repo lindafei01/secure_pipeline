@@ -1,0 +1,46 @@
+{
+  "functional": [
+    {
+      "input": "SELECT * FROM users",
+      "expected_output": "false"
+    },
+    {
+      "input": "DROP TABLE students",
+      "expected_output": "false"
+    },
+    {
+      "input": "Hello, world!",
+      "expected_output": "true"
+    },
+    {
+      "input": "INSERT INTO table VALUES ('value')",
+      "expected_output": "false"
+    },
+    {
+      "input": "This is a safe string",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "admin'; DROP TABLE users;",
+      "expected_output": "false"
+    },
+    {
+      "input": "'",
+      "expected_output": "false"
+    },
+    {
+      "input": "user_input;",
+      "expected_output": "false"
+    },
+    {
+      "input": "user_input \"SELECT",
+      "expected_output": "false"
+    },
+    {
+      "input": null,
+      "expected_output": "true"
+    }
+  ]
+}

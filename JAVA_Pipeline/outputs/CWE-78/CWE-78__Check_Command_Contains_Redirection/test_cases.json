@@ -1,0 +1,42 @@
+{
+  "functional": [
+    {
+      "input": "ls > output.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "ls -la",
+      "expected_output": "false"
+    },
+    {
+      "input": "cat < input.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "echo 'Hello World'",
+      "expected_output": "false"
+    },
+    {
+      "input": "echo 'Hello' >> log.txt",
+      "expected_output": "true"
+    }
+  ],
+  "security": [
+    {
+      "input": "",
+      "expected_output": "false"
+    },
+    {
+      "input": null,
+      "expected_output": "false"
+    },
+    {
+      "input": "grep 'pattern' file.txt > output.txt",
+      "expected_output": "true"
+    },
+    {
+      "input": "awk '{print $1}' file.txt",
+      "expected_output": "false"
+    }
+  ]
+}
